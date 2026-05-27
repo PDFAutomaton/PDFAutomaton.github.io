@@ -74,7 +74,8 @@
 
   if (banner) {
     const bannerImg = document.getElementById("banner-img");
-    bannerImg.src = decodeURIComponent(banner);
+    const bannerPath = decodeURIComponent(banner);
+    bannerImg.src = "https://raw.githubusercontent.com/PDFAutomaton/PDFAutomaton.github.io/main/" + bannerPath;
     bannerImg.style.display = "block";
   }
 
