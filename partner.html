@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earn passive income from your audience — PDF Affiliate Program</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#7F77DD;--purple-dark:#534AB7;--purple-light:#EEEDFE;--purple-text:#3C3489;--green:#3B6D11;--green-light:#EAF3DE;--text:#1a1a1a;--text2:#666;--text3:#999;--border:#e5e5e5;--bg:#fff;--bg2:#f8f8f8;--radius:12px;--radius-sm:8px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:#fff;line-height:1.6}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(127,119,221,0.2)}50%{box-shadow:0 0 0 12px rgba(127,119,221,0)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+nav{padding:20px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.logo{font-size:15px;font-weight:600;color:var(--text);letter-spacing:-0.3px}
+.logo span{color:var(--purple)}
+.nav-cta{background:var(--purple);color:#fff;font-size:13px;font-weight:500;padding:8px 18px;border-radius:100px;text-decoration:none;transition:background 0.15s}
+.nav-cta:hover{background:var(--purple-dark)}
+.hero{text-align:center;padding:5rem 0 3rem;animation:fadeUp 0.6s ease both}
+.badge{display:inline-flex;align-items:center;gap:6px;background:var(--purple-light);color:var(--purple-text);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:1.75rem}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.12;letter-spacing:-1.5px;margin-bottom:1.25rem}
+.hero h1 .grad{background:linear-gradient(90deg,var(--purple),#D4537E,var(--purple));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+.hero-sub{font-size:18px;color:var(--text2);max-width:500px;margin:0 auto 2.5rem;line-height:1.65}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-size:16px;font-weight:600;padding:16px 32px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:background 0.15s,transform 0.12s;animation:glow 3s ease infinite}
+.btn:hover{background:var(--purple-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--text2);border:1px solid var(--border);animation:none;margin-left:12px;font-weight:500;font-size:15px;padding:14px 28px}
+.btn-ghost:hover{background:var(--bg2);transform:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;margin:4rem 0;animation:fadeUp 0.6s 0.15s ease both;opacity:0}
+.stat{background:#fff;padding:1.5rem 1rem;text-align:center}
+.stat-val{font-size:26px;font-weight:700;color:var(--purple);letter-spacing:-0.5px;display:block;margin-bottom:4px}
+.stat-lbl{font-size:12px;color:var(--text3);font-weight:500}
+section{padding:5rem 0;border-top:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple);margin-bottom:12px}
+h2{font-size:clamp(26px,4vw,38px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:12px}
+.section-sub{font-size:17px;color:var(--text2);max-width:480px;line-height:1.6;margin-bottom:2.5rem}
+.steps{display:flex;flex-direction:column;gap:1px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.step{display:flex;align-items:flex-start;gap:16px;padding:1.5rem;background:#fff;border-bottom:1px solid var(--border);transition:background 0.15s}
+.step:last-child{border-bottom:none}
+.step:hover{background:var(--bg2)}
+.step-num{width:36px;height:36px;border-radius:50%;background:var(--purple-light);color:var(--purple-text);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step h3{font-size:16px;font-weight:600;margin-bottom:4px}
+.step p{font-size:14px;color:var(--text2);line-height:1.55;margin:0}
+.money-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:1.5rem}
+.money-top{padding:2.5rem;text-align:center;border-bottom:1px solid var(--border)}
+.per-sale-label{font-size:13px;color:var(--text3);font-weight:500;margin-bottom:8px}
+.per-sale-num{font-size:72px;font-weight:800;color:var(--purple);line-height:1;letter-spacing:-3px}
+.per-sale-sub{font-size:14px;color:var(--text3);margin-top:10px}
+.split-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.split-cell{padding:1.25rem;text-align:center;border-right:1px solid var(--border)}
+.split-cell:last-child{border-right:none}
+.split-val{font-size:20px;font-weight:700;color:var(--text);display:block;margin-bottom:4px}
+.split-lbl{font-size:11px;color:var(--text3);font-weight:500}
+.slider-section{margin:2rem 0}
+.slider-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.slider-top label{font-size:14px;color:var(--text2);font-weight:500}
+.slider-top .val{font-size:20px;font-weight:700;color:var(--purple)}
+input[type=range]{width:100%;height:6px;border-radius:3px;background:var(--purple-light);outline:none;-webkit-appearance:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--purple);cursor:pointer;border:3px solid #fff;box-shadow:0 0 0 1px var(--purple)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:1.5rem}
+.result-card{background:var(--bg2);border-radius:var(--radius-sm);padding:1.25rem}
+.result-card .lbl{font-size:12px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px}
+.result-card .num{font-size:28px;font-weight:800;color:var(--green);letter-spacing:-0.5px}
+.result-card.highlight{background:var(--green-light);border:1px solid #C0DD97}
+.faqs{display:flex;flex-direction:column;gap:12px}
+.faq{border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;background:#fff}
+.faq-q{font-size:15px;font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.faq-q::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--purple);flex-shrink:0}
+.faq-a{font-size:14px;color:var(--text2);line-height:1.6;padding-left:16px}
+.form-section{background:var(--purple-light);border-radius:var(--radius);padding:3rem;text-align:center;border:1px solid #CECBF6}
+.form-section h2{color:var(--purple-text)}
+.form-section .section-sub{margin:0 auto 2rem}
+.form-group{display:flex;flex-direction:column;gap:12px;max-width:440px;margin:0 auto}
+.form-input{width:100%;padding:14px 18px;border:1px solid #CECBF6;border-radius:100px;font-size:15px;outline:none;background:#fff;transition:border-color 0.15s;font-family:inherit}
+.form-input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(127,119,221,0.15)}
+.form-input::placeholder{color:var(--text3)}
+.btn-form{width:100%;padding:16px;border-radius:100px;background:var(--purple);color:#fff;font-size:16px;font-weight:600;border:none;cursor:pointer;transition:background 0.15s,transform 0.12s;animation:glow 3s ease infinite}
+.btn-form:hover{background:var(--purple-dark);transform:translateY(-1px)}
+.form-note{font-size:12px;color:var(--purple-text);margin-top:10px;opacity:0.8}
+.success-msg{display:none;background:#fff;border:1px solid #C0DD97;border-radius:var(--radius);padding:2rem;text-align:center;margin-top:1rem}
+.success-msg h3{font-size:20px;font-weight:700;color:var(--green);margin-bottom:8px}
+.success-msg p{font-size:14px;color:var(--text2)}
+footer{padding:3rem 0;border-top:1px solid var(--border);text-align:center}
+.footer-logo{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px}
+.footer-logo span{color:var(--purple)}
+.footer-sub{font-size:13px;color:var(--text3)}
+@media(max-width:600px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .split-row{grid-template-columns:1fr}
+  .split-cell{border-right:none;border-bottom:1px solid var(--border)}
+  .split-cell:last-child{border-bottom:none}
+  .result-grid{grid-template-columns:1fr}
+  .btn-ghost{display:none}
+  .form-section{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <div class="logo">PDF<span>Automaton</span></div>
+    <a href="#get-started" class="nav-cta">get your free preview</a>
+  </nav>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="badge">&#x2728; zero cost to you, forever</div>
+    <h1>Your audience wants a system.<br><span class="grad">You just share the link.</span></h1>
+    <p class="hero-sub">We build a custom PDF guide for your viewers, list it at $27, and split every sale 50/50 — $13.50 deposited to your bank every week, automatically.</p>
+    <a href="#get-started" class="btn">see your free preview &#8594;</a>
+    <a href="#how-it-works" class="btn btn-ghost">how it works</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><span class="stat-val">$0</span><span class="stat-lbl">cost to you</span></div>
+    <div class="stat"><span class="stat-val">$13.50</span><span class="stat-lbl">per sale, yours</span></div>
+    <div class="stat"><span class="stat-val">24h</span><span class="stat-lbl">to go live</span></div>
+    <div class="stat"><span class="stat-val">weekly</span><span class="stat-lbl">bank deposits</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="how-it-works">
+    <div class="eyebrow">how it works</div>
+    <h2>Simple. Passive. Yours.</h2>
+    <p class="section-sub">We handle everything. You share once. You earn forever.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div><h3>We build your custom guide</h3><p>Written specifically for your audience and niche — not a template, not a reskin. 100% unique to your viewers.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h3>You get a unique affiliate link</h3><p>Every sale through your link pays you $13.50 automatically via Whop. Real-time dashboard so you see every click and every sale.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h3>Share it once, anywhere</h3><p>Pin it in your comments, add it to your description, or mention it in a video. One share is all it takes.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><h3>Earn every week, automatically</h3><p>Whop deposits your cut directly to your bank on a fixed weekly schedule. No invoicing, no chasing, no admin work.</p></div></div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="eyebrow">the math</div>
+    <h2>Run the numbers yourself.</h2>
+    <p class="section-sub">Drag the slider and see exactly what you earn — no estimates, just math.</p>
+
+    <div class="money-card">
+      <div class="money-top">
+        <div class="per-sale-label">your earnings per sale</div>
+        <div class="per-sale-num">$13.50</div>
+        <div class="per-sale-sub">guide sells at $27 &nbsp;&middot;&nbsp; you keep exactly 50% &nbsp;&middot;&nbsp; we keep 50%</div>
+      </div>
+      <div class="split-row">
+        <div class="split-cell"><span class="split-val">$27</span><span class="split-lbl">guide price</span></div>
+        <div class="split-cell"><span class="split-val">$13.50</span><span class="split-lbl">your cut (50%)</span></div>
+        <div class="split-cell"><span class="split-val">$0</span><span class="split-lbl">your investment</span></div>
+      </div>
+    </div>
+
+    <div class="slider-section">
+      <div class="slider-top">
+        <label for="sales">monthly sales estimate</label>
+        <span class="val" id="sales-out">50</span>
+      </div>
+      <input type="range" id="sales" min="10" max="2000" value="50" step="10">
+    </div>
+
+    <div class="result-grid">
+      <div class="result-card"><div class="lbl">monthly earnings</div><div class="num" id="r-monthly">$675</div></div>
+      <div class="result-card highlight"><div class="lbl">annual earnings</div><div class="num" id="r-annual">$8,100</div></div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="eyebrow">every question answered</div>
+    <h2>No catches. No fine print.</h2>
+    <p class="section-sub">We get it — sounds too simple. Here's exactly how it works.</p>
+    <div class="faqs">
+      <div class="faq"><div class="faq-q">Do I pay anything at all?</div><div class="faq-a">Never. We build the guide, host it, handle all customer service and payments. You share one link and collect your $13.50 per sale.</div></div>
+      <div class="faq"><div class="faq-q">How do I track my sales and earnings?</div><div class="faq-a">You get a real-time dashboard on Whop — every click, every sale, every payout. Full transparency, always. You see exactly what your audience spends.</div></div>
+      <div class="faq"><div class="faq-q">When exactly do I get paid?</div><div class="faq-a">Every week, automatically. Whop sends your $13.50 per sale directly to your bank on a fixed weekly schedule. No invoicing needed — ever.</div></div>
+      <div class="faq"><div class="faq-q">Is the guide actually built for my specific audience?</div><div class="faq-a">Yes — written specifically for your niche and viewers, not a generic template. Your audience gets something they actually asked for and will find genuinely useful.</div></div>
+      <div class="faq"><div class="faq-q">How much of my time does this take?</div><div class="faq-a">One share. After that it runs completely on its own — no maintenance, no customer support from you, nothing. Your link keeps earning while you sleep.</div></div>
+      <div class="faq"><div class="faq-q">What if my audience doesn't buy?</div><div class="faq-a">You've lost nothing. Zero cost means zero risk. The worst case scenario is nothing happens. There's genuinely no downside to trying.</div></div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section id="get-started">
+    <div class="form-section">
+      <div class="eyebrow">get your free preview</div>
+      <h2>See your guide before committing to anything.</h2>
+      <p class="section-sub">Enter your channel details below. We'll build a custom sample preview for your audience — free, no commitment, no strings.</p>
+      <div class="form-group" id="the-form">
+        <input type="text" class="form-input" id="channel-name" placeholder="Your YouTube channel name" required>
+        <input type="email" class="form-input" id="creator-email" placeholder="Your email address" required>
+        <button class="btn-form" onclick="submitForm()">build my free preview &#8594;</button>
+        <p class="form-note">&#128274; We'll never share your information. Preview delivered within 24 hours.</p>
+      </div>
+      <div class="success-msg" id="success-msg">
+        <h3>&#10003; You're on the list!</h3>
+        <p>We'll build your custom preview and send it to your email within 24 hours. Check your inbox — it'll be worth the wait.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <footer>
+    <div class="footer-logo">PDF<span>Automaton</span></div>
+    <p class="footer-sub">Building passive income for creators, one guide at a time.</p>
+  </footer>
+</div>
+
+<script>
+const slider = document.getElementById('sales');
+const salesOut = document.getElementById('sales-out');
+const rMonthly = document.getElementById('r-monthly');
+const rAnnual = document.getElementById('r-annual');
+
+function updateCalc() {
+  const s = parseInt(slider.value);
+  const monthly = Math.round(s * 13.5);
+  const annual = monthly * 12;
+  salesOut.textContent = s.toLocaleString();
+  rMonthly.textContent = '$' + monthly.toLocaleString();
+  rAnnual.textContent = '$' + annual.toLocaleString();
+}
+slider.addEventListener('input', updateCalc);
+updateCalc();
+
+function submitForm() {
+  const channel = document.getElementById('channel-name').value.trim();
+  const email = document.getElementById('creator-email').value.trim();
+  if (!channel || !email) { alert('Please fill in both fields.'); return; }
+  if (!email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  
+  fetch('https://formspree.io/f/xpwzgrkd', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({channel_name: channel, email: email, source: 'landing_page'})
+  }).catch(() => {});
+  
+  document.getElementById('the-form').style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; obs.unobserve(e.target); }});
+}, {threshold: 0.05});
+document.querySelectorAll('.stats').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
