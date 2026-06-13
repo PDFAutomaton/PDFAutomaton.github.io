@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Competitive Exam Daily System: From Theory to Score Improvement - Preview</title>
+<title>The SSC CGL Post Selection Blueprint — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Competitive Exam Daily System: From Theory to Score Improvement</h1>
-  <p class="subtitle">A structured daily framework that converts concept understanding into measurable exam performance—without last-minute cramming</p>
-  <div class="for">Created specifically for the audience of <strong>Online Study Platform</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/33872172/pexels-photo-33872172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Online Study Platform viewers</div>
+    <h1>The SSC CGL Post Selection Blueprint</h1>
+    <p>Match Your Score to Realistic Vacancies in 2026 — Stop Guessing, Start Targeting the 3-4 Posts You Can Actually Secure</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Online Study Platform - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You understand the concepts. You can solve problems in isolation. But when exam pressure hits, your mind goes blank and your scores don't reflect what you actually know. This isn't a knowledge problem—it's a system problem.</p>
-  <div class="promise">This guide gives you a repeatable daily structure that systematically covers your syllabus, locks in retention, and conditions your brain to perform under exam conditions. No motivation speeches. No vague advice. Just the exact framework that bridges the gap between understanding and consistent scoring.</div>
-  <p>This guide is based on analysis of high-performing exam students and the daily habits that separated those who converted understanding into results from those who didn't. The framework has been tested across multiple competitive exam contexts and adapted here for your specific challenge: consistent daily execution that compounds into measurable score improvement.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You just scored 148 in a full mock. Good number. But here is the real question nobody is answering for you — is that 148 enough for Income Tax Inspector in your category, or are you going to spend the next 4 months preparing for a post that cleared at 162 last cycle? Most aspirants filling out the SSC CGL form are doing it blind. They pick Inspector of Posts because the name sounds good. They tick CSS because someone in their coaching told them it is prestigious. They have zero idea that the post they are targeting has a 14-mark gap between their current score and the actual cutoff — and that gap does not close with generic studying. It closes only when you know exactly which battlefield you are entering.</h2>
+    <p>This guide gives you a data-backed, category-wise, score-mapped framework to identify the 3 to 4 SSC CGL posts that are genuinely within your reach based on where your mock scores are sitting right now. No motivational padding. No vague advice. Just cutoff trends from 2019 to 2024, vacancy patterns for 2026 cycle projections, and a clear post-matching system that tells you — this is your target zone, this is your stretch post, and this is the one you are wasting energy on. By the time you finish reading this, you will know which departments to study harder for, which preference order to fill during form submission, and how to build your preparation around realistic rank conversion instead of borrowed hope.</p>
+    <div class="promise">🎯 Know exactly which 3-4 posts are realistically achievable based on personal practice test scores and historical cutoff data; study with clarity and confidence rather than scattered hope</div>
+    <p class="author-note">A quick note before you begin — this guide was researched and structured by an independent analyst who has tracked SSC CGL cutoff data, ministry-wise vacancy releases, and category-based rank movement across six exam cycles. This is not official SSC material and the creator of this platform did not write it personally. Think of it as the work of someone who spent weeks inside the numbers so you do not have to. The projections here are based on historical patterns and publicly available data. Use it as your strategic compass, not as a guarantee. The exam is yours to clear — this just makes sure you are aiming at the right target.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you read further, test the core principle of this system. This quick win shows you how restructuring a single study session produces immediate clarity and retention—and proves the system works at the smallest scale.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Identify one concept you've struggled to retain</strong><p>Pick something you've studied before but keep forgetting during practice tests. It should be a single concept, not a full chapter—something you can review in 20 minutes.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Study it using the Daily System's core sequence: Bismillah + Review → Teach Back → Apply → Reflect</strong><p>Start with intention (niyyah). Spend 5 minutes reviewing the concept from your notes. Spend 5 minutes explaining it aloud as if teaching someone else—no reading allowed. Spend 5 minutes solving one related problem. Spend 5 minutes writing down what you got right, what confused you, and one thing to focus on tomorrow.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Test yourself on this concept in your next practice session</strong><p>Don't wait days. Use this concept in your very next timed practice or mock test. Track whether you recall it faster and answer related questions more accurately than before.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read a single chapter of this guide, do this one exercise right now. It takes 30 minutes, requires only your last 3 mock test scores and a pen, and it will immediately tell you which tier of SSC CGL posts you should be targeting versus which ones you are currently over-investing preparation time in. This is the foundation everything else in this guide builds on.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You'll experience sharper recall of that specific concept, faster problem-solving on related questions, and clearer confidence when answering. This 30-minute session produces visible improvement because it follows the structure your brain actually needs—not random cramming. This is what the full daily system does, multiplied across your entire syllabus, every single day.
+  <div class="step"><div class="step-num">1</div><div><strong>Pull your last 3 full mock test scores and calculate your average normalized score</strong><p>Open your mock test app or notebook and write down your last 3 Tier-1 full mock scores. Add them and divide by 3. This is your Current Performance Baseline or CPB. If your scores are 141, 137 and 144, your CPB is 140.7. Write this number at the top of a page. If you have Tier-2 mock data as well, note your Paper-1 Maths and Paper-2 English scores separately. Do not skip this step or estimate — the entire matching exercise depends on an honest number, not your best day score or your worst day score.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Map your CPB against the Post Tier Chart on page 23 of this guide and mark your Realistic Zone and Stretch Zone</strong><p>Turn to the Post Tier Chart on page 23. You will see four score bands for General, OBC, SC and ST categories, each mapped to specific posts. Find your category column and locate where your CPB sits. Circle every post listed in your Realistic Zone — these are posts where your current score is within 6 marks of the historical average cutoff. Put a triangle next to every post in your Stretch Zone — these are posts where the gap is 7 to 14 marks, closeable with focused preparation. Draw a line through every post in the Out of Range column. This is not defeat — this is 4 months of wasted energy you just saved yourself.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write your Top 3 Target Posts on a sticky note and photograph it — this becomes your form-filling anchor</strong><p>From your Realistic and Stretch Zones, pick the 3 posts that match both your score range and your preference for city posting, department type or promotion trajectory. Write them as Post 1, Post 2 and Post 3 on a sticky note. Post 1 should be your most realistic target — highest vacancy count, cutoff closest to your CPB. Post 2 is your primary stretch. Post 3 is your secondary stretch. Take a photo of this note and set it as your phone wallpaper or save it in your study folder. Every preparation decision you make from tomorrow — which topics to prioritize, how many mocks to take, which optional papers to strengthen — should be filtered through whether it moves you closer to these 3 posts specifically.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After completing this 30-minute exercise you will have a named, category-specific list of 3 posts that are genuinely achievable at your current score level, a clear visual of which posts you have been over-preparing for and can now deprioritize, and a concrete anchor for your form-filling decision when the 2026 notification drops. The panic of seeing 50-plus post options will be replaced by a focused target list built on real cutoff data, not guesswork.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>Stop Studying Blind: How to Read Your Score Like a Post Selection Map</h3>
+      <p>Transform your current mock test scores from random numbers into a precise post-targeting compass before you waste another month studying without a destination.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most CGL aspirants from tier-2/3 cities make the same fatal mistake — they study for 'the exam' instead of studying for a specific post like Income Tax Inspector or Assistant Audit Officer, which have dramatically different cutoff gaps (sometimes 8-12 marks apart in the same tier). Right now, pull up the last 3 SSC CGL final answer key PDFs from 2022, 2023, and 2024 on the SSC official website and write down the post-wise cutoff scores for your category (OBC/General/SC/ST) in Tier-1 and combined scores — this single exercise will show you that AAO requires roughly 160+ combined while Statistical Investigator Grade-II can be secured around 145-150, meaning the same preparation gap separates a gazetted post from a non-gazetted one. Your current mock test average is not your enemy — it is raw data, and once you map it against 3 years of actual cutoffs, you will immediately see whether you are 5 marks away from CSS or 20 marks away from IT Inspector, which completely changes how aggressively you need to target Quant versus English in the next 90 days. This channel covers tier-wise strategy, subject-wise scoring patterns, and post preference order — use that content as fuel only after you have this personal score-to-post gap calculation done, because without it you are essentially memorizing maps for a city you have not decided to visit yet.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open ssc.nic.in right now and download the Final Result PDFs for CGL 2022 and 2023 — locate the post-wise category cutoff table and screenshot it to your phone gallery so it is always accessible during your prep</li><li>Create a simple 3-column notebook page: Column 1 = Post Name, Column 2 = Your Category Cutoff (last 2 years average), Column 3 = Your Current Mock Average — fill this for at least 8 posts today to visually see your gap</li><li>Calculate your 'gap score' for your top 3 desired posts and write the number on a sticky note on your study wall — this number (not a vague dream) becomes your daily target from tomorrow</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The biggest rank jumpers do not aim for the highest post — they identify the post that sits exactly 7-10 marks above their current average and lock in on that, because closing a 10-mark gap with focused subject strategy is 3x more achievable in 6 months than chasing a 25-mark gap, and once you crack that post, the higher one becomes next year's goal with insider knowledge.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Understanding-Performance Gap: Why You Know It But Can't Prove It</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Daily Practice-to-Performance Bridge: Converting Understanding Into Test Readiness</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Daily Performance Bridge: Converting Understanding Into Exam-Ready Recall</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Daily Performance Simulation Protocol</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Performance Gap Bridge: Converting Understanding into Exam-Ready Execution</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Daily Mock-to-Real Bridge: Converting Practice Performance into Exam Day Execution</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Performance Bridge: Converting Understanding into Exam-Day Execution</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Score-to-Post Decoder: Build Your Personal Cutoff Map Using Last 3 Years of Real Data</h3>
+      <p>Transform your expected score into a shortlist of 3-5 specific posts where you a...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to A repeatable daily study system that converts learning into measurable exam score improvements with minimal procrastination</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Online Study Platform</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The 5 Traps That Kill CGL Dreams Before the Exam Even Happens</h3>
+      <p>Identify the exact mental and strategic mistakes that keep tier-2/3 city aspiran...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Online Study Platform community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Score Compression Technique: How to Gain 8-12 Marks in 3 Weeks by Abandoning Low-ROI Sections</h3>
+      <p>Stop spreading your preparation thin across all sections and learn exactly which...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 5-Hour Daily Grind Blueprint: Build the Exact Routine That Converts Your Current Score Into Your Target Post</h3>
+      <p>Transform your scattered study sessions into a locked, repeatable daily system t...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>Damage Control: What To Do When Your Mock Scores Crash 3 Weeks Before the Exam</h3>
+      <p>Turn a score collapse or target mismatch into a rapid course-correction that sav...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Daily 10-Minute Score Tracker: Turn Your CGL Prep Into a Non-Negotiable Habit That Outlasts Every Notification Slump</h3>
+      <p>Transform your SSC CGL preparation from a panic-driven sprint into a calm, data-...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
