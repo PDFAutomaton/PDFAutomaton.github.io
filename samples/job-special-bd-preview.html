@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>সরকারি চাকরির কৌশলগত রোডম্যাপ: চাকরি পাওয়ার জন্য স্মার্ট পরিকল্পনা — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Job Special BD viewers</div>
+    <h1>সরকারি চাকরির কৌশলগত রোডম্যাপ: চাকরি পাওয়ার জন্য স্মার্ট পরিকল্পনা</h1>
+    <p>Stop Applying Randomly, Start Winning Systematically — A 12-Month Battle Plan for BRDB, DYD, RAJUK, Bank Officer & Beyond</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>আপনি গত সপ্তাহে BRDB Field Organizer-এর circular দেখলেন, তার আগে DYD-এর সহকারী উপজেলা যুব উন্নয়ন কর্মকর্তার exam center notice দেখলেন, আর কাল রাতে Jamuna Bank-এর নিয়োগ বিজ্ঞপ্তি দেখে আবার নতুন করে syllabus খুঁজতে বসলেন। প্রতিটা circular-ই জরুরি মনে হয়, প্রতিটার জন্যই কিছুটা prepare করলেন — কিন্তু শেষ পর্যন্ত কোনোটাতেই পুরো মনোযোগ দিতে পারলেন না। এটা আপনার ব্যর্থতা না। এটা একটা system failure — আপনার কাছে কোনো filter নেই, কোনো priority নেই, কোনো roadmap নেই। আপনি প্রতিদিন নতুন একটা crisis-এ react করছেন, কিন্তু কোনো real strategy নিয়ে কাজ করছেন না। এই guide সেই সমস্যাটাই সরাসরি fix করবে।</h2>
+    <p>এই guide-এ আপনি পাবেন একটা concrete 12-month roadmap — কোন qualification দিয়ে কোন positions target করবেন (BRDB থেকে শুরু করে Bank Officer পর্যন্ত), কোন sequence-এ apply করবেন, প্রতিটা position-এর realistic competition level ও timeline কী, নতুন pay scale 2026-এর আলোকে কোন departments সবচেয়ে financially worthwhile, এবং কীভাবে প্রতিদিনের consistent preparation একটা single focused plan-এর অংশ হবে — আলাদা আলাদা crisis না হয়ে। এটা কোনো motivational lecture না। এটা একজন knowledgeable বন্ধুর দেওয়া সেই practical guide যেটা আপনার দরকার ছিল বছরের শুরু থেকেই।</p>
+    <div class="promise">🎯 A clear, prioritized 12-month roadmap: which government positions to target based on their qualifications, in what sequence, with realistic timelines and consistent daily preparation</div>
+    <p class="author-note">এই guide-টি Job Special BD channel-এর content, job circular data, ও pay scale updates দেখে একজন independent researcher তৈরি করেছেন — যিনি নিজে channel creator নন, বরং এই channel যে audience-কে serve করে তাদের actual struggle বোঝার চেষ্টা করেছেন। Channel-এর videos থেকে যা শেখা গেছে — BRDB-র field level থেকে Bank Officer পর্যন্ত career path, Union Somaj Kormi-র promotion structure, DYD-র exam pattern — সেই real information-গুলোকে একটা actionable framework-এ সাজানো হয়েছে। এখানে কোনো guarantee নেই, কিন্তু যে কেউ এই plan follow করলে অন্তত এটুকু নিশ্চিত — আর randomly apply করে সময় নষ্ট হবে না। বাকিটা আল্লাহর উপর তাওয়াক্কুল করে আপনার নিজের মেহনত।</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">এখনই Bismillah বলুন এবং নিচের তিনটা step complete করুন। এই ৩০ মিনিটে আপনি প্রথমবারের মতো বুঝতে পারবেন আপনার qualification অনুযায়ী কোন ৩টা position আপনার জন্য সবচেয়ে realistic target — এবং কোনগুলো এখনই আপনার সময় নষ্ট করছে। এটাই সবচেয়ে বড় clarity যেটা বেশিরভাগ aspirant কখনো পান না।</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>আপনার qualification card তৈরি করুন — ১০ মিনিট</strong><p>একটা কাগজে বা phone-এর notes-এ লিখুন: আপনার সর্বোচ্চ degree (SSC, HSC, বা Bachelor's), কোন subject বা faculty, বয়স এখন কত, আপনি কোন জেলায় থাকেন। এই চারটা তথ্য দিয়েই আপনি পরের step-এ filter করতে পারবেন। উদাহরণ: যদি আপনি SSC pass হন তাহলে জনস্বাস্থ্য অধিদপ্তরের মতো positions আপনার জন্য open — কিন্তু Bank Officer General আপনার এই মুহূর্তে target করার দরকার নেই। যদি Bachelor's থাকে তাহলে BRDB Field Organizer, DYD সহকারী উপজেলা কর্মকর্তা, এবং Bank Officer তিনটাই আপনার radar-এ থাকবে।</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>তিনটা position বেছে নিন এই simple formula দিয়ে — ১০ মিনিট</strong><p>আপনার qualification card দেখে এখন তিনটা column বানান: Easy Target, Main Target, Dream Target। Easy Target মানে যেটায় competition কম, qualification match করে, circular প্রায়ই আসে — যেমন Union Somaj Kormi বা BRDB Field Organizer যদি আপনি HSC বা Bachelor's holder হন। Main Target মানে আপনার qualification-এর সাথে সবচেয়ে ভালো match এবং pay scale 2026-এর আলোকে financially strong — যেমন DYD বা সরকারি ব্যাংকের Officer position। Dream Target মানে যেটার জন্য আরো ৬-১২ মাস লাগবে কিন্তু career ladder-এ সবচেয়ে উপরে নিয়ে যাবে। এই তিনটা column fill করলেই আপনার কাছে প্রথমবার একটা priority list থাকবে — infinite circular-এর flood না।</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>আজকের নিয়্যত set করুন এবং একটা কাজ fix করুন — ১০ মিনিট</strong><p>আসরের নামাজের পর অথবা এখনই — দুই মিনিট চুপ করে বসুন এবং মনে মনে নিয়্যত করুন: এই চাকরির প্রস্তুতি আমি করছি আমার পরিবারের হালাল রিযিক নিশ্চিত করতে, এটা আমার ইবাদতের অংশ। তারপর শুধু একটা কাজ fix করুন আগামীকালের জন্য — যেমন: BRDB Field Organizer-এর পুরনো question pattern দেখব, অথবা DYD exam-এর syllabus download করব। একটা। দুটো না, তিনটা না। এই একটা কাজ complete করলে আপনি এই guide-এর বাকি অংশ পড়ার জন্য mentally ready — কারণ আপনি এখন শুধু reader না, আপনি একজন aspirant যার একটা plan আছে।</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: এই ৩০ মিনিটের শেষে আপনার হাতে থাকবে: আপনার qualification অনুযায়ী তিনটা specific target position, একটা priority order যেটা আপনাকে আর সব circular-এ equally react করতে বাধ্য করবে না, এবং আগামীকালের জন্য একটা concrete action। এটা ছোট মনে হতে পারে — কিন্তু আপনার চারপাশের ৯০% aspirant এই কাজটুকুও কখনো করেনি। আল্লাহ চাইলে এই একটা step-ই আপনার পরবর্তী ১২ মাসকে আলাদা করে দেবে।</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>বাধার দেয়াল ভাঙো: সরকারি চাকরির পথে যে ৫টি罠 তোমাকে আটকে রাখছে</h3>
+      <p>সবচেয়ে পরিশ্রমী প্রার্থীরাও কেন বারবার ব্যর্থ হয় — সেই লুকানো কারণগুলো চিহ্নিত করে আজই কোর্স কারেকশন করো।</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">প্রথম এবং সবচেয়ে বড়罠 হলো 'circular দেখলেই apply' মানসিকতা — BRDB মাঠ সংগঠক, ইউনিয়ন সমাজকর্মী, DYD সহকারী উপজেলা যুব উন্নয়ন কর্মকর্তা — এই পদগুলোর syllabus, পদমর্যাদা, promotion path সম্পূর্ণ আলাদা, কিন্তু বেশিরভাগ প্রার্থী একই generic প্রস্তুতি নিয়ে সব জায়গায় ঝাঁপায় এবং কোথাও গভীরতা তৈরি করতে পারে না। দ্বিতীয় বাধা হলো 'new pay scale 2026' বা '9th pay scale' এর খবর ফলো করতে করতে actual পড়াশোনার সময় নষ্ট হওয়া — salary news জানা দরকার কিন্তু সেটা decision-making এর জন্য, daily দুই ঘণ্টা scroll করার জন্য নয়, কারণ আল্লাহ্ তায়ালা আমাদের প্রতিটি মুহূর্তের হিসাব নেবেন। তৃতীয় বাধা হলো একাকীত্বে প্রস্তুতি — SSC পাসে জনস্বাস্থ্য অধিদপ্তরের মতো বড় circular এলে যারা আগে থেকে study group এ আছে তারা question pattern, exam center strategy, book list — সব ২৪ ঘণ্টার মধ্যে শেয়ার করে নেয়, কিন্তু একা প্রার্থী সপ্তাহ পার করে শুধু resource খুঁজতে গিয়ে।</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>আজ রাতে তোমার phone এর notification list খোলো এবং যেসব job circular page বা channel তুমি follow করো সেগুলো গুনে দেখো — যদি ১০টির বেশি হয় তাহলে ৩টিতে নামিয়ে আনো, কারণ বেশি source মানে বেশি জ্ঞান নয়, বেশি বিভ্রান্তি</li><li>তোমার সর্বশেষ যে exam এ বসেছিলে সেটার specific syllabus এবং তুমি কতটুকু cover করেছিলে সেটা একটা কাগজে লেখো — এই gap analysis ছাড়া পরের পরীক্ষায় একই ভুল হবে, Bismillah বলে শুরু করো এবং সৎভাবে নিজেকে মূল্যায়ন করো</li><li>এই সপ্তাহের মধ্যে তোমার জেলা বা উপজেলায় অন্তত দুইজন সরকারি চাকরিপ্রার্থীর সাথে যোগাযোগ করো এবং একটি ছোট study accountability group তৈরি করো — শুধু whatsapp group নয়, সপ্তাহে একবার আসর বা মাগরিবের পর ৩০ মিনিট একসাথে পড়ার commitment নাও</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: যে বাধাটা কেউ বলে না সেটা হলো 'preparation fatigue' — বছরের পর বছর পড়ে কোনো result না পেলে মস্তিষ্ক unconsciously effort কমিয়ে দেয় কিন্তু মুখে বলে 'আমি চেষ্টা করছি'; এই cycle ভাঙার একমাত্র উপায় হলো target পদের সংখ্যা কমানো, প্রতি ৯০ দিনে একটি মাত্র specific exam কে primary target করা এবং বাকি সব কে secondary রাখা — Bank officer general choice list বা BRDB এর মতো পদে যারা প্রথমবারেই সফল হয় তারা সাধারণত এই একটি কাজটাই করেছে।
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
