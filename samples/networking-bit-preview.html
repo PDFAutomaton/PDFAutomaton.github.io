@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Problem-Solver's Framework: Diagnose Any Tech Issue in 10 Minutes - Preview</title>
+<title>The 5-Minute Fix Method: Solve Work Tech Problems Fast & Automate Your Daily Tasks — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Problem-Solver's Framework: Diagnose Any Tech Issue in 10 Minutes</h1>
-  <p class="subtitle">A systematic method to troubleshoot independently, fix issues faster, and understand solutions that actually stick</p>
-  <div class="for">Created specifically for the audience of <strong>Networking Bit</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Networking Bit viewers</div>
+    <h1>The 5-Minute Fix Method: Solve Work Tech Problems Fast & Automate Your Daily Tasks</h1>
+    <p>Stop Losing Hours to Software Errors, Manual Excel Work, and Tools You Don't Know How to Use — Fix It Today, Even If You're Not a Tech Person</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Networking Bit - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You're staring at an error message. Your first instinct is to search Google, scroll through forums, or call someone for help. Two hours later, you're still confused—or worse, you've applied a fix you don't actually understand. This happens because you don't have a framework. You're problem-solving without a map.</p>
-  <div class="promise">This guide gives you that map. You'll learn a four-step diagnostic method that transforms random troubleshooting into deliberate problem-solving. Within 10 minutes, you'll know whether an issue is critical or minor, what's actually causing it, and whether you can fix it yourself. More importantly, you'll understand *why* solutions work—which means the next time a similar problem appears, you won't start from zero. The framework transfers across any technical issue, from software glitches to connectivity problems to hardware failures. This is about building competence, not just collecting quick fixes. As Muslims, we're encouraged to seek knowledge and pursue excellence in whatever we do—ilm is both a right and a responsibility. Mastering a systematic approach to problem-solving is fulfilling that obligation in a practical way. You'll work smarter, waste less time, and solve issues with the clarity that comes from understanding, not guessing.</div>
-  <p>This guide is based on interviews with 40+ technical support professionals, system administrators, and experienced troubleshooters who shared their diagnostic processes. The framework has been tested with people new to tech troubleshooting and refined based on what actually works in real situations.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You opened Outlook this morning and got that error again. Something went wrong. No explanation, no fix button, just a frozen screen and a deadline sitting right behind it. Or maybe it was not Outlook — maybe it was Excel eating your time with copy-paste work that should have been automated months ago, or a startup so slow that your first coffee is finished before your desktop is ready. Sound familiar? If you are a professional working in a corporate office, running a small business, or freelancing in Dhaka, Kolkata, or anywhere in between — this exact situation is killing your productivity every single day, and nobody around you has a fast answer. You search on Google, land on a forum from 2019, try a fix that makes things worse, and eventually just restart your computer and hope for the best. That is not a workflow. That is survival mode.</h2>
+    <p>This guide gives you the exact step-by-step methods to stop surviving and start fixing. You will learn how to resolve the most common Outlook errors in under 5 minutes (yes, including that 'something went wrong' new Outlook bug that has been frustrating professionals since the latest update), how to set up simple Excel automations that eliminate your most repetitive daily tasks without writing a single line of code, how to evaluate and use free AI tools that actually work for your workflow in 2026 without paying for premium subscriptions, and how to explain and document technical problems so clearly that IT support resolves them on the first call instead of the fifth. Every method in this guide is built around one rule: if it takes longer than 5 minutes, we simplify it until it does not. No computer science degree required. No expensive software required. Just clear steps, real screenshots, and techniques you can apply the same day you read them.</p>
+    <div class="promise">🎯 Solve technical problems in under 5 minutes, automate 2-3 daily repetitive tasks, confidently evaluate and implement free/cheap tools, reduce daily friction from software failures</div>
+    <p class="author-note">A quick note before you dive in — I am not the creator behind Networking Bit, and I want to be upfront about that. I am an independent researcher and instructional writer who studied the channel's content, audience questions, and the real problems that keep coming up in the comments — the Outlook errors people cannot fix, the Excel tricks that get thousands of views because they solve something genuinely painful, the AI tool questions from people who want to earn and work smarter but do not know where to start. I put this guide together to give that audience — people like you — a structured, practical reference that goes deeper than a 10-minute video can. The techniques here are based on publicly available methods, real tool documentation, and workflow patterns that consistently work for South Asian professionals navigating corporate and freelance environments. Think of this as the written companion to the practical, no-nonsense approach you already trust from the channel — just in a format you can save, search, and return to whenever the next tech problem lands on your desk.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you read further, apply this compressed version of the framework to any current tech problem you're facing. This isn't the full method—it's proof that the approach works. Start with Bismillah and clear intention (niyyah) to solve this deliberately rather than frantically. You'll see how systematic thinking replaces scattered searching.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Describe the problem in one sentence without emotion or assumption</strong><p>Don't say 'my computer is broken' or 'the app keeps crashing.' Say exactly what happens: 'When I open this app on my phone, it shows a spinning circle for 30 seconds then closes' or 'My laptop won't connect to WiFi even though it's turned on.' Write it down. This forces you to observe rather than assume.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Test two simple conditions without changing anything</strong><p>First: Does the problem happen every time or only sometimes? Second: Does it happen only with this app/device/connection, or does it happen everywhere? For example, if an app crashes, test if it crashes when you restart your phone. If WiFi won't connect, test if it connects on a different device using the same WiFi. You're gathering facts, not guessing.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Based on your findings, place the problem into one of three categories</strong><p>Write down which fits: (A) It's a software/app issue—only happens in one place, or only after an update. (B) It's a connection/system issue—happens across multiple apps or devices. (C) It's a hardware issue—the device itself isn't responding. This takes 2 minutes but saves you from wasting an hour on the wrong solution.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read anything else, do this one thing right now. This quick win is designed to give you a real, visible result today — not a concept to think about, but an actual fix or time-saving setup you will notice tomorrow morning. We are going to resolve the single most common Outlook startup issue that blocks professionals every week and takes most people 45 minutes of frustrated Googling to fix. If your Outlook has been showing errors, loading slowly, or behaving strangely after the recent update, this 30-minute sequence will either fix it completely or tell you exactly what the real problem is so you can solve it in one more step. If your Outlook is actually fine right now, run through this anyway — it will make it faster and prevent the next crash before it happens.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You now know your problem's category and whether it's consistent or random. You've eliminated half the possible causes without downloading anything, restarting randomly, or taking wild guesses. This is the difference between troubleshooting and problem-solving. The barakah comes from focused, intentional work—and that's what you've just done. Next, the full framework shows you exactly how to move forward from here.
+  <div class="step"><div class="step-num">1</div><div><strong>Run the Outlook Quick Repair tool (Windows built-in, zero cost, 8 minutes)</strong><p>Close Outlook completely. Press Windows key, type 'Control Panel' and open it. Go to Programs, then Programs and Features. Find Microsoft Office or Microsoft 365 in the list and click on it once. Click the 'Change' button at the top. A window will pop up — select 'Quick Repair' and click Repair. Do NOT select Online Repair yet, that takes 45 minutes and is not always necessary. Quick Repair takes about 8 minutes, runs offline, and fixes the corrupted file references that cause 70 percent of the 'something went wrong' errors you see on new Outlook. While it runs, write down the exact error message you have been seeing — word for word — because you will need it in Step 3 if the repair alone does not fully resolve things.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Disable all Outlook add-ins and restart clean (5 minutes)</strong><p>Once the repair finishes, open Outlook in safe mode first — hold the Windows key, press R, type 'outlook.exe /safe' and press Enter. If Outlook opens normally in safe mode, your problem is almost definitely a conflicting add-in, which is one of the top causes of the new Outlook errors that have been appearing since the 2025-2026 updates. Now go to File, then Options, then Add-ins. At the bottom of that screen, next to 'Manage', make sure it says 'COM Add-ins' and click Go. You will see a list of add-ins with checkboxes — uncheck ALL of them and click OK. Close Outlook, reopen it normally (not safe mode this time). In most cases, this single step stops the crashing immediately. You can re-enable add-ins one by one later to find the specific culprit, but for right now your goal is a working Outlook, and you just got it.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Create your 60-second Outlook problem documentation template (saves hours later)</strong><p>Open a new Word document or even just Notepad right now and save it as 'Tech Problem Log' on your desktop. Write three headings: What I Was Doing, Exact Error Message, What I Already Tried. That is your entire template. The next time Outlook, Excel, or any work tool breaks — fill in those three lines before you do anything else, including before you restart the computer. This one habit changes everything about how fast problems get solved, whether you are fixing it yourself, asking a colleague, or finally calling IT support. Support teams can resolve issues in one session when you hand them this information upfront instead of saying 'it just stopped working.' Take a screenshot of any error message the moment it appears using Windows Shift S, paste it directly into this document. You now have a system, not just a reaction.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: By the time you finish these three steps — roughly 20 to 30 minutes from right now — your Outlook should be running cleanly without the startup errors that have been slowing you down, you will have confirmed whether an add-in was causing your specific problem, and you will have a simple documentation habit set up that will cut your average tech problem resolution time in half going forward. That last part sounds small but it is not — professionals who document problems clearly spend less time blocked, less time on hold with support, and less time repeating the same fix every month because they actually know what caused it the first time.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The 5-Minute Fix Mindset: Stop Panicking, Start Diagnosing</h3>
+      <p>Transform from someone who freezes when Outlook crashes or Excel throws errors into a calm, systematic problem-solver who can fix most work tech issues before the chai gets cold.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Every tech problem you face — whether it's the 'Something Went Wrong' error in New Outlook, email stuck in your Exchange server drafts, or a formula breaking in Excel — follows the same pattern: it has a cause, a symptom, and a fix that someone has already documented. The 5-Minute Fix Method is a 3-step mental framework: Isolate (is this my device, the software, or the network?), Search Smart (use exact error messages in quotes + the year, like 'Outlook error something went wrong 2026'), and Apply-then-Verify (make one change, test immediately, don't change five things at once). South Asian professionals in corporate and freelance roles often lose 30-60 minutes per incident because they either panic-click everything or immediately escalate to paid support — both of which you can eliminate today. The same logical thinking you'd use to debug why a SUM formula isn't working in Excel is identical to what you'd apply to recover a corrupted EDB file or fix a stuck draft — it's one transferable skill, not hundreds of separate ones.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Write down the last three tech problems that slowed your work this week — Outlook errors, Excel bugs, AI tool confusion — and beside each one write whether you 'panicked,' 'Googled randomly,' or 'had a system.' This audit shows you exactly where your time is leaking.</li><li>Pick one recurring small problem you face (like Excel merge errors or email sync issues) and search for it right now using the exact error message in quotes plus '2026' — notice how specific searches return specific solutions, not generic forum noise.</li><li>Create a simple Notes or WhatsApp Saved Message called 'Fix Log' and paste in the solution once you find it — because 80% of work tech problems repeat, and next time you solve it in 30 seconds instead of 30 minutes.</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The most expensive mistake Bengali-speaking professionals make is assuming a paid tool like Stellar Repair is always needed first — in reality, 70% of Outlook and Exchange problems are configuration or permission errors that cost nothing to fix, so always exhaust the free diagnostic path before justifying a tool purchase to your employer or client.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Tech Triage Protocol: Separate Signal from Noise</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Isolation Test: Pinpoint the Real Problem in 60 Seconds</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Isolation Test: Identify What Actually Changed</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Isolation Test: Separating Software from Hardware</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Pattern Recognition Method: Learning from Past Solutions</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Escalation Protocol: When to Stop Troubleshooting and Get Help</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: Build Your Personal Tech Knowledge Base: Document, Automate & Never Solve Twice</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The 5-Minute Fix Framework: Your Personal Troubleshooting System for Recurring Work Tech Problems</h3>
+      <p>Stop Googling blindly every time Outlook crashes or Excel throws an error — buil...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to solve technical problems independently using systematic diagnosis method, fix issues 5x faster, understand the reasoning behind solutions so they transfer to new situations</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Networking Bit</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The 3 Mental Blocks Killing Your Tech Confidence (And the Exact Mindset Shift That Fixes Them)</h3>
+      <p>Discover why smart professionals stay stuck on the same Outlook errors and Excel...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Networking Bit community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The AI Automation Stack: Chain Free Tools to Kill Repetitive Tasks Forever</h3>
+      <p>Stop doing the same task twice — learn how to connect free AI tools in sequence ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 5-Minute Morning Audit: Build a Daily System That Catches Problems Before They Kill Your Productivity</h3>
+      <p>Stop firefighting random tech chaos and replace it with a repeatable morning rou...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When It Breaks: The 5-Minute Recovery Playbook for Outlook Errors, Excel Crashes & AI Tool Failures</h3>
+      <p>Turn frustrating tech breakdowns into fast fixes so you never lose billable hour...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Permanent Fix Mindset: Turn Your 5-Minute Wins Into a Lifelong System</h3>
+      <p>Transform scattered quick fixes into a personal tech playbook that keeps paying ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
