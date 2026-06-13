@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Environment Artist's Breakdown System — Sample Preview</title>
+<title>The Paper Craft Completion System — Sample Preview</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
@@ -196,12 +196,12 @@
 
 <!-- HERO WITH PEXELS IMAGE -->
 <div class="hero">
-  <img class="hero-img" src="https://images.pexels.com/photos/5915240/pexels-photo-5915240.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <img class="hero-img" src="https://images.pexels.com/photos/7869791/pexels-photo-7869791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
   <div class="hero-overlay">
     <div class="sample-pill">✦ Sample Preview</div>
     <div class="for-badge">Built for World of Art viewers</div>
-    <h1>The Environment Artist's Breakdown System</h1>
-    <p>How to Study AAA Graphics & Actually Apply What You Find</p>
+    <h1>The Paper Craft Completion System</h1>
+    <p>Finish Projects Faster, Use What You Have, Get Results That Look Professional</p>
   </div>
 </div>
 
@@ -209,10 +209,10 @@
 
   <!-- HOOK -->
   <div class="hook-card">
-    <h2>You pause a screenshot from Cyberpunk 2077 or The Last of Us and you can see that something is working — the wet concrete reads perfectly, the light catches the geometry in exactly the right way, the whole scene holds together with a coherence your own work doesn't have yet. You study it for ten minutes. Then you close the tab and open your project, and nothing changes. Not because you weren't paying attention. Because nobody ever gave you a framework for converting what you observed into a decision you can act on. That gap — between seeing quality and understanding how to produce it — is exactly what this guide is built to close.</h2>
-    <p>What follows is a structured breakdown system for analyzing AAA environment art and translating those observations into concrete, applicable technical decisions. You will finish this guide with a repeatable method for dissecting any game environment — its lighting logic, material layering, geometry density choices, atmosphere tech, and asset integration — and a clear way to measure your own work against what you find. This is not a survey of techniques. It is a process, built around pause points and specific questions, so that every time you sit down to study professional work, you walk away with something you can actually use.</p>
-    <div class="promise">🎯 Be able to analyze ANY game environment and extract the specific technical decisions that made it work; apply those same decision-making frameworks to evaluate and improve their own work; build a coherent technical art skillset that compounds</div>
-    <p class="author-note">A note on where this came from: this guide was researched and written by a third-party analyst working closely with the World of Art channel's breakdown library — not by the creator directly. What you'll find here is a synthesis of the analytical frameworks demonstrated across dozens of environment art deep-dives, distilled into a format you can use independently, on your own projects, without needing to watch another video first. The goal was simple: take the quiet, methodical way those breakdowns are conducted and turn it into a tool you hold rather than a video you watch.</p>
+    <h2>You found the tutorial. You gathered the paper. You even started cutting. Then somewhere around step four, the instructions stopped making sense, the folds didn't line up the way they did on screen, and the whole thing got set aside — again. Not because you lack creativity. Because the gap between watching a craft and actually finishing one is real, and most tutorials don't bridge it.</h2>
+    <p>This guide closes that gap. It gives you a repeatable system — not a collection of random projects — for moving from blank paper to a finished, presentable result you can gift, display, or use. Every technique here works with materials already in your home: paper, scissors, glue, and basic household items. No special orders. No expensive kits. No abandoned half-projects. Just a clear process you can run again and again, with results that actually look good when you're done.</p>
+    <div class="promise">🎯 Complete finished, presentable craft projects using only materials at home, with confidence and minimal wasted time or supplies</div>
+    <p class="author-note">A note before we begin: this guide was put together by an independent researcher who studies how people learn visual and hands-on skills — not by the World of Art creator directly. What's documented here comes from careful observation of what actually helps crafters finish projects rather than abandon them halfway. The framework is practical, the steps are honest, and nothing has been padded to sound more impressive than it is. Take what works for your hands, your materials, and your space — and leave the rest.</p>
   </div>
 
   <hr class="divider">
@@ -220,14 +220,14 @@
   <!-- QUICK WIN -->
   <div class="section-label">⚡ Quick Win — Included Free</div>
   <div class="section-title">Get Your First Result in 30 Minutes</div>
-  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read anything else, do this exercise. It takes one reference image, one empty document, and about thirty minutes of focused looking. The point is not to produce a finished analysis — it is to experience what structured observation feels like compared to passive studying, so the rest of this guide lands with context you actually earned.</p>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before anything else, make one thing today. Not a plan. Not a materials list. One completed object you can hold in your hands when you're done. Say Bismillah, set your niyyah — even something small made with care and focus is worthy work — and follow these three steps exactly as written. This is a folded paper gift envelope, suitable for Eid, birthdays, or tucking a small note inside. It uses one sheet of paper, scissors, and glue or tape. That is all.</p>
 
-  <div class="step"><div class="step-num">1</div><div><strong>Pick one screenshot from a game you consider visually strong and open it alongside a blank document.</strong><p>Do not choose a cinematic or a marketing render. Choose a moment of ordinary gameplay — a street, a room, a forest path. Something that wasn't designed to impress in isolation but still looks cohesive and correct. Crop it to a single zone roughly one quarter of the full frame. You are not analyzing the whole scene yet. You are learning to read one small area with precision before scaling up.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Write three separate lists: what you can name, what you can describe but not name, and what you cannot explain at all.</strong><p>Column one is for things you can identify technically — baked ambient occlusion, parallax displacement on a wall surface, a gradient fog pass. Column two is for things you can see working but lack the vocabulary for — something about how the light wraps, a layering effect in the ground material you can perceive but not label. Column three is your honest gap list. Most people skip column two and three entirely. Those two columns are where your actual learning lives. Spend at least ten minutes here. Do not look anything up yet.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Pick one item from column three and write a single, specific question about it — then search only for that question.</strong><p>Not 'how does lighting work in games.' Something like: 'why does the shadow on this surface have a soft outer edge but a hard inner contact point' or 'what determines how much a wet surface reflects the sky versus nearby geometry.' One question, searched with intention. Write down what you find in plain language, in your own words. Then note whether that answer changes how you read the original screenshot. If it does, you just completed your first closed loop. That loop is the entire system, run at small scale.</p></div></div>
+  <div class="step"><div class="step-num">1</div><div><strong>Choose and prepare your single sheet of paper</strong><p>Take one A4 or letter-size sheet — any colour, any pattern, even plain white works beautifully. Place it flat on a clean, hard surface. Smooth out any creases with your palm. This one action, clearing and preparing your surface before starting, is the most skipped step in crafting and the most responsible for crooked results. Give yourself two minutes here. A clean start is not wasted time.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Fold in the completion sequence, not the tutorial sequence</strong><p>Fold the bottom third of the paper up first. Crease firmly with your fingernail along the fold line — a sharp crease is what separates a neat result from a soft, unprofessional one. Fold the left and right edges inward by about two centimetres each, overlapping slightly at the centre. Crease both sides. Now fold the top section down to form the envelope flap, leaving a small overlap at the front. At each fold, stop and check: are the edges meeting cleanly? If not, unfold and redo just that step. One clean checkpoint at a time is the entire system in miniature.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Secure, finish, and place it somewhere visible</strong><p>Apply a small dot of glue or a strip of tape to hold the side folds closed. Press and hold for thirty seconds. Leave the top flap loose — that is your opening. If you have a pen, write a name, draw a small border, or leave it plain. Plain is always acceptable. Now place the finished envelope somewhere you can see it: on a desk, a shelf, beside your workspace. This is not decorative. Seeing a completed object resets your brain's belief about what your hands can do, and that belief is what the rest of this guide builds on.</p></div></div>
 
 
-  <div class="result-box">✅ Expected result: After thirty minutes you will have a three-column observation log for one cropped image section, at least one named technique you previously only sensed, and one closed research loop connecting a visual question to a technical answer. More importantly, you will have experienced the difference between watching a scene and reading it. Every method in this guide builds directly on what you just practiced.</div>
+  <div class="result-box">✅ Expected result: One neat, giftable paper envelope — finished, not abandoned. The folds will be clean because you creased each one deliberately. It will look presentable because preparation and checkpoints replace guesswork. This is the same logic applied to every project in this guide: clear sequence, honest checkpoints, materials you already own. You have just run the system once. Now you know it works.</div>
 
   <hr class="divider">
 
@@ -242,15 +242,15 @@
   <div class="module-header">
     <div class="module-num">1</div>
     <div class="module-info">
-      <h3>The Signal vs. Noise Problem: Why You Can't See What Actually Matters in AAA Graphics</h3>
-      <p>Stop being impressed by everything and start reading games like a technical artist — by the end of this module you'll have a repeatable mental filter that separates genuine craft decisions from marketing smoke.</p>
+      <h3>The Completion Mindset: Why Your Projects Stay Half-Finished (And the Simple Fix That Changes Everything)</h3>
+      <p>You'll discover the exact mental shift that turns scattered craft attempts into finished projects you're proud to give and display — starting with what's already in your home today.</p>
     </div>
   </div>
   <div style="padding:0 24px 24px;">
-    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The real gap between where you are and AAA isn't raw skill — it's perceptual vocabulary. When you load up something like The Last of Us Part I or Cyberpunk 2077 and think 'this looks incredible,' your brain is registering an emotional response, not a technical audit, which means you're absorbing vibes instead of extractable knowledge. The breakdown system starts with one brutal constraint: for any scene you study, you're only allowed to write down three decisions that actually moved the needle — not 'the lighting is good,' but specifically 'they're using a dominant fill from the upper-left at roughly 5600K with almost zero ambient bounce, which forces the eye through the composition without a single post-process vignette doing the work.' That level of specificity forces you to distinguish between techniques that are structurally load-bearing versus ones that are polish layers, which is exactly the hierarchy your own work needs to reflect if you want it to read as AAA rather than just 'detailed.'</p>
-    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open any game you've played recently, find one interior environment, take a screenshot, and write exactly three sentences describing only what you can verify is a deliberate technical decision — delete anything that uses the words 'nice,' 'good,' or 'realistic'</li><li>Pull up a breakdown video on YouTube (channels like Digital Foundry's tech analysis or any GDC environment art talk) and pause every time a presenter says something matters — score each claim as either 'they showed me the before/after data' or 'they just asserted it,' and tally which category dominates</li><li>Create a plain text file called 'My Technical Blind Spots' and list five visual phenomena in games you find impressive but genuinely cannot explain the production pipeline behind — this is your personal curriculum for this course</li></ul>
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most unfinished craft projects aren't a skill problem — they're a setup problem, meaning you sat down without a clear end picture, grabbed random supplies, and quit when it got confusing, which is exactly what this system fixes by teaching you to 'reverse-engineer' from the finished result first. Before you touch a single piece of paper, say Bismillah and write down in one sentence what your finished item will look like and who it's for — this niyyah (intention) is not just spiritual practice, it literally stops the #1 cause of abandoned projects by keeping your hands and mind pointing at the same target. The second secret is what we call the 'Sunday Box' — a shoebox or bag where you collect your basic supplies once (scissors, glue stick, A4 paper, ruler, pencil, eraser, tape), so that when inspiration hits after Asr or on a school afternoon, you're not losing 20 minutes hunting for scissors and losing your motivation with them. Barakah — that divine blessing of getting more out of less — shows up most in craft work when you finish small things completely rather than starting big things repeatedly, so your first rule in this system is always: one project at a time, fully done, before the next idea begins.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, find one box, bag, or drawer and collect every basic supply you already own — scissors, any paper, glue, tape, pencil — this is your permanent 'Sunday Box' and you are not allowed to start Module 2 without it</li><li>Write down the name of ONE unfinished craft project sitting somewhere in your home or in your head, then write a single sentence describing exactly what it will look like when it is 100% done — photo it or save it, because this is your first Completion Target</li><li>Before your next craft session, say Bismillah out loud, read your Completion Target sentence, and set a visible timer for 25 minutes — you will be amazed how much focused work happens when Allah's name opens it and a deadline closes it</li></ul>
     <div style="background:#FAF5FF;border-radius:8px;padding:12px 16px;font-size:13px;color:#C084FC;font-weight:600;">
-      💡 Pro tip: The most dangerous place to be as an aspiring technical artist is confidently wrong — most people skip this foundation module equivalent in their self-education and spend years practicing techniques in the wrong priority order, which is exactly why portfolios that are technically busy still read as junior: busyness is what happens when you can't yet see the load-bearing decisions.
+      💡 Pro tip: The craft tutorials that feel impossibly hard are almost never about your skill level — they're about missing one specific supply that the creator assumed you had; before blaming yourself, rewatch the first 60 seconds of any tutorial you abandoned and look for the one material that stopped you, because 80% of the time there is a paper-only substitute and this system will teach you to always spot it before you start.
     </div>
   </div>
 </div>
@@ -259,8 +259,8 @@
   <div class="module-header">
     <div class="module-num">2</div>
     <div class="module-info">
-      <h3>The Technical Autopsy: Reverse-Engineering AAA Decisions That Actually Matter</h3>
-      <p>Learn to dissect a AAA scene in under 30 minutes and immediately know which 3 de...</p>
+      <h3>The 3-Layer Build Method: How to Turn Any Paper Craft Idea Into a Step-by-Step Plan You Can Actually Follow</h3>
+      <p>You'll stop freezing mid-project and start finishing every craft by learning how...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -273,8 +273,8 @@
   <div class="module-header">
     <div class="module-num">3</div>
     <div class="module-info">
-      <h3>Why Your Brain Lies to You When Studying AAA Environments</h3>
-      <p>Learn to separate genuine technical craft from marketing noise so you stop chasi...</p>
+      <h3>The Five Blockers: Why Your Projects Stall (And the Muslim Crafter's Way Through Each One)</h3>
+      <p>Identify exactly which obstacle is killing your projects and apply the specific ...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -287,8 +287,8 @@
   <div class="module-header">
     <div class="module-num">4</div>
     <div class="module-info">
-      <h3>The Reverse-Engineer Protocol: Decoding AAA Decisions in Under 10 Minutes</h3>
-      <p>Stop guessing why a scene looks good and start extracting the exact technical hi...</p>
+      <h3>The Speed Layer Method: Stack Techniques to Cut Your Crafting Time in Half</h3>
+      <p>Learn how to batch and layer paper craft techniques so you move from blank paper...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -301,8 +301,8 @@
   <div class="module-header">
     <div class="module-num">5</div>
     <div class="module-info">
-      <h3>The 20-Minute Daily Breakdown Ritual That Rewires How You See Game Art</h3>
-      <p>Turn passive gaming sessions and ArtStation scrolling into a compounding daily p...</p>
+      <h3>The 20-Minute Barakah Block: Your Daily Craft Habit That Actually Sticks</h3>
+      <p>Turn scattered crafting attempts into a simple daily rhythm so you finish one pr...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -315,8 +315,8 @@
   <div class="module-header">
     <div class="module-num">6</div>
     <div class="module-info">
-      <h3>When Your Scene Looks Wrong: Diagnosing the Real Problem</h3>
-      <p>Stop guessing why your environment looks off and start using a systematic elimin...</p>
+      <h3>When It Goes Wrong: The Muslim Crafter's Recovery Playbook</h3>
+      <p>Turn your 'ruined' project into a finished one by learning exactly what went wro...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -329,8 +329,8 @@
   <div class="module-header">
     <div class="module-num">7</div>
     <div class="module-info">
-      <h3>The Compound Effect: Turning Your Breakdown Habit Into Career-Defining Expertise</h3>
-      <p>Transform isolated study sessions into a self-reinforcing system that makes your...</p>
+      <h3>The Craft Life: Turning Paper Projects Into a Permanent Family Habit That Keeps Growing</h3>
+      <p>Transform paper crafting from a 'sometimes activity' into a living, breathing pa...</p>
     </div>
   </div>
   <div class="locked-overlay">
