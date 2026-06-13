@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>From Financial Knowledge to Wealth: The Daily Action System for Serious Investors - Preview</title>
+<title>The Wisdom-to-Action Framework — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>From Financial Knowledge to Wealth: The Daily Action System for Serious Investors</h1>
-  <p class="subtitle">Stop Reading and Start Building: A Repeatable Framework That Turns Financial Principles Into Consistent Action</p>
-  <div class="for">Created specifically for the audience of <strong>Wisdom Capture</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/9034262/pexels-photo-9034262.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Wisdom Capture viewers</div>
+    <h1>The Wisdom-to-Action Framework</h1>
+    <p>Converting Leadership Insights into Repeatable Team Systems That Drive Measurable Organizational Outcomes</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Wisdom Capture - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You've read the books. You understand compound interest, asset allocation, and why emergency funds matter. Yet somehow, between knowing what to do and actually doing it every single day, something breaks. The knowledge sits unused while your financial situation remains unchanged. This isn't a failure of intelligence—it's a failure of systems.</p>
-  <div class="promise">This guide gives you a practical daily framework that bridges the gap between financial understanding and wealth-building action. Not motivation that fades by Tuesday. Not another theory to consume. Instead: a repeatable decision-making system you can execute in focused sessions, built on the same principles that serious learners have used for centuries—consistency, intention, and discipline as a form of discipleship to your own best self.</div>
-  <p>This guide was researched and compiled by examining the daily habits of consistent wealth-builders, studying how knowledge actually translates to action, and grounding these findings in timeless principles—both financial and spiritual. It's written for people who are genuinely serious about change, not casual searchers.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You walked out of that leadership conference with three pages of notes, two books you actually bought, and a genuine conviction that this time things would be different. Six weeks later, your team is still firefighting the same reactive cycles, your one-on-ones still drift without structure, and those insights about strategic delegation are sitting in a notebook on your credenza collecting dust. It is not a motivation problem. It is an architecture problem. The wisdom arrived. The system for deploying it never did.</h2>
+    <p>This guide gives you that system. The Wisdom-to-Action Framework is a structured, five-component operating protocol for translating leadership insight—from any source, at any level of abstraction—into concrete team workflows, decision filters, and communication standards your organization can run on repeatedly. By the time you finish reading, you will have a personal leadership architecture that converts what you know into what your team consistently does. No more isolated aha moments. No more vague directives followed by quiet confusion. Just a clear protocol for moving wisdom from your mind into your organization's muscle memory.</p>
+    <div class="promise">🎯 Implement a personal leadership operating system that converts wisdom into daily team protocols, decisions, and measurable organizational outcomes</div>
+    <p class="author-note">A note on how this guide was developed: I am not the practitioner behind the Wisdom Capture platform. I am an independent researcher who studies how experienced organizational leaders actually translate strategic insight into institutional behavior—and more importantly, why so many capable leaders fail to make that translation stick. What you will find in these pages is drawn from documented patterns across leadership development literature, organizational change research, and the frameworks that practitioners in associations, enterprises, and non-profits have used to build durable decision-making systems. The Wisdom Capture team provided directional guidance on what their community most urgently needs. I built the architecture around that need. My job was to make sure this guide earned the thirty minutes you will spend applying it today—and the months of compounding results that follow.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before anything else, you'll create your Personal Financial Decision Framework—a single page that clarifies your money decisions for the next 30 days. This isn't busywork. It's the foundation that prevents decision fatigue and scattered effort. Islamic principle of niyyah (clear intention) applies here: the Prophet (PBUH) said 'actions are judged by intentions.' Clarity precedes action.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Name Your One Financial Reality Right Now</strong><p>Open a document. Write one sentence: the single most pressing financial situation you're facing (debt, savings goal, investment decision, cash flow problem). Not three things. One. This is your anchor point for the next 30 days. Barakah (blessing) flows through focused intention, not scattered effort.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Define Your Weekly Decision Point</strong><p>Choose one day and time each week (suggest Friday evening or Sunday morning—a natural pause before the week ahead) where you'll review and decide on one specific action related to that financial reality. Example: 'Every Sunday at 7pm, I review my spending against my budget and decide on one adjustment.' This becomes your non-negotiable appointment with your finances.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Set Your Daily Micro-Checkpoint</strong><p>Identify one moment each day—ideally tied to an existing habit like after Fajr prayer, during lunch, or before bed—where you'll ask yourself one question: 'Did I make one decision or take one action toward my financial goal today?' 30 seconds. That's the entire checkpoint. Consistency matters more than intensity.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read a single framework chapter, do this exercise. It is called the Insight Inventory Audit, and it is the foundational move of everything that follows. Most leaders are sitting on months of undeployed wisdom—retreat notes, annotated book margins, half-finished voice memos after long flights. This exercise does not generate new insight. It recovers the operational value of insight you already own and gives it a first usable structure. You will walk away with one leadership principle converted into a working decision filter your team can apply this week.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You now have a one-page framework that removes the paralysis of 'what should I do with my money today?' Instead of vague knowledge, you have specific decision points. Most users report a shift in mindset within 48 hours—not from motivation, but from seeing their financial life through a structured lens for the first time. You'll be ready to build on this foundation in the sections ahead.
+  <div class="step"><div class="step-num">1</div><div><strong>Pull your three most recent sources of leadership insight and identify your highest-confidence principle.</strong><p>Open your last conference notes, your most recently annotated book, or your phone's voice memo app. Skim for the one insight you have referenced mentally more than once since you encountered it—the principle that keeps surfacing when you face decisions. Write it down in one sentence. Do not polish it. Examples might look like: 'We escalate problems too fast instead of resolving them at the source' or 'Our planning meetings produce tasks but never owners with deadlines.' That sentence is your raw material.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Convert the principle into a three-part decision filter using the If-Then-Who structure.</strong><p>Take your one-sentence principle and force it through this template: IF [this situation occurs], THEN [this is the default action we take], and WHO [owns the decision or execution]. For example, if your principle was about escalation, your filter becomes: IF a team member brings a problem without a proposed solution, THEN the conversation does not proceed until one solution is drafted by the person closest to the issue, and WHO owns that standard is the direct manager in every one-on-one and team meeting. Write all three components explicitly. Vague principles become operational the moment they have a trigger condition, a default response, and a named owner.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Schedule a ten-minute slot in your next team meeting to introduce the filter as a working protocol, not a motivational message.</strong><p>Block ten minutes on your next team meeting agenda under a label like 'Operating Update' or 'Team Protocol Clarification.' When you arrive at that agenda item, present the If-Then-Who filter you just built as a standing team standard, not as a suggestion or a theme. State it clearly, give one real example of when it applies, and confirm that every person in the room understands their role within it. You are not asking for buy-in. You are installing a decision architecture. This distinction in delivery is the difference between wisdom that motivates briefly and wisdom that changes how the team operates permanently.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: Within thirty minutes you will have converted one leadership insight into a structured decision filter with a clear trigger, a default team response, and a named owner—and you will have a scheduled moment to deploy it as a live team protocol this week. That is one piece of your leadership operating system now built and in motion. The rest of this guide builds the remaining four components around it.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Wisdom Audit: Identifying the Leadership Insights Already Sitting Unused in Your Organization</h3>
+      <p>Transform the scattered 'aha moments' from your last leadership retreat, board meeting, or industry conference into a living inventory your team can actually act on.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most food industry executives leave an annual conference or strategic offsite with three pages of notes and zero implementation — not because the wisdom was bad, but because it never got translated from insight to instruction. Start by doing a 'wisdom audit' this week: pull out the last 90 days of your meeting notes, leadership books with dog-eared pages, and post-conference action items, then sort every item into one of three buckets — Decision Rules (how we make choices), Behavior Standards (how we treat each other and customers), and Process Triggers (what causes us to do what). The painful truth for mid-to-senior leaders in associations and food enterprises is that your team isn't failing to execute because they lack motivation; they're failing because your wisdom lives in your head as a feeling, not on a shared document as a protocol. Once you can see your insights bucketed this way, you'll immediately spot the one or two repeatable situations — like a supplier dispute, a menu development cycle, or a member complaint escalation — where a single clear decision rule would eliminate 80% of the inconsistency you've been managing around for years.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Block 45 minutes today to open your last three months of notes, emails, or conference materials and physically write down every leadership insight you captured — then label each one as a Decision Rule, Behavior Standard, or Process Trigger</li><li>Identify the single most repeated team question or problem you personally resolve each week (the one you've answered more than five times) and write one sentence that captures how you always decide — this is your first protocal</li><li>Share that one-sentence protocol with your leadership team in tomorrow's standup or via Slack and ask them to punch holes in it — the friction you get back is exactly the raw material the rest of this framework runs on</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The insights that feel 'too obvious to write down' are almost always the ones your team is most inconsistently applying — the best wisdom capture sessions in food organizations happen not after conferences but immediately after a crisis, because that's when your real operating philosophy surfaces under pressure.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Knowledge-Action Gap: Why Learning Alone Keeps You Poor</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Knowledge-to-Action Translation Framework</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Knowledge-to-Action Translation Framework</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Execution Gap: Converting Knowledge into Non-Negotiable Daily Habits</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Decision Framework: Converting Knowledge Into Non-Negotiable Choices</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Accountability Architecture: Building Systems That Don't Rely on Willpower</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Accountability Architecture: Building Your Personal Wealth Board of Directors</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Recipe Card Method: Turning Leadership Wisdom into Kitchen-Tested Team Protocols</h3>
+      <p>Transform your hard-won leadership insights from vague principles into laminated...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to A practical, repeatable system they can execute daily that bridges the gap between financial knowledge and consistent wealth-building action</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Wisdom Capture</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The Implementation Gap: Why Your Best Leadership Insights Die in the Conference Room</h3>
+      <p>Identify and dismantle the three specific friction points that turn your hard-wo...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Wisdom Capture community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Decision Filter: Building a 60-Second Protocol That Turns Your Leadership Instincts Into Team Autopilot</h3>
+      <p>Transform the gut-level judgment calls you've spent 20 years developing into a s...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 15-Minute Daily Decision Ritual: Turning Leadership Wisdom into Morning Muscle Memory</h3>
+      <p>Transform your scattered leadership insights into a non-negotiable morning proto...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When the System Breaks: Diagnosing and Restarting Stalled Wisdom Frameworks</h3>
+      <p>Learn to identify exactly where your leadership translation system is failing an...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Living System: Hardwiring Wisdom Into Your Leadership DNA So It Runs Without You</h3>
+      <p>Transform your Wisdom-to-Action practice from a personal discipline into an orga...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
