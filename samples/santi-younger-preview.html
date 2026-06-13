@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Mediterranean Consistency Blueprint: Build Health Habits That Stick (Not Quit) - Preview</title>
+<title>The Custom Thinking System — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Mediterranean Consistency Blueprint: Build Health Habits That Stick (Not Quit)</h1>
-  <p class="subtitle">Small repeatable systems that fit your real life—not another fitness program designed for people who don't exist</p>
-  <div class="for">Created specifically for the audience of <strong>Santi Younger</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/4482037/pexels-photo-4482037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Santi Younger viewers</div>
+    <h1>The Custom Thinking System</h1>
+    <p>Design Your Tool Stack So It Actually Sticks</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Santi Younger - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>My nonna in Sicily never talked about 'building habits' or 'optimizing her routine.' She just lived. She walked to the market, she cooked with her hands, she moved because life required it. And somehow, at 87, she had more energy than most people half her age. The difference wasn't willpower or a perfect plan—it was that her health wasn't separate from her life. It was woven into how she actually lived. Most of us try the opposite. We find a fitness program, we get excited, and then life happens. Work gets busy, family needs you, motivation fades by week six, and suddenly you're back where you started, wondering why consistency feels impossible.</p>
-  <div class="promise">This guide isn't about becoming someone else or fitting into a system designed for Instagram aesthetics. It's about discovering why you've quit before, understanding how Mediterranean rhythms actually work with (not against) your nervous system, and building one small, repeatable habit that's so natural it becomes part of who you are—not something you have to remember to do. Within 30-60 days, you'll see measurable changes. More importantly, you'll feel different about what's possible.</div>
-  <p>This guide was researched and compiled by a third-party writer who spent time studying Mediterranean lifestyle patterns, consistency psychology, and how real people (not fitness influencers) actually build sustainable habits. It draws from Santi Younger's approach to health—one that values family, culture, and authenticity over perfection.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You've rebuilt your Notion workspace four times this year. Not because you're disorganized — but because each time, something was slightly off. The database didn't match how you actually move through a project. The tagging system made sense when you built it but felt like bureaucracy three weeks later. So you scrapped it, started fresh, watched a few more setup videos, and tried again. Sound familiar? The problem isn't your discipline. It's that you've been forcing your thinking into a tool's logic instead of building a tool around yours.</h2>
+    <p>This guide gives you a repeatable framework for diagnosing how you actually think — not how productivity gurus say you should — and translating that into a tool stack with low enough friction that you'll still be using it six months from now. No prescribed app list. No one-size-fits-all workflow. Just a clear method for designing a system that compounds because it feels native to the way your brain already works.</p>
+    <div class="promise">🎯 A personalized, frictionless system that matches how they naturally think, so they can spend mental energy on actual work/learning instead of tool management, and stick with it long-term because it feels native to their brain</div>
+    <p class="author-note">A quick note on how this guide came together: I'm a researcher, not Santi. I put this together by studying how Santi thinks about systems across his work — the patterns he keeps returning to, the distinctions he makes that most productivity content skips. What you're reading is my honest attempt to translate that thinking into something structured and immediately useful. Santi reviewed it. The ideas are genuinely his. The format is mine. If something here sparks a question, his channel is the right place to take it.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you read another page, let's prove something to you: consistency doesn't start with a 90-day transformation plan. It starts with one small thing you can actually do today, right now, that sets the tone for everything else. This isn't a workout. It's a signal to yourself that change is possible.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Name your anchor—not your goal</strong><p>Don't think 'I'm going to get fit.' Instead, identify one daily activity you already do without thinking: your morning coffee, right after you sit down at dinner, or the moment you walk through your front door. This is your anchor. Write it down.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Attach one tiny movement to it</strong><p>For the next 7 days, every single time you do that anchor activity, add one small movement: 10 slow squats while your coffee brews, a 2-minute walk around the block after dinner, or 5 shoulder rolls when you get home. It should feel almost too easy. That's the point.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Track it visibly, not obsessively</strong><p>Put a calendar on your fridge or phone. Each day you do it, mark it. Don't aim for perfection—aim for seeing a chain of checks. One broken chain doesn't erase your progress; it's just a reminder to start again tomorrow.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you touch a single app setting or watch another tool tutorial, you need raw data on how you actually think. This exercise surfaces the real shape of your workflow in one sitting — and gives you a concrete starting point for everything else in this guide.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: By day 7, you'll have proven to yourself that small, consistent actions actually compound. You won't feel exhausted or deprived. You'll feel a quiet sense of control. This is what real consistency feels like—not motivation, but momentum.
+  <div class="step"><div class="step-num">1</div><div><strong>Run a 10-minute thought audit</strong><p>Open a blank document — not Notion, not your usual app, just something with zero structure. Set a timer for 10 minutes and write out every type of thinking task you did yesterday: capturing an idea, planning something, processing information, communicating, creating. Don't organize it. Just list it fast and messy. You're looking for raw material, not a clean taxonomy.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Tag each item with how it actually felt to do it</strong><p>Go back through your list and next to each item write one of three tags: F for Fluid (it felt easy and natural), R for Resistant (you did it but the tool or method created drag), or A for Avoided (you kept putting it off, and the friction was at least partly why). Be honest. An avoided task that you blamed on laziness might actually be a tool mismatch in disguise.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Identify your single biggest Resistant or Avoided pattern</strong><p>Look at everything tagged R or A. Find the one that shows up most often or costs you the most time and mental energy. Write one sentence describing the gap: what the task requires versus what your current tool gives you. For example: 'I need to see how ideas connect spatially but my tool gives me a linear list.' That sentence is your first design brief — the specific problem your custom system needs to solve first.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: You'll finish this exercise with a clear, honest picture of where your current setup is actually fighting you — not a vague sense that something is off, but a named, specific friction point you can start designing around today. Most people who do this realize within 20 minutes that they've been solving the wrong problem. That realization alone is worth the 30 minutes.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>Why Your System Keeps Dying (And It's Not a Discipline Problem)</h3>
+      <p>Discover why every productivity system you've tried has failed you — and build the diagnostic framework that finally makes your tools work with your brain instead of against it.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The reason your Notion setup became a graveyard and your to-do app stopped getting opened isn't laziness — it's a mismatch between how information actually moves through your brain and how the tool was designed to receive it. Most tools are built for a hypothetical 'organized person' who processes linearly, files immediately, and never has 47 browser tabs open about fermentation techniques, recipe testing notes, and half-finished article drafts simultaneously. Before you pick a single app or build a single template, you need to map your actual capture-to-output workflow: where do ideas hit you (voice memo in the kitchen, phone camera, random note at 2am), how long do they stay raw before you process them, and where does your work actually get finished. That honest audit — not another YouTube video about the perfect setup — is the only foundation that makes a system stick long-term.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open your phone's notes app, last-used to-do app, and any abandoned Notion or Obsidian workspace and screenshot the graveyard — you need to see the pattern of where things went to die before you build anything new</li><li>For the next 24 hours, don't change any tool — just add a quick label to every task or idea you capture: write 'kitchen', 'desk', 'phone', or 'random' next to each one to map exactly where and when your brain produces work</li><li>Write three sentences (literally three, no more) answering: what's the ONE type of task I always complete without friction, what does that workflow look like, and what's different about it from everything else I abandon</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The system that sticks is almost never the most sophisticated one — it's the one with the shortest distance between 'idea hits you' and 'idea is captured', so if your current setup requires more than two taps or one click to log something while you're mid-recipe or mid-thought, the tool has already lost.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Consistency Blueprint: Why You Quit (And How to Stop Before You Start)</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Friction Audit: Remove Barriers Before They Break You</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Identity Shift: Becoming a Mediterranean Person (Not Just Following a Diet)</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Friction Audit: Remove Obstacles Before Motivation Fades</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Friction Audit: Remove the Hidden Obstacles Sabotaging Your Consistency</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Identity Shift: Becoming a Person Who Does This (Not Someone Who Tries)</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Legacy Loop: Building Your Personal Health Operating System</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>Map Your Thinking Style to Your Food Workflow</h3>
+      <p>Stop copying productivity influencers and start building a tool stack that mirro...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to build a repeatable daily health habit that fits their real life, see measurable results within 30-60 days, feel confident they can maintain it long-term without constant willpower</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Santi Younger</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why Your System Keeps Breaking (And It's Not a Discipline Problem)</h3>
+      <p>Identify the exact friction points killing your consistency so you can fix the s...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Santi Younger community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Capture-to-Cook Pipeline: Building Your Personal Mise en Place for Ideas</h3>
+      <p>Stop losing brilliant ideas to the void by building a frictionless capture-to-ex...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Daily Stack Ritual: Turn Your Tools Into a Habit That Actually Runs Itself</h3>
+      <p>Build a 15-minute daily trigger sequence so your custom tool stack becomes as au...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>System Crashed: How to Debug Your Setup Without Starting Over</h3>
+      <p>When your food workflow falls apart, you'll learn to diagnose the exact breaking...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Living System: How to Make Your Tool Stack Evolve With You Instead of Against You</h3>
+      <p>Turn your custom thinking system from a setup you did once into something that a...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
