@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Values-to-Action System: Build Lasting Lifestyle Changes Without the Collapse - Preview</title>
+<title>The Disciplined Day System — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Values-to-Action System: Build Lasting Lifestyle Changes Without the Collapse</h1>
-  <p class="subtitle">Move from inspired to intentional—a practical framework for translating your values into daily rhythms that actually stick</p>
-  <div class="for">Created specifically for the audience of <strong>Arab Off Grid</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/34145864/pexels-photo-34145864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Arab Off Grid viewers</div>
+    <h1>The Disciplined Day System</h1>
+    <p>Build Off-Grid Living Habits While Working a Regular Job — A Step-by-Step Framework for Muslim Men Who Are Done Watching and Ready to Start Doing</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Arab Off Grid - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You've felt it. That moment when you read something about intentional living, off-grid simplicity, or values-aligned work and think: 'Yes, this. This is what I want.' Then life pulls you back into the old patterns—the scrolling, the deadlines, the sense that your days don't match what you actually believe in. The gap between inspiration and implementation isn't a willpower problem. It's a systems problem.</p>
-  <div class="promise">This guide gives you a repeatable framework—the Values-to-Action System—that moves you from being a consumer of lifestyle content to someone actually living aligned values daily. Not as a sudden upheaval or unrealistic leap, but through practical phases that build on each other. You'll map what matters most to you, create systems that respect your real life, and develop the kind of consistency that feels like worship (ibadah) rather than punishment. You'll have measured progress within weeks, not years of spinning your wheels.</div>
-  <p>This guide was developed through conversations with the Arab Off Grid community, examining what separates people who talk about change from those who live it. It draws on systems thinking, behavioral psychology, and the wisdom embedded in Islamic practice—particularly the concept that discipline and consistency in pursuing what matters is itself an act of fulfilling your amanah (trust/responsibility). You don't need to be Muslim to benefit from this guide, but if you are, you'll find the framework speaks naturally to values you already hold.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You have watched the videos. Maybe hundreds of them. The man tending his garden at fajr time, the family eating from their own land, the quiet morning with no notifications, no commute, no performance. And for a few minutes, something in you settles. Then your alarm goes off, you open your phone before you have even made wudu, you miss fajr by forty minutes, you eat whatever is fast, and by the time you sit at your desk you already feel like you have lost the day. The gap between the life you can picture and the life you are actually living does not feel like a motivation problem. It feels like a physics problem. Like the current is pulling one way and you are trying to swim another with no clear technique, no structure, just willpower that runs out by Wednesday.</h2>
+    <p>This guide will not ask you to quit your job, move to the countryside, or overhaul your life in a weekend. What it will give you is a concrete daily architecture — a working system built around your existing prayer times, your real work schedule, and the genuine constraints of modern life — that compounds quietly over weeks and months into the kind of discipline that actually holds. The Disciplined Day System is not about escaping your current life overnight. It is about building the habits, rhythms, and intentionality now, inside the life you already have, so that when the moment comes to make a bigger move, you are already the man who can sustain it. Small, structured, repeatable actions rooted in Islamic discipline. Nothing dramatic. Everything purposeful.</p>
+    <div class="promise">🎯 sustainable daily routine system that integrates Islamic discipline, reduces consumption/distraction dependency, increases focused productive time, enables gradual lifestyle transition without dropping everything</div>
+    <p class="author-note">A note before we begin: I am not the creator behind Arab Off Grid. I am an independent researcher and writer brought in to study what is actually working for people in this community — what sticks, what does not, and why the gap between inspiration and implementation is so wide for so many otherwise capable men. I spent time studying the patterns, the struggles, the small wins, and the common breaking points. What you are reading is the practical framework that emerged from that work. I have tried to write it the way a knowledgeable friend would speak — someone who respects your intelligence, understands your deen, and has no interest in lecturing you. Everything here is meant to be used, not just read.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you read further, let's get you a quick win. This isn't busywork—it's the foundation of everything that follows. You're going to identify one core value and trace it forward into one concrete action you can take this week. This clarity alone shifts something. It's the difference between 'I want to live intentionally' and 'On Tuesday, I'm doing this specific thing because it matters.'</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Name one value that's been calling to you</strong><p>Not what you think you should value. What actually moves you? Connection to family? Stewardship of resources? Time for deep work? Presence with loved ones? Spiritual practice? Write it down. One sentence. (This is your niyyah—your clear intention. In Islam, the quality of action is determined by the intention behind it.)</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Ask yourself: 'How is this value currently showing up in my actual life?'</strong><p>Not how you wish it would. How it actually is right now. Be honest. You might realize it's barely present, or that it's there but scattered and unfocused. Write this down too. Barakah—blessing and sustainable progress—comes from clear-eyed assessment, not fantasy.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Identify one specific action that would move this value forward this week</strong><p>Not a massive overhaul. Something concrete and doable. Example: 'I value connection to my family, but I'm scrolling through dinner. This week, I'm putting my phone in another room during meals three times.' Or: 'I value deep work, but I'm fragmented. This week, I'm blocking one two-hour window without notifications.' Start with Bismillah (In the name of God)—it's not just religious ritual, it's a way of anchoring your intention and inviting clarity into your effort.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before systems, before planning, before any big decision — you need one small proof of concept today. This first win is not symbolic. It is neurological. It tells your brain that you are a person who follows through, and that signal matters more than motivation ever will. Set aside 30 minutes right now, or block the next slot after asr or maghrib when your mind is clearest. Begin with Bismillah and a quiet niyyah — make the intention that this time is not productivity for its own sake but a step toward a more accountable, more aligned way of living. That framing changes everything about how it feels.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You've named what matters, seen the gap honestly, and committed to one small action. That's it. By doing this, you've already separated yourself from the endless-inspiration trap. You have something to measure. You have momentum. When you complete this action, you'll feel the difference between knowing something intellectually and actually living it. That's where real change begins.
+  <div class="step"><div class="step-num">1</div><div><strong>Map your five prayer times against your actual workday on paper</strong><p>Take a single sheet of paper — not an app, not a spreadsheet, paper — and write down today's five prayer times alongside your real work schedule. Not the ideal version of your day, the actual one. Where does fajr fall relative to when you wake up? Where do dhuhr and asr land inside your work hours? Are they protected or do they just get absorbed? You are not fixing anything yet. You are just seeing clearly, possibly for the first time, exactly where the fracture lines are between your deen and your day. Most men who do this exercise discover they have been operating on two completely separate tracks — a work schedule and a prayer schedule — with no bridge between them. Seeing that gap on paper is the beginning of closing it.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Identify your one daily anchor habit and write it next to fajr</strong><p>From this moment forward, fajr is not just salah — it is the hinge your entire day turns on. It is your first decision, your first discipline, your first act of choosing intention over convenience. On the same sheet of paper, write down one single habit you want to build — not five, not a morning routine, one. It could be ten minutes of Quran, a glass of water before your phone, five minutes outside with no screen, or making your own breakfast instead of buying it. One habit, anchored to fajr, practiced daily. The research on habit formation and the wisdom of our tradition point to the same truth: consistency on one small thing builds more capacity than heroic effort on many. Write it down. Keep the paper somewhere visible.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Set a single boundary for tonight — one thing you will stop before isha</strong><p>The Disciplined Day System runs on two ends: how you start and how you close. Tonight, before isha, you will stop one thing. Choose one: stop scrolling thirty minutes before isha, stop eating after maghrib, stop opening work messages after a set hour, or simply put your phone in another room before you sleep. One boundary, tonight only, not forever — just tonight. After isha, sit for five minutes in quiet. No content, no planning. Just stillness. This is not wasted time. This is the space where clarity lives, where the nafs settles, and where tomorrow's fajr becomes a real possibility instead of a hope. Write down what you stopped and how it felt. That note becomes your first data point in a system that will compound.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: By the end of these 30 minutes you will have a single sheet of paper that shows you exactly where your day is breaking down, one anchor habit tied to fajr, and one completed boundary before sleep tonight. That is not small. That is a working prototype of The Disciplined Day System. Most men reading this guide have tried to build motivation first and structure second. Tonight you reverse that order, and you will feel the difference by tomorrow morning.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Niyyah-First Framework: Rewiring Your Daily Architecture Before Buying a Single Seed</h3>
+      <p>Transform your 9-to-5 existence from a trap into a launchpad by building the exact mental operating system that separates men who talk about off-grid living from men who actually get there.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most brothers in Dubai, Riyadh, or London scroll through homesteading content at midnight and feel that pull — but they wake up the next morning and the system swallows them whole again, because they never built the invisible architecture underneath the visible habits. The Disciplined Day System treats your five daily salawat as non-negotiable time anchors, not just worship — Fajr becomes your planning block, Dhuhr your midday recalibration, Asr your energy audit, and this structure alone gives you a rhythm no corporate calendar can erase, because it existed 1400 years before open-plan offices. Your current city job is not the enemy of your off-grid future — your undisciplined relationship with convenience is, and that means every time you choose to cook a simple meal instead of ordering Talabat, every time you sit with discomfort instead of opening Instagram, you are actively practicing the same muscle you will need when the solar inverter fails at 2am or the drip irrigation clogs mid-July. Start with a single honest inventory today: write down every decision you outsourced to convenience this week, because that list is your exact curriculum for the next six modules.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Tonight before Isha, write your formal niyyah for this program — one handwritten sentence stating why you are building this life, what you are protecting your family from, and who you are becoming, then place it somewhere you see at Fajr every day</li><li>Tomorrow at Fajr, spend exactly 10 minutes — before your phone, before coffee — writing three things: one habit from consumer life you will reduce this week, one skill from Arab Off Grid content you will practice this month, and one concrete image of what your life looks like in 24 months</li><li>Do a single 'friction audit' today by deliberately turning off food delivery apps for 72 hours and cooking one meal from whatever raw ingredients you already own, treating the inconvenience not as suffering but as your first training rep in the system you are building</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The brothers who fail this system quit because they tried to build off-grid habits on top of a consumer-driven schedule — but the ones who succeed realize that Islamic time structure already gives you a modular daily framework that most productivity gurus charge thousands to teach; your job is not to add discipline to your day but to remove everything that is filling the space where discipline would naturally live.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: Excavate Your Buried Values: The Archaeological Approach to Self-Discovery</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Values Audit: Excavating Your Authentic Priorities</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Values Alignment Audit: Exposing the Routines That Drain You</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Friction Audit: Redesign Your Environment to Make Values-Aligned Actions Automatic</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Values Friction Audit: Exposing Where Your Days Leak Away</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Values Audit: Eliminating the Hidden Anchors Draining Your Energy</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Legacy Loop: Design Systems That Outlive Your Motivation</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Prayer-Anchored Time Blocks: Engineering Your Off-Grid Habits Around the Five Daily Prayers</h3>
+      <p>Transform your existing Salah schedule into a precision productivity framework t...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to working system that moves them from 'inspired consumer of lifestyle content' to 'person actually living aligned values daily with measurable progress'</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Arab Off Grid</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The 5 Walls That Stop You (And the Islamic Framework That Breaks Each One)</h3>
+      <p>Identify the exact obstacles killing your off-grid discipline and replace them w...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Arab Off Grid community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Prayer-Anchor Protocol: Stack Off-Grid Skills Between Your Salah Windows</h3>
+      <p>Transform the five daily prayers from spiritual obligations into precision time-...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Prayer-Anchored Day: Engineering Your Off-Grid Routine Around the Five Pillars of Time</h3>
+      <p>Transform your five daily prayers from spiritual obligations into precision time...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When the System Breaks: Islamic Recovery Protocols for Getting Back on Track</h3>
+      <p>Transform every inevitable setback from a source of shame into a structured rese...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Permanent Shift: From Discipline System to Deen-Aligned Identity</h3>
+      <p>Stop managing habits and start becoming the kind of man whose off-grid values ar...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
