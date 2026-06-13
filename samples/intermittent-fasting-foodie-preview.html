@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Southern Kitchen IF System: Eat Your Culture, Keep Your Results - Preview</title>
+<title>The Sustainable OMAD System: From Struggling to 30-Day Streaks — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Southern Kitchen IF System: Eat Your Culture, Keep Your Results</h1>
-  <p class="subtitle">How to Honor Your Family's Food Legacy While Building the Body You Want—Without Giving Up a Single Flavor</p>
-  <div class="for">Created specifically for the audience of <strong>Intermittent Fasting Foodie</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/37726959/pexels-photo-37726959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Intermittent Fasting Foodie viewers</div>
+    <h1>The Sustainable OMAD System: From Struggling to 30-Day Streaks</h1>
+    <p>The No-Willpower Daily Framework for Women Who Keep Restarting Their Fast — And Are Ready to Finally Stop</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Intermittent Fasting Foodie - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You've heard it before: 'If you want results, you have to eat different.' So you tried. You cut out the biscuits, the collard greens cooked in bacon fat, the mac and cheese that tastes like home. You lasted three weeks before sitting down at your mama's table felt like choosing between two lives. Here's what nobody told you: that feeling isn't weakness. It's a signal that you're trying to solve a cultural problem with a one-size-fits-all diet.</p>
-  <div class="promise">This guide shows you how to build an intermittent fasting life around the foods that actually matter to you—the dishes with stories, the recipes that connect you to people you love. You'll learn a practical system for timing your eating windows so your favorite Southern classics (and whatever culture feeds your soul) fit naturally into your goals. No substitutions. No shame. No choosing between heritage and health.</div>
-  <p>This guide was created by a third-party researcher who spent months studying how people successfully combine cultural eating traditions with intermittent fasting. The system you're about to learn comes from real people doing exactly what you want to do: thriving on their own terms.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You broke your fast last night and you already know how this goes. You told yourself it would just be a few dates and some soup. Then somehow there was a stromboli involved, and maybe a Dunkin run that felt completely reasonable at the time, and by 9pm you were lying down wondering why your stomach hurt and whether you even count the day as a win. You do this. You restart. You go strong for 10, maybe 12 days, and then something shifts — a family dinner, a slow results week, one bad break-fast choice — and suddenly you are back at day one staring at your phone watching someone else's OMAD vlog wondering why it looks so easy for them and so chaotic for you. The answer is not willpower. You have plenty of that. You made it through Ramadan. You have fasted 72 hours. The answer is that nobody gave you a concrete daily system built around how you actually eat, how you actually live, and what your body actually does when the results slow down after week two.</h2>
+    <p>This guide gives you that system. Not inspiration. Not a meal plan that requires you to cook things you have never heard of. A real, repeatable daily framework — built around foods you already eat, restaurants you already know, and a fasting structure that works around your prayer times, your family table, and yes, even date night — so that hitting a 30-day streak stops feeling like a miracle and starts feeling like just another Tuesday.</p>
+    <div class="promise">🎯 sustainable fasting lifestyle where they can fast consistently 4-6 days/week, see measurable health results monthly, enjoy food within eating windows without guilt, and feel part of a community doing the same</div>
+    <p class="author-note">A quick and honest note before we begin: I am a researcher and content analyst, not the creator of the Intermittent Fasting Foodie channel. I studied hundreds of hours of fasting content, community conversations, and real documented struggles — including the ones she shared openly on her channel — to build this framework. Everything here is grounded in what actually works for women who fast seriously, eat real food, and live full lives. I wrote this as someone who respects both the practice of fasting and the Islamic values that often shape why this audience chooses it. If something lands wrong, that is on me, not on her. She just showed up honestly, and this guide tries to honor that.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you read another word, you're going to identify your non-negotiable foods—the ones you won't give up—and slot them into an eating window that actually works. This isn't about restriction. It's about clarity. Once you know where your favorite meals fit, everything else becomes easier.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>List Your Three Non-Negotiables</strong><p>Write down the three foods or meals from your culture/family tradition that you refuse to live without. Not the 'nice to have' items—the ones that make you feel connected, satisfied, and like yourself. (Fried chicken? Sunday gumbo? Your grandmother's pound cake? Write it down.)</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Notice When You Actually Want Them</strong><p>For each food, ask yourself honestly: When do I crave this? When do I eat it with family? When does it show up in my week? Not when you think you 'should' eat it, but when it actually calls to you. Write down the time of day or day of the week.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Claim Your Eating Window</strong><p>Look at your answers. If your favorite meals cluster around dinnertime and weekends, that's your window. If they're spread across the day, you have flexibility. Choose an eating window (like 12pm-8pm or 1pm-9pm) that lets you eat at least two of these three foods comfortably. That's your starting point.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another word of this guide, do this one thing right now. It takes 30 minutes, requires zero meal prep, and by the time you finish you will have something almost nobody who starts OMAD actually has: a written anchor that makes day two, day nine, and day twenty-three all start from the same stable place instead of from scratch. Think of this as your niyyah made practical — the intention set on paper so your body and your schedule both know what you are committing to.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You'll know exactly which eating window honors your actual life instead of fighting against it. You'll see that IF doesn't mean giving up your food culture—it means timing it better. Most people feel relief in this moment: finally, a system that asks 'How do we make this work?' instead of 'What do you have to sacrifice?'
+  <div class="step"><div class="step-num">1</div><div><strong>Write your three non-negotiables for your eating window — not goals, non-negotiables</strong><p>Open your notes app or grab any paper. Write down exactly three things that must be true every time you break your fast, no matter what. Not aspirations. Boundaries. For example: I will always break my fast with something warm and small before my main meal. I will not eat past 90 minutes into my window. I will not open DoorDash while I am still in my fasting window and hungry. These three rules do more work than any meal plan because they remove the in-the-moment decisions that are costing you your streaks. If you have watched a 72-hour fast break go sideways, you already know the moment it goes wrong is never during the fast — it is the first 20 minutes of eating when you are most vulnerable. Your non-negotiables are the guardrail for exactly that window.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Pick your anchor meal — one specific meal you can eat anywhere, anytime, that you know sits well</strong><p>This is your reset meal. The one you come back to when you are traveling, when the family dinner ran late, when Dunkin is the only option and you need to make it work. It should be real food you genuinely enjoy, it should be something you can find or assemble in most situations, and it should be a meal your body has already proven it handles well after a fast. Write it down with enough detail that it is a decision already made: not just 'something light' but 'grilled protein, something warm, no heavy bread on the first round.' When you have an anchor meal, you stop negotiating with yourself every single day and you stop relying on motivation to make a good choice at the worst possible moment.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Set one prayer-time boundary as your daily fasting checkpoint</strong><p>Choose one salah — Dhuhr works well for most schedules — and make it your daily check-in point. After that prayer, you spend 60 seconds asking yourself one question: Am I still in my window, or am I setting myself up to break early? You are not tracking macros. You are not logging anything complicated. You are using a moment you are already pausing for — a moment of connection and reset that is already built into your day — as a fasting anchor. Write down which salah you are choosing and what your one question is. This single habit is what separates women who fast 4 to 6 days a week consistently from women who fast hard for two weeks and then lose the thread. The checkpoint costs you nothing and it uses what you already have.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: By the time you finish these three steps you will have a written fasting anchor — your non-negotiables, your anchor meal, and your daily checkpoint — that takes fasting from a daily willpower decision to a system that runs on structure instead of motivation. That is the entire premise of this guide in 30 minutes. Everything that follows just makes it stronger.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Niyyah Shift: Why Your OMAD Keeps Failing Before the Food Even Enters the Picture</h3>
+      <p>Transform your OMAD practice from a white-knuckle willpower battle into a sustainable daily ritual by building the intentional foundation that actually holds a 30-day streak together.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most OMAD attempts collapse not because of hunger but because there's no 'why' strong enough to carry you through day 9 when the scale hasn't moved and your colleague just ordered biryani in front of you — so before you plan a single meal, you need a layered niyyah that connects your fasting practice to something bigger than a dress size. Think of this the way you approach Ramadan: you don't white-knuckle those 16-hour fasts through sheer grit, you hold them through meaning, structure, and community — and your everyday OMAD deserves that same scaffolding. Map your personal 'why' across three levels: the physical (energy, health, how you feel cooking and exploring halal food spots without the afternoon crash), the mental (clarity, productivity, the barakah that comes from focused intentional living), and the spiritual (discipline as ibadah, your body as an amanah, stewardship over what Allah gave you). Written niyyah combined with a fixed daily anchor point — most women in this community find Dhuhr or Asr prayer works perfectly as a midday reset that doubles as a hunger check-in — is what separates the women who hit day 30 from the ones who restart every Monday.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, open your notes app and write your three-level niyyah in 2-3 sentences each — physical, mental, and spiritual — then screenshot it as your phone wallpaper so it's the first thing you see when you reach for your phone during a craving moment</li><li>Choose one prayer time today (Dhuhr works brilliantly for most schedules) to serve as your daily OMAD anchor — after salah, take 60 seconds to do a hunger and intention check-in, asking yourself 'am I hungry or am I bored/stressed/scrolling food content?' and log the honest answer in a simple notes streak</li><li>Pick your OMAD eating window tonight based on when you genuinely enjoy food most — for this audience that's often the family dinner window between Maghrib and Isha — and say Bismillah before you open any food planning app or recipe video, making the research itself part of the ritual, not just the eating</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The Muslim women who build the longest OMAD streaks aren't the ones with the most discipline — they're the ones who stop treating OMAD as a diet they're 'doing' and start treating it as a personal sunnah of intentionality around food, which means a broken fast day isn't a failure requiring a restart, it's just Qadr, and you pick up your niyyah exactly where you left off tomorrow without the shame spiral that kills most routines.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Cultural Food Identity Blueprint: Why Your Grandmother's Kitchen Isn't Your Enemy</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Heritage Plate: Deconstructing Traditional Southern Dishes</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Technique Swap: Keeping Flavor, Losing the Guilt</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Plate Architecture Method: Building Southern Meals That Align with Your Goals</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Family Table Negotiation: Keeping Culture Without Compromising Progress</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Ingredient Swap Mastery: Making Grandma's Recipes Work for Your Goals</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: Legacy Meals: Creating Your Family's New Food Story</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The OMAD Meal Architecture: Building Your One Plate Around Halal Food Culture</h3>
+      <p>Stop guessing what to eat in your eating window and start engineering a single p...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to sustainable IF lifestyle that includes flavorful, culturally-connected meals they actually want to eat; consistency without sacrifice or restriction feeling</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Intermittent Fasting Foodie</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The Wall: Why Week 2 Kills Every OMAD Attempt (And How to Break Through It)</h3>
+      <p>You'll identify the exact 3 obstacles that have derailed every previous attempt ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Intermittent Fasting Foodie community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Metabolic Reset Window: Stack OMAD With Your Prayer Schedule for Accelerated Results</h3>
+      <p>Stop fighting your biology and your deen separately — learn how to use your five...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>Your OMAD Daily Blueprint: The Hour-by-Hour Framework That Runs on Autopilot</h3>
+      <p>Replace willpower with a structured daily rhythm anchored to your prayer times s...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When It Falls Apart: Your Islamic Reset Protocol for Getting Back to Your Streak</h3>
+      <p>Learn exactly what to do in the 24 hours after breaking your OMAD streak so you ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Forever Framework: Making OMAD Your Identity, Not Just Your Diet</h3>
+      <p>Transform OMAD from a 30-day challenge into a permanent part of who you are — a ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
