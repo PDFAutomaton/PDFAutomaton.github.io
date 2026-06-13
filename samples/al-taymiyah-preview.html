@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Quran + Sunnah Foundation: From Scattered Knowledge to Systematic Islamic Practice - Preview</title>
+<title>The Rizq Consistency System — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Quran + Sunnah Foundation: From Scattered Knowledge to Systematic Islamic Practice</h1>
-  <p class="subtitle">Build a Traceable, Consistent Approach to Islam Based on Authentic Sources—and Apply It Daily</p>
-  <div class="for">Created specifically for the audience of <strong>Al-Taymiyah</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/10060573/pexels-photo-10060573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Al-Taymiyah viewers</div>
+    <h1>The Rizq Consistency System</h1>
+    <p>Build Lasting Wealth Without Abandoning Your Faith</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Al-Taymiyah - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You know Islam is true. You've read parts of the Quran, listened to lectures, tried to pray consistently. But somewhere between what your family practices, what different scholars teach, and what you actually do each day, things feel fragmented. You're not sure which interpretations are authentic. Your Islamic practice doesn't feel integrated into your real life. And worst—you can't explain why you believe what you believe beyond 'that's what I was taught.'</p>
-  <div class="promise">This guide gives you a method. Not a list of rules, but a framework for understanding Islam directly from the Quran and authentic Sunnah—then building it into your actual daily life in a way that compounds over time. You'll learn to distinguish between cultural practice and Islamic principle. You'll know which scholars and sources to trust. And you'll develop the consistency that transforms scattered knowledge into lived deen. By the end, your Islamic practice won't be something you do on the side. It will be integrated, intentional, and sustainable.</div>
-  <p>This guide is based on traditional Islamic scholarship methodology and contemporary research on knowledge application and habit formation. It's structured for the Muslim who wants clarity without shortcuts, and who understands that seeking ilm (knowledge) is an obligation—not a luxury.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You have made du'a for rizq. You have started the side hustle. You have watched the videos, read the books, and told yourself this time is different. And then, somewhere between the first obstacle and the first slow week, you stopped. Not because you are lazy. Not because Allah did not bless you. But because nobody ever gave you a repeatable system that actually fits the way a Muslim is supposed to move through the world. You have been trying to run a Western wealth-building playbook inside an Islamic life, and those two things keep colliding. The result is a cycle that is exhausting: launch something, lose momentum, feel guilty for wanting money in the first place, and wonder if maybe rizq just is not meant for you the way it seems to come for others. That cycle ends here.</h2>
+    <p>This guide delivers one thing: a clear, actionable system for building consistent and growing income that is rooted in Islamic principles, not in contradiction to them. You will learn exactly how to balance tawakkul with decisive action so you stop second-guessing yourself every time you make a financial move. You will get a mental framework that keeps you executing when results are slow, a structured approach to scaling your income without the chaos of starting over every few months, and the mindset shifts that allow serious wealth-building while your deen stays intact. No vague motivation. No guilt-tripping about money. Just the system that successful Muslim professionals and entrepreneurs are already using, broken down step by step so you can apply it starting today.</p>
+    <div class="promise">🎯 Build consistent, growing income through an Islamic framework; execute financial goals without abandoning them; think and act like successful Muslims</div>
+    <p class="author-note">A note before you begin: this guide was researched and written by a third-party researcher and writer working under the Al-Taymiyah channel, not by the sheikh himself. The frameworks, Islamic references, and practical strategies here were compiled from extensive study of classical Islamic scholarship on wealth, rizq, and tawakkul, cross-referenced with real patterns observed among Muslim professionals and entrepreneurs who have built consistency in their income. The goal was simple — to put into structured, written form what this community has been asking for. If something lands and helps you, that is from Allah. If there are shortcomings, they are from the limitations of the researcher. Treat this as a sincere offering from one member of the ummah to another, and begin it with intention.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you go deeper into the framework, complete this exercise. It will show you exactly where your current Islamic knowledge stands and identify the first gap to close. This isn't theoretical—it creates an immediate reference point you'll return to throughout the guide.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Map one area where you're uncertain</strong><p>Pick one Islamic practice or belief you do regularly but can't fully explain. Examples: Why you perform wudu the way you do. Whether a financial practice is halal or haram. How you should treat a specific family situation. Write it down clearly.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Trace it back to its source</strong><p>Ask yourself: Do I know this from the Quran? From the authentic Sunnah? From a scholar I trust? From family tradition? From cultural practice? Write down where this understanding actually came from—be honest about what you're certain of and what you're assuming.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Identify the gap</strong><p>If you can't trace it to Quran or authentic hadith, or if you're relying on one scholar without understanding why they made that ruling—you've found your first gap. This is normal. This is where the framework begins.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another chapter, do this exercise. It is designed to break the single most common pattern holding this audience back: starting financial efforts without a clear niyyah and structure, which means the moment things get hard, there is nothing solid to return to. This 30-minute exercise builds your foundation today. It is called the Rizq Clarity Audit, and it is where every consistent earner — whether they knew it or not — actually began.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You'll have one concrete example of how scattered knowledge shows up in your life. You'll see the difference between 'I do this because I learned it' and 'I do this because I understand the Islamic principle behind it.' This becomes your starting point—the proof that this framework matters.
+  <div class="step"><div class="step-num">1</div><div><strong>Set your niyyah in writing — 5 minutes</strong><p>Open your notes app or grab a piece of paper and write your intention for building wealth in one or two sentences. Not a goal. An intention. Why does this matter to your deen, your family, and your ability to give? Start with Bismillah. Be specific. 'I intend to build consistent income so I can pay off my debts without haram means, provide halal security for my family, and give sadaqah without strain.' A niyyah written down becomes an anchor. When you want to quit in week three, you come back to this. This is not motivational fluff — this is a documented contract between you and Allah about why you are doing what you are doing.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Identify your single income leak — 10 minutes</strong><p>Look at the last 90 days of your financial life and answer this one question honestly: where did your biggest effort produce the least return? Not because the idea was bad, but because you either abandoned it too early, never systematized it, or scattered your energy across too many directions at once. Write it down. One sentence. 'I started freelance design work but stopped following up with leads after two weeks.' Most people have one primary leak, and it is almost always inconsistency, not incompetence. Naming it precisely is the first act of practical tawakkul — you are acknowledging reality so you can move through it, not around it.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write your one 90-day income target and attach one daily action — 15 minutes</strong><p>Pick one income stream only. Write a specific 90-day target for it. Not a dream number — a stretch number that is grounded in what is actually possible if you showed up consistently. Then write the single daily action that, if done every day, would make that target inevitable. One action. Not five. Use your Fajr or Asr prayer time as the trigger — immediately after one of these salawat, you do this one action before anything else. This is your system seed. The entire Rizq Consistency System builds from this daily action and this 90-day target. Everything else in this guide teaches you how to protect, scale, and sustain what you are starting right now in this step.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: By the end of this 30 minutes you will have a written niyyah that doubles as your persistence anchor, a clear diagnosis of your primary consistency failure, and a single daily action tied to a 90-day income target. You will feel the shift from vague wanting to structured pursuing. That shift is what this whole guide is built to make permanent.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>Niyyah Before Strategy: The Mindset Shift That Separates Muslim Wealth-Builders From Everyone Else</h3>
+      <p>You'll rewire how you think about money, work, and faith so that pursuing rizq becomes an act of worship — not a source of guilt.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The biggest lie you've been sold is that being a good Muslim means being okay with being broke — that ambition is somehow arrogance (kibr) and comfort with poverty is tawakkul. Real tawakkul means you tie your camel AND trust Allah; the Prophet ﷺ had business partners, ran trade routes, and praised the honest merchant who stands with the prophets on Yawm al-Qiyamah. The reason you start a freelance project, a tech side hustle, or a dropshipping store and abandon it at week three isn't laziness — it's that you have no framework connecting your daily work to your deen, so when results are slow, your nafs convinces you it was haram distraction all along. Starting today, every income-generating action you take gets a niyyah attached to it: providing for a future family, giving more in sadaqah, building independence so you can pray Fajr without a manager threatening your job — these intentions transform grinding into ibadah and make quitting feel like what it actually is: breaking a promise to Allah.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open your notes app right now and write your specific wealth niyyah in one sentence — not 'make money' but exactly why: 'I am building income to sponsor my parents' Hajj, support my future family, and give 10% in sadaqah' — read it every morning before you open any app</li><li>Audit the last three money-making attempts you abandoned and write honestly why you stopped; you will almost certainly find the pattern is not skill or opportunity but missing a faith-based 'why' that outlasted the initial motivation — this diagnosis is your foundation</li><li>Set your Fajr alarm 15 minutes earlier tomorrow and spend those minutes not scrolling Al-Taymiyah videos but making du'a specifically naming your financial goal, then writing one concrete action you will complete before Dhuhr — this links your highest ibadah to your daily rizq pursuit from day one</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Stop waiting until your iman 'feels high enough' to pursue wealth seriously — the Companions did their most productive business during ordinary days, not peak spiritual moments, because they understood that consistent, intentional action in a halal direction IS the high-iman state, not a departure from it.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Cultural Islam vs. Qur'anic Islam Audit: Identifying What You Actually Practice</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: Cultural Islam vs. Quranic Islam: The Source Authentication Framework</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Cultural Islam vs. Quranic Islam Filter: Identifying What's Actually Required</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Cultural vs. Quranic Audit: Identifying What You Actually Believe</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Cultural vs. Quranic Lens: Identifying What's Actually Islamic</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Cultural vs. Islamic Practice Audit: Identifying What You Actually Follow</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Authenticity Filter: Separating Cultural Islam from Quranic Practice</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Halal Stack: Building Your Repeatable Income System Around Salah Times</h3>
+      <p>You'll install a daily wealth-building rhythm that uses your five prayer times a...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to Have a clear, traceable understanding of Islam based on Quran and authentic Sunnah; be able to apply Islamic principles consistently in real situations; feel confident in their Islamic knowledge and practice; build a sustainable daily Islamic routine that compounds over time</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Al-Taymiyah</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The Obstacles Are the System: Why You Keep Stopping and How to Never Stop Again</h3>
+      <p>Identify the exact three walls that have killed every income attempt you've star...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Al-Taymiyah community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Barakah Multiplier: Stack Your Skills Into High-Value Tech Offers</h3>
+      <p>Stop trading time for money and start packaging your existing Islamic knowledge ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Barakah Blueprint: Your Non-Negotiable Daily System for Compounding Rizq</h3>
+      <p>Transform your five daily prayers from time breaks into precision resets that st...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When the System Breaks: The Muslim Tech Builder's Recovery Playbook</h3>
+      <p>Turn your inevitable setbacks into structured resets so a bad week never becomes...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Lifetime System: Making Rizq-Building as Natural as Salah</h3>
+      <p>Transform everything you've built in this course from a 'challenge you completed...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
