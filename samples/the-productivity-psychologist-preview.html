@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 90-Day Consistency Protocol — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/8581115/pexels-photo-8581115.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for The Productivity Psychologist viewers</div>
+    <h1>The 90-Day Consistency Protocol</h1>
+    <p>The Weekly Review That Stops Plans From Falling Apart</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You probably planned last Sunday. You wrote things down, maybe color-coded something, felt briefly organized. By Wednesday, something urgent appeared and quietly pushed your actual priorities off the list. By Friday, you were managing the week rather than executing it. This is not a discipline problem. It is a system design problem — and it happens to nearly everyone who is smart enough to plan carefully but has no reliable mechanism for catching the moment things start to drift.</h2>
+    <p>This guide gives you one framework: a structured weekly review process built on what behavioral science actually says about habit maintenance, decision fatigue, and why high-performing people still fall off track after week three. You will not find a new app recommendation here, a productivity philosophy to adopt, or a morning routine to overhaul. You will find a single, repeatable process you can run in under an hour each week — one that is specifically designed to survive the transitions, the busy seasons, and the ordinary Tuesdays when everything feels slightly off-course. The goal is 90 days of consistent execution on what you have already decided matters. That is it.</p>
+    <div class="promise">🎯 A simple, science-backed weekly system they can execute consistently for 90+ days that survives life transitions. Not more tools - ONE framework that works.</div>
+    <p class="author-note">A note on where this came from: I am a researcher, not the creator of this channel. This guide was developed by synthesizing published work in habit formation, implementation intentions, and self-regulation research — drawing from fields including cognitive psychology, organizational behavior, and behavioral economics. The framework has been structured specifically around the patterns that emerged from studying why consistent people still execute inconsistently, and what the evidence suggests actually closes that gap. The creator reviewed and shaped the final system, but the underlying research is drawn from the broader scientific literature, not personal opinion. You will find citations and source notes throughout where they are relevant.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read the full protocol, do this once today. It is a stripped-down version of the core weekly review — enough to show you what the full system feels like and give you something concrete before the week moves on. You need a timer, something to write with, and approximately 30 minutes of uninterrupted time. That is the only requirement.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Run a brutal 10-minute week audit</strong><p>Set a timer for 10 minutes. Write down every task or intention you had for this past week — from memory, without looking at your lists. Then mark each one honestly: done, partially done, or quietly abandoned. Do not explain or justify anything yet. Just get an accurate picture of where your execution actually landed versus where you planned it would land. Most people have not done this once in the past month. The gap you see is not a character flaw — it is the data your current system is not capturing.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Identify the one thing that derailed the most</strong><p>Look at your abandoned or partial items and find the single task or priority that had the most downstream impact — the one whose absence created the most friction, guilt, or catch-up work. Write one sentence describing exactly when it fell off and what replaced it. Not why you failed to do it. Specifically when it left your active attention and what took its place. This distinction matters: most planning systems ask you to recommit to goals. This protocol asks you to find the precise moment of drift, because that is where the intervention needs to go.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write one implementation intention for next week</strong><p>Using the format 'When X happens, I will do Y at Z time,' write a single sentence that addresses the specific derailment you just identified. For example: 'When Monday morning standup ends, I will spend 20 minutes on the proposal draft before opening email.' Research by psychologist Peter Gollwitzer consistently shows that this if-then structure significantly increases follow-through compared to general intention-setting. You are not rewriting your entire week. You are installing one pre-made decision that removes the need to negotiate with yourself in the moment.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: You will finish this exercise with a clear record of where your week actually went, a named derailment point rather than a vague sense of having been busy, and one specific behavioral commitment for the coming week that is grounded in your actual schedule. It will not feel transformative. It will feel like clarity — which is the more useful thing. The full 90-Day Protocol builds this into a complete weekly structure that catches drift earlier, adjusts without starting over, and holds across the transitions where most systems quietly collapse.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>Why Your System Keeps Failing (It's Not a Willpower Problem)</h3>
+      <p>Discover the real reason your planning tools are full of week-one energy and week-three ghost towns — and install the one structural fix that changes everything.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The reason you keep falling off your system isn't that you're lazy or lack discipline — it's that you've been treating consistency as a character trait instead of an architecture problem, which means every new planner, app, or 'this time I'm serious' Monday is built on the same broken foundation. High-achievers in particular get trapped by what I call the Motivation Debt Cycle: you front-load intensity in week one, burn through your planning energy, and then have nothing left to sustain the system when real work pressure hits in week three. The 90-Day Consistency Protocol fixes this by replacing motivation-dependent planning with a single non-negotiable weekly review — a 20-minute recurring appointment with yourself that acts as the connective tissue between your intentions and your actual calendar. Unlike the planning sessions you've done before, this review isn't about adding more to your plate; it's specifically designed to audit, trim, and re-anchor so that the gap between 'what I planned' and 'what I actually did' closes week over week instead of quietly destroying your confidence.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open your calendar right now and block a recurring 20-minute 'Weekly Review' slot for the same day and time every week for the next 90 days — Sunday evening or Friday afternoon work best for most professionals, but the day matters less than the non-negotiability of it</li><li>Write down the last three times your system broke down and note what was happening in your life that week (high workload, travel, a transition like end of quarter) — you're looking for your personal derailment patterns, not generic ones</li><li>Count how many active planning systems you're currently using (apps, notebooks, sticky notes, calendar) and identify which single one already has the most of your real commitments in it — that's your anchor system for this protocol, everything else gets archived or deleted today</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The most dangerous week in any new system isn't week one — it's week two, when novelty has worn off but the habit isn't formed yet. Set a calendar alert for exactly 14 days from today that says 'This is the week most people quit — do your review anyway,' because naming the dip in advance is the single fastest way to survive it.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The 20-Minute Sunday Setup: Your Weekly Review Blueprint</h3>
+      <p>Transform your Sunday from a dread spiral into a 20-minute ritual that makes Mon...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why You Keep Falling Off (And It's Not a Willpower Problem)</h3>
+      <p>Identify the exact friction points and transition traps that derail your executi...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Friction Audit: Engineer Your Environment So Consistency Becomes the Path of Least Resistance</h3>
+      <p>Stop relying on willpower and start designing the conditions where your weekly r...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Daily Anchor: The 10-Minute Routine That Keeps Your Week From Unraveling</h3>
+      <p>Build one non-negotiable daily touchpoint that connects your big-picture plans t...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>The Derail Diagnosis: How to Recover Fast Without Starting Over</h3>
+      <p>Learn to treat a broken week as data, not failure, so you stop white-knuckling r...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Identity Shift: How to Become Someone Who Actually Does This Forever</h3>
+      <p>Stop white-knuckling consistency and start becoming the kind of person for whom ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
