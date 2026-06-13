@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Game Tech Breakdown System — Sample Preview</title>
+<title>The Technical Art Diagnosis System — Sample Preview</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
@@ -196,12 +196,12 @@
 
 <!-- HERO WITH PEXELS IMAGE -->
 <div class="hero">
-  <img class="hero-img" src="https://images.pexels.com/photos/10988020/pexels-photo-10988020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <img class="hero-img" src="https://images.pexels.com/photos/29412595/pexels-photo-29412595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
   <div class="hero-overlay">
     <div class="sample-pill">✦ Sample Preview</div>
     <div class="for-badge">Built for World of Art viewers</div>
-    <h1>The Game Tech Breakdown System</h1>
-    <p>How to Analyze and Reverse-Engineer Any Game's Graphics Like a Professional</p>
+    <h1>The Technical Art Diagnosis System</h1>
+    <p>Analyze Any Visual Problem Like An Environment Artist: A Step-by-Step Framework for Breaking Down Water, Lighting, Displacement, and More — Without Guessing</p>
   </div>
 </div>
 
@@ -209,10 +209,10 @@
 
   <!-- HOOK -->
   <div class="hook-card">
-    <h2>You're watching a breakdown of Crimson Desert's water simulation, or maybe it's the Subnautica 2 environment deep-dive, and somewhere around the three-minute mark it hits you: you can see exactly what makes it look incredible, but you have absolutely no idea how you'd begin to build it. The volumetric fog is doing something interesting. The subsurface scattering on the water surface looks physically correct. The way light behaves through the canopy feels alive. You can feel the quality. You just can't name it, isolate it, or replicate it. So you rewatch the video. You take some screenshots. You open your 3D software or your engine and stare at a blank viewport. Nothing translates. An hour disappears. You've studied the game without actually learning anything you can use. That gap between observation and implementation is not a knowledge gap. It's a framework gap. And this guide exists to close it.</h2>
-    <p>What you're going to get from this guide is a repeatable, systematic method for breaking down any game's visual and technical systems, the same way a technical artist or graphics engineer would approach it on day one of a new project. Not surface-level commentary about what looks cool. Not vague inspiration. A structured, step-by-step thinking process that turns passive watching into active technical intelligence you can immediately apply to your own work. By the time you've worked through this system, you'll be able to sit down with any game, from a Forza title to an indie environment piece, and walk away with specific, nameable, implementable insights about lighting architecture, material systems, post-processing pipelines, and rendering techniques. The Crimson Desert breakdown, the Subnautica 2 analysis, the Forza comparison videos are all worked examples throughout this guide, not just name-drops. You'll see the exact thinking process applied to real footage, real systems, real decisions. The goal is not to turn you into a passive consumer of technical breakdowns. The goal is to make you someone who can run their own.</p>
-    <div class="promise">🎯 Build a repeatable technical analysis framework. Develop ability to deconstruct any game's visual/technical systems quickly. Apply those insights to their own work with confidence.</div>
-    <p class="author-note">A quick word on who put this together. I'm not the person behind the World of Art channel. I'm a third-party researcher and technical writer who has spent a significant amount of time studying the breakdown methodology demonstrated across that body of work, cross-referencing it with technical documentation, GDC talks, and conversations with working environment artists and technical directors. What I've tried to do here is systematize something that, on the channel, comes across as intuitive expertise, because it is. The goal was to extract that thinking process, make it explicit, and give you a repeatable version of it. Any errors in framing or interpretation are mine. The underlying analytical approach you'll learn here belongs to the kind of methodical, visually-literate technical thinking that the channel has been quietly modeling for years. I just wrote it down.</p>
+    <h2>You're watching a breakdown of Crimson Desert's terrain rendering or Subnautica 2's underwater volumetrics, and you can see that something is technically impressive — but when you open your own project file fifteen minutes later, you have no idea how to close the gap between what you observed and what you need to do next. The knowledge didn't transfer. It almost never does, not because you weren't paying attention, but because watching and diagnosing are two completely different cognitive skills, and nobody teaches the second one.</h2>
+    <p>This guide gives you a repeatable diagnostic framework — the same kind of structured visual interrogation that environment artists and technical artists use in production — so that the next time you encounter a visual problem in your own work, or study a reference from Forza Horizon's asphalt reflections or Subnautica 2's caustic light scattering, you can methodically identify which layer of the technical stack is responsible, name the specific technique involved, and decide whether it belongs in your current production pipeline. Not someday. On the project you're working on right now.</p>
+    <div class="promise">🎯 Be able to systematically analyze any visual problem in their game, identify the exact technical cause, know which tool/technique fixes it, and implement it consistently</div>
+    <p class="author-note">A note on where this guide comes from: I'm a third-party researcher and technical writer, not the creator behind the World of Art channel. What I've done is spend considerable time studying the analytical methods demonstrated across the channel's breakdowns — the way complex scenes get decomposed layer by layer, the calm refusal to skip steps, the habit of naming things precisely before moving on — and I've organized those methods into a structured, written system you can apply independently. The framework here is built from observed practice, not theory. Any expertise you find in these pages belongs to the process itself.</p>
   </div>
 
   <hr class="divider">
@@ -220,14 +220,14 @@
   <!-- QUICK WIN -->
   <div class="section-label">⚡ Quick Win — Included Free</div>
   <div class="section-title">Get Your First Result in 30 Minutes</div>
-  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page of this guide, do this exercise right now. You don't need any special software. You don't need a fast machine. You need a game you already have installed, a screenshot tool, and about thirty minutes of focused attention. This is the single-system isolation drill, and it's the foundation of the entire framework you're going to build. Most people fail at game analysis because they try to understand everything at once. This drill trains you to pick one system, isolate it completely, and extract something specific and usable from it. Do this once today and you'll immediately understand what this guide is actually teaching.</p>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read the full framework, do this exercise once with a real reference image. It takes about thirty minutes and it will immediately change how you look at any environment — in a game, in your own scene, or in a breakdown video. You're not trying to solve anything yet. You're training the habit of separating what you see from what you assume.</p>
 
-  <div class="step"><div class="step-num">1</div><div><strong>Pick one game, open it, and choose a single scene with strong ambient lighting, then take three screenshots from the same position with different in-game time-of-day or weather settings if available, or simply three angles of the same lit surface.</strong><p>The goal here is not to analyze the whole scene. You're isolating lighting behavior only. Ignore the geometry. Ignore the textures. Look specifically at where the brightest point in the image is, where the darkest point is, and whether there is a clear secondary light source filling shadows. On your screenshots, literally draw or mark these three zones with a pen, a markup tool, or even just a sticky note on your monitor. You are training your eye to decompose a scene into its light sources before anything else. This is exactly the first step applied in the Forza comparison analysis, where the difference between titles came down to identifying dominant light direction and secondary bounce behavior before any material properties were even considered.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Write down exactly three sentences describing what you see, using technical language even if you're not sure it's correct yet.</strong><p>This step feels uncomfortable for most people and that discomfort is the point. Write something like: the primary light source appears to be coming from the upper left at roughly forty-five degrees, there is a soft blue fill light in the shadow areas suggesting either an HDRI sky contribution or a dedicated fill light setup, and the specular highlight on the wet surface is tight and bright which suggests a low roughness value in the material. You will be wrong about some of it. That is fine. The act of committing to specific technical language, rather than writing this looks really cinematic, is what begins to build your analytical vocabulary. Every breakdown in this guide starts from exactly this kind of forced specificity.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Search for one term you used in your sentences that you are least confident about, spend ten minutes reading a single credible source on it, then rewrite just that one sentence with more precision.</strong><p>If you wrote roughness value and you are not sure what that maps to in a real PBR workflow, spend ten minutes on it now. Not two hours. Ten minutes, one source, one rewrite. This constraint is deliberate. The failure mode for technically curious people is the rabbit hole, where one term leads to six tabs and ninety minutes later you have learned a lot of context and revised nothing about your actual observation. The system in this guide is built around short, specific learning loops attached to real observed evidence. You saw something, you described it, you sharpened the description. That loop, repeated across dozens of scenes and systems, is what builds the kind of technical fluency that makes game breakdowns genuinely useful to your work.</p></div></div>
+  <div class="step"><div class="step-num">1</div><div><strong>Pick one screenshot from a game you respect and open it alongside a blank document</strong><p>Choose something with visual complexity but a clear focal point — a wet cobblestone street in a night scene, a shallow ocean floor like those in Subnautica 2's early biome environments, or a road surface from Forza Horizon 5's dry season lighting. Avoid cinematics or heavily post-processed marketing shots. In-engine gameplay screenshots or developer captures are ideal. Your document should have four labeled sections: Surface, Light, Atmosphere, and Movement or Simulation. Leave them empty for now.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Spend fifteen minutes filling in only what you can observe directly — no guesses about technique yet</strong><p>Under Surface, describe the material behavior: is it absorbing light or reflecting it, does it have visible normal variation, does the texture tile or does it read as unique? Under Light, note the direction, color temperature, and whether shadows have soft or hard termination edges. Under Atmosphere, look for haze, fog density, or any scattering between the camera and distant geometry. Under Movement or Simulation, note anything that implies a dynamic system — foam accumulation, grass responding to implied wind, puddle ripples. Write plain observations. The sentence 'the wet areas appear brighter than the dry areas under direct light' is more useful at this stage than 'probably screen-space reflections.'</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Now write one sentence per section naming the most likely technical system responsible, and flag the one you don't know</strong><p>This is the diagnostic step. For each section, convert your observation into a technical hypothesis: 'The specular response on the surface suggests a roughness map with localized wet masking, possibly driven by a height-based wetness parameter.' You do not need to be correct. You need to be specific. Mark any section where you genuinely cannot form a hypothesis with a single word: Unknown. That word is useful data — it tells you exactly where your current knowledge has a gap, which means it tells you exactly what to look up next. One Unknown per session is a better study plan than an hour of unfocused tutorial browsing.</p></div></div>
 
 
-  <div class="result-box">✅ Expected result: After thirty minutes you will have one screenshot set, three technically-worded observations, and one sharpened sentence that is more accurate than what you first wrote. That sounds small. It is not small. You have just completed one full cycle of the core analysis loop this entire guide is built around. You have also identified, in concrete terms, at least one area of your technical vocabulary that needs development, which is more actionable information about your own skill gaps than most people get from an hour of passive watching. Do this with one scene per week for a month and your ability to analyze games will be unrecognizable compared to where you are right now.</div>
+  <div class="result-box">✅ Expected result: By the end of this exercise you will have produced a structured one-page visual diagnosis of a real game environment. It will be imprecise in places and that is completely expected. What it will also be is systematic — and that is the thing that was missing before. The next time you open a breakdown video about Crimson Desert's landscape shaders or study a technical post about terrain displacement, you will have a mental filing system waiting to receive that information instead of a flat list of facts that dissolves by morning.</div>
 
   <hr class="divider">
 
@@ -242,15 +242,15 @@
   <div class="module-header">
     <div class="module-num">1</div>
     <div class="module-info">
-      <h3>The Reverse-Engineering Mindset: Stop Seeing Art, Start Seeing Systems</h3>
-      <p>Transform how your brain processes game visuals — from passive appreciation to active technical deconstruction — so every game you play becomes a free masterclass in real-time rendering.</p>
+      <h3>The Diagnostic Lens: Stop Seeing Art, Start Reading Systems</h3>
+      <p>Shift from 'this looks wrong' to 'this is a specific technical failure I can name, isolate, and fix' — the mental switch that separates environment artists who grow fast from those who stay stuck.</p>
     </div>
   </div>
   <div style="padding:0 24px 24px;">
-    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most 3D artists and aspiring devs make the same critical mistake: they study games aesthetically, asking 'does this look cool?' instead of technically, asking 'what render passes, texture channels, and lighting rigs are producing this specific visual output?' The shift you need is learning to see games as stacked, separable technical layers — geometry silhouette, albedo/base color, roughness/metallic response, lighting contribution, post-process stack — because once you can mentally 'peel' a scene into those layers, you stop being overwhelmed and start having actual reverse-engineerable data. Before you can analyze anything like a professional technical artist at Naughty Dog or Ubisoft, you need a fixed vocabulary: PBR material pipeline, deferred vs. forward rendering, GI approximation methods, LOD systems, and shader complexity — these aren't jargon gates, they're the actual language that converts what your eyes see into something your hands can build. Think of this module as installing the operating system that every other breakdown technique in this course runs on — get the mental framework wrong and you'll study 500 game screenshots and learn almost nothing actionable.</p>
-    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open a game you know well right now — take one screenshot and write down exactly five technical questions about it using this forced format: 'How did they achieve [specific visual effect] using [suspected technical system]?' — this rewires your brain to ask buildable questions instead of vague ones</li><li>Go to the World of Art channel backlog and rewatch one environment or shading breakdown video, but this time pause every 60 seconds and write the technical layer being discussed — by the end you should have a list of 5-8 discrete systems, not a general impression</li><li>Create a dead-simple 'Tech Vocabulary Doc' right now with three columns: Term, What It Does Visually, How I'd Implement It — seed it with just these five entries to start: Albedo, Roughness Map, Ambient Occlusion, Normal Map, Emissive — you'll build this doc throughout the entire course</li></ul>
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Every visual problem in a game environment is actually one of four things: a shading/material data problem, a geometry/topology problem, a lighting interaction problem, or a texture/UV information problem — and the moment you learn to sort what you're looking at into one of these buckets, you stop feeling overwhelmed and start feeling like a detective. When you're studying breakdowns on channels like this one — whether it's a Unreal Engine 5 Lumen deep-dive, a Nanite mesh analysis, or a stylized environment teardown — your job isn't to absorb everything, it's to ask 'which bucket does this technique live in and what problem was the artist trying to solve?' This single reframe kills information overload because you're no longer collecting facts, you're building a diagnostic vocabulary that maps directly to your own production blockers. Start treating reference images, shader graphs, and engine screenshots not as inspiration but as evidence — you're a technical crime scene investigator, and the scene always tells you exactly what went wrong if you know what questions to ask.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open a project you're currently stuck on, pick ONE visual issue, and force yourself to write a single sentence naming exactly which of the four buckets it belongs to — no vague language like 'it looks flat,' instead write 'this is a shading problem caused by missing surface normal variation in the roughness channel'</li><li>Go to your last three saved reference images or tutorial screenshots and label each one with its primary bucket category plus a one-line note on what production problem it solves — this builds your diagnostic vocabulary faster than any course</li><li>Screenshot a single material or environment asset from any game you're playing tonight and spend five minutes reverse-engineering it: what bucket does each visual quality live in, and what specific engine node or texture map is probably responsible?</li></ul>
     <div style="background:#FAF5FF;border-radius:8px;padding:12px 16px;font-size:13px;color:#C084FC;font-weight:600;">
-      💡 Pro tip: The fastest professionals don't analyze finished games first — they analyze broken or unfinished ones. Search YouTube for 'game graphics glitch compilation' or 'shader error showcase' because when a system fails visually, it exposes exactly what that system was contributing, giving you a free dissection that no polished screenshot can.
+      💡 Pro tip: The artists who diagnose fastest aren't the ones who know the most techniques — they're the ones who've built a mental library of 'failure signatures,' meaning they've deliberately studied broken, wrong, and buggy assets as much as polished ones, because a stretched UV or a blown-out specular spike teaches you the underlying system faster than a perfect result ever will.
     </div>
   </div>
 </div>
@@ -259,8 +259,8 @@
   <div class="module-header">
     <div class="module-num">2</div>
     <div class="module-info">
-      <h3>The Layer Peel Method: Dissecting Any Game's Visual Stack in 30 Minutes</h3>
-      <p>Transform from someone who sees a finished image into someone who can mentally s...</p>
+      <h3>The 5-Layer Deconstruction Method: Breaking Down Any Environment Into Solvable Technical Problems</h3>
+      <p>Transform the overwhelming visual complexity of any game environment into a clea...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -273,8 +273,8 @@
   <div class="module-header">
     <div class="module-num">3</div>
     <div class="module-info">
-      <h3>Breaking the Observation Loop: Why You Keep Staring at Screenshots Instead of Understanding Them</h3>
-      <p>Transform frustrating 'I can see it but can't explain it' paralysis into a concr...</p>
+      <h3>Killing the Analysis Paralysis: Why You're Stuck and How to Break Through</h3>
+      <p>Turn the moment your brain freezes in front of a complex scene into a systematic...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -287,8 +287,8 @@
   <div class="module-header">
     <div class="module-num">4</div>
     <div class="module-info">
-      <h3>The Shader Archaeology Method: Reverse-Engineering Material Systems From Screenshots Alone</h3>
-      <p>Turn any game screenshot into a complete material blueprint by learning to read ...</p>
+      <h3>The Reverse-Engineer Protocol: Deconstruct Any Shipped Game's Technical Art in 20 Minutes</h3>
+      <p>Turn any shipped game into your personal technical art masterclass by learning t...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -301,8 +301,8 @@
   <div class="module-header">
     <div class="module-num">5</div>
     <div class="module-info">
-      <h3>The 15-Minute Daily Breakdown Habit: Build a Technical Eye That Never Turns Off</h3>
-      <p>Transform random game-playing time into a compounding daily practice that rewire...</p>
+      <h3>The 20-Minute Daily Dissection Habit: Build a Technical Eye That Never Shuts Off</h3>
+      <p>Transform passive game-playing and reference-browsing into an automatic diagnost...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -315,8 +315,8 @@
   <div class="module-header">
     <div class="module-num">6</div>
     <div class="module-info">
-      <h3>When Your Breakdown Hits a Wall: Diagnosing and Fixing Dead Ends in Technical Analysis</h3>
-      <p>Turn frustrating analysis dead ends into diagnostic wins by learning to recogniz...</p>
+      <h3>The Breakdown Protocol: Diagnosing and Recovering from Technical Art Failures</h3>
+      <p>Turn frustrating dead-ends into a repeatable diagnostic process that gets you un...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -329,8 +329,8 @@
   <div class="module-header">
     <div class="module-num">7</div>
     <div class="module-info">
-      <h3>The Analyst's Lifestyle: Building a Permanent Game Tech Obsession That Compounds Over Time</h3>
-      <p>Transform game-playing from passive entertainment into an always-on technical ed...</p>
+      <h3>The Compound Effect: Wiring Technical Diagnosis Into Your Daily Dev Loop Forever</h3>
+      <p>Transform the diagnosis system from a technique you practice into a reflex you c...</p>
     </div>
   </div>
   <div class="locked-overlay">
