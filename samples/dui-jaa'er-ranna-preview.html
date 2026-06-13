@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Bengali Kitchen System: Master 5 Recipes, Cook 20 Dishes (No Wasted Ingredients) - Preview</title>
+<title>The Bengali Kitchen System — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Bengali Kitchen System: Master 5 Recipes, Cook 20 Dishes (No Wasted Ingredients)</h1>
-  <p class="subtitle">A Practical Framework to Build Confidence, Save Time, and Stop Repeating the Same Safe Dishes</p>
-  <div class="for">Created specifically for the audience of <strong>Dui Jaa'er Ranna</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/6544493/pexels-photo-6544493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Dui Jaa'er Ranna viewers</div>
+    <h1>The Bengali Kitchen System</h1>
+    <p>Master Regional Recipes with Consistency and Confidence — A Practical Framework for Home Cooks Who Want Every Dish to Work the First Time</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Dui Jaa'er Ranna - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You've watched the recipe demo three times. You have the ingredients. But when you start cooking, something feels off—the timing doesn't match, you're not sure if you're doing it right, and halfway through you realize you might waste half of what you bought. So you default back to the one dish you know works, and the cycle continues.</p>
-  <div class="promise">This guide breaks that cycle by teaching you a system, not just recipes. You'll learn how to master 5 core Bengali recipes so thoroughly that you can adapt them, combine them, and transform them into 20+ reliable dishes using whatever ingredients you have on hand. More importantly, you'll build the confidence to cook first-time right—no wasted ingredients, no second-guessing, no falling back on the same safe choice.</div>
-  <p>This guide was developed by studying the practical teaching approach of Dui Jaa'er Ranna, translating her demonstration style into a repeatable system for home cooks who want results, not theory.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You are halfway through making a dal that you have cooked a hundred times, and suddenly you cannot remember — was it one teaspoon of panch phoron or two? Did the onions go in before or after the tomatoes? You added a little extra turmeric to correct the color and now the whole pot tastes off. The groceries are used, the time is spent, and dinner is an hour away. This is not a skill problem. This is a system problem. And it happens to capable, experienced home cooks every single day.</h2>
+    <p>This guide gives you a practical kitchen system built around authentic Bengali and Bangladeshi regional recipes — the kind that appear on channels like Dui Jaa'er Ranna, where the cooking is calm, deliberate, and rooted in real household tradition. You will learn how to anchor your ingredient ratios so you stop second-guessing mid-pot, how to sequence your preparation so nothing burns while you are still chopping, how to build a simple weekly meal plan that honors traditional flavors without exhausting your mornings, and how to write down your own household recipe notes in a format you can actually pass to your daughter or younger sister when the time comes. By the end of this guide you will not just know more recipes — you will cook with the settled confidence that comes from having a reliable method behind every dish.</p>
+    <div class="promise">🎯 Execute authentic Bengali recipes reliably on first attempt; build a personal recipe system that works for their household; cook with confidence knowing the dish will turn out well</div>
+    <p class="author-note">A note before we begin: I am not Dui Jaa'er Ranna, and I want to be honest about that from the first page. I am an independent researcher and food systems writer who studies how home cooks — particularly Bengali and Bangladeshi women managing full households — actually learn, remember, and execute traditional recipes under real daily pressure. I put this guide together by studying the cooking methods, sequencing, and ingredient logic demonstrated across the Dui Jaa'er Ranna channel, cross-referencing regional culinary sources, and listening carefully to the struggles real home cooks describe. My job was to organize what already works into a system you can hold in your hands and use tomorrow morning. All credit for the recipes, the calm methodology, and the beautiful domestic care belongs to the creator and her kitchen. I simply built the framework around what she already does so well. Begin with Bismillah, set your niyyah that this knowledge will bring barakah to your family table, and let us start.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you read further, let's prove the system works. You're going to cook your first 'foundation recipe'—a simple, adaptable Bengali curry base that becomes the building block for everything else. This isn't a test. It's proof that you can follow a process and get a delicious, confident result on your first try.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Gather your base ingredients</strong><p>Onion, ginger-garlic paste, turmeric, salt, and any protein or vegetable you have (chicken, lentils, potato, spinach—the system works with all of them). You're not following a rigid ingredient list; you're following a technique sequence.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Execute the three-stage process</strong><p>Stage 1: Soften onions (3 min). Stage 2: Add spices and paste, cook until fragrant (2 min). Stage 3: Add protein/veg and liquid, simmer until done (15-20 min depending on what you're cooking). Write down your timing for each stage.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Taste, adjust, and note what worked</strong><p>Add more salt or spice if needed—this is where confidence builds. Note down exactly what you used and how it turned out. This becomes your reference for next time.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page, do this one exercise. It will immediately solve the most common reason a familiar recipe fails — the moment mid-cooking when your memory goes blank and you make a guess that throws the whole dish off. This works for any Bengali dish you already cook regularly. You need a pen, one sheet of paper, and about thirty minutes of quiet. Consider sitting after Asr or any prayer time when your mind is already settled — that natural pause is a perfect reset for focused work like this.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: A complete, satisfying dish that tastes intentional and delicious. More importantly: proof that when you follow a process instead of panicking about instructions, cooking becomes reliable. You'll understand why each step matters, which means you can adapt it tomorrow with different ingredients.
+  <div class="step"><div class="step-num">1</div><div><strong>Choose one dish your family eats at least twice a month and write down every ingredient from memory right now — amounts and all.</strong><p>Do not open a recipe. Do not check your phone. Write what you believe you know. This is not a test you can fail — it is a map of exactly where your memory is solid and where the gaps are hiding. Most cooks find they remember the main ingredients perfectly but go vague on the spice sequence, the water ratio, or the order things enter the pot. Those gaps are precisely where confident cooking breaks down. Write freely for ten minutes, then circle anything where you felt uncertain or had to guess.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Now look up the recipe — from the Dui Jaa'er Ranna channel or your most trusted source — and mark every place your memory differed from what the recipe actually says.</strong><p>Pay particular attention to three things: the moment each spice enters the pot, the quantity of water or liquid added, and how long the onions or base are cooked before the main ingredient joins. These three points are responsible for the majority of inconsistent results in Bengali home cooking. You are not looking for mistakes to feel bad about — you are identifying the exact two or three details that, once memorized correctly, will make this dish reliable every single time you cook it.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write a clean, corrected version of just that one recipe on a fresh sheet of paper in your own words, including the corrected details, and put it somewhere in your kitchen you will actually see it.</strong><p>This one sheet is the beginning of your household recipe system — what this guide will help you build fully over the coming pages. Inside a cabinet door, tucked beside your spice rack, or slipped into the front of a notebook works well. The goal is that next time you cook this dish, the answer to your mid-cooking question is already visible before you even need to ask it. Many women who do this simple exercise find they cook that particular dish more calmly within the very next attempt — not because the recipe changed, but because the uncertainty was removed before the oil even hit the pan.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: By the end of this thirty minutes you will have identified the two or three specific details that were quietly undermining one of your most familiar dishes, and you will have a written reference that makes your next attempt noticeably more settled and consistent. That feeling — cooking without the low hum of uncertainty — is exactly what this entire guide is designed to give you across every dish in your weekly rotation.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Niyyah-to-Nihari Framework: Build Your Kitchen System Before You Touch a Spoon</h3>
+      <p>Transform your daily cooking from reactive guesswork into a calm, intentional system rooted in Bengali tradition — so every meal feels like a choice, not a crisis.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Before you ever open a recipe, the single biggest reason your biryani turns out different every time or your dal tastes flat on Tuesday isn't skill — it's that you're making 40 small decisions under pressure with hungry children behind you, and that mental load is destroying your consistency. The Bengali Kitchen System starts with what we call your Anchor Dishes: identify the 7-10 dishes your family eats most weeks (think rohu maacher jhol, daal-bhaat, dim bhuna, begun vorta) and accept that mastering these with locked ratios and a fixed sequence is more valuable than knowing 50 recipes loosely — this is ilm with purpose, not just cooking. Just as your five daily salah give structure to your entire day, your Anchor Dishes become the skeleton of your weekly meal plan, and everything else — the special occasion dishes, the Dui Jaa'er Ranna showstoppers — hangs off that skeleton without chaos. Start every cooking session with Bismillah and a genuine niyyah that you are nourishing your family as an act of worship, because that single shift in intention turns the frustration of a failed curry into a learning moment rather than a failure, and that mindset is the actual foundation this whole system rests on.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, write down 7 dishes your family eats almost every week without fail — not aspirational dishes, the real Tuesday-night meals — this is your personal Anchor Dish list and the entire system is built on this list</li><li>For just ONE dish from that list (pick the one you make most), write down from memory the sequence you follow and the approximate ratios you use, then note every point where you feel unsure or where it 'sometimes works' — those gaps are exactly what Module 2 will fix</li><li>Set a Bismillah reminder on your phone for 10 minutes before your main cooking time each day — not an alarm, a reminder with the word Bismillah written — so you begin with intention rather than panic, and over one week notice whether this single habit changes your focus in the kitchen</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Most Bengali home cooks try to improve by learning more recipes, but your real problem is not a recipe shortage — it is recipe debt, meaning you have too many half-learned dishes competing for mental space, so before this course is over you will actually need to temporarily stop trying new recipes and go aggressively deep on fewer dishes, because barakah in cooking, like barakah in any work, comes from focused mastery not scattered effort.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Bengali Pantry Foundation: Building Your No-Waste Ingredient System</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Bengali Ingredient Mapping System: From 5 Base Recipes to 20 Dishes</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Bengali Ingredient Map: Strategic Prep & Storage for Zero Waste</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Bengali Ingredient Bridge: Transform Leftover Components Into 5 New Dishes</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Bengali Mise en Place Mastery: Prep Like a Pro Without Waste</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Bengali Pantry Rotation System: Never Waste Ingredients Again</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Bengali Kitchen Command Center: Your Personal Recipe Execution System</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Bengali Flavor Architecture: Building Every Dish on the Same 3-Layer Foundation</h3>
+      <p>Once you understand that virtually every Bengali dish — from a simple aloo bhort...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to Execute recipes confidently first-time with available ingredients; build a rotation of 20+ dishes that work reliably; save time and reduce food waste; gain cooking confidence through repeatable process</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Dui Jaa'er Ranna</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Breaking the Blocks: Why Your Bengali Cooking Keeps Failing (And the Fixes That Actually Work)</h3>
+      <p>Identify the exact obstacles sabotaging your consistency in the kitchen and repl...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Dui Jaa'er Ranna community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Masala Mind Map: How to Cook by Instinct, Not by Panic</h3>
+      <p>Stop measuring everything twice and start reading your pot like an experienced B...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Bengali Kitchen Daily Rhythm: Build a Repeatable System Around Your Prayer Times</h3>
+      <p>Transform your cooking from reactive daily stress into a calm, barakah-filled rh...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When the Curry Goes Wrong: Your Bengali Kitchen Rescue Plan</h3>
+      <p>Transform cooking disasters into learning moments so a curdled korma or over-sal...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>From Student to Keeper: Making Bengali Kitchen Mastery Your Permanent Identity</h3>
+      <p>This module transforms everything you've learned from a temporary effort into a ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
