@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Language Learner's Daily Operating System: 90-Day Fluency Sprint Without Burnout - Preview</title>
+<title>From B1 to University-Ready: The German Mastery Roadmap — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Language Learner's Daily Operating System: 90-Day Fluency Sprint Without Burnout</h1>
-  <p class="subtitle">A systems-based approach to retain 20+ words weekly, track measurable progress, and sustain 45+ minutes of focused study daily</p>
-  <div class="for">Created specifically for the audience of <strong>Language Pantheon</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/6503155/pexels-photo-6503155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Language Pantheon viewers</div>
+    <h1>From B1 to University-Ready: The German Mastery Roadmap</h1>
+    <p>Your Exam + Speaking Success Blueprint for TestDaF, DSH, and Beyond — Built for International Students Who Are Done Guessing</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Language Pantheon - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You already know consistency matters. You've probably read that too. The real problem isn't motivation—it's that you don't have a reliable operating system for your language learning. Without one, you're running the same failed experiments repeatedly: sporadic study sessions, vocabulary that evaporates, no way to distinguish what's actually working from what's wasting your time.</p>
-  <div class="promise">This guide gives you a repeatable daily system built on three pillars: structured input management (what you study and when), active retention mechanics (how your brain actually holds information), and measurement protocols (knowing exactly what progress looks like week-to-week). The system is engineered to avoid burnout through strategic cognitive load distribution—the same principle that prevents system crashes in complex software. You'll hit 20+ words retained weekly, measurable weekly progress milestones, and sustain focused study without the crash-and-recover cycle.</div>
-  <p>This guide synthesizes research from applied linguistics, cognitive science, and learning systems design. It's based on what works, not what sounds motivational.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You have been studying German for months. You know the Konjunktiv II rules. You can explain the difference between Akkusativ and Dativ. You have gone through apps, YouTube channels, maybe even a few textbooks. And yet — the moment someone asks you a real question in German, everything freezes. The words vanish. You reach for a sentence and what comes out sounds like a grammar exercise, not a human being. Meanwhile, your university application deadline is not moving. The DSH or TestDaF exam is not waiting. And somewhere in the back of your mind is a question that keeps getting louder: am I even preparing for the right exam? This is not a motivation problem. This is a roadmap problem. And this guide exists to fix exactly that.</h2>
+    <p>What you are holding is not another vocabulary list or grammar summary. This is a structured, stage-by-stage pathway built specifically for students at your level, with your goal, facing your exact obstacles — whether that is breaking through the B1 plateau that has swallowed months of your effort, choosing between TestDaF versus DSH versus Goethe so you stop wasting preparation time on the wrong certification, or finally moving from knowing German to speaking German with the kind of confidence that holds up in a university seminar or a professional setting in a German-speaking country. You will finish this guide knowing precisely where you are, exactly where you need to go, and the specific steps that connect the two. No fragmented app-hopping. No more studying hard in the wrong direction. A real pathway, clearly marked, with checkpoints you can actually measure.</p>
+    <div class="promise">🎯 Clear, accelerated pathway from current level to exam success and German university/professional readiness with practical speaking confidence</div>
+    <p class="author-note">A note before you begin: this guide was researched and written by an independent language education researcher, not by the Language Pantheon team directly. I came to this project as someone who spent considerable time studying how international students from South Asia, the Middle East, and Southeast Asia actually navigate the German language learning journey — what breaks them through and what keeps them stuck. I have spent time with the Language Pantheon community, watched the seminars on unlocking your future in Germany, sat with the exam guidance sessions comparing Goethe, TELC, ÖSD, DSH, and TestDaF, and paid close attention to what questions kept coming back. This guide is my honest attempt to synthesize that knowledge into something you can act on immediately. I have tried to write it the way a knowledgeable friend would speak to you — directly, practically, and with genuine respect for the effort you have already put in. Bismillah. Let us get you moving.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before committing to the full 90-day system, you'll set up your baseline measurement protocol and run your first retention cycle. This establishes the foundation every other component depends on.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Audit your current study materials</strong><p>List every resource you're currently using (app, textbook, podcast, etc.) and the daily time you spend on each. Don't estimate—be exact. This reveals your actual input sources and where your time actually goes versus where you think it goes.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Extract 20 high-frequency words from your target language at your current level</strong><p>Pick words you encounter regularly but haven't reliably retained (typically A1-A2 range words you've 'learned' multiple times). Write them with one context sentence each. These become your first retention test batch.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Create your baseline measurement spreadsheet</strong><p>Set up three columns: Word | First Exposure Date | Retention Check Results. Today is Day 0. You'll check retention on Days 1, 3, and 7. This becomes your weekly tracking system going forward.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page of this guide, do this exercise. It takes thirty minutes, requires nothing except a pen, paper, and your phone, and it will give you something most B1 learners never have — a clear, honest picture of exactly which gap is costing you the most. Make your niyyah before you start: this thirty minutes is not casual scrolling, it is purposeful ilm, and focused work done with intention carries its own barakah. Sit after any prayer, close distracting tabs, and begin.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You'll have a measurable baseline of which words you actually retain after one week using your current study method. This data point is critical—it shows you whether your existing system produces results or not. Most learners discover their current approach retains only 30-40% of studied words. From there, the full system shows you why and fixes it.
+  <div class="step"><div class="step-num">1</div><div><strong>Run your personal German speaking stress test</strong><p>Set a timer for ten minutes. Choose one of these three prompts — describe why you want to study in Germany, explain what you did last week, or give your opinion on whether students should work part-time during their studies. Speak out loud in German and record yourself on your phone. Do not stop to correct yourself. Do not restart. Speak for the full ten minutes even if it feels uncomfortable and even if you mix in English words or go silent for a few seconds. This recording is private and it is honest data, not a performance. When the timer ends, play it back once and note three specific moments where you froze, switched languages, or felt your grammar knowledge fail to connect with your actual speech. Write those three moments down exactly. This is your personal speaking gap map.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Match your goal to the correct exam in under ten minutes</strong><p>Take a clean sheet of paper and write your actual goal at the top — specific university name if you have one, or the type of institution and country. Now ask yourself three questions and write the answers: Does the university specifically list DSH or TestDaF as accepted, or do they accept both? Is your target program at a Studienkolleg, a Bachelor's level, or a Master's level? Do you need your result within the next six months or do you have more time? Cross-reference this against the simple rule you will find detailed in the exam chapter of this guide: DSH is typically taken at the university itself and is institution-specific, TestDaF is taken at certified centers and accepted nationally and internationally, and Goethe certificates serve visa and general purposes more than direct university admission. If after these three questions you still feel uncertain, write that uncertainty down — that is your exam clarity gap and this guide addresses it directly in the certification roadmap section.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Build your ten-day micro-sprint plan right now</strong><p>Look at the three speaking moments you wrote down in step one. Pick the single most recurring pattern — was it missing vocabulary for abstract ideas, was it Konjunktiv II collapsing under pressure, was it noun-verb combinations sounding mechanical, or was it simply the freeze response before you had even formed a sentence? Set a ten-day micro-sprint around that one pattern only. For each of the next ten days, commit to one twenty-minute focused session targeting that specific gap — not general studying, not app streaks, not passive listening, but deliberate work on that exact weakness. Write today's date at the top of the page and the ten dates below it. Block the time now. If it helps, anchor each session to a consistent prayer time so the habit has a natural trigger built into your day already. This single decision — narrowing your focus to one real gap for ten days — will move you further than another month of scattered preparation.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After thirty minutes you will have three things you did not have before: an honest recording that shows you exactly where your speaking breaks down rather than where you imagine it does, a clear and reasoned answer to which exam actually serves your specific university or professional goal, and a written ten-day plan targeting your single highest-leverage weakness. This is not motivation. This is direction. And direction is what turns months of effort into actual results.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The B1 Trap: Why You're Studying Hard But Going Nowhere (And the Framework That Fixes It)</h3>
+      <p>You'll finally understand why your current study approach is keeping you stuck at intermediate level, and replace it with a goal-anchored system that turns every hour of effort into real, measurable progress toward your German university or job dream.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most students from South Asia, Southeast Asia, and the Middle East reach B1 and hit a wall not because of ability, but because they're studying German in general instead of studying German for something specific — and there's a massive difference between cramming vocabulary lists and building the language muscles you need to survive a DSH oral exam or a Studienkolleg interview. Language Pantheon's own content gives you the blueprint: the channel covers everything from Studienkolleg admission guidance to the exact difference between Goethe, TELC, ÖSD, DSH, and TestDaF — but most students consume this content passively instead of using it to build a personal roadmap anchored to one clear destination. Your first move is to treat this journey as an act of ibadah — the Prophet ﷺ taught us that seeking knowledge (ilm) is an obligation, and when you make the niyyah that your German mastery is your means of building a halal future, studying stops feeling like a burden and starts carrying barakah. The framework that unlocks everything is simple: one target exam, one target date, one daily non-negotiable practice — everything else, including idioms like 'Kein Schwein ruft mich an' and real speaking confidence, gets built on top of that clear foundation.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open a notes app right now and write your specific goal in one sentence — not 'learn German' but 'pass TestDaF TDN 4 by March 2026 to enter TU Munich' — this single act separates students who progress from those who plateau indefinitely</li><li>Visit the Language Pantheon video 'Which Exam is right for you? Goethe, TELC, ÖSD, DSH, TestDaF' today and pause after each exam description to honestly ask whether that exam serves your actual university or job goal, then commit to one exam in writing</li><li>Set a 25-minute 'German block' immediately after one of your five daily prayers — Asr works beautifully for many students — so your deen literally structures your discipline and you never have to negotiate with yourself about when to study</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Stop trying to 'improve your German overall' — that mindset is exactly why B1 students stay at B1 for years; every single resource you touch, from Language Pantheon's speaking videos to grammar posts, must be filtered through one question: 'Does this directly help me perform better in my target exam or real-world context?' — ruthless specificity, not broad effort, is what creates the jump from B1 to university-ready.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Consistency Architecture: Building Your Non-Negotiable Language Ritual</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Consistency Architecture: Building Unbreakable Daily Habits Without Willpower</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Momentum Stack: Building Unbreakable Daily Chains Without Willpower</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Momentum Loop: Converting Inconsistency into Compounding Wins</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Consistency Architecture: Building Systems That Run Without Willpower</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Momentum Loop: Breaking Through Plateaus with Micro-Wins and Pattern Interrupts</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Momentum Loop: Converting Plateaus Into Compound Breakthroughs</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Grammar-to-Speech Bridge: Stop Knowing German and Start Using It</h3>
+      <p>You'll rewire how your brain connects written grammar rules to real spoken sente...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to A repeatable daily system that guarantees 20+ words retained weekly, measurable weekly progress (reading level increase, speaking confidence milestone), ability to study 45+ focused minutes daily without burnout</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Language Pantheon</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Breaking the Plateau: Why You're Stuck at B1 and the Exact Moves to Get Out</h3>
+      <p>Identify the hidden saboteurs killing your German progress and replace them with...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Language Pantheon community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>Break the Plateau: Advanced Output Techniques That Force Real Fluency</h3>
+      <p>You stop passively absorbing German and start aggressively producing it — turnin...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 4-Prayer-Block Day: Your Unbreakable German Daily System</h3>
+      <p>Stop studying randomly and start running a repeatable daily system that uses you...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>Stuck, Burnt Out, or Falling Behind? Your German Recovery Protocol</h3>
+      <p>When the plateau hits hard and motivation collapses, this module gives you the e...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>German for Life: Turning a Study Phase into a Permanent Identity</h3>
+      <p>This module transforms German from a temporary exam goal into a living part of w...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
