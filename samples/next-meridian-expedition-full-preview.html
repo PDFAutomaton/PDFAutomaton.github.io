@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Overland Blueprint — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/7303800/pexels-photo-7303800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Next Meridian Expedition viewers</div>
+    <h1>The Overland Blueprint</h1>
+    <p>Build Your 4-Year Adventure While Keeping Your Life Together</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You've watched the footage. Maybe it was a Defender grinding up the road to Lhasa, or a pair of motorbikes somewhere deep in Namibia with nothing but red dirt in every direction. You felt something shift — that specific, uncomfortable recognition that your life is happening somewhere other than where you're sitting right now. So you opened a new tab. Maybe a spreadsheet. Maybe a Reddit thread titled 'how do people actually afford to do this.' And then, somewhere between the visa requirements and the insurance rabbit hole and the quiet calculation of how many years of savings you'd need, the tab got closed. Not because the dream died. Because the project felt impossible to start. That's not a motivation problem. That's a planning problem. And planning problems have solutions.</h2>
+    <p>This guide is not going to tell you to quit your job, sell everything, and trust the universe. That advice costs nothing to give and even less to follow badly. What it will give you is the unglamorous, unsexy project management framework that sits behind every long-haul expedition you've ever admired — the same kind of structured thinking that turns a vague four-year fantasy into a dated timeline, a defensible budget, and a first concrete action you can take this week without blowing up your career, your relationship, or your savings account. By the time you finish this, you'll know exactly how to break a multi-year overland project into phases, how to calculate what it actually costs versus what the Instagram version makes you think it costs, and how to build enough momentum in the boring middle stretch — the visa processing, the vehicle sourcing, the funding gaps — that you don't quietly abandon the whole thing by February.</p>
+    <div class="promise">🎯 Execute a meaningful multi-month or multi-year adventure project while maintaining financial stability and relationships</div>
+    <p class="author-note">A note on who wrote this: I'm not the person behind Next Meridian Expedition, and I want to be upfront about that. I'm a researcher and writer who has spent an uncomfortable amount of time studying how long-form adventure projects actually get built — not the highlight reel, but the planning architecture underneath it. I've pulled apart the real logistical decisions documented across four years of overland travel, cross-referenced them with project management frameworks, and tried to write the guide I genuinely wish existed when I first started asking 'but how do people actually do this.' Everything here is grounded in real-world expedition decisions — the border crossings that required months of preparation, the route pivots that had to happen fast, the funding models that held and the ones that didn't. I've tried to write like someone who respects your intelligence and your time. If something doesn't land, that's on me, not the framework.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">The single biggest reason overland projects never leave the planning phase is that the first step feels too large to touch. So here is one that isn't. In the next 30 minutes, you are not going to plan a four-year expedition. You are going to do the one thing that separates people who eventually go from people who permanently intend to — you are going to make the project real on paper by building your Expedition Anchor Document. This is a single-page file that forces you to translate the vague feeling into four specific, answerable questions. It sounds almost insultingly simple. Do it anyway.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Open a blank document and write your honest constraint ceiling</strong><p>Not your dream version — your actual version. Set a timer for 10 minutes and write down three numbers without Googling anything: the rough monthly income you could not go below without genuine hardship, the maximum number of months you could realistically be away from your current obligations in the next four years if you planned carefully, and the one relationship or responsibility that would need the clearest agreement before this could happen. These numbers do not have to be comfortable. They just have to be honest. This is the container your expedition has to fit inside — and knowing the container is the first real planning move you can make.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Name the route in one sentence, even if it's wrong</strong><p>Give yourself 10 minutes to write a single sentence that describes the expedition in geographic terms. It doesn't need to be final. It needs to exist. Something like: 'Overland from Western Europe through Central Asia to Southeast Asia over 14 months in a capable 4x4' is enough. The route will change — anyone who spent time planning Tibet access in the last four years will tell you that immediately. But a named, directional project behaves completely differently in your brain than an unnamed fantasy. It becomes something you can research, price, and build a phase structure around. Write the sentence. You can revise it a hundred times. You cannot revise a blank page.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Identify your single nearest decision and write it down</strong><p>Spend the final 10 minutes answering this question honestly: what is the one decision, if you made it in the next 90 days, that would make the expedition more real than it is today? Not the biggest decision — the nearest one. For some people it's 'research and shortlist three vehicle options.' For others it's 'have one honest conversation with my partner about what this would actually require.' For others it's 'calculate what 18 months of budget travel actually costs using real expedition data rather than best-case estimates.' Write the decision down, write the 90-day deadline next to it, and save the document somewhere you will see it. This is now a project. Projects move. Fantasies don't.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: You will finish this exercise with a one-page document that contains your real constraints, a named route, and a single committed next decision with a deadline. It will feel underwhelming. That is exactly correct. The gap between people who complete four-year expeditions and people who watch them is rarely talent or money or courage — it is the willingness to do the undramatic foundational work before the exciting part begins. You just did the first piece of it.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The 4-Year Frame: How to Think About This So You Actually Start</h3>
+      <p>Shift from dreaming about overlanding to treating it as a structured multi-year project with a start date, so fear stops being a reason to wait and becomes fuel to plan smarter.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The guys behind videos like 'Overlanding TIBET: The BEST Road We've Driven in 4 Years' and '3500KM across Namibia on Motorbikes' didn't quit their lives overnight — they picked a horizon date 3-4 years out and reverse-engineered every financial, logistical, and psychological obstacle back to decisions they could make this week. Your brain treats 'someday I'll overland Central Asia' as a fantasy, but 'October 2028 departure, Defender crossing into Nepal via the Friendship Highway' as a project — and projects get resourced, scheduled, and executed. The single most effective mindset reframe is to stop asking 'can I afford this life' and start asking 'what would need to be true by month 18 for this to be inevitable' — because that question forces you into systems thinking instead of permission-seeking. Analysis paralysis isn't a personality flaw, it's what happens when the goal is too vague to act on, so your job in this module is to compress your abstract adventure dream into one specific sentence that includes a vehicle, a region, and a year.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Write one sentence today in this exact format: 'By [month, year] I will be overlanding [specific region] in a [vehicle type]' — post it somewhere you see daily, not in a notes app you'll never open</li><li>Open a calendar and block the single weekend 6 months from now that you will use exclusively to run your first full financial audit for the trip — treat it like a flight you've already booked and cannot miss</li><li>Find and watch Next Meridian's 'Everything You Need to Know about OVERLANDING' video, but this time pause after every major decision point and write down the equivalent decision you'll need to make — you're building your first project checklist, not just consuming content</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Don't start with the vehicle or the gear — start with the relationship audit. Every failed long-term overland plan collapses at a human variable, not a mechanical one: a partner who wasn't bought in, a family obligation that wasn't negotiated early, or a work situation that was assumed to be flexible. The crew filming '22 years searching for a family home in Nepal' weren't just navigating roads — they were navigating years of aligned commitment. Have the uncomfortable conversation with whoever shares your life before you spend a single hour researching roof tents.
+    </div>
+  </div>
+</div>
+
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Overland Operating System: Build the Planning Stack That Took Next Meridian 4 Years to Perfect</h3>
+      <p>Transform your scattered Pinterest boards and YouTube rabbit holes into a ruthless, executable system that bridges the gap between watching someone drive a Defender to Lhasa and actually sitting in the driver's seat yourself.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The reason most overland dreams die isn't money or time — it's the absence of a tiered planning architecture that separates vision from logistics from daily execution, which is exactly why you can watch every episode of someone crossing Namibia on motorbikes and still not move an inch toward doing it yourself. Build three distinct layers: a Route Master (a live document covering your 4-year geographic arc broken into 6-month chapters, from the UK or Australia to Central Asia to the Indian subcontinent, with hard border crossing research attached to each leg), a Resource Stack (a single spreadsheet tracking vehicle costs, visa timelines, insurance windows, and savings rate with a real departure date as the anchor), and a Weekly Action Block (a non-negotiable 90-minute session where you make one concrete decision — not research, a decision — like booking a pre-trip shakedown run or calling your insurance broker about international coverage). The system only works if these three layers sync, meaning your weekly action must move something in your resource stack, which must shrink the unknowns in your route master, because ambiguity is what feeds analysis-paralysis and the only cure is forced specificity.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open a Google Doc right now titled '[Your Name] Overland Master — [Target Departure Year]' and write three geographic chapters for your 4-year arc (e.g. Europe to Central Asia, Central Asia to Indian subcontinent, India to Southeast Asia) — each chapter needs one hard logistical question written under it that you must answer before that leg is locked</li><li>Build your Resource Stack spreadsheet today with five columns: Expense Category, Current Status, Target Number, Deadline, and Owner — populate at least the vehicle, insurance, and initial savings rows with real figures even if they feel embarrassing, because a brutal honest number beats a vague dream every time</li><li>Schedule your first Weekly Action Block for this week — put it in your calendar as a recurring 90-minute block, and for session one your only job is to identify the single biggest logistical unknown blocking your departure (visa complexity, vehicle choice, family conversation) and make one phone call, send one email, or post one specific question in an overlanding forum to crack it open</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Stop researching destinations and start researching departure blockers — the Next Meridian crew didn't get to Tibet by perfecting their route knowledge, they got there by systematically eliminating every reason they couldn't leave, so flip your planning energy 80% toward obstacle removal and only 20% toward destination dreaming until your departure date is locked in writing.
+    </div>
+  </div>
+</div>
+
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The Five Walls: Dismantling Every Excuse Standing Between You and the Road</h3>
+      <p>Identify and systematically dismantle the real obstacles killing your overland dream before they calcify into permanent regret.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The five walls that stop most people are identical regardless of whether they're dreaming of driving a Defender through Tibet or crossing Namibia on motorbikes: financial fear, relationship resistance, career consequence, vehicle complexity, and the silent killer — indefinite preparation. Financial fear is almost always based on imagined costs rather than researched ones, so your first move is always to price the actual thing, because the real number is usually 40% less terrifying than the invented one. Relationship resistance from partners, parents, or colleagues collapses fastest when you show a concrete plan rather than a vague dream, because people don't fear your adventure — they fear your lack of preparation for it. Vehicle complexity and route logistics are genuine challenges, but they're solved with a 4-year timeline, not a 4-month one — the overland community that crossed Tibet on that exact road already documented every problem you're afraid of, and that information is free.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Write down your top three 'blocking' obstacles right now, then spend 20 minutes finding one real person online who had that exact obstacle and left anyway — search YouTube comments on overland Tibet or Namibia trip videos to find them</li><li>Build a one-page 'Reality Check Sheet': list your feared cost, research the actual monthly budget from documented overlanders in your target region, and calculate the gap — most people discover their imagined budget is 30-50% inflated</li><li>Have the real conversation you've been avoiding — partner, boss, or financial advisor — but frame it around the 4-year timeline and one specific route milestone, not an open-ended 'I want to leave everything' speech</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The wall that looks financial is almost always psychological — people who solve the money math first still don't leave, because the real blocker was never the number. Fix the story you're telling yourself about who gets to do this before you build another spreadsheet.
+    </div>
+  </div>
+</div>
+
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Expedition Stack: Compressing 4 Years of Logistics Into a System You Can Run in 20 Minutes a Week</h3>
+      <p>Stop drowning in spreadsheets and Reddit rabbit holes — this module gives you the exact decision-making architecture that lets serious overlanders like the Next Meridian crew manage Tibet permit timelines, Namibia border crossings, and Nepal trekking logistics without quitting their day jobs.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The reason most overland plans collapse isn't money or time — it's decision fatigue from treating every logistical problem as equally urgent, which is why you need to build what operators call a 'tiered decision stack': categorize every task as a 24-hour decision (visa applications with hard windows, like the restricted Tibet permits that require 6-8 weeks minimum lead time), a 30-day decision (vehicle modifications, insurance renewals, route waypoints), or a 'when conditions are right' decision (wild camping spots, border crossing timing based on seasonal intel). The Next Meridian approach visible across their India and Nepal content isn't spontaneous — it's systematic optionality, meaning they've pre-researched multiple contingency routes so when Nepal hides its mountains or a land border crossing gets complicated, the decision is already 80% made before the situation arises. Build your own 'route intelligence file' for each country on your list: one document per destination covering overland entry points, vehicle import requirements, fuel availability gaps over 300km, and one 'local fixer' contact sourced from overlanding Facebook groups or iOverlander — this single habit collapses weeks of future research into a 20-minute weekly review session. Run this review every Sunday, update your stack, and you'll arrive at your departure date with a plan that's been stress-tested 200 times in your living room before it ever gets tested on the road to Lhasa.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open a new document right now and create your first 'Route Intelligence File' for the one country on your list that scares you most logistically — add three headers: Entry Points, Vehicle Requirements, Critical Lead Times — and spend 20 minutes populating it using iOverlander and one relevant overlanding Facebook group</li><li>Audit your current overland to-do list and tag every item as 24-hour, 30-day, or 'when conditions are right' — if you don't have a list yet, write down every open question about your trip and tag those instead, because naming the decision tier immediately kills 60% of the paralysis</li><li>Identify one 'hard window' logistical item on your route (Tibet permits, Carnet de Passage applications, India vehicle import paperwork) and set a calendar reminder 10 weeks before your target departure to initiate that process — most overland trips fail at the planning stage because this single item gets discovered too late</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The most counterintuitive move serious overlanders make is planning their hardest border crossing or most restricted destination first, not last — because permits for places like Tibet or restricted Himalayan zones have fixed processing windows that don't care about your readiness, and building your entire 4-year timeline backwards from that hard constraint produces a more realistic and executable plan than starting with the easy wins and hoping the hard stuff fits at the end.
+    </div>
+  </div>
+</div>
+
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Daily 20: The Non-Negotiable Routine That Moves Your Overland Dream Forward Every Single Day</h3>
+      <p>Replace scattered weekend bursts of planning with a daily 20-minute system that quietly compounds into a fully funded, fully planned overland expedition without blowing up your career or your family.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The reason most overland dreams die isn't a lack of motivation — it's that planning happens in unsustainable all-or-nothing weekend binges that burn you out and produce nothing actionable; instead, split your daily 20 minutes into three fixed micro-blocks: 7 minutes of financial tracking (checking your dedicated expedition fund, logging any new gear research prices, updating your visa/border cost spreadsheet for regions like Tibet or Namibia where costs shift constantly), 8 minutes of route or logistics research (one specific task only — today's job might be reading one firsthand report on the Nepal-Tibet land border crossing, not the entire Himalayan route), and 5 minutes of community intelligence (one targeted question posted or answered in overlanding forums, or watching one short segment of a route-relevant video to extract one usable data point). The compounding effect here is brutal and real: 20 minutes daily over 4 years is over 480 hours of focused expedition-building, which is more than enough to have driven research, budgeting, mechanical training, and gear acquisition to a point of genuine readiness — the people who actually leave for a Defender trip to Lhasa or a 3,500km Namibia moto run didn't plan harder, they planned more consistently. Guard these 20 minutes like a bill payment: put them in your calendar as a recurring appointment, keep a single running document called your Expedition Log where every session adds one line of progress, and never let a day produce zero output even if that output is just confirming one piece of information you already suspected.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open your calendar right now and block 20 minutes every weekday morning (or lunch break) labeled 'Expedition Build' — pick the same time slot you'd never miss, like right after your first coffee, and protect it for 30 days minimum</li><li>Create your Expedition Log today: a single Google Doc or Notion page with three columns — Date, Task Completed, Next Open Question — then fill in today's row with whatever your current biggest unknown is (visa requirements for a land border crossing, realistic monthly budget for overlanding Southeast Asia, or which specific gear upgrade to prioritize next)</li><li>For the next 7 days, use your 8-minute research block on one hyper-specific topic only: pick one border crossing or region on your target route and find three firsthand accounts from overlanders who crossed it in the last 24 months, extracting only timing, cost, and any surprises that didn't show up in official guidance</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Delete overland content from your passive entertainment rotation entirely and reclassify it as active research — when you watch something covering a route you're targeting, you watch it once with your Expedition Log open and extract at least one concrete data point (a campsite GPS reference, a border wait time, a fuel availability note), because consuming overlanding content as entertainment is the most comfortable way to feel productive while making zero actual progress toward leaving.
+    </div>
+  </div>
+</div>
+
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When It All Goes Sideways: The Overlander's Recovery Playbook</h3>
+      <p>Transform every breakdown, budget blowout, and family meltdown from a trip-ender into a detour you'll laugh about later.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Every serious overlander — including the Next Meridian crew who watched their Tibet timeline collapse waiting on permits, or pushed through mechanical chaos across 3,500km of Namibian gravel — operates on a principle most planners miss: the plan isn't the trip, the recovery is. When your budget takes a hit, your first move isn't to cut the adventure, it's to audit the next 90 days for one high-ROI sacrifice (a work sprint, a freelance contract, selling gear you've been 'meaning to use') that buys back momentum without touching your core timeline. When family or work pressure spikes and threatens to derail everything, you're not negotiating the dream — you're negotiating the schedule, which is a completely solvable logistical problem, not an existential one. Build a 'Red File' right now: a single document containing your insurance contacts, emergency fund threshold, a pre-written 3-month pause protocol, and a list of five people who've agreed in advance to be your reality-check board when fear disguises itself as reason.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Build your Red File today — open a Google Doc, title it 'Recovery Protocol', and fill in your emergency fund floor number, your insurance policy reference, and one person you'll call before making any panic-driven decision about the trip</li><li>Map your top three most likely failure points (money shortfall, work contract extension, vehicle issue) and write one specific 'if this happens, I do THIS' response for each — not a vague plan, a named action with a timeline</li><li>Reframe your last 'this is impossible' moment in writing: identify whether it was a genuine logistical wall or an emotional reaction, then list the one thing that would have changed your read of the situation — this builds the diagnostic muscle you'll use on the road</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The overlanders who finish four-year expeditions aren't the ones who avoided problems — they're the ones who pre-decided that a problem only has 72 hours to be a crisis before it becomes a project; set a literal calendar rule that no setback gets more than three days of reactive energy before you switch to solution mode, because the Nepal heartbreaks and the India surprises only become the best stories when you stayed in the game long enough to write them.
+    </div>
+  </div>
+</div>
+
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Permanent Shift: How to Stop Treating This Like a Trip and Start Living Like It's Your Life</h3>
+      <p>Transform the 4-year overland journey from a one-time escape into the actual architecture of your existence — so returning to a desk job becomes the exception, not the default.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The biggest mistake overlanders make after years like the Tibet run or 3,500km across Namibia is mentally framing the road as a 'phase' that eventually ends — which guarantees the gravitational pull of old obligations will eventually win. Instead, rebuild your identity infrastructure now: update how you introduce yourself, restructure your income streams around location-independence before the trip ends, and build a small audience around your journey because even modest revenue from documenting your overland life creates a financial permission structure that makes 'going back' economically irrational. After 4 years on the road, the returning overlander's worst enemy isn't money or logistics — it's the lack of a social environment that normalises what they're doing, so deliberately cultivate relationships with people already living this way, whether that's the overlanding community at border crossings into India or the network of long-haulers you meet on Nepal treks, because your peer group will determine your baseline more than any spreadsheet will. Treat sustainability like a systems engineering problem: build redundancy into your vehicle maintenance knowledge, your income sources, and your emotional resilience protocols, so that one breakdown in a remote Tibetan plateau or one expensive visa setback doesn't collapse the entire operation.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Write a one-paragraph 'operating model' for your life — not a bucket list, but a document that describes how you generate income, manage a home base or lack thereof, and handle obligations like healthcare and family contact — then identify the single biggest structural gap between that model and your current reality and take one concrete step to close it this week</li><li>Go through your last 90 days of expenses and tag every cost as either 'location-dependent' or 'location-independent' — your goal is to get location-dependent costs below 30% of your total spend, and for anything above that threshold, write down one specific action that would convert or eliminate it</li><li>Find and message three people who are currently 2-5 years ahead of you on a similar overland path — not influencers with millions of followers, but real operators documenting journeys comparable to the Defender through Tibet or the Nepal overland routes — and ask them one specific question about how they've structured their life to make this permanent rather than temporary</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The overlanders who quit after one big trip almost always had a 'return plan' — those who never stop never made one. Don't plan your re-entry into conventional life; instead, design your next expedition before the current one ends, because a booked next departure is the most powerful psychological commitment device ever created and it costs you nothing to make it.
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
