@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Diaspora Friendship Code: Build Your Ride-or-Die Crew While Staying True to Your Culture — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/7249345/pexels-photo-7249345.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Misbah Official viewers</div>
+    <h1>The Diaspora Friendship Code: Build Your Ride-or-Die Crew While Staying True to Your Culture</h1>
+    <p>The No-Nonsense Guide to Finding Your People, Keeping It Real, and Never Having to Choose Between Where You're From and Where You're At</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You know that feeling when you're at a school event and someone makes a joke you have to fake-laugh at because explaining why it's not funny would take forty-five minutes and a whiteboard? Or when your Western mates want to do something on a Friday evening and you're trying to figure out how to say 'I've got Jumu'ah and then my mum needs me home' without it becoming a whole thing? And then on the flip side, you go back to the Somali community events and somehow you're also not Somali enough because you've got a slight accent when you speak Af-Somali and you didn't know the lyrics to a song everyone apparently grew up with? Walaal, you are living in two worlds and getting fully claimed by neither — and the wild part is, you're not alone. There are guys across London, Melbourne, Stockholm, and Oslo right now feeling the exact same thing. The problem isn't you. The problem is nobody ever gave you the actual playbook for building a proper crew in the diaspora — friends who'd show up at your airport gate like the whole Ayan airport reunion energy, who'd throw you a surprise 100k celebration without you having to hint for three months, who'd do the Safar trips and the late-night challenges and the real conversations. Friends who get the culture AND the context. That's what this guide is for.</h2>
+    <p>By the time you finish this guide, you're going to have a clear, practical framework for identifying the right people, building genuine loyalty in your friend group, navigating the hard social moments without selling out your values, and creating the kind of shared memories that actually feel like yours — not a copy-paste of someone else's highlight reel. No therapy speak, no generic 'just be yourself' advice, and absolutely zero lectures. Just real strategies from someone who studied this stuff closely, built on what actually works for Somali diaspora young men specifically.</p>
+    <div class="promise">🎯 Feel part of a strong friend group, maintain cultural identity confidently, create authentic memories with people who 'get it', belong somewhere</div>
+    <p class="author-note">Real talk before we get into it — I'm not Misbah, and I'm not going to pretend I am. I'm a researcher and writer who studies diaspora youth culture and social dynamics, and I put this guide together by spending a serious amount of time in the world Misbah and his audience actually live in — watching the content, listening to what resonates, and mapping it against what the research says about belonging, identity, and friendship formation for second-generation immigrant young men in the West. Misbah's channel gave me the clearest window into what this life actually looks and feels like from the inside. So think of me as the friend-of-a-friend who did a deep dive and came back with notes. Everything in here is written for you, not at you. Take what works, leave what doesn't, and make it your own.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another word of this guide, do this one thing. It's called the 'Three Names Exercise' and it's specifically designed to break the mental fog that keeps diaspora guys stuck in surface-level friendships for years. You're not building a whole crew today — you're just identifying the seed. The person or people your crew grows from. Set a timer, make a coffee or grab some water, say Bismillah and set a clean niyyah that this is you investing in your akhira as much as your dunya — because the Prophet, peace be upon him, told us a man is on the religion of his close friend, so choosing well is literally an act of worship. Now go.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Write down every person you've spoken to in the last two weeks — just first names, no judgment</strong><p>Grab your notes app or a piece of paper and list everyone: school, masjid, online, family friends, Somali community, teammates, anyone. Don't filter yet. You're just auditing your actual social world as it exists right now, not as you wish it was. Most guys are shocked to discover they've spoken to more people than they thought — the issue isn't access, it's depth. Give yourself eight minutes for this. If you get to prayer time, step away, pray, and come back — the reset will actually help you think clearer.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Circle the names where the conversation went past small talk at least once</strong><p>Not 'we talked for a long time' — specifically, did it go somewhere real? Did someone mention something about family pressure, about feeling out of place, about a goal they have, about something that actually matters? Even one moment counts. These are your signals. You're looking for people who have shown even a small capacity for realness. In the Misbah world, these are the people who'd actually show up at the airport — not just react to the vlog of it. You might circle two names. You might circle five. Either is fine. Give yourself seven minutes.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Pick ONE name from your circled list and send them a specific, low-pressure message right now</strong><p>Not 'hey' and not a voice note asking to hang out vaguely sometime. Something specific and real, like: 'Bro I was thinking — we should actually link up properly, not just see each other at [wherever]. You free this week for food or a walk or something?' That's it. No big reveal, no awkward confession of friendship. Just a direct, specific, low-stakes invitation that signals you're someone who makes things happen. The specificity is what separates guys who have tight crews from guys who always say they want one but never actually move. Send it before your thirty minutes is up. The barakah is in the action, not the intention alone.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: Within 24 to 72 hours you will have either confirmed a real meetup with someone who has actual crew potential, or you'll have gotten a response that tells you clearly whether this person is worth investing more energy in. Either outcome is useful information. Most guys spend months in a fog about whether someone is actually a good friend candidate — this move forces clarity fast. You've just done more toward building a genuine crew in thirty minutes than most people do in a year of hoping it happens organically.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Diaspora Identity Stack: Know Who You Are Before You Build Your Crew</h3>
+      <p>Before you can find your ride-or-die people, you need to stop apologizing for being the guy who watches Misbah travel vlogs AND codes — your cultural duality is your superpower, not your weakness.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most Somali guys in the West are running two operating systems at once — the version of you that fits in at school or work, and the real you that laughs at Somali pranks, feels something when you see airport reunion videos, and still calls your hooyo every few days — and the reason friendships feel shallow is because you're only ever showing people one of those. The Diaspora Friendship Code starts with one non-negotiable foundation: write down your three core identity anchors — these are the things that are true about you whether you're in Mogadishu, Melbourne, or Manchester — for most of this audience that means your deen, your Somali roots, and your specific passion (tech, content creation, gaming, whatever your lane is). Once you have those three anchors written down with a clear Bismillah and niyyah behind the exercise, you now have a filter — any friendship that requires you to dim or hide even one of those anchors is not a ride-or-die friendship, it's a performance, and performances are exhausting and temporary. The guys in Misbah's circle who show up in those vlogs, the airport moments, the surprise 100k celebrations — those friendships exist because there was a foundation of 'I see the real you and I'm still here,' and that starts with YOU being clear enough on yourself that others have something real to connect to.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, open your notes app and write your three identity anchors — be brutally honest, not aspirational; if Somali culture and your deen are core, write that, don't write what sounds cool</li><li>Think of one person in your life — school, uni, online — who you've only ever shown your 'fitting in' face to, and identify one specific thing about your real self (a Somali value, a tech interest, something from your deen) you could authentically bring into your next conversation with them</li><li>Screenshot or save one piece of content — a vlog, a Somali meme, a tech video — that genuinely represents YOU at your most authentic, and use it as a visual reminder of your identity stack whenever you feel pressure to shrink yourself socially</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The biggest lie in diaspora social life is that you need to 'find your people' first and then be yourself — it's actually the reverse; the moment you operate from your identity anchors without apology, even online in comments or small group chats, you become a signal that other anchored people can locate, and they will find you faster than any forced social strategy ever could.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Asxaab Algorithm: How to Identify, Test, and Lock In Real Ones Fast</h3>
+      <p>Learn the exact three-layer filtering system to tell apart ride-or-die asxaab fr...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why Your Crew Stays Small: The 3 Real Blocks Killing Diaspora Friendships (And How to Smash Them)</h3>
+      <p>Identify the exact walls between you and your ride-or-dies — cultural code-switc...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Deep Root System: How to Turn Casual Links Into Lifelong Brotherhood</h3>
+      <p>Move beyond surface-level friendships and build the kind of ride-or-die crew tha...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Daily Diaspora Stack: Your 24-Hour System for Staying Connected Without Losing Yourself</h3>
+      <p>Build a repeatable daily routine that keeps your Somali friendships alive, your ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When the Crew Cracks: Fix Friendship Fallouts Without Losing Yourself or Your Culture</h3>
+      <p>Learn how to repair broken trust, navigate awkward distances, and rebuild after ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Forever Code: Turn Your Crew Into a Legacy, Not Just a Phase</h3>
+      <p>Transform the friendships and cultural identity systems you've built across thes...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
