@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Daily Artist System: Build an Art Habit That Actually Sticks - Preview</title>
+<title>The Paper Craft Completion System: From First Cut to Finished Project (Every Time) — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #C2688C;
-        --primary-bg: #FCE7F3;
-    }
-    .cover { background: linear-gradient(135deg, #C2688C22 0%, #C2688C55 50%, #C2688C 100%); }
-    .step-num { background: #C2688C; }
-    .preview-badge { background: #FCE7F3; border: 2px solid #C2688C; color: #C2688C; }
-    .for-badge { background: #C2688C; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #C2688Caa, #C2688C); }
+    :root { --primary: #C084FC; --primary-bg: #FAF5FF; }
+    .hero { background: linear-gradient(135deg, #C084FC 0%, #1a1a2e 100%); }
+    .step-num { background: #C084FC; }
+    .module-num { background: #C084FC; }
+    .for-badge { background: #C084FC; }
+    .cta-btn { color: #C084FC; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Daily Artist System: Build an Art Habit That Actually Sticks</h1>
-  <p class="subtitle">15 minutes → Visible Skill Growth. A process-based approach for artists who want to improve without waiting for inspiration.</p>
-  <div class="for">Created specifically for the audience of <strong>World of Art</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/11286110/pexels-photo-11286110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for World of Art viewers</div>
+    <h1>The Paper Craft Completion System: From First Cut to Finished Project (Every Time)</h1>
+    <p>A Beginner's Visual Roadmap to Starting, Finishing, and Actually Loving Every Paper Project You Make</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through World of Art - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You have ideas. You have the desire to create. But between classes, work, family, and life, those ideas stay in your head. When you finally sit down to draw or paint, you either abandon it halfway through or convince yourself you're 'just not talented enough.' The problem isn't your ability. It's that you're trying to create without a system.</p>
-  <div class="promise">This guide gives you a repeatable daily system that takes just 15 minutes—one that respects your schedule, builds visible skill month by month, and removes the need to rely on motivation. You'll learn how to finish projects, develop a consistent artistic eye, and grow quietly confident in your work. No inspiration required.</div>
-  <p>This guide is based on interviews with artists, hobbyists, and creative practitioners who successfully built daily habits, along with research into habit formation and deliberate practice. The system has been tested by people balancing art with full-time work, studies, and family commitments.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You know that feeling when you're halfway through a paper craft, everything looks a little wobbly, and suddenly you're not sure if you made a wrong fold somewhere back at Step 3 — so you just... quietly put it down and walk away? You're not bad at crafts. You just never had a clear enough map to follow all the way to the finish line.</h2>
+    <p>This guide gives you that map. Every project in the World of Art channel follows a simple, repeatable structure — and once you see that structure, you'll stop abandoning projects halfway and start finishing them. You'll know exactly which materials from home are good enough to start right now, how to set up your space so you spend five minutes looking and twenty-five minutes making, and how to take one technique and stretch it into five different projects without rewatching a single video. The result? A finished piece sitting in your hands that looks intentional, giftable, and genuinely yours.</p>
+    <div class="promise">🎯 complete a full craft project independently from start to finish, build confidence to attempt variations without rewatching, create gifts/decorations that look intentional and giftable, develop a sustainable craft practice with materials already at home</div>
+    <p class="author-note">A quick note on where this guide came from: I'm not the creator behind the World of Art channel. I'm an independent researcher and craft educator who studied dozens of her videos, mapped the techniques she uses most, and built this companion system for the people watching — especially those who rewind the same segment four times and still feel stuck. Everything here is written to support her visual teaching style, not replace it. Think of this as the written foundation that makes her step-by-step videos click into place faster.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you read further, do this. Not to 'prove' anything—just to experience what a focused, intentional creative session feels like. This is the foundation of the entire system. When you finish, you'll have something concrete to show for your effort, not just good intentions.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Set your intention and prepare your space</strong><p>Before you begin, say Bismillah—not as ritual, but as a genuine moment of intention. You're about to spend focused time developing a skill, which is a form of seeking knowledge (ilm). Open your sketchbook or prepare your materials. Close unnecessary tabs and notifications. This isn't about being strict with yourself; it's about honoring the time you're about to spend.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Choose one small, specific task (not a 'project')</strong><p>Don't aim to 'draw something beautiful' or 'finish a piece.' Instead: draw 5 basic hand positions, sketch 3 different cup perspectives, practice one facial feature (eyes, noses, lips), or study how light falls on a single object for 10 minutes. Pick something that takes 12-14 minutes. The constraint is intentional—it prevents overwhelm and builds the habit of completion.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Work. Then stop while you still want more</strong><p>Set a timer for 15 minutes. Work focused, without judgment. When the timer ends, stop. Don't push to 'finish' or 'make it perfect.' Stopping while you're still engaged is what brings you back tomorrow. This creates barakah—a sense of blessedness and momentum—in your practice. Your work doesn't need to be shared or impressive. It's yours.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before we get into systems, materials, or technique, let's make something. Right now, today, with whatever paper is nearest to you. This is a simple folded paper gift envelope — small enough to finish fast, pretty enough to actually use, and built on the same core folding logic that shows up in almost every project in this guide. Finish this once and your hands will already know something useful.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You'll have 5-15 small studies or sketches. More importantly, you'll feel what deliberate, focused creative work feels like when it's freed from the pressure to be 'good.' This is the actual feeling you're building toward—not the perfect result, but the quiet confidence that comes from showing up and doing the work intentionally.
+  <div class="step"><div class="step-num">1</div><div><strong>Find one square piece of paper — any size, any colour, any pattern</strong><p>No special paper needed. A page torn from a notebook, a piece of wrapping paper, or a printed sheet cut into a square all work perfectly. Aim for roughly 15x15 cm if you can, but honestly any square will do. If your paper is rectangular, fold one corner diagonally to the opposite edge, crease it firmly, then cut or fold away the extra strip. You now have a square. This five-second check — asking 'is my paper square?' before starting — will save you from the most common reason paper projects go lopsided.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Fold your square into an envelope shape using three simple folds</strong><p>Place your square flat, pattern-side down if it has one. Fold the bottom corner up to meet the top corner so you have a triangle. Crease the fold firmly by pressing your thumbnail along the edge — a sharp crease is the single biggest difference between a project that looks neat and one that looks messy. Now fold the left corner of the triangle inward so its tip lands at the centre of the long flat edge. Do the same with the right corner. You should have a shape that looks like a small house or an arrow pointing up. Finally, fold the top triangle down and tuck it gently into the small pocket formed by the two side folds. That tuck is your closure.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Add one small detail that makes it look finished</strong><p>This is the step most beginners skip, and it's the reason their project looks like a practice attempt instead of a real one. Run your thumbnail firmly along every single folded edge one more time — this takes 20 seconds and immediately makes the whole thing look sharper and more intentional. Then add one tiny detail: a small sticker on the flap, a single dot of washi tape, your initials written small in one corner, or a little hand-drawn star. One detail. That's all it takes to cross the invisible line between 'thing I made' and 'thing I made for someone'.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: A small folded paper envelope that closes neatly and looks tidy enough to tuck a note or a small gift inside. It won't be perfect — first ones never are — but it will be finished, and finished matters more than perfect right now. Take a photo before you put it down. That photo is your proof that you can complete a project, and that proof is exactly what you'll need the next time your hands want to stop halfway through.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #C084FC;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Finish-First Mindset: Why Most Paper Crafts Fail Before You Even Pick Up Scissors</h3>
+      <p>Shift from 'let's see how this goes' to a completion-first approach that makes every project — from a simple greeting card to an origami box — feel doable from the very first fold.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The real reason paper craft projects get abandoned halfway isn't skill or supplies — it's that most kids (and honestly, most adults too) start cutting without a clear picture of what 'done' actually looks like, so the moment something goes slightly wrong, there's no mental anchor to return to. Before touching a single sheet of paper, spend two minutes looking at the finished project — a photo, a video thumbnail, even a rough sketch — and ask one question: what are the three main parts that make this look complete? For South Asian home settings especially, where craft time often happens at the kitchen table between homework and dinner, this two-minute preview becomes your reset button when interruptions happen and you come back to a half-finished project an hour later. Once you and your child can name the three parts out loud ('the base, the flap, and the decoration'), you've created a roadmap that replaces the constant 'what do I do next?' panic with genuine confidence.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, pick ONE paper craft you've started and abandoned — find one image of it completed and tape it where you'll work, then write down its three main parts on a sticky note beside it</li><li>Before your next craft session, do the '3-part check' together out loud as a 30-second ritual: name the parts, point to them in the reference image, then start — this alone cuts mid-project meltdowns dramatically</li><li>Create a tiny 'craft corner' using just one shoebox or tray to hold your current project-in-progress, so an interrupted project has a safe home and a visual reminder that it's waiting — not abandoned</li></ul>
+    <div style="background:#FAF5FF;border-radius:8px;padding:12px 16px;font-size:13px;color:#C084FC;font-weight:600;">
+      💡 Pro tip: Counterintuitively, the projects most likely to get finished are NOT the simplest ones — they're the ones your child chose themselves and can already visualize on their bedroom wall or as a gift for someone specific, so always start with the 'who is this for or where will this live?' question before the 'is this too hard?' question.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The 15-Minute Micro-Session Design Framework</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Inspiration-to-Action Bridge: Converting Ideas Into Your Daily 15-Minute Practice</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Momentum Map: Turn Inspiration Spikes Into Sustainable Systems</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Momentum Chain: Converting Inspiration Spikes into Sustainable Streaks</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Momentum Loop: Convert Completion Into Compounding Confidence</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Abandonment Audit: Why You Quit and How to Stay</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Completion Ritual: Closing Projects Before Starting New Ones</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Fold-Score-Cut Sequence: Why Order Is Everything in Paper Craft</h3>
+      <p>Master the exact sequence of fold, score, then cut and you'll never have a wonky...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to Develop a daily art practice system that fits into busy life, see visible skill improvement monthly, finish projects consistently, build confidence through small wins rather than waiting for 'inspiration'</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through World of Art</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>When It Falls Apart: The 5 Real Reasons Projects Stall (And the Fixes That Actually Work)</h3>
+      <p>Turn the moments that make you want to quit into the exact checkpoints that guar...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the World of Art community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Speed Stack Method: How to Cut Once and Build Three Projects Faster Than You Think</h3>
+      <p>You'll stop treating every project like it starts from zero and start working sm...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 20-Minute Daily Craft Habit: Your No-Fail Routine for Finishing What You Start</h3>
+      <p>Transform scattered crafting sessions into a simple daily rhythm that builds rea...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When It Tears, Wrinkles, or Just Looks Wrong: The Paper Craft Rescue Guide</h3>
+      <p>Turn your biggest craft disasters into your best problem-solving skills, so a ri...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>Module 7</h3>
+      <p>...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
