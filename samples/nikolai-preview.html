@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The High-Stakes Decision System — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/31934900/pexels-photo-31934900.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Nikolai viewers</div>
+    <h1>The High-Stakes Decision System</h1>
+    <p>How to Execute Your Mountain Objectives Consistently</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You know the feeling. You've hiked for two hours, the line you've been studying for weeks is right there, conditions look reasonable, your gear is dialed — and then you freeze. Not because you can't ski it. Because in that exact moment, standing at the entry point with exposure below you and your heart doing something weird in your chest, you genuinely cannot tell if you're making a calculated decision or a stupid one. So you either bomb in and hope your legs remember what to do, or you back off and spend the drive home questioning whether you're actually cut out for this. Nikolai has stood in versions of that moment on faces that would make most people's knees buckle — and what separates his execution from the hesitation most riders carry into serious terrain isn't raw ability. It's the decision architecture running underneath every drop, every commitment, every line choice in low-visibility or loaded snowpack. That system is what this guide is about.</h2>
+    <p>By the time you finish this guide, you will have a repeatable, pressure-tested framework for making sound decisions in high-consequence mountain terrain — one that tells you when you're actually ready versus when you're just willing to roll the dice. You'll understand why your technical ability consistently fails to show up when the stakes are highest, how to assess avalanche exposure and commitment zones without letting adrenaline corrupt your read, and how to build the specific mental architecture that lets you execute difficult objectives with clarity instead of chaos. This isn't motivational content. It's operational. The goal is that your next serious objective goes differently — not because you got braver, but because you got cleaner.</p>
+    <div class="promise">🎯 Execute challenging mountain objectives with confidence, make sound decisions under pressure, consistently perform at their peak ability when it matters</div>
+    <p class="author-note">A quick note before we get into it. I'm not Nikolai. I'm a researcher and writer who has spent considerable time studying how high-performing mountain athletes make decisions under pressure — drawing on sports psychology, avalanche science, and hours of studying the kind of content Nikolai puts out. What you'll find in this guide is a structured synthesis of what actually works, grounded in the real moments his videos capture: the hesitation before commitment, the terrain assessment on the fly, the cost of getting it wrong. I've tried to write this the way a knowledgeable friend would explain it to you — someone who respects that you already have ability, and is here to help you use it more consistently when it counts.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page, do this exercise. It's called the Commitment Audit, and it will immediately show you the exact point in your decision process where things currently break down. Most riders who struggle with execution aren't failing everywhere — they're failing at one specific moment. This finds it. You need a pen, paper or notes app, and 30 honest minutes.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Write out your last three mountain objectives where execution felt off — either you backed off and regretted it, or you committed and it felt reactive rather than decided.</strong><p>For each one, write three sentences: what the objective was, what the conditions were, and the exact moment the decision felt unclear or forced. Don't editorialize — just describe what happened. The pattern you're looking for is whether your breakdown happened during approach and assessment, at the entry point under pressure, or mid-run when commitment was already made. Most riders consistently break down at the same stage every time, and they've never actually named it.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>For each scenario, rate two things on a scale of 1-10: how clearly you understood the actual risk at that moment, and how confident you were in your own physical readiness to execute.</strong><p>Write both numbers down and then look at the gap between them. If your risk clarity score is consistently lower than your readiness score, your problem is assessment — you're making commitment decisions without an accurate read on the terrain. If your readiness score is consistently lower, your problem is confidence architecture — you may be technically capable but you haven't built the internal evidence base that lets you trust yourself under pressure. These are different problems with different fixes, and this guide addresses both.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write one sentence that completes this exact prompt for your next planned objective: 'I will commit to this line when I can confirm that ___, ___, and ___ are true, and I will turn around if ___ is present.'</strong><p>Fill in three go-conditions and one hard stop condition. They need to be observable and specific — not feelings, not vibes, not 'if it feels right.' Think snowpack behavior on a test slope, visibility to see your full fall line, wind loading on the aspect you're skiing, your own warm-up run quality that day. This single sentence is the beginning of your personal decision protocol. It sounds simple. It isn't something most riders ever actually write down, which is a large part of why they keep freezing at entry points.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After 30 minutes you will know exactly which stage of the decision process is costing you your best days on the mountain, whether your core issue is risk assessment or self-trust, and you will have a draft of your first objective-specific decision protocol. That's not a small thing. Most riders who have been struggling with execution for years have never done this basic audit. The rest of this guide builds directly on what you just uncovered.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Decision Architecture: Why Your Brain Betrays You at the Drop-In</h3>
+      <p>Understand exactly why your decision-making collapses in critical mountain moments so you can build a framework that actually holds under pressure.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">When you're standing at the top of a consequential line — steeps, exposed ridgelines, variable snow conditions — your prefrontal cortex (the part that makes good decisions) gets hijacked by your amygdala, and you either send it recklessly or bail with no real logic, both driven by emotion masquerading as judgment. The skiers and riders you follow who consistently execute gnarly terrain aren't braver than you, they've just pre-loaded their decisions so thoroughly before the drop-in that there's nothing left to decide under stress — the work happened at home, in mellow terrain, and during honest post-session debriefs. The core framework you're building across these modules is called decision architecture: a personal system where you define your go/no-go criteria, skill benchmarks, and risk thresholds in low-stakes environments so your brain has a concrete script to run when cortisol spikes at 3,000 meters. Most inconsistent performers aren't lacking courage, they're lacking pre-built decision trees — so today you're going to start constructing yours.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Pull up your last three mountain sessions and write down one specific moment where you made a decision you weren't fully confident in — identify whether it was fear-based (bailed on something you were capable of) or ego-based (sent something you weren't ready for) because these require completely different fixes</li><li>Create a simple three-tier terrain classification in your notes app right now: Green (terrain you can execute at 80% effort with full confidence), Yellow (terrain that requires your best conditions, best preparation, and pre-planned exit routes), Red (terrain outside your current skill ceiling regardless of conditions) — then honestly slot your last five runs into these tiers</li><li>Record a 90-second voice memo tonight describing your current honest skill ceiling in your primary discipline — not your best day, not your worst day, your reliable repeatable level — because you cannot build a decision system on top of a false baseline</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The riders who look most fearless on camera almost always have a longer private no-list than you do — the framework isn't about expanding what you'll attempt, it's about getting ruthlessly precise about the gap between your current capability and the objective's actual demands, which paradoxically unlocks faster progression than pure boldness ever will.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Commit-or-Retreat Framework: Making Go/No-Go Calls Under Pressure</h3>
+      <p>You'll install a repeatable 3-checkpoint decision system that eliminates paralys...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The Paralysis Patterns: Why Your Brain Betrays You at the Drop-In</h3>
+      <p>Identify the exact mental traps that turn capable riders into hesitators so you ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Terrain Read Protocol: Making High-Stakes Calls in Real Time</h3>
+      <p>Transform how you assess consequential terrain so your decisions in critical mom...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Morning Stack: Daily Reps That Build Decision Muscle Before You Ever Click Into Your Bindings</h3>
+      <p>Build the repeatable daily system that compounds your decision-making ability so...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>Recovery Mode: Resetting When Your Mountain Day Goes Sideways</h3>
+      <p>Learn to diagnose exactly why your execution broke down and rebuild your decisio...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Identity Lock-In: Wiring the Decision System Into Your Permanent Operating System</h3>
+      <p>Transform the high-stakes decision framework from a checklist you remember to us...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
