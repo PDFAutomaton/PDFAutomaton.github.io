@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Paper Craft Completion System: From First Cut to Finished Project (Every Time) — Sample Preview</title>
+<title>The Game Tech Breakdown System — Sample Preview</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
@@ -196,12 +196,12 @@
 
 <!-- HERO WITH PEXELS IMAGE -->
 <div class="hero">
-  <img class="hero-img" src="https://images.pexels.com/photos/11286110/pexels-photo-11286110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <img class="hero-img" src="https://images.pexels.com/photos/10988020/pexels-photo-10988020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
   <div class="hero-overlay">
     <div class="sample-pill">✦ Sample Preview</div>
     <div class="for-badge">Built for World of Art viewers</div>
-    <h1>The Paper Craft Completion System: From First Cut to Finished Project (Every Time)</h1>
-    <p>A Beginner's Visual Roadmap to Starting, Finishing, and Actually Loving Every Paper Project You Make</p>
+    <h1>The Game Tech Breakdown System</h1>
+    <p>How to Analyze and Reverse-Engineer Any Game's Graphics Like a Professional</p>
   </div>
 </div>
 
@@ -209,10 +209,10 @@
 
   <!-- HOOK -->
   <div class="hook-card">
-    <h2>You know that feeling when you're halfway through a paper craft, everything looks a little wobbly, and suddenly you're not sure if you made a wrong fold somewhere back at Step 3 — so you just... quietly put it down and walk away? You're not bad at crafts. You just never had a clear enough map to follow all the way to the finish line.</h2>
-    <p>This guide gives you that map. Every project in the World of Art channel follows a simple, repeatable structure — and once you see that structure, you'll stop abandoning projects halfway and start finishing them. You'll know exactly which materials from home are good enough to start right now, how to set up your space so you spend five minutes looking and twenty-five minutes making, and how to take one technique and stretch it into five different projects without rewatching a single video. The result? A finished piece sitting in your hands that looks intentional, giftable, and genuinely yours.</p>
-    <div class="promise">🎯 complete a full craft project independently from start to finish, build confidence to attempt variations without rewatching, create gifts/decorations that look intentional and giftable, develop a sustainable craft practice with materials already at home</div>
-    <p class="author-note">A quick note on where this guide came from: I'm not the creator behind the World of Art channel. I'm an independent researcher and craft educator who studied dozens of her videos, mapped the techniques she uses most, and built this companion system for the people watching — especially those who rewind the same segment four times and still feel stuck. Everything here is written to support her visual teaching style, not replace it. Think of this as the written foundation that makes her step-by-step videos click into place faster.</p>
+    <h2>You're watching a breakdown of Crimson Desert's water simulation, or maybe it's the Subnautica 2 environment deep-dive, and somewhere around the three-minute mark it hits you: you can see exactly what makes it look incredible, but you have absolutely no idea how you'd begin to build it. The volumetric fog is doing something interesting. The subsurface scattering on the water surface looks physically correct. The way light behaves through the canopy feels alive. You can feel the quality. You just can't name it, isolate it, or replicate it. So you rewatch the video. You take some screenshots. You open your 3D software or your engine and stare at a blank viewport. Nothing translates. An hour disappears. You've studied the game without actually learning anything you can use. That gap between observation and implementation is not a knowledge gap. It's a framework gap. And this guide exists to close it.</h2>
+    <p>What you're going to get from this guide is a repeatable, systematic method for breaking down any game's visual and technical systems, the same way a technical artist or graphics engineer would approach it on day one of a new project. Not surface-level commentary about what looks cool. Not vague inspiration. A structured, step-by-step thinking process that turns passive watching into active technical intelligence you can immediately apply to your own work. By the time you've worked through this system, you'll be able to sit down with any game, from a Forza title to an indie environment piece, and walk away with specific, nameable, implementable insights about lighting architecture, material systems, post-processing pipelines, and rendering techniques. The Crimson Desert breakdown, the Subnautica 2 analysis, the Forza comparison videos are all worked examples throughout this guide, not just name-drops. You'll see the exact thinking process applied to real footage, real systems, real decisions. The goal is not to turn you into a passive consumer of technical breakdowns. The goal is to make you someone who can run their own.</p>
+    <div class="promise">🎯 Build a repeatable technical analysis framework. Develop ability to deconstruct any game's visual/technical systems quickly. Apply those insights to their own work with confidence.</div>
+    <p class="author-note">A quick word on who put this together. I'm not the person behind the World of Art channel. I'm a third-party researcher and technical writer who has spent a significant amount of time studying the breakdown methodology demonstrated across that body of work, cross-referencing it with technical documentation, GDC talks, and conversations with working environment artists and technical directors. What I've tried to do here is systematize something that, on the channel, comes across as intuitive expertise, because it is. The goal was to extract that thinking process, make it explicit, and give you a repeatable version of it. Any errors in framing or interpretation are mine. The underlying analytical approach you'll learn here belongs to the kind of methodical, visually-literate technical thinking that the channel has been quietly modeling for years. I just wrote it down.</p>
   </div>
 
   <hr class="divider">
@@ -220,14 +220,14 @@
   <!-- QUICK WIN -->
   <div class="section-label">⚡ Quick Win — Included Free</div>
   <div class="section-title">Get Your First Result in 30 Minutes</div>
-  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before we get into systems, materials, or technique, let's make something. Right now, today, with whatever paper is nearest to you. This is a simple folded paper gift envelope — small enough to finish fast, pretty enough to actually use, and built on the same core folding logic that shows up in almost every project in this guide. Finish this once and your hands will already know something useful.</p>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page of this guide, do this exercise right now. You don't need any special software. You don't need a fast machine. You need a game you already have installed, a screenshot tool, and about thirty minutes of focused attention. This is the single-system isolation drill, and it's the foundation of the entire framework you're going to build. Most people fail at game analysis because they try to understand everything at once. This drill trains you to pick one system, isolate it completely, and extract something specific and usable from it. Do this once today and you'll immediately understand what this guide is actually teaching.</p>
 
-  <div class="step"><div class="step-num">1</div><div><strong>Find one square piece of paper — any size, any colour, any pattern</strong><p>No special paper needed. A page torn from a notebook, a piece of wrapping paper, or a printed sheet cut into a square all work perfectly. Aim for roughly 15x15 cm if you can, but honestly any square will do. If your paper is rectangular, fold one corner diagonally to the opposite edge, crease it firmly, then cut or fold away the extra strip. You now have a square. This five-second check — asking 'is my paper square?' before starting — will save you from the most common reason paper projects go lopsided.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Fold your square into an envelope shape using three simple folds</strong><p>Place your square flat, pattern-side down if it has one. Fold the bottom corner up to meet the top corner so you have a triangle. Crease the fold firmly by pressing your thumbnail along the edge — a sharp crease is the single biggest difference between a project that looks neat and one that looks messy. Now fold the left corner of the triangle inward so its tip lands at the centre of the long flat edge. Do the same with the right corner. You should have a shape that looks like a small house or an arrow pointing up. Finally, fold the top triangle down and tuck it gently into the small pocket formed by the two side folds. That tuck is your closure.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Add one small detail that makes it look finished</strong><p>This is the step most beginners skip, and it's the reason their project looks like a practice attempt instead of a real one. Run your thumbnail firmly along every single folded edge one more time — this takes 20 seconds and immediately makes the whole thing look sharper and more intentional. Then add one tiny detail: a small sticker on the flap, a single dot of washi tape, your initials written small in one corner, or a little hand-drawn star. One detail. That's all it takes to cross the invisible line between 'thing I made' and 'thing I made for someone'.</p></div></div>
+  <div class="step"><div class="step-num">1</div><div><strong>Pick one game, open it, and choose a single scene with strong ambient lighting, then take three screenshots from the same position with different in-game time-of-day or weather settings if available, or simply three angles of the same lit surface.</strong><p>The goal here is not to analyze the whole scene. You're isolating lighting behavior only. Ignore the geometry. Ignore the textures. Look specifically at where the brightest point in the image is, where the darkest point is, and whether there is a clear secondary light source filling shadows. On your screenshots, literally draw or mark these three zones with a pen, a markup tool, or even just a sticky note on your monitor. You are training your eye to decompose a scene into its light sources before anything else. This is exactly the first step applied in the Forza comparison analysis, where the difference between titles came down to identifying dominant light direction and secondary bounce behavior before any material properties were even considered.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Write down exactly three sentences describing what you see, using technical language even if you're not sure it's correct yet.</strong><p>This step feels uncomfortable for most people and that discomfort is the point. Write something like: the primary light source appears to be coming from the upper left at roughly forty-five degrees, there is a soft blue fill light in the shadow areas suggesting either an HDRI sky contribution or a dedicated fill light setup, and the specular highlight on the wet surface is tight and bright which suggests a low roughness value in the material. You will be wrong about some of it. That is fine. The act of committing to specific technical language, rather than writing this looks really cinematic, is what begins to build your analytical vocabulary. Every breakdown in this guide starts from exactly this kind of forced specificity.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Search for one term you used in your sentences that you are least confident about, spend ten minutes reading a single credible source on it, then rewrite just that one sentence with more precision.</strong><p>If you wrote roughness value and you are not sure what that maps to in a real PBR workflow, spend ten minutes on it now. Not two hours. Ten minutes, one source, one rewrite. This constraint is deliberate. The failure mode for technically curious people is the rabbit hole, where one term leads to six tabs and ninety minutes later you have learned a lot of context and revised nothing about your actual observation. The system in this guide is built around short, specific learning loops attached to real observed evidence. You saw something, you described it, you sharpened the description. That loop, repeated across dozens of scenes and systems, is what builds the kind of technical fluency that makes game breakdowns genuinely useful to your work.</p></div></div>
 
 
-  <div class="result-box">✅ Expected result: A small folded paper envelope that closes neatly and looks tidy enough to tuck a note or a small gift inside. It won't be perfect — first ones never are — but it will be finished, and finished matters more than perfect right now. Take a photo before you put it down. That photo is your proof that you can complete a project, and that proof is exactly what you'll need the next time your hands want to stop halfway through.</div>
+  <div class="result-box">✅ Expected result: After thirty minutes you will have one screenshot set, three technically-worded observations, and one sharpened sentence that is more accurate than what you first wrote. That sounds small. It is not small. You have just completed one full cycle of the core analysis loop this entire guide is built around. You have also identified, in concrete terms, at least one area of your technical vocabulary that needs development, which is more actionable information about your own skill gaps than most people get from an hour of passive watching. Do this with one scene per week for a month and your ability to analyze games will be unrecognizable compared to where you are right now.</div>
 
   <hr class="divider">
 
@@ -242,15 +242,15 @@
   <div class="module-header">
     <div class="module-num">1</div>
     <div class="module-info">
-      <h3>The Finish-First Mindset: Why Most Paper Crafts Fail Before You Even Pick Up Scissors</h3>
-      <p>Shift from 'let's see how this goes' to a completion-first approach that makes every project — from a simple greeting card to an origami box — feel doable from the very first fold.</p>
+      <h3>The Reverse-Engineering Mindset: Stop Seeing Art, Start Seeing Systems</h3>
+      <p>Transform how your brain processes game visuals — from passive appreciation to active technical deconstruction — so every game you play becomes a free masterclass in real-time rendering.</p>
     </div>
   </div>
   <div style="padding:0 24px 24px;">
-    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The real reason paper craft projects get abandoned halfway isn't skill or supplies — it's that most kids (and honestly, most adults too) start cutting without a clear picture of what 'done' actually looks like, so the moment something goes slightly wrong, there's no mental anchor to return to. Before touching a single sheet of paper, spend two minutes looking at the finished project — a photo, a video thumbnail, even a rough sketch — and ask one question: what are the three main parts that make this look complete? For South Asian home settings especially, where craft time often happens at the kitchen table between homework and dinner, this two-minute preview becomes your reset button when interruptions happen and you come back to a half-finished project an hour later. Once you and your child can name the three parts out loud ('the base, the flap, and the decoration'), you've created a roadmap that replaces the constant 'what do I do next?' panic with genuine confidence.</p>
-    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, pick ONE paper craft you've started and abandoned — find one image of it completed and tape it where you'll work, then write down its three main parts on a sticky note beside it</li><li>Before your next craft session, do the '3-part check' together out loud as a 30-second ritual: name the parts, point to them in the reference image, then start — this alone cuts mid-project meltdowns dramatically</li><li>Create a tiny 'craft corner' using just one shoebox or tray to hold your current project-in-progress, so an interrupted project has a safe home and a visual reminder that it's waiting — not abandoned</li></ul>
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most 3D artists and aspiring devs make the same critical mistake: they study games aesthetically, asking 'does this look cool?' instead of technically, asking 'what render passes, texture channels, and lighting rigs are producing this specific visual output?' The shift you need is learning to see games as stacked, separable technical layers — geometry silhouette, albedo/base color, roughness/metallic response, lighting contribution, post-process stack — because once you can mentally 'peel' a scene into those layers, you stop being overwhelmed and start having actual reverse-engineerable data. Before you can analyze anything like a professional technical artist at Naughty Dog or Ubisoft, you need a fixed vocabulary: PBR material pipeline, deferred vs. forward rendering, GI approximation methods, LOD systems, and shader complexity — these aren't jargon gates, they're the actual language that converts what your eyes see into something your hands can build. Think of this module as installing the operating system that every other breakdown technique in this course runs on — get the mental framework wrong and you'll study 500 game screenshots and learn almost nothing actionable.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open a game you know well right now — take one screenshot and write down exactly five technical questions about it using this forced format: 'How did they achieve [specific visual effect] using [suspected technical system]?' — this rewires your brain to ask buildable questions instead of vague ones</li><li>Go to the World of Art channel backlog and rewatch one environment or shading breakdown video, but this time pause every 60 seconds and write the technical layer being discussed — by the end you should have a list of 5-8 discrete systems, not a general impression</li><li>Create a dead-simple 'Tech Vocabulary Doc' right now with three columns: Term, What It Does Visually, How I'd Implement It — seed it with just these five entries to start: Albedo, Roughness Map, Ambient Occlusion, Normal Map, Emissive — you'll build this doc throughout the entire course</li></ul>
     <div style="background:#FAF5FF;border-radius:8px;padding:12px 16px;font-size:13px;color:#C084FC;font-weight:600;">
-      💡 Pro tip: Counterintuitively, the projects most likely to get finished are NOT the simplest ones — they're the ones your child chose themselves and can already visualize on their bedroom wall or as a gift for someone specific, so always start with the 'who is this for or where will this live?' question before the 'is this too hard?' question.
+      💡 Pro tip: The fastest professionals don't analyze finished games first — they analyze broken or unfinished ones. Search YouTube for 'game graphics glitch compilation' or 'shader error showcase' because when a system fails visually, it exposes exactly what that system was contributing, giving you a free dissection that no polished screenshot can.
     </div>
   </div>
 </div>
@@ -259,8 +259,8 @@
   <div class="module-header">
     <div class="module-num">2</div>
     <div class="module-info">
-      <h3>The Fold-Score-Cut Sequence: Why Order Is Everything in Paper Craft</h3>
-      <p>Master the exact sequence of fold, score, then cut and you'll never have a wonky...</p>
+      <h3>The Layer Peel Method: Dissecting Any Game's Visual Stack in 30 Minutes</h3>
+      <p>Transform from someone who sees a finished image into someone who can mentally s...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -273,8 +273,8 @@
   <div class="module-header">
     <div class="module-num">3</div>
     <div class="module-info">
-      <h3>When It Falls Apart: The 5 Real Reasons Projects Stall (And the Fixes That Actually Work)</h3>
-      <p>Turn the moments that make you want to quit into the exact checkpoints that guar...</p>
+      <h3>Breaking the Observation Loop: Why You Keep Staring at Screenshots Instead of Understanding Them</h3>
+      <p>Transform frustrating 'I can see it but can't explain it' paralysis into a concr...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -287,8 +287,8 @@
   <div class="module-header">
     <div class="module-num">4</div>
     <div class="module-info">
-      <h3>The Speed Stack Method: How to Cut Once and Build Three Projects Faster Than You Think</h3>
-      <p>You'll stop treating every project like it starts from zero and start working sm...</p>
+      <h3>The Shader Archaeology Method: Reverse-Engineering Material Systems From Screenshots Alone</h3>
+      <p>Turn any game screenshot into a complete material blueprint by learning to read ...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -301,8 +301,8 @@
   <div class="module-header">
     <div class="module-num">5</div>
     <div class="module-info">
-      <h3>The 20-Minute Daily Craft Habit: Your No-Fail Routine for Finishing What You Start</h3>
-      <p>Transform scattered crafting sessions into a simple daily rhythm that builds rea...</p>
+      <h3>The 15-Minute Daily Breakdown Habit: Build a Technical Eye That Never Turns Off</h3>
+      <p>Transform random game-playing time into a compounding daily practice that rewire...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -315,8 +315,8 @@
   <div class="module-header">
     <div class="module-num">6</div>
     <div class="module-info">
-      <h3>When It Tears, Wrinkles, or Just Looks Wrong: The Paper Craft Rescue Guide</h3>
-      <p>Turn your biggest craft disasters into your best problem-solving skills, so a ri...</p>
+      <h3>When Your Breakdown Hits a Wall: Diagnosing and Fixing Dead Ends in Technical Analysis</h3>
+      <p>Turn frustrating analysis dead ends into diagnostic wins by learning to recogniz...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -329,8 +329,8 @@
   <div class="module-header">
     <div class="module-num">7</div>
     <div class="module-info">
-      <h3>Module 7</h3>
-      <p>...</p>
+      <h3>The Analyst's Lifestyle: Building a Permanent Game Tech Obsession That Compounds Over Time</h3>
+      <p>Transform game-playing from passive entertainment into an always-on technical ed...</p>
     </div>
   </div>
   <div class="locked-overlay">
