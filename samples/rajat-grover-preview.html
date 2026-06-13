@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The 90-Day Deep Work System: From Distracted to Disciplined - Preview</title>
+<title>The Indian Traveler's Cost Breakdown Blueprint — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The 90-Day Deep Work System: From Distracted to Disciplined</h1>
-  <p class="subtitle">A Simple Daily Framework That Turns Scattered Effort Into Compounding Results</p>
-  <div class="for">Created specifically for the audience of <strong>Rajat Grover</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/7010194/pexels-photo-7010194.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Rajat Grover viewers</div>
+    <h1>The Indian Traveler's Cost Breakdown Blueprint</h1>
+    <p>The Exact Numbers, Hidden Traps, and Repeatable System to Plan Any International Trip Without Blowing Your Budget Midway Through Booking</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Rajat Grover - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You already know what you should be doing. The problem isn't knowledge—it's that you can't sustain focused work past an hour, your daily system keeps breaking, and you're back to square one every few weeks. This guide doesn't add another thing to your plate. It replaces the broken system with one that runs on its own.</p>
-  <div class="promise">Over the next 90 days, you'll build a repeatable daily rhythm that lets you do 3-4 hours of focused work without fighting yourself. Within 30 days, you'll see tangible output that proves the system works. By day 90, deep work becomes your default mode, not something you have to motivate yourself to do.</div>
-  <p>This guide is based on research into habit formation, attention science, and the practical routines of people who consistently produce results. It's not theory—it's a framework tested and refined by people like you who needed a system that actually sticks.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You've done the research. You've watched the videos, saved the Instagram reels, read the blog posts. You have a destination in mind, maybe even a rough dates. And then you sit down to actually book — and within 45 minutes, you're staring at a screen wondering how a '7-day Europe trip for ₹1.5 lakh' somehow becomes ₹2.8 lakh before you've even confirmed the hotels. The flights alone ate half the budget. Then you find out the 'cheap' hostel is 40 minutes outside the city. Then someone in a Facebook group mentions travel insurance, airport transfers, sim cards, entry fees, tipping culture. And suddenly you're not sure if you can actually afford this trip — or if you're just bad at planning. You're not bad at planning. You just don't have the right breakdown in front of you. And that's a different problem entirely.</h2>
+    <p>This guide gives you one thing the travel internet almost never gives Indian travelers: actual, itemized, rupee-denominated cost breakdowns built around how we actually spend money abroad — not how a 22-year-old backpacker from London spends it, and not how a luxury travel blogger with brand sponsorships spends it. Inside, you'll find the real per-day food costs in popular destinations, how to instantly cross-check if a hotel price you've been quoted is fair market rate or tourist markup, a complete pre-booking checklist that surfaces hidden expenses before they surface on your credit card statement, a repeatable trip-costing system you can use for any destination you ever want to visit, and a clear framework for spotting the 7 most common pricing traps that specifically target Indian passport holders booking international travel. By the time you finish this guide, you'll know your total trip number — not an estimate, not a range, a real working number — before you spend a single rupee.</p>
+    <div class="promise">🎯 Clear, itemized breakdown of total trip cost before committing money; confidence that they're getting fair prices; a repeatable trip-planning checklist they can use for any destination</div>
+    <p class="author-note">A quick note before we get into the numbers: this guide was researched and written by an independent travel cost researcher, not by Rajat directly. Rajat's channel has spent years breaking down real trip costs for Indian travelers in a way that actually makes sense for our budgets and our planning style — and this guide was built to extend that same thinking into a format you can work through at your own pace. Everything here is based on publicly available pricing data, community-reported costs from Indian travel forums, and firsthand booking research conducted across multiple destinations in 2024. Where prices have changed or vary by season, we've flagged it. The goal was simple: create the one document you wish existed the first time you tried to plan an international trip seriously.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you read further, run this quick test. It takes 30 minutes and will show you exactly where your focus breaks down. This is your baseline. You'll return to this in 30 days and see the difference.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Pick one task that matters</strong><p>Not email, not admin work. Something that actually moves a project forward. Something you've been thinking about starting but haven't. Set a timer for 25 minutes.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Work until the timer stops</strong><p>Write down the exact time you first felt the urge to switch. Don't judge it. Just note it—when did your mind wander? When did you reach for your phone? This is your distraction point.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Document what you finished</strong><p>Write down what you actually completed in those 25 minutes. Be specific. One page written. Three paragraphs edited. One sketch finished. This is your current output baseline.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you do anything else in this guide, do this one exercise right now. It takes 30 minutes and it will immediately show you whether your current trip budget is realistic — or whether you're about to hit a wall 60% of the way through booking. Most Indian travelers discover a ₹40,000 to ₹80,000 gap between their assumed budget and their actual cost during this exercise. Knowing that gap now costs you nothing. Discovering it after you've booked non-refundable flights costs you everything.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You now have three pieces of data: your distraction point, your output per 25 minutes, and proof that you can sustain at least some focus. In 30 days, you'll repeat this same task and your distraction point will be gone. Your output will double.
+  <div class="step"><div class="step-num">1</div><div><strong>Write down your current assumed total trip budget in rupees — right now, before calculating anything</strong><p>Open your notes app or grab a piece of paper and write one number: what you currently think this trip will cost you, all-in, in INR. Don't calculate it yet, just write the number you have in your head. This is your baseline. Most people have a rough figure floating around — ₹1.2 lakh, ₹2 lakh, whatever yours is. Write it down and circle it. This number is going to be important in about 20 minutes.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Build a fast 6-line cost skeleton using Google Flights, Booking.com, and one honest food estimate</strong><p>Open three tabs right now. Tab one: Google Flights — search your actual travel dates and note the real round-trip price in INR including baggage fees (add ₹4,000 to ₹8,000 if baggage isn't included). Tab two: Booking.com — filter for properties with a minimum 8.0 review score in a central neighborhood and note the per-night price for your dates. Multiply by number of nights. Tab three: Search 'average meal cost in [your destination] for tourists in 2024' and find a Reddit thread or travel forum post, not a travel blog. Multiply the daily food estimate by your trip days. Add these three numbers together. Then add 15% on top of that combined total to roughly account for local transport, sim card, entry fees, and incidentals. Write this new total next to your circled number from Step 1.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Compare your two numbers and identify your gap category</strong><p>Look at both numbers side by side. If your new calculated number is within 10% of your original assumed budget, your instincts are well-calibrated and you're ready to do a proper full breakdown using the rest of this guide. If your calculated number is 20% to 40% higher than your assumption, you're in the most common gap category — and the rest of this guide will help you either close that gap through smarter booking or adjust your destination choice. If your calculated number is more than 40% higher, your destination or travel style expectations need a real conversation before you book anything, and Chapter 3 of this guide is specifically written for that situation. Either way, you now have real data in front of you instead of a number floating in your head.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: Within 30 minutes you'll have a rough but honest cost skeleton for your trip in front of you, a clear sense of whether your current budget assumption is realistic, and most importantly, you'll have replaced the vague financial anxiety that comes from not knowing with an actual number you can work with. That shift — from 'I think this might cost around X' to 'I have evidence it will cost approximately Y' — is where confident trip planning actually begins.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The 'Asli Cost' Mindset: Why Every Indian Traveler Overspends Before Booking Anything</h3>
+      <p>Shift from reactive price-checking to a proactive cost architecture mindset so you never again confuse 'cheap flight' with 'cheap trip'.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The single biggest reason Indian middle-class travelers from cities like Nagpur, Jaipur, or Coimbatore blow their international trip budget isn't the flight or the hotel — it's that they calculate cost in layers instead of all at once, booking the flight first and discovering the real total only at the airport. Think of your trip budget like a thali: the base plate is flights and hotels, but the dal, sabzi, roti, and dessert — local transport, visa fees, travel insurance, forex conversion losses, tipping culture, and food costs — can easily double that base number, and nobody tells you this upfront. The 'Indian tourist tax' is real but it's not always price gouging — half of it is self-inflicted because we compare our trip cost to a friend's 3-year-old Thailand trip without accounting for inflation, currency shifts, or that they stayed in a hostel dorm. Your new mental model is simple: never discuss or commit to any international trip until you've built what I call the Full Cost Stack — a single number that includes every rupee leaving your account from the day you start applying for a visa to the day you land back in India.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open a new Google Sheet right now and create 8 columns labeled: Visa & Documentation, Flights, Accommodation, Local Transport, Food & Drinks, Activities & Entry Fees, Forex/Card Charges, and Emergency Buffer — this is your permanent Cost Stack template for every future trip</li><li>Go to your last international trip expense (or a friend's) and reverse-engineer what percentage each category was of the total spend — most Indians find food alone was 15-20% and they never budgeted for it separately</li><li>Write down the one international destination you're currently dreaming about, then Google the current Indian passport visa fee, approximate return flight cost, and daily hotel rate for 5 nights — add these three numbers and call this your 'Layer 1 number' which you'll build on in the next modules</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The most dangerous budget mistake Indian travelers make is anchoring their entire trip budget to the flight deal they found — a ₹25,000 return flight to Vietnam feels like a steal until you realize visa, food, transport, and activities in a tourist-heavy city like Hanoi will add another ₹40,000 minimum; always build your budget backwards from the destination's daily cost of living first, then find a flight that fits, not the other way around.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Distraction Audit: Mapping Your Hidden Energy Drains</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Energy Architecture: Building Your Personal Deep Work Operating System</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Energy Architecture System: Building Your Personal Peak Performance Schedule</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Focus Architecture: Building Your Distraction-Proof Environment</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Momentum Loop: Building Unstoppable Work Streaks</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Energy Audit: Mapping Your Focus Peaks and Protecting Them</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Momentum Architecture: Building Your Anti-Distraction Operating System</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The 7-Bucket Cost Breakdown System: Never Miss a Hidden Expense Again</h3>
+      <p>Learn to split every international trip into 7 non-negotiable cost buckets so yo...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to A simple, repeatable daily system they can execute without willpower that compounds into visible results within 30 days</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Rajat Grover</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The 5 Traps That Bleed Indian Travelers Dry (And How to Dodge Every One)</h3>
+      <p>Identify exactly where your international trip budget silently collapses so you ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Rajat Grover community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Food-First Cost Intelligence Method: Reverse-Engineer Any Destination's True Price Level</h3>
+      <p>Learn how to use local street food and restaurant prices as your secret financia...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Daily ₹500 Audit: Your Non-Negotiable End-of-Day Tracking Ritual</h3>
+      <p>Turn a 10-minute nightly habit into your personal shield against budget leakage ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>Budget Rescue Mode: Fix Overspending Mid-Trip Before It Spirals</h3>
+      <p>When your trip goes off-budget, this module gives you a same-day damage control ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Lifetime Traveler System: Turn One Trip's Lessons Into Permanent Financial Intelligence</h3>
+      <p>Transform every international trip you take into a data asset that makes your ne...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
