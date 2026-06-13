@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Data Extraction Workflow: From First Scrape to Automated Scale - Preview</title>
+<title>The Lean Operator's Data System: Automate Lead Generation in 2 Hours (Not 40) — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Data Extraction Workflow: From First Scrape to Automated Scale</h1>
-  <p class="subtitle">A systematic framework to build reliable data pipelines that eliminate manual collection and scale without breaking</p>
-  <div class="for">Created specifically for the audience of <strong>Web Scraping</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/4955393/pexels-photo-4955393.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Web Scraping viewers</div>
+    <h1>The Lean Operator's Data System: Automate Lead Generation in 2 Hours (Not 40)</h1>
+    <p>How to Build a Repeatable Web Scraping Workflow Using Free Tools — So You Can Compete With Enterprise Budgets Without Spending Like One</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Web Scraping - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You're losing 10+ hours every week to manual data collection. Not because you lack tools, but because you lack a system. Most people treat web scraping as a technical problem when it's actually a process problem.</p>
-  <div class="promise">This guide gives you the exact workflow used to build scalable data acquisition systems that run hands-off. You'll move from fragile, one-off scrapes to reliable pipelines that generate business results without manual intervention.</div>
-  <p>This guide was researched and compiled by analyzing workflows across 40+ professionals who successfully automated their data collection. It reflects patterns from people doing this work at scale.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You already know how to scrape. You watched the Google Maps Scraper video, followed every step on screen, and got your first 200 leads. Then the next client came in, you needed data from a different city, different niche — and you started from zero again. Same confusion. Same wasted afternoon. Same copy-paste into Excel that somehow still had duplicates. The tool was never the problem. The system was. Right now, somewhere in Karachi or Dhaka or Dubai, a competitor is running automated pipelines that pull fresh leads every morning while they focus on closing deals. They are not smarter than you. They just stopped treating each scraping session as a one-time task and built it into a repeatable workflow. That is the only difference. And that difference is costing you 30 to 40 hours every single week.</h2>
+    <p>This guide gives you exactly what the channel's screen recordings show but never fully explain — the logic behind the sequence, the decisions you make before you open any tool, and the repeatable folder and file structure that means you never start from zero again. By the time you finish reading, you will have a working data system built around the same scrapers you have already seen: Google Maps for local business leads, LinkedIn Jobs for prospect research, Craigslist for market intelligence. No coding required. No subscriptions. No enterprise budget. Just a clear, documented workflow you can hand off, repeat, or scale — whichever your business needs first. Begin with Bismillah and a clear niyyah: you are not just collecting data, you are building the infrastructure that frees your time for work that actually matters.</p>
+    <div class="promise">🎯 A working, repeatable data extraction system that saves 20+ hours/week and lets them compete with bigger companies without enterprise budgets</div>
+    <p class="author-note">A note before we begin — I am not the creator of the Web Scraping channel, and I want to be straightforward about that. I am an independent researcher who has spent considerable time studying the channel's tutorials, testing the tools demonstrated in those videos, and documenting what a complete, repeatable system actually looks like when you connect all the pieces together. The creator shows you the how through precise, no-nonsense screen recordings. This guide is my attempt to answer the why and the what next — written specifically for operators running lean, client-facing businesses who need a system, not just a tutorial. Any mistakes in interpretation are mine alone. All credit for the original tooling demonstrations belongs to the channel. I wrote this as one practitioner sharing notes with another, nothing more.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before building infrastructure, you need proof that scraping works for your specific data source. This 30-minute exercise validates your approach and gives you your first extracted dataset.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Identify and inspect your target</strong><p>Pick one page containing the data you need. Open it in your browser. Right-click → Inspect. Look for the HTML structure holding your data. Note the CSS selectors or XPath patterns. This takes 5 minutes and confirms the data is accessible.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Write a minimal extraction script</strong><p>Use requests + BeautifulSoup (Python) or similar. Write 8-12 lines of code that fetch the page and extract one data field. Don't optimize. Don't scale. Just extract. This takes 15 minutes and proves the mechanics work.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Run it and validate output</strong><p>Execute the script. Save the output to a CSV or JSON file. Open it. Verify the data matches what you see on the page. This takes 5 minutes and confirms your approach is sound.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another section, do this first. Right now. Not after Asr, not tomorrow morning — now. This single exercise will give you a working lead list from Google Maps, a saved project file you can reuse, and the muscle memory of completing one clean scraping run from start to finish. It takes 30 minutes maximum. Make your intention clear: you are learning a skill that is obligatory for anyone who wants to operate with amanah and efficiency in their business. Then open your laptop and follow these three steps exactly.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You'll have 20-100 rows of clean extracted data in a structured format. More importantly, you'll know whether your target requires JavaScript rendering, authentication, or rate limiting—critical information for building a real system.
+  <div class="step"><div class="step-num">1</div><div><strong>Download and open Apify's Google Maps Scraper — free tier, no card needed</strong><p>Go to apify.com, create a free account, and search for 'Google Maps Scraper' in the Store. Open it. In the Start URLs field, type a Google Maps search URL for a real niche and city you actually need — for example, 'restaurants in Lahore' or 'real estate agents in Dubai.' Do not pick a fake example. Use a niche from your current or next client project. This is your niyyah made practical — start with real intent, not practice data you will never use. Set the maximum results to 50. That is enough to prove the system works without burning your free credits.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Run the scraper and export your results as CSV while it runs</strong><p>Click Start and watch the results populate in real time — this is the same moment you see in the channel's screen recordings and it still works exactly that way. While it runs, create a folder on your desktop right now called DATA_SYSTEM and inside it create two subfolders: RAW and CLEANED. When the scraper finishes, click Export, choose CSV, and save the file into your RAW folder with a filename that includes the niche, city, and today's date — for example, restaurants_lahore_2024-01-15.csv. This naming convention is the first brick of your system. Every project from today forward follows this same structure. The barakah is in the discipline of the small things done consistently.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Open the CSV in Google Sheets and delete every column except Name, Phone, Website, and Address</strong><p>Upload your CSV to Google Sheets. You will see 30 or more columns — most of them noise. Delete everything except the four columns listed above. Then add a fifth column called STATUS and leave it blank. Save this cleaned file into your CLEANED subfolder with the same filename. That STATUS column is where you will later mark each lead as Contacted, Replied, or Converted. You have just completed one full cycle of the system: extract, structure, clean, and prepare for action. This is the workflow. You will repeat it for LinkedIn Jobs, for Craigslist, for any source the channel covers — the folder structure and the four core columns never change.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: A clean Google Sheets file with 50 real, usable leads from a niche you actually work in, saved in a folder structure you will reuse for every project going forward. Total time: 25 to 30 minutes. This is not a demo. This is the first run of your data system — and it is already more organized than what most operators have after months of scraping.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Lean Operator Mindset: Why You Don't Need Enterprise Budgets to Extract Enterprise-Level Data</h3>
+      <p>Shift from feeling blocked by budget constraints to understanding that Python, free APIs, and smart architecture can replace 90% of what $2,000/month tools do — starting today.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The painful truth is that tools like ZoomInfo and Apify's enterprise plans are not smarter than you — they are just productized versions of the same scraping logic you can build yourself using BeautifulSoup, Playwright, and free-tier proxies, and businesses in Mumbai, Karachi, and Jakarta are quietly doing exactly this to undercut Western competitors on price. The framework this entire course is built on is called Lean Data Architecture: one data source, one automation script, one clean output — repeated until you have a system, not a stack of half-finished experiments. Before you write a single line of code or collect a single lead, you need to make niyyah (intention) clear: are you building this to free up 40 hours a week for actual client work and family time, or are you just chasing another tool? That clarity of purpose is what separates operators who finish and deploy from those who have 12 half-built scrapers sitting in a folder called 'projects2024.'</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Write down the ONE specific data task currently eating 5+ hours of your week — LinkedIn profiles, e-commerce prices, business directories — because this becomes your Module 2 target and every lesson from here is built around solving YOUR exact problem, not a generic use case</li><li>Open a free Google Colab notebook right now, name it 'Lean Data System — [Your Niche]', and type Bismillah at the top as a comment — this is your workspace for the entire course and starting it today with intention means you will not be starting from zero when Module 2 arrives</li><li>Map your current data budget honestly: list every tool you pay for (or wish you could afford) that touches data collection, enrichment, or research, then write next to each one 'replace,' 'reduce,' or 'keep' — most people find they can eliminate 70% within 60 days of finishing this course</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The operators who scale fastest are not the ones who learn the most scraping techniques — they are the ones who pick the ugliest, most manual data problem in their business and automate only that one thing first, because one working script that runs every morning while you pray Fajr is worth more than ten tutorials you watched but never deployed.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: Building Your Data Extraction Foundation: Systems Before Tools</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: Building Your Extraction Framework: From Ad-Hoc to Systematic</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: Building Your Extraction Template Library: The Reusable Blueprints System</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: Building Your Extraction Pipeline: Error Detection & Self-Healing Systems</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: Building Extraction Intelligence: Error Detection & Self-Healing Systems</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: Building Your Extraction Intelligence System: Error Detection & Self-Healing Workflows</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: Building Your Extraction Command Center: Monitoring, Scaling & Delegation Systems</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Zero-Cost Scraping Stack: Build Your Automated Data Pipeline in One Sitting</h3>
+      <p>Replace $500/month enterprise tools with a free, automated system that pulls bus...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to Build scalable, hands-off data acquisition systems that save 15+ hours weekly and generate reliable business results</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Web Scraping</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Remove the Roadblocks: Why Your Scraper Keeps Failing (And the Fixes That Actually Work)</h3>
+      <p>Turn the 5 most common scraping failures into solved problems so you stop losing...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Web Scraping community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>Dynamic Data Pipelines: Chain APIs and Scrapers So Your System Feeds Itself</h3>
+      <p>Stop collecting data manually one time — build a self-refreshing pipeline that r...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 2-Hour Barakah Block: Your Daily Scraping Routine That Compounds Every Week</h3>
+      <p>Transform scattered scraping sessions into a tight daily system that runs like F...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When Your Scraper Breaks at 2AM: The Muslim Operator's Troubleshooting Playbook</h3>
+      <p>Turn every scraper failure from a panic moment into a 15-minute fix so broken co...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Barakah System: Turning Your 2-Hour Setup Into a Permanent Competitive Advantage</h3>
+      <p>Transform your scraping setup from a one-time hack into a self-maintaining data ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
