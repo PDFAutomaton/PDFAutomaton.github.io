@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Tiny Home Commitment System: Build, Buy, or Move In (Without Regret) - Preview</title>
+<title>The Solo Builder's Momentum System — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Tiny Home Commitment System: Build, Buy, or Move In (Without Regret)</h1>
-  <p class="subtitle">A step-by-step framework to downsize with confidence, eliminate decision paralysis, and execute your lifestyle change without expensive mistakes</p>
-  <div class="for">Created specifically for the audience of <strong>Stan Wilkins</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/5505125/pexels-photo-5505125.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Stan Wilkins viewers</div>
+    <h1>The Solo Builder's Momentum System</h1>
+    <p>Finish Your Project Before You Lose Interest: A Phase-by-Phase Framework Built Around Stan's Deck Build</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Stan Wilkins - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You've watched the tiny home videos. You've done the math on your mortgage. You know downsizing could work for you. But somewhere between 'I want this' and 'I'm doing this,' the gap widens. You get stuck in research loops, second-guess your choices, or freeze when facing the actual complexity of building, buying, or moving. The problem isn't your commitment—it's that you don't have a system.</p>
-  <div class="promise">This guide gives you the exact framework Stan Wilkins uses to move from decision to execution. You'll get a methodical pathway that handles the three entry points (building, buying, or renting into tiny living), shows you how to process emotional attachment to possessions without shame, and builds your confidence through small, verifiable actions. No motivation speeches. No oversimplified 'just let it go' advice. Just a system that works because it addresses what actually stops you.</div>
-  <p>This guide is based on documented practices from tiny home creators, downsizing specialists, and people who've successfully executed this transition. It synthesizes their methods into a replicable system you can follow step-by-step.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You started strong. First two weekends you were out there early, making real progress, telling yourself this is the one you actually finish. Then week three hit. The footings needed more digging than you planned, you hit a water line you didn't expect, and now the whole thing is sitting half-done in your backyard while you tell yourself you'll get back to it when the weather's better. You won't. Not without a system. That stall isn't a motivation problem - it's a structure problem. You never built a framework that could survive contact with the real job.</h2>
+    <p>This guide uses Stan's actual deck build - footings through framing through finishing touches - as a live case study to show you a repeatable system for keeping multi-month projects moving. Not theory. Not generic project management advice recycled from a corporate playbook. A practical phase-by-phase structure that tells you exactly what to do when you hit a snag, how to break a six-month build into weekly targets that actually close out, and how to stay accountable to the work even when the work is unglamorous drainage prep that nobody on YouTube wants to film. If you can follow this system through one build, you own it for every build after that.</p>
+    <div class="promise">🎯 Complete long-term DIY builds on schedule and budget while maintaining momentum through boring/difficult phases</div>
+    <p class="author-note">A quick note before you get into it: I am not Stan. I am an independent researcher and builder who has spent time studying how solo creators like Stan approach long-duration projects with limited resources and no crew. What you will find in this guide is my attempt to reverse-engineer the system visible in his work and translate it into something you can apply starting today. Stan did not write this or endorse it. I did my best to build something honest and useful. The framework is sound. The rest is up to you.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you commit to anything, you need proof that this path is real for you. This quick exercise clarifies your actual entry point (build, buy, or move in), exposes the real obstacles hiding beneath 'I'm not ready yet,' and gives you one concrete action you can take today. This isn't motivation—it's diagnosis.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Define your entry point</strong><p>Write down which path appeals to you most: building a tiny home, buying an existing one, or renting into tiny living. Don't overthink it. If you're genuinely torn between two, write both. This isn't a forever choice—it's your starting assumption.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>List your three biggest fears about this path</strong><p>Write them down exactly as you think them. 'What if I build it wrong?' 'What if I can't afford it?' 'What if I move in and hate it?' Don't solve them yet. Just name them. These fears are data—they'll show you where the system needs to catch you.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Identify one person who's already done your chosen path</strong><p>Find one real example: a builder, a buyer, a renter. A YouTube creator, a friend of a friend, a Reddit post. Write down one specific thing they did that proved it was possible. This breaks the abstraction—you're no longer thinking about 'tiny homes in general' but about 'how this actual person moved from zero to done.'</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page, do this. The biggest reason long builds stall is not laziness - it is that the project lives entirely in your head as one giant undefined thing. This exercise pulls it out of your head and breaks it into something your brain can actually process as winnable. You need a piece of paper or a notes app and thirty minutes. That is it.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: You'll know your entry point, you'll have named the fears that actually matter (not the vague ones), and you'll have proof that someone like you has already done this. You're not further along the path yet—but you're no longer stuck in the fog. That clarity is where execution begins.
+  <div class="step"><div class="step-num">1</div><div><strong>Write down every phase your project needs to reach done - no filtering, no ordering, just dump it all out</strong><p>Set a ten-minute timer and list every distinct category of work your project requires from first shovel to final walkthrough. For a deck build this looks like: site layout, footing holes, concrete pours, post setting, beam installation, joist framing, decking boards, railing, stairs, finishing and sealing. Do not worry about sequence yet. You are just getting it out of your head and onto something you can look at. Most people end up with eight to fourteen phases. If yours looks like two or three you are grouping too much - break it down further.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Put a realistic week count next to each phase based on your actual available hours per week - not your best-case hours</strong><p>Be honest here. If you have twelve hours a week available and pouring footings realistically takes about eight hours of active work plus cure time, that phase is two weeks minimum. Go through every phase and assign a number. Do not assign one week to everything because it feels optimistic. The goal is a number you can actually hit. Add all the weeks up. That total is your real project timeline. Most people are shocked. That shock is useful - it resets your expectations before frustration does it for you.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Circle the one phase that is blocking everything else right now and write down the single next physical action required to move it forward</strong><p>Not a plan. Not a list of subtasks. One physical action. For Stan's build this might have been: mark footing locations with stakes before anything else could happen. For your project it might be: call the utility line locator service, buy two bags of concrete, rent the post hole digger for Saturday. The action should be specific enough that you could do it without thinking about it again. Write it at the top of the page and put the page somewhere you will see it tomorrow morning.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: You will walk away with a rough but realistic project map, an honest timeline that accounts for your actual schedule, and one concrete action that moves your current blocking phase forward. That is more structural clarity than most solo builders have when they start a six-month project. The system in this guide builds directly on top of what you just created.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The 90-Day Sprint Mindset: Why Your Brain Kills Long Projects (And How to Rewire It)</h3>
+      <p>You'll learn exactly why your motivation dies at week six of every build and install the mental operating system that keeps you moving from foundation pour to final walkthrough.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Your brain is wired to reward completion, not progress — which is why a 6-month tiny home build feels like pushing a boulder uphill after the exciting framing phase is done and you're staring at electrical rough-in on a Tuesday after a 10-hour shift. The fix isn't discipline or motivation, it's architecture: you need to restructure your project into what we call 'visible wins' — hard, physical milestones you can photograph, stand inside, or literally lock a door on, because your brain needs proof it's building something real. Most guys kill their projects not at the hard parts but at the 'gray zone' — that mid-project stretch where the shell is up but nothing looks finished yet — and the only way through that zone is having a pre-built decision tree written down before you hit it, not in the moment when you're tired and second-guessing every material choice. Think of this system like the diagnostic mode on a piece of equipment: you're not winging the build, you're running a structured sequence where each phase has a defined start condition, a completion checkpoint, and a go/no-go trigger before you spend another dollar or weekend.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Write down the single physical milestone that would make your project feel 'real' to you — not a task, but a moment you could take a photo of and text to someone — and set that as your 30-day target, not your finish line</li><li>Open your phone's notes app right now and list every reason you quit your last unfinished project, then circle the one that showed up first — that's your specific kill switch and Module 2 is built around disarming it</li><li>Break your total project into exactly three phases labeled 'Shell,' 'Systems,' and 'Livable' — assign a rough percentage of your total budget to each bucket today, even if the numbers shift later, because a project without budget phases will always overspend in phase one and stall in phase two</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The guys who actually finish their builds don't have more motivation — they have fewer open loops. Before you touch a single tool this week, close every half-decided question you have about your project (lumber grade, trailer spec, window brand) by making a 'good enough for now' decision and writing it down, because your brain bleeds energy on unresolved decisions the same way a slow leak drains a hydraulic system.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Commitment Clarity Audit: Identify Your True Tiny Home Why</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Ruthless Inventory: Your Personal Belongings Audit</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Possession Audit: Categorize Before You Purge</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Ruthless Release Protocol: Your 90-Day Declutter Blueprint</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Ruthless Inventory Method: Categorize, Quantify, and Eliminate</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Downsizing Gauntlet: Your 90-Day Possession Purge Protocol</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Reverse Inventory System: What Stays vs. What Goes</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Phase Map: Breaking Your Build Into Chunks You Can Actually Finish</h3>
+      <p>You'll build a concrete phase-by-phase roadmap that turns your overwhelming proj...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to a clear, actionable pathway from 'I want to downsize' to 'I'm living in my tiny home' with confidence in practical execution</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Stan Wilkins</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Unstuck in 20 Minutes: The Solo Builder's Problem-Solving Protocol</h3>
+      <p>Turn every mid-build crisis into a solved problem instead of a project-killing m...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Stan Wilkins community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Problem-Solving Protocol: Unstick Yourself in Under 2 Hours</h3>
+      <p>Turn mid-build crises into solvable puzzles so a busted plan never kills your mo...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 20-Minute Daily Build Loop: How to Touch Your Project Every Single Day (Even When You're Exhausted)</h3>
+      <p>Turn your build from a weekend scramble into a daily habit that compounds progre...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When It All Goes Sideways: The Mid-Project Recovery Protocol</h3>
+      <p>Turn your biggest build setbacks into decisions you can execute today instead of...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Builder's Mindset: Turning One Finished Project Into a Lifetime of Them</h3>
+      <p>You stop being someone who builds things and start being someone who is a builde...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
