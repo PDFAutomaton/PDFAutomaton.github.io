@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Graphics Analysis Framework — Sample Preview</title>
+<title>From Game Analysis to Portfolio: The Technical Artist's Implementation System — Sample Preview</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
@@ -196,12 +196,12 @@
 
 <!-- HERO WITH PEXELS IMAGE -->
 <div class="hero">
-  <img class="hero-img" src="https://images.pexels.com/photos/3850229/pexels-photo-3850229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <img class="hero-img" src="https://images.pexels.com/photos/9618450/pexels-photo-9618450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
   <div class="hero-overlay">
     <div class="sample-pill">✦ Sample Preview</div>
     <div class="for-badge">Built for World of Art viewers</div>
-    <h1>The Graphics Analysis Framework</h1>
-    <p>From AAA Breakdown to Your Game Engine: A Repeatable System for Reverse-Engineering Professional Techniques and Implementing Them in Your Own Projects</p>
+    <h1>From Game Analysis to Portfolio: The Technical Artist's Implementation System</h1>
+    <p>A structured pipeline for reverse-engineering AAA techniques and turning passive study into work you can ship</p>
   </div>
 </div>
 
@@ -209,10 +209,10 @@
 
   <!-- HOOK -->
   <div class="hook-card">
-    <h2>You watch a detailed breakdown of how Cyberpunk 2077 handles its wet street reflections — the screen-space reflections, the puddle normals, the way light bleeds across the asphalt at 2am — and for about twenty minutes, you genuinely feel like you understand it. Then you open Unreal Engine or Godot, stare at your scene, and realize you have no idea where to actually start. The knowledge evaporated somewhere between the video and the viewport. That gap — between understanding what a game is doing and knowing how to touch it in your own project — is exactly what this guide exists to close.</h2>
-    <p>What you'll find here is not another theory dump about rendering pipelines or a glossary of terms you already half-know. This is a structured, repeatable framework for analyzing any AAA title systematically, identifying the specific techniques driving its visual quality, and translating those techniques into scaled, implementable decisions for your own engine and performance budget. We'll work through real examples — the kind of games already broken down on the World of Art channel, including titles like Horizon Forbidden West, Alan Wake 2, and The Callisto Protocol — using a consistent method you can apply to any game you sit down with. By the end, you will have a personal analysis toolkit: a set of checklists, priority filters, and translation steps that turn passive watching into active, buildable knowledge.</p>
-    <div class="promise">🎯 Be able to analyze professional games systematically, extract the core techniques used, and implement scaled versions in their own projects within realistic constraints</div>
-    <p class="author-note">A quick note on where this guide comes from. I'm a third-party researcher and technical writer, not the creator behind World of Art. I've spent time studying the channel's visual breakdown methodology, cross-referencing it with game development documentation, GDC talks, and shader breakdowns from working technical artists, and what you're reading is my attempt to systematize what that channel does intuitively into something you can follow step by step. I have enormous respect for the work that goes into those video analyses, and this guide is built to complement that content — not replace it. Think of it as the workbook that sits next to the videos. I don't claim to be a AAA developer. I claim to have looked very carefully at how good technical analysis actually works, and written it down in a way that's actionable for the skill levels in this room.</p>
+    <h2>You can describe exactly how Horizon Forbidden West handles its terrain blending, explain the layered approach behind Cyberpunk's wet surface reflections, and break down why a particular wave simulation works the way it does. But when you open your DCC tool and start a new scene, none of that analysis shows up in the work. That gap, between knowing what a technique is and knowing how to actually build it yourself, is where most technical learning stalls.</h2>
+    <p>This guide gives you a repeatable system. Not a reading list, not a mood board workflow, not another breakdown of techniques you already understand conceptually. A working pipeline that takes you from watching an analysis to having a documented, implementable version of that technique in your own project files. You will end this guide with a personal reference architecture, a prioritisation method for choosing which techniques actually move your portfolio forward, and a checklist format you can run against any game you study from here on.</p>
+    <div class="promise">🎯 Build a technical skillset that translates directly into portfolio work and job readiness. Go from passive watcher to active implementer.</div>
+    <p class="author-note">A note on who wrote this: I am not the person behind World of Art. I am an independent researcher and technical documentation writer who works with educational creators to translate their body of work into structured reference material. I have spent time inside this channel's catalogue, cross-referencing the techniques covered against industry job postings, portfolio feedback threads, and junior technical artist hiring criteria. What follows is my attempt to build the system that the channel's content points toward but, by nature of the video format, cannot fully deliver on its own. Where I have made methodology choices, I have tried to explain the reasoning. Where something is genuinely disputed in the industry, I have said so.</p>
   </div>
 
   <hr class="divider">
@@ -220,14 +220,14 @@
   <!-- QUICK WIN -->
   <div class="section-label">⚡ Quick Win — Included Free</div>
   <div class="section-title">Get Your First Result in 30 Minutes</div>
-  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page, do this. Pick one game you already have installed — ideally something with a strong visual identity, anything from a modern open-world title to a recent horror game. You're going to run your first structured observation pass using just three focal points. This is the foundation of the full framework, and doing it once today in a low-stakes way will make every subsequent section click faster. You don't need to implement anything yet. You're training your eye to see with a method.</p>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">This exercise builds the foundation of your personal technique library. You are going to take one game you already know visually, identify one specific surface or environmental detail that you cannot currently replicate, and produce a structured implementation note for it. Not the implementation itself. The note that makes implementation possible. Most people skip this step and go straight to tutorials. That is why nothing sticks.</p>
 
-  <div class="step"><div class="step-num">1</div><div><strong>Boot the game and find one visually complex scene, then pause or enter photo mode</strong><p>Look for a scene with mixed lighting conditions — ideally one with a strong light source, a shadowed area, and at least one reflective or wet surface. Interior doorways, street-level urban environments, and forest clearings at dusk all work well. Take a screenshot or just hold the frame. You want something you can stare at for five minutes without it changing. This is your specimen.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Write down exactly three observations using this sentence structure: I can see X, which is probably achieved by Y</strong><p>Force yourself to name what you're seeing and make a guess at the technique behind it — even a wrong guess. For example: 'I can see the reflections on the floor breaking up near the edges of the screen, which is probably screen-space reflection with a falloff distance set.' Or: 'I can see the grass flattening in a circle around the player, which is probably a distance-based tessellation or wind simulation with a collision mask.' You are not graded on accuracy. You are building the habit of pairing observation with mechanism.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Google one of your three guesses using the exact technique name you wrote down, plus the words 'game dev implementation'</strong><p>If you wrote 'screen-space reflection falloff,' search that. If you wrote 'grass collision mask Unreal,' search that. Spend ten minutes reading one result — a forum post, a GDC slide, a Reddit thread, anything. Then come back to your screenshot and see if the result changes how you read the image. It usually will. This loop — observe, name, research, re-observe — is the micro-version of the entire framework in this guide.</p></div></div>
+  <div class="step"><div class="step-num">1</div><div><strong>Pick one surface from a game you have played in the last six months and screenshot or sketch it from memory</strong><p>Do not spend time finding the perfect example. Pick something specific: a wet concrete floor, a weathered metal panel, a shoreline where water meets sand. Open a blank document or a physical notebook. Write the game name, the surface type, and one sentence describing what makes it visually convincing. The goal here is to commit to a single, bounded thing rather than a category of things. 'Realistic water' is not bounded. 'The foam accumulation at rock edges in God of War Ragnarok' is.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>List exactly three visual properties of that surface that you do not currently know how to produce</strong><p>Not twenty. Three. Force the constraint. Look at your screenshot or mental image and ask: what is happening here that I could not fake right now in my current tool setup? This might be the way grime collects in surface cavities, the way a material transitions between wet and dry states, or the way light scatters differently across a roughness gradient. Write each property as a single plain sentence. No jargon required at this stage. You are describing what you see, not how it is built.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>For each property, write one search string and one tool or node category you think is responsible</strong><p>Example format: Property: foam collects in low-lying areas and fades at edges. Search string: 'Houdini foam mask shoreline accumulation'. Likely tool or node category: vertex colour masking or fluid simulation bake. You do not need to be correct. You need to have a hypothesis. This is the step that converts passive observation into an active research posture. Save this document somewhere you will find it. It is the first entry in your technique library.</p></div></div>
 
 
-  <div class="result-box">✅ Expected result: After 30 minutes you will have completed one full observation cycle on a real game scene, named at least three techniques by their approximate category, and connected one of them to an outside technical resource. You won't be able to implement anything yet, and that's exactly right. What you'll have is the beginning of a trained eye — one that looks at a game frame and immediately starts asking mechanical questions instead of just reacting to how good it looks. That shift in how you see is what everything else in this guide is built on.</div>
+  <div class="result-box">✅ Expected result: You will have a single structured technique note: one surface, three properties, three search strings, three tool hypotheses. It will take up less than a page. It is not impressive on its own. It becomes the template you run against every game you study from this point forward, and after ten entries it starts to function as a genuine personal reference system that reflects your actual skill gaps rather than someone else's curriculum.</div>
 
   <hr class="divider">
 
@@ -242,15 +242,15 @@
   <div class="module-header">
     <div class="module-num">1</div>
     <div class="module-info">
-      <h3>The Reverse-Engineer's Eye: How to Actually See What AAA Games Are Doing</h3>
-      <p>Stop watching graphics breakdowns passively and start extracting a reusable technical blueprint from every game you play.</p>
+      <h3>The Reverse Engineering Mindset: Stop Watching, Start Decoding</h3>
+      <p>Shift from passive game consumer to active technical detective by building a structured lens that turns every screenshot, shader breakdown, and GDC talk into extractable, implementable knowledge.</p>
     </div>
   </div>
   <div style="padding:0 24px 24px;">
-    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most people in this community can *describe* what makes Cyberpunk 2077 or Alan Wake 2 look incredible, but describing and dissecting are completely different skills — one keeps you a fan, the other makes you a developer. The Graphics Analysis Framework starts with a single habit: every time you notice a visual effect that stops you cold, you immediately ask three questions in sequence — What is the *input* data this effect needs, what is the *transformation* being applied, and what does the *output* look like in isolation from everything else around it. This input-transform-output loop is how you convert 'that subsurface scattering on skin looks insane' into an actionable technical spec you can chase in Unreal, Unity, or Godot, because you're no longer reacting emotionally to the whole image, you're surgically isolating one rendering pass at a time. The reason this framework works specifically for self-taught devs and junior engineers is that it bypasses the need for a graphics programming degree — you're leveraging the finished product as your textbook, and AAA studios have spent millions of dollars making that textbook as visually explicit as possible.</p>
-    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Today, boot up any game with high-fidelity lighting — Horizon Forbidden West, The Last of Us Part I, or even a game you already own — disable HDR on your monitor if possible, and spend 15 minutes doing nothing but pausing in scenes and naming exactly one rendering technique per screenshot you take (motion blur, ambient occlusion, bloom, etc.) — the act of naming forces your brain out of passive consumption mode</li><li>Go to the GDC Vault right now (gdcvault.com, free content is available without login) and find ONE rendering talk from a studio whose art style you want to replicate — don't watch the whole thing yet, just skim the slide deck and write down every technical term you don't fully understand, because that list IS your personal curriculum gap-analysis</li><li>Create a dead-simple 'Technique Teardown Doc' — a Google Doc or Notion page with three columns labeled Input, Transform, Output — and immediately populate it with one effect from your gaming session using your best guess for each column, even if you're wrong, because committing a hypothesis forces you to look for evidence that confirms or breaks it</li></ul>
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most technical artists consume game analysis content the same way they watch Netflix — entertained but passive — which is why you can explain Horizon Zero Dawn's strand-based foliage rendering in a pub conversation but freeze when you need to implement wind interaction in your own UE5 scene. The fix is treating every game you play or every breakdown video you watch on this channel as a live teardown session, where your job is to ask three specific questions: What problem is this technique solving, what are the observable visual inputs and outputs, and what's the simplest version I could prototype this week in my own DCC tool. This 'minimum viable technique' thinking is the core of the system — you're not trying to rebuild Lumen from scratch, you're trying to isolate the one shader node, one texture channel trick, or one geometry flow decision that you can drop into your current portfolio piece by Friday. Once you start framing game analysis this way, a single World of Art breakdown video stops being 45 minutes of entertainment and becomes a structured list of 3-5 concrete experiments you can run immediately.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open your last played game right now, take 5 screenshots of visually interesting moments, and for each one write one sentence answering: 'What specific technical problem is this rendering or art decision solving?' — not what it looks like, but what problem it fixes</li><li>Find one GDC talk, shader breakdown, or channel video you've already watched and rewatch only the first 10 minutes with a text doc open, this time writing down every technique mentioned as 'TECHNIQUE: [name] | PROBLEM IT SOLVES: [answer] | PROTOTYPE DIFFICULTY: Easy/Medium/Hard'</li><li>Create a folder on your desktop called 'Technique Lab' and drop in your annotated screenshots and notes — this is your personal extraction database, and the act of creating it commits you to the system before you've done any actual implementation</li></ul>
     <div style="background:#FAF5FF;border-radius:8px;padding:12px 16px;font-size:13px;color:#C084FC;font-weight:600;">
-      💡 Pro tip: The biggest mistake this community makes is studying the most complex effects first because they're the most impressive — but your analysis muscle gets built on simple, isolated effects like a basic rim light or a depth-of-field blur, because when you can articulate those completely using the Input-Transform-Output model, you'll discover that 90% of 'impossible' AAA techniques are just three or four of those simple effects stacked with very specific parameter tuning, not alien technology.
+      💡 Pro tip: The techniques that feel too simple to bother prototyping — a vertex color masking trick, a cheap normal map blend setup — are almost always the ones that actually end up in shipped games and in senior artist interviews, so deliberately start with the lowest-difficulty items on your list before the impressive-sounding stuff.
     </div>
   </div>
 </div>
@@ -259,8 +259,8 @@
   <div class="module-header">
     <div class="module-num">2</div>
     <div class="module-info">
-      <h3>The Reverse-Engineering Loop: Dissecting AAA Visuals Into Buildable Parts</h3>
-      <p>Learn to systematically tear apart any AAA screenshot or video frame into discre...</p>
+      <h3>The Reverse-Engineering Framework: Extracting Implementable Techniques from Any Game</h3>
+      <p>Transform passive game analysis into a structured extraction system that convert...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -273,8 +273,8 @@
   <div class="module-header">
     <div class="module-num">3</div>
     <div class="module-info">
-      <h3>Breaking the Analysis-Paralysis Loop: Why You Keep Studying But Never Shipping</h3>
-      <p>Transform the endless cycle of watching GDC talks and bookmarking shader breakdo...</p>
+      <h3>Breaking the Analysis Paralysis Loop</h3>
+      <p>Identify the exact friction points killing your implementation momentum and inst...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -287,8 +287,8 @@
   <div class="module-header">
     <div class="module-num">4</div>
     <div class="module-info">
-      <h3>The Reverse-Engineering Sprint: Deconstruct a AAA Effect and Ship It in 48 Hours</h3>
-      <p>Stop collecting references and start shipping — this module forces you to compre...</p>
+      <h3>Reverse-Engineer at Shader Level: Reading GPU Tricks Without Source Code</h3>
+      <p>Stop guessing how effects work and start diagnosing them with the same tools stu...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -301,8 +301,8 @@
   <div class="module-header">
     <div class="module-num">5</div>
     <div class="module-info">
-      <h3>The Daily Dissection Habit: 20 Minutes That Close the Theory-to-Engine Gap</h3>
-      <p>Turn passive gaming sessions into active reverse-engineering practice by buildin...</p>
+      <h3>The 20-Minute Daily Extraction Loop: Turning Game Time Into Portfolio Fuel</h3>
+      <p>Transform your existing gaming sessions into a structured daily intelligence-gat...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -315,8 +315,8 @@
   <div class="module-header">
     <div class="module-num">6</div>
     <div class="module-info">
-      <h3>When Your Implementation Breaks: The Graphics Debug Playbook</h3>
-      <p>Turn frustrating visual glitches and failed technique ports into diagnostic supe...</p>
+      <h3>Debug Your Pipeline: When Your Recreation Looks Nothing Like the Reference</h3>
+      <p>Turn the frustrating gap between your recreation and the original into a diagnos...</p>
     </div>
   </div>
   <div class="locked-overlay">
@@ -329,8 +329,8 @@
   <div class="module-header">
     <div class="module-num">7</div>
     <div class="module-info">
-      <h3>The Living Lab: Turning Graphics Analysis Into a Permanent Dev Habit</h3>
-      <p>Transform one-off technique breakdowns into a compounding knowledge system that ...</p>
+      <h3>The Compounding Artist: Turning Game Analysis Into a Lifelong Competitive Edge</h3>
+      <p>Transform isolated study sessions into an evergreen system that keeps your skill...</p>
     </div>
   </div>
   <div class="locked-overlay">
