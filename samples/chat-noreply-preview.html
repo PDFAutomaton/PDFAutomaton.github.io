@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Semester-Long Momentum System — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/6683966/pexels-photo-6683966.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Chat-Noreply viewers</div>
+    <h1>The Semester-Long Momentum System</h1>
+    <p>How Indian Exam Students Actually Stay Consistent (Without Burning Out by Week 6)</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You started this semester differently. New notebook, color-coded schedule, maybe even a vision board if you were feeling ambitious. Week one was great. Week two was fine. Somewhere around week four, when the organic chemistry got genuinely unhinged or the integration problems stopped making any sense, the whole system quietly collapsed. Now you're back to studying in three-hour panic sessions the night before every test, running entirely on guilt and chai, wondering why you can't just be consistent like those people who apparently enjoy this. Here's the thing nobody tells you: you didn't fail because you lack discipline. You failed because you were using a sprint strategy for a marathon race. The semester is four to five months long. No human being sustains pure willpower across four to five months. Not toppers, not your cousin who got into IIT, not anyone. The students who actually perform consistently across a full semester aren't more motivated than you. They just accidentally stumbled into systems that don't require them to feel motivated every single day.</h2>
+    <p>This guide gives you that system. Not a motivational framework that feels good for a week. Not a color-coded time table that becomes a museum piece by February. An actual operating rhythm for how to study hard subjects across a full semester without your brain staging a revolt halfway through. You'll learn how to structure your study blocks so mental fatigue stops killing your sessions, how to handle the specific moment mid-semester when everything feels impossible and most students quietly give up, and how to build daily momentum that compounds instead of resets every time you have a bad week. The whole thing is built around one uncomfortable truth: consistency is an engineering problem, not a character problem. We're going to treat it like one.</p>
+    <div class="promise">🎯 Sustainable daily study rhythm that builds momentum without requiring heroic willpower, ability to tackle hard topics without losing focus, consistent performance across the semester instead of last-minute panic</div>
+    <p class="author-note">A quick note before we get into it. I'm a researcher who studies student performance patterns and learning systems, not the creator of the channel you came from. I put this guide together by analyzing what actually separates students who maintain steady performance across a full semester from those who flame out mid-term. I'm not a motivational speaker and this isn't a pep talk. Some of what follows is going to contradict advice you've been given your entire academic life. I'd ask you to sit with that rather than immediately dismiss it. The students who told me these systems changed how they studied weren't exceptional kids. They were regular students who were exhausted from doing things the hard way and desperate enough to try something different. That's a pretty good starting point.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read the rest of this guide, do this one thing today. Right now if possible. It takes thirty minutes and it's going to show you something important about how your study sessions are actually structured versus how you think they're structured. Most students discover within the first fifteen minutes that their study blocks have a hidden architecture they've never consciously examined. Once you see it, you can't unsee it, and that awareness alone changes how you approach the next session.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Pull out the subject you've been avoiding most this week</strong><p>Not your easiest subject. Not the one you're behind on for a test tomorrow. The one you keep skipping because opening that textbook or those notes produces a specific low-grade dread in your chest. Set a timer for exactly twenty-five minutes. Open the material to wherever you last genuinely understood something, not where you left off, where you last actually understood. This distinction matters more than it sounds. You're going to work forward from competence, not from confusion.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Work for the full twenty-five minutes and track every moment you mentally leave the room</strong><p>Each time you notice your attention has drifted, whether to your phone, a random thought, anxiety about the exam, or just a general mental blankness, make a small tally mark on a piece of paper. Don't judge it, don't try to reduce it, just mark it. You're gathering data right now, not performing productivity. When the timer goes off, stop completely. Count your tally marks. Most students doing this for the first time find they mentally checked out somewhere between four and nine times in twenty-five minutes. That number is not a character flaw. It's a baseline.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Take a five-minute break with your phone face-down, then write two sentences about what you actually covered</strong><p>Not what you planned to cover. What you actually absorbed well enough to explain to someone else. Two sentences maximum. This forces an honest accounting of real output versus time spent, which are two very different numbers for most students. The gap between those two numbers, your time spent versus your real output, is exactly what the rest of this system is designed to close. Save that number of tally marks and your two sentences somewhere. We'll reference this structure repeatedly throughout the guide.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After thirty minutes you'll have your personal focus baseline, which is the actual number of times your attention broke across a single study block, and a clear picture of your real output rate on a difficult subject. Most students find this mildly humbling and also weirdly relieving. You're not lazy. You're working with an unexamined system that leaks attention constantly. Now you know what you're actually fixing.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Identity Shift: Stop Being a Student Who Studies and Start Being Someone Who Shows Up</h3>
+      <p>Before you fix your schedule, you need to fix the story you're telling yourself about why you're doing this — because no Pomodoro timer saves you when you genuinely believe you're not built for JEE or NEET.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most Indian exam students treat consistency like a willpower problem, so they keep downloading new timetables and buying new stationery after every breakdown — but the real issue is that your brain is running on fear-based motivation (avoid failure, avoid disappointing parents) which burns out by Week 6 every single time because fear is a sprinter fuel, not a marathon fuel. The fix isn't to stop caring about results — it's to build what psychologists call 'process identity': you're not studying to crack JEE, you're someone who does 4 hours of focused work daily, full stop, regardless of how yesterday went. This matters specifically in the Indian coaching system because your Aakash or Allen batch moves at a brutal pace and if you tie your consistency to your test scores, one bad DPP week spirals into skipping Physical Chemistry entirely for 10 days. Right now, your job in Module 1 is simple: define the minimum viable version of yourself on a bad day — not the best-case timetable, but the floor you will never go below, even during pre-board panic or family function season.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Write one sentence in your phone notes right now that starts with 'I am someone who...' — not 'I want to' or 'I will try to' — and make it about a daily behavior, not an exam result (example: 'I am someone who opens my Physics book every single day, even if only for 20 minutes')</li><li>Look at your last 2 weeks and identify the exact day your consistency broke — write down what happened the day BEFORE that break, because that trigger (a bad mock score, a comparison with a batchmate, an argument at home) is your personal consistency killer you need to plan around</li><li>Set your 'floor standard' for this semester right now: pick ONE subject, ONE time slot, and ONE minimum duration (even 25 minutes) that you commit to hitting on your worst days — this is not your full schedule, this is just the habit you will protect no matter what</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The students who top their batches aren't more disciplined — they've just accidentally stumbled into process identity by studying the same subject at the same time for so long it stopped feeling like a choice, so you can engineer this artificially by anchoring your non-negotiable study slot to something you already do without thinking, like right after dinner or immediately after your school/coaching drop-off, before your brain has time to negotiate.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The 3-Subject Rotation: Why JEE/NEET Toppers Never Study One Subject All Day</h3>
+      <p>Replace willpower-draining marathon sessions with a rhythmic subject rotation sy...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The Wall: Why You're Not Lazy, You're Just Hitting Predictable Crash Points</h3>
+      <p>Learn to identify the exact moments in your JEE/NEET semester when motivation co...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Difficulty Spike Protocol: How to Push Through When JEE/NEET Content Gets Brutal</h3>
+      <p>Learn how to rewire your brain's response to hard chapters so that difficulty be...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 90-Minute Loop: Your Non-Negotiable Daily Blueprint</h3>
+      <p>Replace your chaotic study days with one repeatable daily structure that works w...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>The Crash-and-Recovery Protocol: Getting Back After a Bad Week</h3>
+      <p>Turn your worst study week into a system reset that actually makes you more cons...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>From Exam Mode to Exam Life: Making Consistency Your Default Setting</h3>
+      <p>This module transforms everything you've built this semester from a temporary su...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
