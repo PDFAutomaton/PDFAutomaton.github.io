@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Daily Islam System: From Sporadic Practice to Unshakeable Routine - Preview</title>
+<title>The Barakah Beauty System — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #0F3460;
-        --primary-bg: #E8F0FE;
-    }
-    .cover { background: linear-gradient(135deg, #0F346022 0%, #0F346055 50%, #0F3460 100%); }
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
     .step-num { background: #0F3460; }
-    .preview-badge { background: #E8F0FE; border: 2px solid #0F3460; color: #0F3460; }
-    .for-badge { background: #0F3460; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #0F3460aa, #0F3460); }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Daily Islam System: From Sporadic Practice to Unshakeable Routine</h1>
-  <p class="subtitle">Build a repeatable Islamic practice that actually fits your modern life—no guilt, no overwhelm, just real results</p>
-  <div class="for">Created specifically for the audience of <strong>Imaan Talks</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/8068686/pexels-photo-8068686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Imaan Talks viewers</div>
+    <h1>The Barakah Beauty System</h1>
+    <p>90 Days to Glowing Skin, Better Health & Real Confidence — The Islamic Wellness Blueprint</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Imaan Talks - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You know Islam is important to you. You've watched the content, read the posts, felt the pull toward something deeper. But between work emails, social commitments, and just... life... your practice keeps slipping. You pray when you remember. You read Quran when you feel motivated. You want to be consistent, but consistency keeps feeling like something other people manage, not you. Sound familiar? Here's what nobody tells you: consistency isn't about willpower or being 'more religious.' It's about design. It's about building a system so small and practical that skipping it feels harder than doing it.</p>
-  <div class="promise">This guide isn't about adding more to your plate. It's about replacing scattered effort with a simple daily rhythm that actually works with your life, not against it. By the end, you'll have a system that takes less than 30 minutes total but creates the kind of spiritual momentum that shows up everywhere—in your focus at work, your patience with people, your inner sense of peace, and yes, your actual Islamic practice. Real discipline is just love with a schedule. Let's build yours.</div>
-  <p>This guide is based on interviews with modern Muslims across different professions and backgrounds who rebuilt their practice using systematic habit design. You'll hear their real examples throughout.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You started that skincare routine three times this year. You bought the products, watched the videos, made the notes. Week one felt amazing. Week two started slipping. By week three, the cleanser was sitting unopened on your shelf and your skin was back to exactly where it was — maybe worse, because now there's guilt on top of the breakouts. Sound familiar? Here's what nobody tells you: it's not a willpower problem. It's a systems problem. You don't have a routine. You have a series of disconnected habits with no anchor, no rhythm, and no real reason to stick past the motivation wearing off. And when you're juggling uni deadlines, family expectations, prayer times, and the constant background noise of figuring out who you are in a world that wasn't exactly designed with you in mind — 'just be consistent' is genuinely unhelpful advice. This guide exists because you deserve something that actually works with your life, not against it.</h2>
+    <p>What you're holding is a 90-day system — not a mood board, not a list of tips you already know — a real, step-by-step blueprint that connects your Islamic practices to measurable physical results. We're talking clearer skin with an evidence-backed protocol you can actually follow. Better gut health and energy through daily fixes that take minutes, not hours. Real confidence that isn't dependent on a good skin day. And a repeatable system that uses your salah times, your niyyah, and the discipline you already practice in your deen as the backbone of your wellness routine — because your deen and your health were never meant to be separate. The Prophet ﷺ said the body has a right over you. This guide is about honoring that right, practically and consistently, for 90 days until it becomes who you are.</p>
+    <div class="promise">🎯 Visible transformation (clear skin, energy, confidence) through a sustainable 30-90 day system that ties wellness practices to Islamic discipline and barakah</div>
+    <p class="author-note">A note before we begin — I'm a researcher and wellness writer, not Imaan herself. I've put this system together by studying the content, the community questions, and the real patterns that show up again and again in what Muslim women your age are struggling with and searching for. Everything in here is grounded in both evidence-based wellness practice and authentic Islamic framing. Imaan's voice and approach shaped every section, but think of this guide as the friend-who-did-the-research handing you the condensed, no-fluff version so you don't have to figure it out alone. Take what's useful, make it yours, and start with Bismillah.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before you read further, let's prove this works. This quick exercise will show you exactly where the friction is in your current practice—and how small it actually is to remove. Many people realize their biggest block isn't laziness; it's unclear time blocks and unclear intention. This 30-minute session will fix both.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>Map your current Islamic touchpoints</strong><p>Grab paper or your phone notes. Write down every Islamic practice you currently do in a week—prayer, Quran, duas, Islamic content, conversations. Just list what actually happens, not what should happen. Be honest. This isn't judgment; it's data. (5 minutes)</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Identify your one 'anchor prayer'</strong><p>Look at your list. Which prayer do you hit most consistently? Fajr? Zuhr? Asr? Pick the ONE you never miss. That's your anchor. This becomes your system's foundation. (3 minutes)</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Design your 'after-prayer micro-routine'</strong><p>For the next 3 days only, commit to this: right after your anchor prayer, spend 90 seconds (that's it) doing ONE thing—read 3 ayahs of Quran, listen to a 1-minute Islamic reflection, or sit quietly with an intention (niyyah). Set a phone reminder if needed. Don't overthink it. Just 90 seconds, anchored to a prayer you already do. (2 minutes to set up)</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page, do this. Right now, today. Not tomorrow, not after you finish the guide. The biggest reason routines die is that they never produce a feeling worth repeating. We're going to give you that feeling in the next 30 minutes using three things you almost certainly already have at home. This is your Day 1. Your niyyah starts here — make the intention that caring for this body Allah gave you is an act of worship, then let's move.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: After 3 days, you'll notice three things: First, you'll see how tiny the actual time commitment is—this isn't about hours, it's about 90 seconds. Second, you'll have proof that your anchor prayer is strong enough to carry a new habit. Third, you'll feel the difference between scattered practice and intentional practice. That's barakah—when effort is focused and purposeful, it multiplies. That feeling? That's what the full system builds on.
+  <div class="step"><div class="step-num">1</div><div><strong>Do a 5-minute face steam with green tea or plain hot water</strong><p>Boil water, pour it into a bowl, drape a clean dupatta or towel over your head, and let the steam open your pores for 5 minutes. If you have a green tea bag, drop it in — the antioxidants are doing real work here. This single step addresses the number one reason DIY skincare fails: product cannot penetrate congested, unprepped skin. While you steam, make your niyyah. Say Bismillah. This is not a spa treat — this is you honoring the amanah of your body. You will feel the difference in your skin texture within minutes and that feeling is the data point your brain needs to want to repeat this.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Do a 60-second cold water finish and apply ONE moisturizer with SPF or plain aloe vera</strong><p>Splash your face with cold water — this closes the pores you just opened and reduces puffiness instantly. Pat dry with a clean cloth, never rub. Then apply one thing only: either a moisturizer with SPF if it's daytime, or plain aloe vera gel if it's evening. The mistake most people make is layering five products on day one and having no idea what's working. One product, consistently. Take a photo in natural light right now before you do this step, then take another after. The difference in glow and texture will be visible and that photo is your accountability partner for the next 90 days.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Drink 500ml of warm water with a pinch of sea salt and half a lemon, then set three phone alarms</strong><p>This is your gut reset starting today. Warm lemon water first thing — or right now if you haven't had it yet — kickstarts digestion, reduces the bloating that shows up on your face as puffiness, and begins the internal hydration that no topical product can replace. The sea salt replaces electrolytes, especially important if you're someone who drinks tea before water in the morning (we see you). Then set three alarms on your phone: one for morning water, one for your skincare step, one for a 10-minute wind-down before bed. Label them with intention — not just 'alarm' but 'barakah morning,' 'skin niyyah,' 'body rest.' These three alarms are your system skeleton. The rest of this guide builds on them.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: Within 30 minutes you will have visibly brighter, softer skin — not a dramatic transformation, but a real, noticeable glow that proves the system works. More importantly, you will have completed Day 1 with intention, which means the 90-day clock has started. Save that before photo. You're going to want it in three weeks.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>Niyyah Before Niacinamide: Building the Mindset That Makes Your Glow Last</h3>
+      <p>Before you touch a single skincare product or workout plan, you need to rewire how you think about self-care — because without the right foundation, every routine you start will collapse by week two.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most Muslim girls in their 20s have tried every trending skincare routine from Instagram and YouTube, spent money on serums they use for 11 days, then quietly abandon — and the real problem isn't laziness, it's that nobody ever connected their daily self-care to something deeper than aesthetics. When you make the niyyah that caring for this body is a trust from Allah (amanah), your consistency changes because you're no longer doing it just for validation — you're doing it as an act of worship, which means it survives bad skin days, busy uni weeks, and every other excuse your brain invents. The Barakah Beauty System works on a 90-day cycle because that's actually how long it takes for your skin to fully renew itself at the cellular level AND for a habit to become automatic in your brain — so the first 30 days are not about results, they're about building the infrastructure that creates results. Use your five daily salah times as your non-negotiable check-in points throughout the day — Fajr is your morning reset, Dhuhr is your midday accountability, Asr is your energy audit, Maghrib is your wind-down signal, and Isha is your reflection — this prayer-anchored rhythm means you already have a built-in structure that most wellness influencers charge hundreds for.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, open your notes app and write your personal niyyah statement — not 'I want clear skin' but something like 'I am caring for this body because it is an amanah from Allah and I want to show up fully in my deen, my relationships, and my purpose' — keep it under 3 lines and screenshot it as your lock screen for the next 30 days</li><li>Do a brutally honest 5-minute audit: list every wellness or skincare habit you've started in the last 12 months and write one word next to each explaining why you stopped — you'll likely see a pattern (boredom, no results fast enough, too complicated) and that pattern is exactly what this system is designed to break</li><li>Before you sleep tonight, pick ONE small action you will do tomorrow morning immediately after Fajr salah — it could be drinking one glass of water, doing 60 seconds of face massage, or writing three things you're grateful for about your body — the action itself matters less than the habit of linking your morning ibadah to your self-care, because that anchor is what makes the whole 90 days stick</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The girls who see the most transformation in this system are not the ones who are most motivated on Day 1 — they're the ones who design their environment so the right choice is the easy choice, so before Day 2 even arrives, physically place your skincare on your prayer mat or next to your mus-haf so that your self-care routine literally cannot be separated from your spiritual routine in your mind or your space.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Foundation Audit: Diagnosing Your Practice Gaps</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Identity Shift: From Knowing Islam to Living Islam</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Environmental Design Method: Structuring Your Space for Automatic Practice</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Identity Shift: Becoming Muslim First, Professional Second</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Identity Shift: Making Islam Your Default Operating System</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Accountability Architecture: Building Your Islamic Practice Support System</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Legacy Lens: Building Your Islamic Identity for Tomorrow</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The 5-Pillar Skin & Body Ritual: Building Your Daily Barakah Routine Around Salah</h3>
+      <p>Learn how to anchor your entire skincare and wellness system to your existing pr...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to A repeatable daily Islamic practice system that fits modern life, requires minimal time, actually sticks, and shows real spiritual + practical results (better focus, relationships, work performance, inner peace)</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Imaan Talks</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why You Keep Stopping: Breaking the Cycle That Kills Every Routine Before It Sticks</h3>
+      <p>Identify the exact three traps that have sabotaged every skincare and wellness r...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Imaan Talks community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Barakah Accelerator: Stack Your Habits Around Salah for Compounding Results</h3>
+      <p>Learn how to plug advanced skincare and wellness rituals into your existing pray...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Barakah Routine: Build Your Non-Negotiable Daily System Around Your Salah</h3>
+      <p>Stop restarting from zero every week — this module gives you a prayer-anchored d...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>Barakah Recovery: How to Get Back on Track When Life (or Your Skin) Falls Apart</h3>
+      <p>Learn exactly what to do when your routine breaks down — because the women who g...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Lifestyle Lock-In: Making Barakah Beauty Your Forever Default</h3>
+      <p>This module transforms everything you've built over 90 days from a 'challenge yo...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
