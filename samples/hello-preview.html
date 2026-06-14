@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Start to Finish: The Paper Craft Focus System for Kids (and Parents Who Want Peace) — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/6966379/pexels-photo-6966379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Hello viewers</div>
+    <h1>From Start to Finish: The Paper Craft Focus System for Kids (and Parents Who Want Peace)</h1>
+    <p>A calm, step-by-step method for completing real origami projects without meltdowns, torn paper, or giving up three folds in</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You know that moment — maybe four steps into a project — when the paper is slightly crumpled, the fold didn't land where it was supposed to, and the whole thing suddenly looks nothing like it should? That's usually when the paper gets dropped, or scrunched, or quietly pushed off the table. Not because the child isn't trying. Not because origami is too hard. But because nobody showed them what to do when a fold goes sideways — and without that, even the most patient kid hits a wall they can't climb over.</h2>
+    <p>This guide gives you a system, not just a project. You'll get a clear sequence of foundational folds taught in the order that actually builds confidence, a simple recovery method for when paper tears or a crease lands wrong, visual checkpoints so kids know they're doing it right before they move to the next step, and a repeatable 15-to-30-minute activity structure parents can pull out any afternoon without planning ahead. Everything here is designed so a child can eventually sit down, open this guide, and work through a complete project start to finish — calmly, independently, and with something real to show at the end.</p>
+    <div class="promise">🎯 Complete a full origami project from start to finish without frustration; build confidence in following complex sequences; parents gain a reliable, repeatable activity system they can use daily</div>
+    <p class="author-note">A small note before we begin: I'm not the person behind the Hello channel. I'm an independent researcher who spent time studying how children actually learn paper folding — what stops them, what keeps them going, and what the difference is between a project that gets finished and one that ends up in the bin. This guide was built from that research, designed to work alongside the calm, visual style of instruction the channel is known for. If you've watched those videos and thought 'this is almost exactly what we need' — this guide is meant to be the missing piece that makes it stick.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before anything else in this guide, do this one project today. It uses a single sheet of A4 or letter-size paper, no scissors, no glue, no special supplies. It's called the Standing House, and it's specifically chosen because it has a satisfying 3D result, it uses only four core fold types you'll return to throughout the whole guide, and it has a natural stopping point after each step so nobody has to hold a complex shape in mid-air while figuring out what comes next. Set a sheet of paper on a flat table — not the floor, not a lap — and follow these three steps exactly as written.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Make your base and crease it sharp</strong><p>Fold the paper in half the short way, so it looks like a small book. Open it flat again. Now fold it in half the long way, crease firmly, open flat again. You now have a cross of crease lines in the center. Run your fingernail — or a smooth pen cap — along every crease line twice. This is the step most people skip, and it's the reason folds drift later. Take 60 seconds here and press every line until it holds its shape on its own. If the paper keeps springing open, fold it again and hold it flat under a heavy book for 30 seconds before continuing.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Build the walls by folding up from the center crease</strong><p>Fold the top edge of the paper down to meet the horizontal center crease only — not all the way to the bottom. Crease and hold. Flip the paper over and do the same on the other side. You now have a wide, flat shape with a thick middle band. Stand it up on the table with the open edges pointing down. It should stand on its own in a slight arch. If it collapses, the center crease needs to be sharper — lay it flat, re-crease that center line firmly, and try again. This collapsing moment is the most common frustration point, and the fix is always the same: a firmer center crease, not starting over.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Form the roof by pinching the top center point</strong><p>While the shape is standing, use both thumbs to gently press inward on the top center fold from both sides at the same time, letting the paper naturally peak upward into a ridge. Do not force it — press slowly and let the paper find its own angle. A triangular roof shape will appear. Hold it for ten seconds, then set it down. It will hold its shape. If the peak collapses flat, the top fold needs one more firm crease along the ridge line — pinch it between your thumb and forefinger and run along the full length once.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: A small paper house that stands on its own on a flat surface, with a defined roof peak and two visible walls. It takes most children between 12 and 20 minutes on the first try. If it took longer or needed a second sheet of paper, that's completely normal and means the foundational crease habit covered in Chapter One will make a real difference. Keep this finished house on the table while you read the rest of the guide — it's a visible reminder that finishing is already possible.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The One-Sheet Rule: Why Less Paper Means More Focus</h3>
+      <p>Before your child touches a single pair of scissors, you need to understand the single mindset shift that turns a frustrated quitter into a kid who actually finishes things.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most paper craft projects fail in the first five minutes because the instructions show the finished product — an origami crane, a pop-up card, a paper lantern — and a child's brain immediately compares that gorgeous result to the blank sheet in their hands, and the gap feels impossible. The fix is brutally simple: cover the final photo entirely and only reveal one step at a time, because a child aged 6-14 doesn't need motivation to start, they need proof that the next fold or cut is something they can actually do right now with what's in front of them. Think of it like the way a good YouTube tutorial pauses on each step — you're essentially becoming that pause button in real life, and once your child experiences the small win of completing Step 1 perfectly, their brain releases enough dopamine to hunt for Step 2 on their own. This is the entire foundation of everything else in this course: one step visible, one step doable, one step done — repeat.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Find any paper craft project in your home right now — a folded card, a paper airplane diagram, anything with numbered steps — and physically cover every step except Step 1 with a sticky note or spare sheet of paper</li><li>Sit with your child for just the first step only, do it together, then stand up and walk away so they experience completing something without you hovering over the result</li><li>Write '1 step at a time' on a small piece of paper and tape it to whatever surface your child crafts on — this becomes your shared language for every project going forward</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The moment your child asks 'but what does it look like at the end?' is actually the worst time to show them — say 'let's find out together' and keep the final image hidden until they've completed at least three steps, because earned curiosity is ten times more powerful than upfront motivation and dramatically reduces mid-project abandonment.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Step-Before-the-Step: How to Break Any Paper Project Into Pieces Kids Can Actually Finish</h3>
+      <p>Learn the one sequencing trick that turns overwhelming paper craft projects into...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why Kids Quit (And the 3 Fixes That Actually Work)</h3>
+      <p>Identify the exact moment your child gives up on paper projects — and rewire tha...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Score-and-Fold Shortcut: How One Technique Unlocks Every Project Faster</h3>
+      <p>Master the single most underused paper technique that eliminates the #1 cause of...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 20-Minute Paper Craft Ritual: Your Daily Focus Formula That Actually Sticks</h3>
+      <p>Transform chaotic craft attempts into a calming daily ritual your child will act...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When It All Falls Apart: The Paper Craft Rescue Plan</h3>
+      <p>Turn project meltdowns into comeback moments so your child finishes what they st...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>Paper Craft as a Family Ritual: Making Focus a Habit That Sticks for Good</h3>
+      <p>Transform what started as a single project into an unshakeable weekly rhythm tha...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
