@@ -3,110 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Aesthetic Consistency Framework: Design Once, Execute Daily - Preview</title>
+<title>The Daily Study System That Actually Improves Grades — Sample Preview</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Georgia', serif; background: #f8f6f1; color: #1a1a1a; line-height: 1.7; }
-  .cover { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 60px 40px; text-align: center; }
-  .cover .badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
-  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.3; margin-bottom: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .cover .subtitle { font-size: 16px; opacity: 0.8; max-width: 500px; margin: 0 auto 32px; }
-  .cover .for { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 24px; display: inline-block; font-size: 14px; }
-  .preview-badge { background: #e8f4f8; border: 2px solid #3498db; color: #2980b9; text-align: center; padding: 12px; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
-  .section { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
-  .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; border-left: 4px solid #0f3460; padding-left: 16px; }
-  .section p { margin-bottom: 16px; font-size: 16px; color: #333; }
-  .promise { background: #f0f7ff; border-left: 4px solid #3498db; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0; font-style: italic; }
-  .quick-win { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); margin: 32px 0; }
-  .quick-win h3 { font-size: 20px; color: #0f3460; margin-bottom: 8px; }
-  .quick-win .desc { color: #666; margin-bottom: 24px; font-size: 15px; }
-  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-  .step-num { width: 32px; height: 32px; background: #0f3460; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 14px; }
-  .step strong { display: block; margin-bottom: 4px; color: #1a1a2e; }
-  .step p { font-size: 14px; color: #555; margin: 0; }
-  .locked-section { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; }
-  .locked-section h2 { font-size: 18px; color: #666; margin-bottom: 16px; }
-  .locked-item { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: #f0f0f0; border-radius: 8px; margin-bottom: 8px; color: #888; font-size: 15px; }
-  .cta { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: white; text-align: center; padding: 48px 24px; }
-  .cta h2 { font-size: 24px; margin-bottom: 12px; }
-  .cta p { opacity: 0.8; margin-bottom: 24px; font-size: 15px; }
-  .cta .price { font-size: 48px; font-weight: 700; margin-bottom: 8px; }
-  .cta .price span { font-size: 18px; opacity: 0.7; }
-  .divider { height: 1px; background: #e0e0e0; max-width: 680px; margin: 0 auto; }
-  .footer { text-align: center; padding: 16px; font-size: 12px; color: #999; background: #f0f0f0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
 </style>
 <style>
-    :root {
-        --primary: #C2688C;
-        --primary-bg: #FCE7F3;
-    }
-    .cover { background: linear-gradient(135deg, #C2688C22 0%, #C2688C55 50%, #C2688C 100%); }
-    .step-num { background: #C2688C; }
-    .preview-badge { background: #FCE7F3; border: 2px solid #C2688C; color: #C2688C; }
-    .for-badge { background: #C2688C; color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-    .cta { background: linear-gradient(135deg, #C2688Caa, #C2688C); }
+    :root { --primary: #C084FC; --primary-bg: #FAF5FF; }
+    .hero { background: linear-gradient(135deg, #C084FC 0%, #1a1a2e 100%); }
+    .step-num { background: #C084FC; }
+    .module-num { background: #C084FC; }
+    .for-badge { background: #C084FC; }
+    .cta-btn { color: #C084FC; }
     </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="badge">SAMPLE PREVIEW</div>
-  <h1>The Aesthetic Consistency Framework: Design Once, Execute Daily</h1>
-  <p class="subtitle">Build a Beautiful System That Sustains Itself—Without Perfection or Willpower</p>
-  <div class="for">Created specifically for the audience of <strong>Nova (The Pastel Pad)</strong></div>
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/8099515/pexels-photo-8099515.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Nova (The Pastel Pad) viewers</div>
+    <h1>The Daily Study System That Actually Improves Grades</h1>
+    <p>From Scattered Studying to Consistent 90s — A Calm, Repeatable System That Finally Makes Your Effort Count</p>
+  </div>
 </div>
 
-<div class="preview-badge">SAMPLE PREVIEW - This is a free preview. Full guide available exclusively through Nova (The Pastel Pad) - Not for redistribution</div>
+<div class="container">
 
-<div class="section">
-  <h2>Introduction</h2>
-  <p>You've felt it before: that moment when a new aesthetic system feels perfect in your mind, looks stunning in photos, and then... quietly fades. Three weeks later, you're back to scattered systems and unfinished intentions. It's not laziness. It's that the gap between *designing* something beautiful and *living* it daily is wider than anyone talks about.</p>
-  <div class="promise">This guide bridges that gap. You'll discover a framework built on how humans actually behave—not how we wish we would. The result? A daily rhythm that feels both genuinely beautiful and genuinely sustainable, without requiring perfect execution or constant willpower.</div>
-  <p>Created by Nova, a designer and productivity researcher who has spent years studying why aesthetic systems fail—and what actually sticks. This guide is built on real patterns, not theory.</p>
-</div>
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You already study. Probably more than most people around you. You sit down, open your notes, spend an hour going over everything — and then two weeks later, you get your exam back and the grade doesn't match how hard you worked. That specific feeling — the confusion, the quiet frustration of trying so hard and still not seeing it in your results — is exactly what this guide was built to fix. The problem was never your effort. It was never your intelligence. It was that nobody ever handed you a system that told you exactly what to do, in what order, for how long, and how to know if it's actually working before exam day arrives.</h2>
+    <p>What you're holding is a complete daily study system — not a collection of tips, not a Pinterest-worthy routine that falls apart by Wednesday, but an actual repeatable framework you can run every single day that builds toward consistent 90s. You'll learn which study methods actually convert to grades (and which ones just feel productive), how to structure focused sessions so you're not burning out after 20 minutes, how to spread your studying across the full term so exam week becomes a review rather than a rescue mission, and how to build in real checkpoints so you always know whether your current approach is working before it's too late to adjust. This system works with your schedule, your subjects, and your life — including your prayers, your family, and everything else that matters to you.</p>
+    <div class="promise">🎯 a practical, repeatable daily study system that produces visible grade improvements, ability to study 60+ focused minutes daily, consistent exam scores of 90+, reduced exam anxiety through preparation</div>
+    <p class="author-note">A quick note before you dive in: I'm a researcher and curriculum designer who works behind the scenes with student creators like Nova to study what actually works academically for high-school students. I'm not a teacher standing at the front of a classroom — I'm someone who has spent a lot of time reviewing the research on learning science, interviewing high-performing students, and translating all of that into systems that real teenagers can actually use on a Tuesday night when they're tired and have three subjects to cover. Nova reviewed everything in this guide and made sure it reflects the real challenges her community faces. The strategies here are practical, evidence-informed, and genuinely designed for students who are already putting in effort and deserve to see that effort rewarded. I hope it serves you well, insha'Allah.</p>
+  </div>
 
-<div class="divider"></div>
+  <hr class="divider">
 
-<div class="section">
-  <div class="quick-win">
-    <h3>Get Your First Result in 30 Minutes</h3>
-    <p class="desc">Before we go deeper, let's prove this works. You're going to identify your One Anchor—the single daily ritual that becomes the foundation of everything else. This isn't about overhauling your life. It's about finding the one small moment that, when it's beautiful and intentional, makes everything else feel possible.</p>
-    <div class="step"><div class="step-num">1</div><div><strong>List three daily moments that already happen automatically</strong><p>Morning coffee. Evening wind-down. Getting ready. Pick moments that are non-negotiable—things you do anyway, without reminding yourself. These are your strongest anchors.</p></div></div>
-<div class="step"><div class="step-num">2</div><div><strong>Choose one and make it 10% more intentional</strong><p>If it's morning coffee, maybe that means using your favorite mug and a small notepad. If it's evening wind-down, perhaps a candle and a specific chair. The gesture should take less than 30 seconds to set up and feel genuinely pleasant to experience.</p></div></div>
-<div class="step"><div class="step-num">3</div><div><strong>Commit to that one moment for the next seven days</strong><p>Not perfectly. Just notice what happens when one small daily ritual feels intentional and aesthetic. No pressure to expand beyond this yet.</p></div></div>
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page, do this. Right now, today, within the next 30 minutes. This exercise is the foundation of the entire system, and completing it will immediately show you something about your studying that most students never figure out until after a failed exam. You only need a pen, one sheet of paper, and one subject you have coming up. Set your intention first — say Bismillah, take one breath, and remind yourself that seeking knowledge is an act of worship. That single moment of niyyah changes the quality of what follows.</p>
 
-    <div class="promise" style="margin-top:20px;margin-bottom:0">
-      After this: By day three, you'll notice this small ritual creating a ripple—it makes the rest of your day feel slightly more organized, even without additional systems. This is your proof of concept. This tiny anchor becomes the foundation everything else builds on.
+  <div class="step"><div class="step-num">1</div><div><strong>Write down everything your next exam will test — from memory, without opening a single note.</strong><p>Take your sheet of paper and spend exactly 10 minutes writing every topic, concept, formula, or skill you believe will appear on your next upcoming exam in any subject. Do not open your textbook, your notes, or your phone. Just write what you actually know is on there. This is not a test — there is no grade. What you are doing is creating a real map of what your brain has already stored versus what it only thinks it knows. Most students skip this step entirely and spend their study time re-reading things they already understand while completely ignoring the gaps that will cost them marks. When your 10 minutes are up, put your pen down.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Open your notes or syllabus and mark every gap — anything you missed, blanked on, or wrote vaguely.</strong><p>Spend the next 10 minutes comparing your brain-dump list against your actual course notes, syllabus, or textbook chapter headings. Circle or mark anything you missed entirely. Put a small question mark next to anything you wrote down but only vaguely — the topics where you knew the name but couldn't explain the concept if someone asked you right now. Be honest. Nobody is watching and nobody is judging. What you are building is your personal priority list — the exact topics that, if you studied them first and most, would have the highest impact on your grade. This is already more strategic than most students ever get.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write your top three priority topics on a sticky note and put it where you study.</strong><p>From your gap list, choose the three topics that are most likely to appear on your exam AND that you understood the least clearly in step two. Write only those three on a sticky note or small piece of paper and place it on your desk, your laptop, or wherever you usually study. These are your anchors for every study session until that exam. You are not ignoring everything else — you are making sure your limited time and energy goes toward the areas with the highest return first. This is the core logic of the entire system you are about to learn, and you just applied it in under 30 minutes.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: By the time you finish this exercise, you will have something most students never have before an exam: a clear, honest picture of where your actual knowledge gaps are right now, and a starting point that is specific enough to act on today. Students who complete this step before studying report feeling immediately less overwhelmed — not because there is less to cover, but because they finally know where to start. Keep that sticky note. You will use it in Chapter Two.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #C084FC;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Niyyah Shift: Why Your Study Mindset Is the Only Thing Standing Between You and Consistent 90s</h3>
+      <p>Before you touch a single flashcard or open your notebook, you need to rewire the story you're telling yourself about studying — because scattered grades come from scattered thinking, not scattered time.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most students in this community open their notes with zero intention set, which is why three tabs become fifteen and two hours disappear with nothing to show — your brain needs a declared mission before it can execute one, so starting every session with a genuine Bismillah and a written niyyah ('I'm studying this chemistry unit to understand rizq through knowledge and to honor my parents') literally activates a different mode of focus than 'I guess I should study.' The students who pull consistent 90s aren't smarter than you — they've simply built a belief that studying is something they *are*, not something they *do when exams panic them*, and that identity shift changes every micro-decision from whether to check Instagram to whether to rewrite that confusing paragraph one more time. You also need to stop romanticizing the aesthetic of studying (the pretty planner, the color-coded tabs Nova posts about) without installing the foundation underneath it — the system has to live in your values first, your notebook second, or it will collapse the moment Ramadan gets busy or sports season hits.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, write ONE sentence on a sticky note that answers: why does my education matter to me beyond grades — connect it to your deen, your family, or your future community, and put it where you open your laptop</li><li>Before your very next study session, say Bismillah out loud and write a two-line intention that names the subject, the specific goal for that session, and who benefits from your knowledge — do this every single time until it's as automatic as wudu before salah</li><li>Audit your current 'study identity' by finishing this sentence honestly in your journal: 'I'm the kind of student who ______' — if your answer describes someone reactive and panic-driven, rewrite it as who you are *becoming* and read it before every session this week</li></ul>
+    <div style="background:#FAF5FF;border-radius:8px;padding:12px 16px;font-size:13px;color:#C084FC;font-weight:600;">
+      💡 Pro tip: The most powerful focus reset you already have built into your day is salah — high performers in this community use the five prayer times as natural study block boundaries, so instead of fighting distraction and forcing 3-hour marathon sessions, structure your studying *between* prayers, making each block sacred and finite, which paradoxically produces more retention than the all-nighters that feel more productive.
     </div>
   </div>
 </div>
 
-<div class="divider"></div>
-
-<div class="locked-section">
-  <h2>Full Guide Contents (Unlocked with purchase)</h2>
-  <div class="locked-item"><span>🔒</span><span>Module 1: The Aesthetic Anchor: Finding Your Non-Negotiable Core</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 2: The Aesthetic Anchor System: Building Non-Negotiable Visual Touchstones</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 3: The Aesthetic Anchor: Creating Your Daily Visual Trigger System</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 4: The Aesthetic Friction Audit: Removing Barriers to Consistency</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 5: The Friction Audit: Identifying & Removing Consistency Killers</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 6: The Friction Audit: Identifying Your Aesthetic System's Breaking Points</span></div>
-<div class="locked-item"><span>🔒</span><span>Module 7: The Aesthetic Audit: Measuring What Matters & Adjusting Without Starting Over</span></div>
-
-  <div class="locked-item"><span>[LOCK]</span><span>Resources and Recommended Tools</span></div>
-  <div class="locked-item"><span>[LOCK]</span><span>90-Day Action Plan</span></div>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>Build Your Non-Negotiable Daily Study Ritual (The System That Runs on Autopilot)</h3>
+      <p>Transform your scattered study attempts into a locked-in daily ritual that your ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="cta">
-  <h2>Get the Complete Guide</h2>
-  <p>Everything you need to A realistic, maintainable daily rhythm that feels both beautiful AND sustainable without constant effort or perfectionism</p>
-  <div class="price">$27 <span>one-time</span></div>
-  <p style="opacity:0.6;font-size:13px">Available exclusively through Nova (The Pastel Pad)</p>
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The Real Reason You Keep Losing Focus (And the Muslim Student's Fix)</h3>
+      <p>Identify the exact obstacles hijacking your study sessions and replace them with...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
 
-<div class="footer">
-  Created exclusively for the Nova (The Pastel Pad) community
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Retrieval Loop: Why Re-Reading Is Killing Your Grades (And What Muslim Scholars Have Always Known About Real Learning)</h3>
+      <p>Switch from passive re-reading to active retrieval and watch your test scores ju...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
 </div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Prayer-Anchored Daily Study Blueprint: Your Repeatable System for Consistent 90s</h3>
+      <p>Turn your five daily prayers into natural study reset points so you finally have...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When Everything Falls Apart: The Muslim Student's Reset Protocol</h3>
+      <p>Learn exactly what to do the moment your system breaks down so a bad day never b...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>Make It Stick Forever: Turning Your Study System Into a Lifestyle (Not Just an Exam Strategy)</h3>
+      <p>Transform your daily study system from something you do before tests into someth...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
 
 </body>
 </html>
