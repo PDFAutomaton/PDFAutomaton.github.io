@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Free Fire Aim System: Find Your Perfect Sensitivity Once & Stop Changing Settings — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/33376151/pexels-photo-33376151.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Freefireismypassion2 viewers</div>
+    <h1>The Free Fire Aim System: Find Your Perfect Sensitivity Once & Stop Changing Settings</h1>
+    <p>The Exact Framework Competitive Players Use to Lock In Headshot Settings for Their Device, Their Hands, and Their Guns — No More Random Number Testing</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You just lost another ranked match. You KNOW you had the angle. You KNOW you pulled the trigger first. But somehow the enemy's bullets found your head before yours found theirs. So you do what every Free Fire player does — you open sensitivity settings and start changing numbers again. 4-finger? 3-finger? Copy that YouTube pro's settings? Maybe gyro this time? Three days later you're worse than before, your rank is bleeding LP, and you genuinely cannot tell if it's YOUR aim or your SETTINGS that are broken. That right there is the real problem — and 90% of players are stuck in that exact loop right now.</h2>
+    <p>This guide is NOT going to give you another random sensitivity number to copy. What it WILL do is give you a complete diagnostic system — a step-by-step framework to test, confirm, and LOCK your sensitivity settings specifically for your device model, your hand size, your claw style, and your preferred guns. After you finish this guide, you will stop second-guessing your settings forever. Every drill you practice will actually build real muscle memory instead of getting reset every time you watch a new YouTube video. You will know EXACTLY why a setting works for you, which means you can fix it yourself if something ever feels off. The goal is simple: consistent headshots in ranked, gunfights you actually win, and a rank that keeps climbing because your mechanics are finally building on a stable foundation.</p>
+    <div class="promise">🎯 Consistent headshots in ranked matches, climb rank tier by out-aiming opponents, feel confident their settings are optimized</div>
+    <p class="author-note">Hey — quick note before you dive in. I'm not Freefireismypassion2. I'm a third-party researcher and mobile gaming systems analyst who studied hundreds of Free Fire players across different rank tiers, device types, and playstyles to build the framework inside this guide. I have deep respect for the creator's work — the channel's practical, no-nonsense approach to showing real results is exactly what inspired the structure here. My job was to take that same energy and add the systematic 'WHY' behind it, so you're not just copying what works for someone else but actually understanding what works for YOU. Everything in this guide was built with one specific player in mind: someone who is serious about ranked, practices regularly, but keeps hitting a wall they can't diagnose. If that's you, you're in exactly the right place. Let's get into it.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page of theory, do THIS. This is the Single Gun Drift Test — a fast diagnostic that tells you immediately whether your current sensitivity is too high, too low, or in the right range for your most-used gun. Most players have never done this properly. You will finish this in 30 minutes and walk away knowing something real and actionable about your current settings TODAY.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Pick ONE gun and go into Training Mode right now</strong><p>Open Free Fire, go to Training Mode, and select only the gun you use most in ranked — whether that's MP40, M1887, AK, SCAR, or anything else. Equip NO attachments except the scope or sight you actually use in real matches. Stand exactly 20 meters from a dummy target (count the floor tiles if needed — each large tile is roughly 1 meter). This distance matters because it is the most common close-to-mid range where most ranked gunfights are decided. Do not use a bot lobby, do not use a real match — Training Mode only, because you need zero pressure to observe honestly.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Fire a full magazine and record where your shots land on the dummy</strong><p>ADS into the dummy's chest and fire the full magazine without consciously correcting your aim after the first shot. Just fire and let the recoil do whatever it does naturally. After the magazine is empty, look at the hit pattern on the dummy. Now categorize what you see: if all your shots drifted UP past the head and you lost the target completely, your ADS sensitivity is too HIGH for this gun. If your shots stayed glued to the chest and barely moved, your sensitivity is too LOW and you are overcompensating by gripping too hard. If shots scattered LEFT or RIGHT in a wide arc, your horizontal sensitivity is mismatched. Screenshot or mentally note the pattern — this is your current aim signature and it is specific to you and your device.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Make ONE single adjustment based on what you saw and test again immediately</strong><p>Based on your pattern, go to Settings and change ONLY your ADS sensitivity for that specific gun category — move it by 3 points MAXIMUM in the direction that fixes your observed drift. If shots went too high, reduce by 3. If too stiff and low, increase by 3. Then repeat the exact same test: same gun, same distance, same full magazine, no correction. Compare the new pattern to the old one. You are NOT looking for perfection right now — you are looking for DIRECTION. Did the pattern move toward center? That tells you which way to keep adjusting in the full system. Write down both numbers and the result. This is the beginning of your personal sensitivity log and it is more valuable than any number you will ever copy from YouTube.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After completing this test you will know two things you did not know 30 minutes ago: which direction your current sensitivity is drifting for your main gun, and whether your problem is a settings issue or a muscle memory issue. If the adjusted setting immediately felt more controlled, your original sensitivity was miscalibrated for your device — and the full guide will show you how to dial every gun and distance into the same kind of precision. If even the adjusted setting felt inconsistent, your foundation is actually a mechanical training issue — and the guide covers that diagnostic path too. Either way, you now have a real data point about YOUR aim instead of someone else's opinion about theirs.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>Why Your Sensitivity Is Not The Problem (And What Actually Is)</h3>
+      <p>Discover why 90% of Free Fire players from Hyderabad to Chennai are stuck in Platinum rank not because of wrong sensitivity numbers, but because of a broken testing mindset that guarantees you'll never find a setting that feels right.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Every time you watch a Desi Free Fire YouTuber post their sensitivity settings and you copy them exactly, you're making the biggest mistake in mobile gaming — their thumbs are not your thumbs, their phone screen size is not yours, and their muscle memory was built over thousands of hours on THOSE numbers, not zero hours on your copy. The real problem is that you're treating sensitivity like a magic code when it's actually a language your brain needs time to learn — your hands literally build new neural pathways when you stick to one setting consistently for 7+ days, which is why your aim feels 'off' every single time you switch after one bad ranked game. Think of it this way: if you practiced free throws in basketball but switched the distance to the hoop every 3 days, you'd never develop muscle memory — same logic applies to your DPI and sensitivity values in Free Fire ranked matches. What you actually need before touching any sensitivity slider is a baseline framework: understand your phone size category (under 6-inch vs 6-inch+), your grip style (thumb only vs three-finger claw), and your primary engagement range (close Bermuda fights vs long-range Kalahari peaks) — these three factors determine your entire sensitivity direction.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, open Free Fire settings and screenshot your current sensitivity values — this is your 'Day 0 baseline' and you will NOT change these for the next 7 days no matter how bad one match feels</li><li>Identify your phone screen size and write it down alongside your grip style (pure thumbs or do you use index finger too) — post this in the comments below this video because your starting point is different from every other player watching</li><li>Play exactly 10 Ranked matches today using only your current settings and after each match rate your aim feel from 1-10 in your notes app — this data will make Module 2 make complete sense to you</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The players destroying you in Diamond and Heroic rank are NOT using perfect sensitivity — they're using sensitivity they stopped questioning 6 months ago, and that consistency itself became their superpower.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The 3-Zone Sensitivity Formula: Map Your Aim to Your Thumb Size</h3>
+      <p>Stop copying pro player settings and build your personal sensitivity blueprint b...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why You Keep Failing: The 3 Traps Destroying Your Aim Progress</h3>
+      <p>Identify and escape the exact mistakes that keep Telugu gamers stuck in Gold ran...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Recoil Compensation Code: Sync Your Sensitivity to Your Gun's Kick Pattern</h3>
+      <p>Master the hidden relationship between sensitivity and recoil so your bullets ac...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 15-Minute Daily Aim Ritual That Locks In Your Sensitivity Forever</h3>
+      <p>Turn your sensitivity from a setting you constantly second-guess into muscle mem...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>My Aim Broke Overnight — Fix It Fast Without Starting Over</h3>
+      <p>When your sensitivity suddenly feels wrong after an update or rank-up, use this ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The 30-Day Lock-In: Why Your Settings Are Done & Your Only Job Now Is Reps</h3>
+      <p>Once your sensitivity is dialed in, the only variable left between you and Heroi...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
