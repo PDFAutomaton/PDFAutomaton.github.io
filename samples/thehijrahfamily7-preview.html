@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Real Hijrah Checklist: Step-by-Step Guide to Moving Your Family to Saudi Arabia (With Actual Costs & Timelines) — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/37879984/pexels-photo-37879984.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Thehijrahfamily7 viewers</div>
+    <h1>The Real Hijrah Checklist: Step-by-Step Guide to Moving Your Family to Saudi Arabia (With Actual Costs & Timelines)</h1>
+    <p>A boots-on-the-ground roadmap for Muslim families ready to stop dreaming and start doing — with real numbers, real timelines, and real talk from someone who actually made the move</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You've watched the vlogs. You've made the du'a. You've had the late-night conversations with your spouse where you both agreed — yes, this is what we want. And then Monday morning comes, the kids need breakfast, the mortgage needs paying, and the hijrah stays exactly where it's been for the last two years: a beautiful, unstarted plan. Here's what nobody tells you: the thing keeping most families stuck isn't doubt about whether hijrah is right. It's that they can't find a single honest answer to a single practical question. What visa did you actually use? How much did the container shipping cost? What happened to the kids in month one when they didn't speak Arabic? When the information is scattered, vague, or wrapped in so much inspiration it forgets to include the invoice — it's almost impossible to make a confident decision. That paralysis is not a weakness. It's a gap in information. And this guide exists to close it.</h2>
+    <p>What you're holding is not a motivational push. It's a map. Inside, you'll find a month-by-month breakdown of what a real hijrah execution looks like for a family — covering visa pathways with actual eligibility requirements, housing costs by city (yes, including Madinah), schooling options for children at different ages and language levels, how to move or protect your income, what the first 90 days on the ground actually feel like, and the mistakes that cost time and money so you don't have to repeat them. Every section is written with the intention of giving you enough real data that you can sit down with your spouse tonight and say: here is what step one looks like, here is what it costs, and here is when we could realistically begin. The hijrah is an act of worship. The planning is part of that worship too. Let's make it count.</p>
+    <div class="promise">🎯 Clear, executable hijrah roadmap with real data (costs, timelines, visa types, community options) that transforms the dream from abstract spiritual goal into doable life plan they can action in next 6-12 months</div>
+    <p class="author-note">A note before we begin: I'm the researcher and writer behind this guide, not the face you know from the channel. I'm a Muslim woman who has spent months compiling, verifying, and organizing the kind of practical hijrah information that is genuinely hard to find in one place — cross-referencing visa documentation, expat family accounts, housing market data, schooling options, and cost-of-living figures specific to the cities most hijrah families are actually considering. I approached this project with the same question you're probably asking: what would I need to know to actually do this? Everything in here has been checked for accuracy at time of writing, but immigration rules shift and costs change — so where it matters, I've shown you how to verify figures yourself rather than just handing you numbers to trust blindly. This guide is offered as a practical companion to the lived experience you see on the channel. The heart behind it is the same: to make the path clearer for families who are serious about making this move for the sake of Allah.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another word of this guide, do this one exercise. It takes about 30 minutes, requires nothing except a notebook or open document, and it will immediately transform hijrah from a floating dream into a problem you can actually solve. Most families spend years thinking about hijrah in the abstract — is it possible, is it right, is it time — without ever writing down what they actually need to figure out. This exercise forces the question out of your head and onto paper, which is where plans begin. Start with Bismillah and set your niyyah clearly: this is not just life planning, this is an act of seeking what is better for your family's deen and dunya. That intention matters. Now let's move.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Write your family's current visa eligibility profile</strong><p>Open a blank document or grab a piece of paper and write down the following for every adult in your household: current passport nationality, current employment status (employed, self-employed, business owner, freelance, or not currently working), and your approximate annual household income in USD or GBP. Then write one sentence answering this question: is your income location-dependent (you must be physically present to earn it) or location-flexible (you can earn it remotely or passively)? This single distinction will determine which of the three main visa pathways in Chapter 2 of this guide applies to your family — and it narrows your entire research focus immediately. You don't need to research every visa. You need to research your visa.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>List your family's five non-negotiables for the move</strong><p>Not your wishes — your non-negotiables. The things that, if they weren't workable, would genuinely change your decision. Write them down in order of priority. Common ones include: children must have access to English-medium schooling in the first year, spouse must have a clear path to legal residency and right to work, monthly housing budget cannot exceed a specific figure, family must be within a certain distance of a masjid, healthcare must cover a specific existing condition. Being honest about your actual constraints right now — before you fall in love with a specific city or scenario — will save you from months of planning in the wrong direction. Five things. Write them now.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Set a 90-day research deadline and name your decision date</strong><p>Open your calendar — phone, paper, whatever you use — and count forward 90 days from today. Write on that date: Hijrah Decision Review. This is not the day you move. This is the day you and your spouse sit down with everything you've learned and make a clear, informed decision: we are moving within X timeframe, or we are not moving yet because of Y specific reason. Naming a decision date does something powerful — it converts open-ended wondering into a bounded research project with an endpoint. It also makes du'a more specific. You're no longer asking Allah for clarity about something vague. You're asking for clarity by a date, with a decision ready. That's how plans become real.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: By the end of this 30-minute exercise you will have three things you did not have before: a clear sense of which visa pathway is most likely relevant to your family, an honest written list of your actual constraints (not your fears, your constraints — there is a difference), and a named date on your calendar that makes this process real. When you move into Chapter 1 of this guide, you will be reading it as someone with a specific profile and a specific deadline — not as a dreamer browsing possibilities. That shift in posture changes everything about how useful the information becomes.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Niyyah Framework: Building the Decision Foundation That Holds When Fear Kicks In</h3>
+      <p>Transform your hijrah from a vague dream into a locked-in decision backed by Islamic clarity and real-world logic — so doubt stops derailing your timeline.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Before you research a single visa category or Riyadh neighborhood, you need to articulate your niyyah in writing — not just 'for the sake of Allah' but specifically: is this hijrah for deen preservation, community, your children's Islamic identity, or proximity to the Haramayn? That specificity becomes your filter for every decision ahead, because a family moving for their kids' Islamic schooling will make completely different choices about which city, which visa type, and what financial sacrifice is acceptable compared to a family chasing halal income or retirement near Makkah. The single biggest reason Muslim families from the US and UK stall for years — sometimes a decade — is that spouses are not aligned on the *why*, which means every practical obstacle (the cost, the kids' friendships, the career pause) becomes a dealbreaker instead of a solvable problem. Run the Spouse Alignment Audit this week: each partner independently writes three sentences on why they want this move, what success looks like in Year 1, and what they're most afraid of losing — then compare them out loud over tea, not over text.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Set a 20-minute timer after Maghrib tonight, make two rakahs of istikhara if you haven't already, then write your hijrah niyyah statement in one paragraph — be ruthlessly specific about the Islamic and practical reason your *family* (not just you) needs this move</li><li>Run the Spouse Alignment Audit: both partners separately write answers to three questions — Why do we want this? What does Year 1 success look like? What are we most afraid of losing? — then sit together and read them aloud before moving to any logistics research</li><li>Pull up a blank note on your phone labeled 'Hijrah Non-Negotiables' and list the top three things your family absolutely cannot compromise on (e.g., English-medium Islamic school, husband's remote income must be maintained, wife's career continuity) — this list will eliminate 80% of bad decisions before you even make them</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The families who successfully complete hijrah almost never feel 'fully ready' — they instead reach what scholars call 'tawakkul activation,' the point where the evidence is sufficient and continued waiting becomes a choice rooted in fear, not wisdom. If your list of reasons to move already outweighs your list of solvable problems, you are not waiting for more information — you are waiting for courage, and no amount of YouTube research will manufacture that for you.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Saudi Visa Ladder: Which Entry Route Actually Gets Your Family In (And Which Ones Waste Your Time)</h3>
+      <p>You'll stop guessing which visa pathway fits your family's situation and walk aw...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The 5 Walls That Stop Most Hijrah Families (And How to Break Through Each One)</h3>
+      <p>You'll identify exactly which obstacle is actually blocking your hijrah — fear, ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Saudi School System Decoded: Getting Your Kids Enrolled Without the Runaround</h3>
+      <p>Transform schooling from your biggest fear into your most powerful reason to mov...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Hijrah Family Daily System: How to Run Your New Saudi Life Without Losing Your Mind (or Your Deen)</h3>
+      <p>Transform the chaos of your first months in Saudi Arabia into a structured daily...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When Hijrah Gets Hard: The Muslim Family's Troubleshooting Guide for Saudi Arabia Setbacks</h3>
+      <p>Turn the inevitable visa delays, housing nightmares, and family meltdowns into r...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>Roots Not Ropes: Turning Your Saudi Move Into a Permanent Lifestyle — Not Just a Long Holiday</h3>
+      <p>Transform from a family 'trying out Saudi' into one that has genuinely planted r...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
