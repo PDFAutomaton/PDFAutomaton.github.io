@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 90-Day Health Fix: From Symptom-Chasing to Root-Cause Results — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/8313199/pexels-photo-8313199.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Beautybound Kr viewers</div>
+    <h1>The 90-Day Health Fix: From Symptom-Chasing to Root-Cause Results</h1>
+    <p>Why Your Remedies Keep Failing — And the Simple, Testable System That Finally Gets You Real Results</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You've tried the methi seeds soaked overnight. You've done the 40-day fasting. You ordered the biotin, the ashwagandha, maybe even the moringa powder someone in a WhatsApp group swore by. You were consistent — for a few weeks. And then life happened, the results didn't come, and somewhere in the back of your mind a quiet, exhausting thought settled in: maybe this is just how my body is now. Here's what nobody told you: the remedies didn't fail because you weren't disciplined enough. They failed because you were solving the wrong problem.</h2>
+    <p>This guide is not about adding more things to try. It's about building one clear framework — a 90-day system — that helps you identify what is actually happening in your body, choose one evidence-backed solution, and stay consistent long enough to see real, measurable change. No more guessing. No more starting over. By the time you finish reading, you will understand why symptom-chasing keeps you stuck, how to find the actual root cause of your most persistent health issue, and exactly how to structure the next 90 days so that you can finally see whether something is working — and know what to do next if it isn't. This is the system your body has been waiting for you to follow.</p>
+    <div class="promise">🎯 A reliable, testable framework for identifying health problems at their root (not symptoms), selecting ONE solution backed by evidence, and maintaining it consistently for measurable results</div>
+    <p class="author-note">A quick note before we begin: I am a third-party health researcher, not a doctor, and not the creator behind Beautybound Kr. I put this guide together by studying the patterns that show up again and again in the questions women like you are asking — about hair fall that won't stop, fatigue that no supplement seems to fix, and health advice that contradicts itself depending on who you ask. My job here is simply to organize what the research actually says into a format that is honest, practical, and genuinely useful for your real life. I have deep respect for both the traditional wellness wisdom you grew up with and the science that helps us understand why some of it works beautifully and some of it needs a little updating. You will find both honored here. I am grateful to be trusted with your time.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page, do this one exercise. It will not fix your health today — but it will do something more valuable: it will show you exactly where the guessing ends and the real work begins. Most women jump straight to solutions. This exercise makes you stop and name the actual problem first, which is the single step that changes everything. You need a pen, a piece of paper or your phone notes app, and 30 honest minutes.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Write down every health remedy or supplement you have tried in the last 12 months</strong><p>Be specific. Include the amla juice you had for three weeks, the iron tablet you took on and off, the fasting period, the coconut oil routine, the vitamin D your cousin recommended. Next to each one, write two things: how long you actually did it consistently, and whether you knew your baseline levels or symptoms before you started. Most women discover in this step that they never had a starting measurement — no lab number, no symptom score, nothing to compare against. That is not a failure. That is your first real piece of information.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Circle your ONE most persistent symptom — the one that has been with you the longest or bothers you the most</strong><p>Not all your symptoms. One. Hair fall, fatigue, irregular cycles, skin issues, digestive heaviness — pick the one that, if it resolved, would change your daily life the most. Now write down honestly: have you ever had a blood test specifically looking for the root cause of this symptom? If the answer is no, or if it has been more than a year, write the words 'untested assumption' next to it. This is not a judgment. This is clarity. You cannot fix what you have not measured.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write your 90-day commitment statement in one sentence</strong><p>Use this format: For the next 90 days, I will focus only on [your one symptom], starting with [the one test or action that identifies the root cause], and I will not add any new remedies until I have a result to measure. Photograph it or save it. This sentence becomes the filter for every health decision you make for the next 90 days. If something does not help you understand or address that one symptom, it waits. This is not restriction — this is how results actually happen.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: At the end of this 30-minute exercise, you will have a written record of what you have already tried, a single clearly named health priority, and a one-sentence commitment that tells you exactly what to do next. You will also likely notice that most of what you have tried was based on an untested assumption about what was wrong. That awareness alone is worth more than any supplement you could order tonight — because now you know where to actually start.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>Stop Treating Symptoms, Start Reading Signals: The Root-Cause Reset Mindset</h3>
+      <p>You'll finally understand why every remedy you've tried — from your amma's neem kadha to the latest gut-health supplement — hasn't stuck, and how to build a personal health framework that makes Telugu wisdom and modern nutrition work together instead of against each other.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The reason you're exhausted, losing hair, and still Googling the same symptoms three years later isn't that you lack willpower or the right supplement — it's that you've been treating your body like a checklist instead of a system, fixing one thing while ignoring the three upstream causes feeding it. Most South Asian women in your position are caught between two extremes: dismissing your mother-in-law's rasam-and-rest advice as old-fashioned OR chasing every American wellness trend that ignores that your body literally runs on rice and lentils — and neither extreme alone is giving you results. Your 90-day fix starts with one foundational shift: before you add anything new, you map your current symptom cluster — hair fall, fatigue, skin issues, irregular cycles — and trace each one back to the same three root systems: blood sugar stability, chronic low-grade inflammation, and nervous system overload, because for most Telugu women managing a household, a job, and family expectations across two cultures, all three are quietly firing at once. Once you see that your hair fall, afternoon energy crashes, and bloating after idli aren't three separate problems but one pattern, you stop chasing individual fixes and start making every food choice, sleep habit, and stress response work as one coordinated system.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Take 10 minutes today to write down your top 3 persistent symptoms — hair fall, fatigue, bloating, skin issues, whatever they are — then next to each one write how long it's been happening and what you've already tried, so you can finally see the pattern instead of the pile</li><li>Audit your last 7 days of eating with one specific question: how many meals were built around a stable protein + complex carb + fat combination versus just rice or roti with a side — this single awareness step will show you immediately where your blood sugar is working against you</li><li>Pick ONE trusted health information source for this 90-day period — whether that's this program, a registered dietitian, or an evidence-based channel — and commit to filtering all new advice through that lens instead of implementing three conflicting tips from three different Instagram Reels in the same week</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The most counterintuitive thing you'll learn in this program is that your South Indian traditional diet — tamarind, turmeric, fermented rice, curry leaves in oil — is actually closer to the anti-inflammatory, gut-supportive protocol that Western functional medicine charges thousands to teach, so your real work isn't replacing what your kitchen already does, it's stopping the modern shortcuts like skipping meals, relying on protein bars, and drinking cold water with food that are quietly dismantling the system your ancestors already built correctly.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Dosha-Meets-Data Method: Building Your Personal Health Blueprint</h3>
+      <p>Stop guessing and start mapping — you'll combine your Ayurvedic body type with t...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Breaking the 'Try Everything, Stick to Nothing' Cycle</h3>
+      <p>Identify the exact 3 obstacles that keep South Asian women stuck in the loop of ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Telugu Kitchen Pharmacy: Activating the Healing Compounds Already in Your Pantry</h3>
+      <p>Transform the spices and ingredients your amma already taught you to cook with i...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Telugu Kitchen Clock: Building Your Non-Negotiable Daily Health Rhythm</h3>
+      <p>Stop reinventing your health routine every Monday — this module gives you one re...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When It's Not Working: The Telugu Woman's Troubleshooting Playbook</h3>
+      <p>Stop abandoning protocols that were actually working and learn to diagnose exact...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Telugu Grandma Test: Making This Your Family's New Normal (Not Another Phase)</h3>
+      <p>Transform everything you've learned from a 90-day experiment into the non-negoti...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
