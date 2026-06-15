@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AP IIIT Selection Clarity Guide: Know Your Exact Seat & Counselling Timeline — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/1888005/pexels-photo-1888005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Visionbanker142 viewers</div>
+    <h1>The AP IIIT Selection Clarity Guide: Know Your Exact Seat & Counselling Timeline</h1>
+    <p>A Category-Wise, Campus-Wise Breakdown So You Stop Guessing and Start Confirming Your Admission — Before the Next Phase Closes</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You checked your rank. You refreshed the portal seventeen times. You asked three relatives who each gave you a different answer. And right now, you still don't know one simple thing: will YOUR marks get YOU a seat in YOUR preferred IIIT campus under YOUR category — in THIS phase or the next one? That uncertainty is not your fault. The AP IIIT counselling process releases information in fragments, cutoffs shift between phases, and nobody gives you a clean, category-specific answer that actually applies to your situation. Meanwhile, the clock is running. Phase releases happen fast. Document verification windows are short. One missed deadline and you are waiting another full year.</h2>
+    <p>This guide does one thing extremely well: it removes the guesswork from your specific situation. Using historical cutoff data organized by campus, category, and phase — BC-A, BC-B, SC, ST, OC, EWS — this guide gives you a working framework to identify your realistic seat probability RIGHT NOW, understand exactly which documents you need and when, follow a confirmed step-by-step counselling timeline so no deadline catches you off guard, and make a smart final choice between campuses if you get multiple options. By the time you finish reading, you will not be refreshing portals and hoping. You will have a clear action plan written down with your name, rank, category, and campus preference already mapped to expected outcomes.</p>
+    <div class="promise">🎯 Know exactly which IIIT campus they will get based on their marks and category, understand the precise next steps in counselling with confirmed timelines, feel confident in their admission decision</div>
+    <p class="author-note">A quick note before we begin — I am not Visionbanker142, and I want to be upfront about that. I am an independent researcher who studies AP state-level engineering entrance processes, counselling data, and student decision patterns specifically for RGUKT and AP IIIT admissions. I built this guide because I watched too many capable students from good families lose their seats — not because of their marks, but because of information gaps at the worst possible moment. Everything in this guide is based on official counselling data, historical cutoff trends, and the real questions students ask during selection phase. Think of this as getting advice from that one friend who actually read every official notification carefully and is now explaining it to you in plain language, without making you feel lost or behind.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page, do this one exercise right now. It takes 30 minutes, requires only your hall ticket and a pen, and gives you your first honest probability estimate — which campus category combination is realistic for you in the current or upcoming phase. No assumptions. Just your actual numbers matched against structured reference points.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Write down your exact rank, marks, and category on a piece of paper right now</strong><p>Open your AP IIIT result or RGUKT rank card. Write these four things clearly: your total marks out of 120, your state rank, your category (OC, BC-A, BC-B, BC-C, BC-D, BC-E, SC, ST, or EWS), and your home district. If you have a local area reservation eligibility, note that separately. Do not estimate — use the exact number from your official result. This one step eliminates the biggest mistake students make, which is mentally rounding their rank upward and building false hope around a wrong number.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Go to the AP IIIT official counselling notification page and locate the previous phase cutoff list</strong><p>Visit apiiit.ac.in or the official RGUKT counselling portal and find the published seat allotment results or cutoff data from the most recently completed phase. If the current cycle has not released this yet, use last year's final phase cutoffs as your baseline reference — the guide's data tables in Chapter 2 also give you this organized by campus and category. Find your category column. Find the campus rows for your top three preferred locations — Ongole, Srikakulam, RK Valley, Idupulapaya, Nuzvid, or Basar. Write down the closing rank for your category in each of those campuses from the last available phase data.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Do the gap calculation and categorize yourself into one of three zones</strong><p>Subtract your rank from the closing rank you found. If your rank is lower than the closing rank by more than 500 positions, write CONFIRM ZONE — high probability this phase. If your rank is within 500 positions above or below the closing rank, write BORDERLINE ZONE — monitor Phase 2 and 3 closely, prepare documents immediately. If your rank is higher than the closing rank by more than 500 positions for all your preferred campuses, write STRETCH ZONE — identify alternate campuses or lower-preference branches where your rank does clear the cutoff. This zone label tells you exactly how urgently you need to act and which section of this guide to read first.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After completing these three steps you will have a written snapshot — your rank, your category, your top campus preferences, and your realistic zone classification — that gives you a factual starting point instead of anxiety-driven guessing. Most students who do this exercise discover either that their seat is more secure than they feared, or that they need to act on an alternate campus option faster than they realized. Either way, you now know something real. That is more than 90 percent of students waiting in the same phase as you can say right now.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>Stop Guessing, Start Calculating: The AP IIIT Rank-to-Seat Framework</h3>
+      <p>Transform from a student anxiously refreshing results pages to one who knows exactly which IIIT campus, which branch, and which counselling phase will give them a confirmed seat before the process even begins.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most AP IIIT aspirants make the fatal mistake of comparing their marks to last year's cutoffs without understanding that each campus — Nuzvid, Ongole, Srikakulam, Idupulapaya, Rajam, Rk Valley — has dramatically different closing ranks for the same CSE branch, sometimes varying by 2,000+ rank positions, so your Nuzvid dream and your Srikakulam backup are not interchangeable options. The AP IIIT counselling runs across multiple phases (Phase 1, Phase 2, Extended) and students who freeze a 'good' seat in Phase 1 out of fear lose access to better campuses that open up in Phase 2 when higher-ranked students upgrade — understanding this slide-down effect is the single most powerful concept in this entire guide. Your actual strategy must be built on three numbers you should calculate today: your AP IIIT rank, the previous 3 years' closing ranks for your target campus-branch combination, and the percentage gap between them — if your rank is within 15% above last year's closing rank, you are in the 'negotiate zone' where phase and category choice becomes your weapon. Telugu medium students from SC/ST/BC categories have reserved quota seats that close at entirely different rank points than OC seats, and confusing general cutoffs with your actual category cutoffs is the #1 reason students either underestimate their chances or waste a phase on a seat they never needed to compromise on.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Go to the AP IIIT official website right now and download the seat allotment PDFs from the last 2 counselling years — screenshot the closing ranks for your top 3 campus choices across all phases and save them in a dedicated folder on your phone</li><li>Write down your current AP IIIT rank or expected rank range, your exact category (OC/BC-A/BC-B/SC/ST), and whether you are a local or non-local candidate — this combination determines which cutoff column you should actually be reading</li><li>Search 'Visionbanker142 AP IIIT cutoff' to find the campus-wise rank analysis videos and cross-check the closing ranks shown there against the official PDFs you just downloaded — any discrepancy means you need the official data, not assumptions</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The biggest rank jumps between phases happen for non-CSE branches like ECE and Civil at mid-tier campuses — if CSE is out of reach, locking ECE at a top campus in Phase 1 and upgrading to CSE at the same campus in Phase 2 is a legitimate strategy that works every year, but almost no student from rural AP knows to execute it deliberately.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Cutoff Reverse-Engineering Method: Calculate Your Real Seat Probability Before Results Drop</h3>
+      <p>Learn the exact system to predict which IIIT campus and branch will give you a s...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The 3 Traps That Kill Your IIIT Seat (And How to Dodge All of Them)</h3>
+      <p>Learn the exact mistakes that cause students to lose valid seats every year so y...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Phase Prediction Hack: Calculate Your Seat Before Results Are Even Out</h3>
+      <p>Stop guessing and start calculating — use last year's closing ranks to reverse-e...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 20-Minute Daily Seat Tracker Routine That Keeps You Ahead of Every Counselling Phase</h3>
+      <p>Turn daily confusion into daily clarity by building one simple habit that keeps ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When Your Rank Didn't Work Out: Emergency Recovery Moves for AP IIIT Counselling</h3>
+      <p>Transform a seeming dead-end into a strategic comeback by knowing exactly which ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>After the Seat: How to Never Lose Sleep Over IIIT Counselling Again (For You or Your Younger Siblings)</h3>
+      <p>Turn your hard-won counselling knowledge into a permanent family asset so that y...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
