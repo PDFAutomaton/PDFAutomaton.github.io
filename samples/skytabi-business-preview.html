@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Consistent Scholar — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/8199250/pexels-photo-8199250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Skytabi Business viewers</div>
+    <h1>The Consistent Scholar</h1>
+    <p>A Realistic Study System for Girls Who Want Better Grades Without Burnout</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You opened your notebook, made a beautiful schedule, highlighted your syllabus in three colours, and told yourself this week would be different. And it was — for about four days. Then one late night, one missed Fajr, one overwhelming chapter, and the whole system quietly collapsed. You went back to cramming the night before. Sound familiar? This isn't a motivation problem. It's a structure problem. And it's exactly what this guide was made to solve.</h2>
+    <p>What you'll find inside isn't a rigid productivity system designed for someone with eight free hours and zero family obligations. It's a calm, repeatable study rhythm built specifically for girls like you — juggling competitive coursework, family expectations, prayer times, and the very real need to actually sleep and feel human. By the time you finish reading, you'll have a working daily study structure you can start today, a method for turning even a distracted 25-minute window into real progress, and a way of thinking about consistency that doesn't punish you for being imperfect. The goal isn't to study more. It's to study in a way that actually sticks — with barakah in the effort, not just the outcome.</p>
+    <div class="promise">🎯 A calm, realistic daily system that builds focus gradually, delivers visible grade improvements, and doesn't require perfection—something that fits naturally into their existing life without overwhelming them</div>
+    <p class="author-note">A small note before we begin: this guide was researched and written by a third-party education researcher, not by the creator of Skytabi Business directly. I came to this project as someone who studies how students actually build habits versus how productivity culture tells them they should — and the gap between those two things is enormous, especially for high-achieving girls navigating academic pressure alongside cultural and spiritual life. I've tried to write this the way a knowledgeable older friend would explain it to you over chai — honestly, quietly, without judgment. I hope it feels that way to you.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page, do this. Not tomorrow. Not after you reorganise your desk. Right now, in the next 30 minutes, you're going to complete one real focused study block — probably the most productive 25 minutes you've had in weeks. This isn't about willpower. It's about removing every tiny decision that quietly drains you before you even open your textbook. Here's the exact sequence.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Set your niyyah and your space in under 5 minutes</strong><p>Pick the one subject that has been sitting heaviest on your mind — the one you've been avoiding. Open only that notebook or tab. Put your phone face-down or in another room. If you have a favourite low-fi or nature sound you study to, start it now at a low volume. Then, before you begin, say Bismillah and take one quiet breath. This is not a small thing. Setting an intention transforms a task into something meaningful — the Prophet ﷺ reminded us that actions are by their intentions, and that includes how we sit down to seek knowledge. Ilm is an act of worship. Treat the beginning of your study session the way you treat the beginning of something that matters.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Do exactly 25 minutes of single-topic focus with a physical timer</strong><p>Use a physical timer if you have one, or a plain timer app with the screen turned face-down. Choose one specific thing to do in this session — not 'study biology' but 'read and summarise pages 34 to 41 of my bio chapter in my own words.' Concrete and small. When the timer starts, you only do that one thing. If your mind drifts — and it will, especially in the first 10 minutes — gently bring it back without scolding yourself. Think of it like returning to focus after a distraction in salah. You don't give up the prayer. You simply return. That returning is the whole skill. You're training it right now.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Close the session with a 2-minute written brain dump</strong><p>When the timer ends, spend exactly two minutes writing freely in a small notebook or the notes app — what you understood, what confused you, what you need to revisit next time. Don't edit it. Don't make it neat. This is not for marks, it's for your brain. Research consistently shows that writing what you just learned — even messily — locks it into memory far better than re-reading. Then close your books completely. Drink water. Stand up. This matters: rest after a focused block is not laziness, it is part of the system. Barakah lives in work done with presence and then released — not in staring at notes until your eyes blur.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After these 30 minutes, you will have completed more meaningful revision than most students accomplish in two distracted hours. You'll also notice something quieter: a small but real sense of accomplishment that doesn't come from cramming under panic. That feeling is what this entire guide is designed to help you rebuild — one focused, intentional session at a time.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Niyyah Shift: Why Your Mindset Is the Only Study System That Actually Sticks</h3>
+      <p>Transform studying from a stress response into an intentional act of ibadah so your brain stops treating it like punishment and starts treating it like purpose.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most girls in your position aren't failing because they're lazy — they're failing because they're studying from panic, not intention, and panic-mode studying literally impairs the prefrontal cortex responsible for retention and focus. Before you download another Notion template or buy another planner, understand this: no system survives a broken mindset, and your mindset is currently wired to associate studying with guilt, comparison, and dread rather than growth. The Islamic concept of niyyah (intention) isn't just spiritual — it's neurologically powerful, because setting a clear, values-anchored intention before a task activates your brain's goal-pursuit circuitry and reduces the emotional friction that causes you to scroll instead of study. Your five daily salah already give you a built-in rhythm of pause and reset that most productivity coaches charge hundreds of dollars to teach — your job in this module is simply to start treating the time between Fajr and Dhuhr, or Asr and Maghrib, as sacred focused blocks rather than dead time you're vaguely guilty about wasting.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, open your notes app and write one sentence answering: 'Why do I actually want to do well in my studies?' — not what your parents want, not what looks good — make it yours, make it honest, and connect it to something bigger than marks (serving your community, becoming someone who can give back, fulfilling the trust Allah placed in your 'aql)</li><li>Tomorrow before your first study session of any kind, say Bismillah out loud, read your niyyah statement, and set a single specific goal for that session ('I will understand photosynthesis well enough to explain it without looking at my notes') — do this even if the session is only 20 minutes</li><li>Look at your prayer timetable for tomorrow and block out one 45-minute study window that ends before your next salah time — this gives you a natural stop point that removes the anxiety of 'how long do I study?' and makes salah your built-in brain reset</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Stop trying to build a study habit and instead attach studying to an anchor habit you already do without thinking — specifically, pick one salah you never miss and commit to opening your notes or textbook for even five minutes immediately after the sunnah prayers of that one salah for the next seven days; consistency with one tiny anchor beats a perfectly designed routine you abandon by Wednesday.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Prayer-Anchored Study Block: Build Your Sessions Around Salah, Not Willpower</h3>
+      <p>Learn how to use your five daily prayers as natural study boundaries so you neve...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The Obstacle Map: Why Your Routine Keeps Collapsing (And How to Stop It)</h3>
+      <p>You'll identify the exact 3-4 personal roadblocks sabotaging your consistency an...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Barakah Stack: Layering Active Recall With Your Prayer Rhythm for Twice the Retention</h3>
+      <p>You'll replace passive re-reading with a prayer-anchored active recall system th...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Barakah Blueprint: Building Your Non-Negotiable Daily Study Rhythm</h3>
+      <p>You'll stop reinventing your routine every Monday and finally build one repeatab...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>The Reset Protocol: How to Get Back on Track After You've Fallen Off (Without the Guilt Spiral)</h3>
+      <p>You'll learn exactly what to do the moment your study routine collapses — whethe...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Long Game: Making the Consistent Scholar Your Permanent Identity (Not Just a Phase)</h3>
+      <p>This module transforms everything you've built from a 'study challenge' into a n...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
