@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Authentic Islam Framework: Verify Sources, Retain Knowledge, Live the Lessons — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/20784677/pexels-photo-20784677.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Techview1406 viewers</div>
+    <h1>The Authentic Islam Framework: Verify Sources, Retain Knowledge, Live the Lessons</h1>
+    <p>A Systematic Method for Urdu-Speaking Muslims to Distinguish Truth from Distortion, Retain Deep Islamic Knowledge, and Connect History to Living Faith</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You are watching a detailed lecture on Umar ibn Abd al-Aziz, or perhaps a deep-dive into the Sufi silsilas of the subcontinent, or an account of how Islamic governance actually functioned under the early caliphs — and something stirs in you. This is the knowledge you have been searching for. But by the following week, the details have blurred. Worse, you encounter a contradictory account on another channel, or a WhatsApp forward that distorts the same historical figure you just spent an hour learning about — and now you are unsure which version to trust. You have no reliable filter. You have no structured method to hold what you have learned. And so knowledge that should be transforming your daily decisions and deepening your salah remains suspended somewhere between inspiration and confusion. This is not a failure of your intelligence or your sincerity. It is a failure of method. And method, alhamdulillah, can be taught.</h2>
+    <p>This guide gives you a three-part framework — Verify, Retain, Apply — built specifically for Muslims who engage seriously with long-form Islamic history and spirituality. By the time you finish reading, you will know precisely how to evaluate whether a historical claim or reformist narrative genuinely traces back to Quran and Sunnah or whether it is cultural interpolation dressed in Islamic language. You will have a structured retention system designed around the natural rhythm of your day — including your five daily prayers as built-in review anchors. And you will have a concrete method for converting what you learn about figures like Shah Waliullah, Saladin, or the early Abbasid scholars into actionable principles that shape how you make decisions, treat people, and pursue your own spiritual development. This is not another list of motivational reminders. It is a working system rooted in the Islamic tradition of serious, purposeful ilm — because the Prophet, peace be upon him, did not say seeking knowledge is merely praiseworthy. He said it is obligatory.</p>
+    <div class="promise">🎯 Possess a coherent, verified understanding of Islamic history and spirituality that strengthens personal faith practice and informs ethical decision-making</div>
+    <p class="author-note">A brief word on who compiled this guide and why that matters to you. I am an independent researcher and educator with a background in Islamic intellectual history and educational design. I am not Techview1406, and I want to be transparent about that. What I have done is study this channel's body of work carefully — its methodology, its sources, the specific gaps its audience consistently encounters — and built this framework as a companion tool for serious learners already engaged with this content. Think of this as what a knowledgeable fellow student might hand you after years of sitting in the same circles, having made all the methodological mistakes first so you do not have to. I have tried to write as a Muslim addressing other Muslims — not as an outside observer explaining our tradition to us. Where I have drawn on scholarly opinion, I have tried to be honest about the weight of that opinion. Where something is my own synthesis, I have said so. May Allah make it beneficial and forgive whatever errors it contains. That is the only credential that ultimately matters.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another chapter of this guide, do this exercise right now. It is called the Source Chain Test, and it is the foundational skill the entire Verify section is built upon. Most distorted Islamic narratives — whether about historical figures, Sufi orders, or Islamic governance — survive because we never ask one simple question at the right moment. This exercise will make that question automatic. Begin with Bismillah and set a clear niyyah: you are doing this to sharpen your ability to protect authentic ilm, which is itself an act of worship.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Choose one Islamic claim you encountered this week and write it down in one sentence</strong><p>This could be something from a video, a social media post, a conversation, or a book. It should be a specific historical or religious claim — for example, that a particular Islamic ruler implemented full economic justice, or that a specific Sufi order was founded in direct response to colonial pressure, or that a hadith proves a particular position. Write it as precisely as you can. Vague claims cannot be tested. Precision is an Islamic intellectual virtue — the early muhadditheen built entire sciences around it. Give yourself eight minutes for this step.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Trace it backward through three questions in writing</strong><p>On paper or in a notes app, answer these three questions about your chosen claim. First: who is the earliest source this claim is attributed to, and how many transmission steps separate that source from the person making the claim today? Second: does this claim align with, contradict, or exist in silence within the Quran and established hadith collections — and which specific ayah or hadith is most relevant? Third: what is the most serious scholarly objection to this claim, even if you ultimately disagree with that objection? You are not trying to destroy the claim. You are stress-testing it the way a structural engineer tests a bridge — because you intend to walk across it and build your faith on it. Give yourself fifteen minutes for this step, and resist the urge to rush.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write a single verdict sentence and a single action sentence</strong><p>Based on what you found, write one sentence that honestly states the current reliability status of this claim — strong, uncertain, or requires more investigation — and why. Then write one sentence that states what you will do differently because of this assessment. Perhaps you will hold the claim provisionally rather than repeating it with certainty. Perhaps you will seek a specific classical source. Perhaps the claim is well-supported and you can now hold it with greater confidence and articulate why. This two-sentence conclusion is the beginning of your personal Islamic knowledge audit file, which the Retain section of this guide will help you build systematically. Give yourself seven minutes for this final step.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After thirty minutes you will have completed one full cycle of the Source Chain Test and produced a written entry you can refer back to. More importantly, you will have experienced the difference between passively receiving Islamic information and actively processing it with a structured method. That difference is not merely intellectual — it changes how knowledge settles in you, how long it stays, and how readily it shapes your actions. Many readers report that this single exercise permanently shifts how they listen to Islamic lectures, because they begin mentally running the three questions in real time. That shift is the foundation everything else in this guide is built upon.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Verification Mindset: How to Think Before You Absorb</h3>
+      <p>Transform from a passive consumer of Islamic content into a sharp, discerning learner who can instantly separate authentic scholarship from viral noise.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Every time you scroll past a clip about Saladin, the Ottoman Caliphate, or a hadith explanation on a food channel like Techview1406, your first question before sharing or believing should be: who is the original source and does it trace back to a recognized scholar or authenticated text — because in Islam, isnad (chain of narration) is not an academic luxury, it is the entire architecture of trust. Make this a non-negotiable habit: when you encounter Islamic historical content, open a second tab and cross-reference with at least one classical source — Tabari, Ibn Kathir, or a verified contemporary scholar like Dr. Yasir Qadhi or Mufti Menk — before that knowledge becomes part of how you think and speak. Set your niyyah right now that seeking verified ilm is your ibadah, not just your hobby, because the Prophet ﷺ said seeking knowledge is obligatory upon every Muslim, and that obligation includes the quality of what you seek, not just the quantity. Start every study session with Bismillah and a conscious intention: 'I am sitting with this content to strengthen my deen and protect my understanding' — that single mental shift changes how your brain filters information, making you naturally more skeptical of sensationalism and more drawn to substance.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, write down three Islamic history topics you believe to be true — then spend 15 minutes tracing each claim to its original classical or scholarly source to discover which ones actually hold up</li><li>Create a simple two-column note in your phone labeled 'Verified' and 'Needs Checking' and add every Islamic fact or story you encounter this week into one of those two columns before passing it on to anyone</li><li>Identify one scholar whose methodology you trust — follow their actual channel, book, or podcast — and use them as your personal benchmark when new Islamic historical claims cross your feed</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The most dangerous Islamic misinformation is not the obviously wrong content — it is the 80% accurate content with a critical distortion buried inside, so train yourself to fact-check the specific claim that feels most emotionally satisfying or surprising, because that is precisely where distortion hides.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Islamic Source Verification System: How to Filter Gold from Noise</h3>
+      <p>You'll build a personal three-layer verification habit that turns every Islamic ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Breaking the Barriers: Why Your Brain Fights Islamic Knowledge (And How to Win)</h3>
+      <p>Identify the three hidden obstacles blocking Urdu-speaking Muslims from retainin...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Cross-Reference Method: Stack Multiple Sources to Bulletproof Your Islamic Knowledge</h3>
+      <p>Move beyond single-source dependency by building a layered verification system t...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Daily Salah-Synced Learning Routine: Build Unshakeable Islamic Knowledge One Prayer Time at a Time</h3>
+      <p>Transform your five daily prayers from spiritual pauses into a complete knowledg...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When the Wires Cross: Fixing Confusion, Doubt, and Information Overload</h3>
+      <p>When distorted narratives or contradictory sources derail your understanding, th...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>From Student to Steward: Making Authentic Islamic Knowledge Your Lifelong Identity</h3>
+      <p>Transform the Authentic Islam Framework from a 6-week habit into a permanent len...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
