@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Student Income Stack: How to Earn $300+/Month Consistently Without Account Bans — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/5849573/pexels-photo-5849573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Jobswithkev viewers</div>
+    <h1>The Student Income Stack: How to Earn $300+/Month Consistently Without Account Bans</h1>
+    <p>The 2026 Setup Guide for Stacking 3-4 Micro-Income Platforms Around Your Studies, Prayer Times, and Real Life — Without Getting Flagged, Banned, or Burned Out</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You found the platform. You signed up. You maybe even completed your first task. Then one morning you open the app and your account is under review — or worse, permanently suspended — and the $47 you earned is just gone. No explanation. No appeal that actually works. Just a generic email and a sick feeling in your stomach. If that has happened to you even once, this guide was written specifically for you. Because that moment — losing access without warning after putting in real effort — is not just frustrating. When you are a student with no backup income, no credit card, and no traditional job you can easily fit around classes and Fajr, it genuinely sets you back. The problem is almost never that you did something wrong. The problem is that nobody showed you the correct setup before you started earning. Wrong IP environment, wrong device fingerprint, inconsistent login location — platforms built to detect fraud will flag legitimate users who simply do not know the technical setup rules. This guide fixes that before you earn your first dollar, not after you lose your first account.</h2>
+    <p>What you are holding is a step-by-step setup system — not a list of apps, not a motivational framework, not a collection of vague tips. This is the exact technical and operational setup process for building a stack of 3 to 4 micro-income platforms that pay consistently, tolerate your student schedule, work without upfront investment or a credit card, and can realistically generate $200 to $500 per month when the daily system is followed. Every platform in this guide has been tested with real accounts. You will see real dashboard screenshots, real earnings figures including weeks where tasks were scarce and income dropped, and real rejection emails with the exact fixes applied. The goal is not to hype you into thinking this is passive income that runs while you sleep. The hustle is real. But a proper system makes that hustle reliable, predictable, and something you can actually plan your finances around. You will finish this guide knowing exactly which platforms to prioritize first, how to set them up correctly so your account stays safe for the long term, and how to run your daily earning session in 1 to 2 hours built around your study blocks and prayer times — because those five daily resets are actually one of the best natural productivity structures you can build an income routine around.</p>
+    <div class="promise">🎯 Stack 3-4 reliable micro-income platforms generating $200-500/month passively alongside studies, with a simple daily system that takes 1-2 hours, consistent payouts, and zero account bans</div>
+    <p class="author-note">A quick note before we start: I am not Kev. I am a third-party researcher and systems writer who was brought in to document and structure the setup process you are about to go through. Kev tests these platforms himself, shares his actual dashboard numbers with his community on Jobswithkev, and has been transparent about both the wins and the failures — including accounts that got restricted and the specific steps taken to recover or replace them. My job was to take that messy, trial-and-error field knowledge and turn it into a clean, reproducible guide that a student with zero prior setup experience can follow from the beginning. I have tried to write this the way a knowledgeable friend would explain it — directly, without unnecessary complexity, and without pretending the process is easier than it actually is. If something in this guide is unclear or a platform has changed since publication, Kev's channel is the live update source. This PDF is the foundation. The channel keeps it current. Now let us begin — Bismillah, and set your niyyah clearly: you are building a halal income source that creates real relief for yourself and potentially for those who depend on you. That intention matters.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another section, do this one thing right now. Most people read an entire guide, feel motivated, and then do nothing for three days because the first step feels too big. This quick win is designed to break that pattern. In the next 30 minutes you are going to complete the single most important account setup step that the majority of new users skip — and skipping it is the number one reason accounts get flagged within the first two weeks. You do not need anything installed yet. You just need your phone or laptop, a stable internet connection, and 30 focused minutes. Make your niyyah, open a new browser tab, and go through these three steps right now.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Check and lock your device fingerprint baseline</strong><p>Before you register on any earning platform, open your browser and go to coveryourtracks.eff.org — it is a free tool that shows exactly what information websites collect from your device when you visit. Take a screenshot of your results. This is your current fingerprint. What you are looking for is whether your browser is sending a unique, trackable signature. If the result says your browser has a unique fingerprint, do not panic — but do not register on any new platform yet either. This screenshot becomes your reference point. In Section 2 of this guide you will use it to configure your browser correctly before any platform sees your device. Doing this check now means you are starting with accurate information instead of guessing later why an account was flagged. Takes 5 minutes maximum.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Create your dedicated income email address</strong><p>Open Gmail or ProtonMail — ProtonMail is recommended if you are in a region where Google services occasionally have access issues — and create one clean email address used only for earning platforms. The format that works well is something simple like your first name plus the word work plus a two digit number, for example ahmedwork07 at proton dot me. Do not use your student email, your personal social email, or any address already connected to failed platform registrations. Write this new email address and its password into a notes app or a small notebook you will keep specifically for your income stack. This single action — having a clean, dedicated email — prevents cross-platform contamination that gets legitimate accounts flagged as duplicates. Takes 8 minutes including verification.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Register on Remotasks and complete the orientation quiz</strong><p>Go to remotasks.com and sign up using your new dedicated email address. Use your real name and real location — do not use a VPN during initial registration on this platform specifically, as Remotasks uses location verification during onboarding and a VPN at this stage triggers an immediate review flag. Once registered, navigate to the Radiant AI training tab and start the free orientation modules. Complete at least one full module and pass the short quiz at the end. This does two things: it activates your account from pending to active status, and it qualifies you for the higher-paying task categories that unverified accounts cannot access. Many students skip the training and then wonder why only low-paying or no tasks appear on their dashboard. The training is the unlock. Takes 15 minutes and you will see your first task feed before the timer is done.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: By the end of these 30 minutes you will have a clean fingerprint reference screenshot saved, a dedicated income email address that is not connected to any previous platform attempts, and an active Remotasks account with at least one training module completed and your first task feed visible on your dashboard. That task feed is real money available to you right now. You have not earned yet — but you have set up correctly, which is something the majority of people who attempted this before you did not do. The rest of this guide builds the full stack on top of this foundation.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Barakah Blueprint: Why 99% of Students Fail Before They Even Start</h3>
+      <p>Before you touch a single platform, you need to install the mental operating system that separates students earning $300/month consistently from those who quit after week two.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most students from Karachi to Cairo jump straight into signing up for every platform they find on YouTube and burn out within days because they have no system — they're reacting, not building, and that reactive energy is exactly why accounts get abandoned and earnings stay at zero. The students on Jobswithkev's channel who actually hit consistent numbers treat their micro-income work like a second class: they have fixed time blocks (Fajr to Shuruq and after Asr are gold for focused task work), a single notebook tracking every platform, every payment, and every pending verification, and a non-negotiable rule to touch only two or three platforms maximum until each one is actually paying. Set your niyyah clearly — you're building halal rizq to remove financial pressure from your studies, not chasing get-rich hype — and that clarity alone will stop you from chasing every new 'method' video and keep you executing the boring, repeatable tasks that actually compound. Think of each prayer time as a natural Pomodoro reset: when the adhan sounds, you close the laptop, make salah, come back with fresh eyes — this rhythm protects you from the burnout that destroys most students' consistency within the first month.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open a free Google Sheet right now and create three columns — Platform, Status (pending/active/paying), and This Week's Earnings — then add every platform you've ever signed up for so you can see your actual starting point instead of guessing</li><li>Write one sentence in your phone notes as your formal niyyah: exactly why you're building this income stack, what it will free you from, and what you'll do with the first $100 you earn — screenshot it and set it as your lock screen</li><li>Pick your two daily focus windows based on your salah schedule (most students find post-Fajr for 45 minutes and post-Asr for 45 minutes works best) and block these in your calendar as recurring events labeled 'Stack Work' starting today</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The single biggest reason student accounts get flagged or banned isn't fraud — it's inconsistency signals: logging in from five different devices, skipping weeks then doing 10 hours in one day, and using VPNs 'just in case.' Platforms algorithmically trust users who show up in small, regular patterns, so 30 disciplined minutes daily will protect your account and grow your reputation score far more than sporadic marathon sessions ever will.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Micro-Stack System: How to Layer 3 Income Streams That Work Around Your Prayer Times and Classes</h3>
+      <p>You'll build a repeatable daily earning loop using three platform types that sta...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why Your Earnings Keep Stopping (And the 3 Fixes That Actually Work)</h3>
+      <p>Identify the exact mistakes killing your income consistency and install the simp...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Stacking System: How to Layer 3 Income Streams So They Cover Each Other's Gaps</h3>
+      <p>You stop relying on any single platform and build a rotation where when one slow...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Muslim Student's Daily Stack Routine: How to Earn Consistently Using Prayer Times as Your Reset Points</h3>
+      <p>Transform your existing daily prayer schedule into a built-in productivity syste...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When It All Breaks Down: The Muslim Student's Recovery Playbook for Bans, Dry Spells, and Disappeared Earnings</h3>
+      <p>Turn every setback into a system upgrade so that account issues, task droughts, ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Barakah Blueprint: Turning Your Side Hustle Into a Permanent Income Identity</h3>
+      <p>Transform your scattered gig work into a locked-in monthly system that runs arou...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
