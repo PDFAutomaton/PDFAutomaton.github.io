@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Landowner's Habitat System — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #C084FC; --primary-bg: #FAF5FF; }
+    .hero { background: linear-gradient(135deg, #C084FC 0%, #1a1a2e 100%); }
+    .step-num { background: #C084FC; }
+    .module-num { background: #C084FC; }
+    .for-badge { background: #C084FC; }
+    .cta-btn { color: #C084FC; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/34692876/pexels-photo-34692876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Partnerships viewers</div>
+    <h1>The Landowner's Habitat System</h1>
+    <p>Plan Once, Execute Year-Round, Own More Deer Movement</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You've got a tractor, a chainsaw, and a truck bed full of good intentions — and somehow, October rolls around every single year and you're still hunting the same three spots, watching the same deer walk the same field edge at last light, just out of range. Not because you haven't put in work. You have. You've planted food plots, hung stands, cleared shooting lanes, maybe even dozed out a road or two. But none of it connected. You fixed pieces without ever building a system. And on a 50-acre property — or a 200-acre one with two creek bottoms and a pine block that deer won't touch — generic magazine advice doesn't just underperform. It flat-out fails.</h2>
+    <p>This guide gives you the exact planning framework that small-to-mid-size Southern landowners have used to stop guessing and start steering deer movement with purpose. You're going to learn how to read your specific property for the corridors deer are already trying to use, how to sequence your habitat work so every improvement builds on the last, and how to lock in a repeatable annual system so you're not starting from scratch every February when the planning window is already closing. One property. One plan. Built to compound year after year.</p>
+    <div class="promise">🎯 A clear, sequential annual habitat management system that systematically improves deer movement and hunting success on their specific property size</div>
+    <p class="author-note">A quick word before we get into it: I put this guide together as an outside researcher working closely with the creator and his client case studies — real landowners, real acreage, real results documented over multiple seasons in Georgia and across the Southeast. I'm not the one who's been boots-on-ground improving these properties, and I won't pretend otherwise. What I've done is organize the framework, the sequencing, and the lessons learned from properties that actually changed — so you can apply them to yours without wading through years of trial and error. Everything in here is grounded in documented outcomes, not theory.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you touch a single acre, you need a Movement Baseline — a one-page snapshot of where deer are already trying to go on your property. Most landowners skip this step and spend years fighting deer behavior instead of working with it. This exercise takes 30 minutes, costs nothing, and is the single most important thing you can do before any habitat improvement. You're not building anything today. You're reading what's already there.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Pull up your property on Google Earth or onX and screenshot your land boundary</strong><p>Open Google Earth Pro (free) or your onX Hunt app and zoom in on your property. Take a screenshot or print the satellite view. You need to see your terrain features clearly — timber blocks, open fields, creek drainages, thickets, and any neighboring land use like agriculture or hardwood edges adjacent to your line. If you've never looked at your property from above with fresh eyes specifically asking 'where would a deer want to travel,' you're about to see things you've walked past a hundred times.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Mark every pinch point, edge transition, and thick-to-open boundary you can identify</strong><p>Using a pen on your printout or the markup tool in onX, circle or mark every place on your property where two different cover types meet — thick timber running into an open field, a creek bottom that narrows between two ridges, a brushy fencerow connecting two woodlots. These transition zones and pinch points are where deer movement naturally funnels. Don't overthink it. If it looks like a natural bottleneck or a bridge between cover, mark it. Aim for at least five marked locations on any property over 20 acres.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Rank your marked locations by how many deer signs you remember seeing there — even without fresh scouting</strong><p>Next to each mark, write a number from 1 to 3 based on your gut memory: 3 means you've seen deer, tracks, rubs, or scrapes there multiple times across different seasons. 2 means you've seen sign once or twice but never hunted it seriously. 1 means it looks good on the map but you honestly don't have boots-on-ground confirmation yet. This ranking becomes your starting priority list. You're not guessing at random anymore — you're triaging your property based on evidence you already own.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: In 30 minutes you'll have a rough but real Movement Baseline map — a marked-up aerial of your property showing where deer movement is likely funneling right now based on terrain and your own documented sign. This one page becomes the foundation every habitat decision in this guide gets built on. Landowners who do this step first stop wasting improvement dollars on areas deer were never going to use consistently. You'll refer back to this map throughout the entire planning process.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #C084FC;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Property Blueprint: Why 90% of Habitat Work Fails Before It Starts</h3>
+      <p>Stop managing deer like you're hoping they show up and start managing land like you're engineering where they have to go.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Most Georgia landowners with 50-150 acres are making the same mistake: they're buying clover seed and hanging stands based on where they've seen deer before, which is reactive management that keeps you one season behind the deer's actual patterns. Before you plant a single food plot or cut a single shooting lane, you need to do one thing — pull up your property on onX Hunt or Google Earth and identify your three pinch points, your two bedding areas, and your one sanctuary (the place you never go, ever), because every habitat improvement you make for the next five years should be designed to funnel deer between those six locations. Your property size doesn't matter as much as your terrain transitions — a 40-acre property with a creek bottom, a hardwood ridge, and a field edge has more natural deer architecture than a 200-acre flat pine block, and understanding that distinction will save you thousands in wasted food plot inputs. The landowners who consistently kill mature bucks on small-to-mid acreage aren't outspending their neighbors, they're out-thinking them by treating their land as a system with entry points, travel corridors, and destination nodes — not just a collection of spots.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Open onX Hunt or Google Earth right now and drop pins on every location you've seen deer in the last two seasons — you're looking for a pattern of WHERE they were traveling, not just where they stopped</li><li>Identify the one area on your property that has the thickest nastiest cover and declare it your sanctuary by physically marking it on your map — no entry from August through January, no exceptions</li><li>Sketch a rough hand-drawn map of your property showing bedding to feed travel routes and identify the one natural bottleneck (creek crossing, fence gap, ridge saddle) that all those routes funnel through — that's your first habitat investment priority</li></ul>
+    <div style="background:#FAF5FF;border-radius:8px;padding:12px 16px;font-size:13px;color:#C084FC;font-weight:600;">
+      💡 Pro tip: The biggest ROI move on any Southern property isn't a food plot — it's a hinge-cut thicket you create with a chainsaw in January that forces deer to bed exactly where you want them, which then makes every other habitat improvement you make downstream of that bedding area 3x more effective.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Habitat Grid: Map Your Property Into Functional Deer Zones Before You Touch a Single Chainsaw</h3>
+      <p>Transform your raw acreage into a strategic system of interconnected zones so ev...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why Your Habitat Work Keeps Stalling (And the 3 Fixes That Actually Work on Small Acreage)</h3>
+      <p>Identify the exact bottlenecks killing your habitat momentum and replace them wi...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>Topographic Trigger Points: How to Stack Multiple Deer Behaviors Into Single Locations</h3>
+      <p>Stop spreading your improvements across your whole property and start identifyin...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 15-Minute Morning Audit: How to Read Your Property Every Single Day Without Burning a Tank of Gas</h3>
+      <p>Turn your daily coffee into a property intelligence ritual that catches habitat ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When Your Plan Breaks Down: Diagnosing and Fixing Habitat Failures Before You Lose a Season</h3>
+      <p>Turn setbacks into strategic pivots so a failed food plot or ignored bedding are...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Living Property: How to Make Habitat Management Automatic So It Outlasts Any Single Season or Motivation Spike</h3>
+      <p>Transform your annual deer season scramble into a self-reinforcing property syst...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
