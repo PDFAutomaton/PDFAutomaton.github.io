@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Conscious Creator's Implementation System — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/8279217/pexels-photo-8279217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Candacevandell viewers</div>
+    <h1>The Conscious Creator's Implementation System</h1>
+    <p>Turn Your Spiritual Awareness Into Measurable Daily Progress</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You had a breakthrough last Tuesday. A real one. You journaled three pages, felt the shift in your body, sent a voice note to your friend saying 'I think I finally get it,' and went to bed absolutely certain that this time was different. By Friday, you were back in the same loop — scrolling instead of creating, planning instead of starting, understanding everything and doing nothing. The awareness is not the problem. You have more awareness than most people will develop in a lifetime. The problem is that nobody ever built you a bridge between the insight and the Tuesday morning when you actually have to show up.</h2>
+    <p>This guide is that bridge. Not a 30-day challenge that assumes you'll feel motivated every day. Not a manifestation workbook that lets you visualize your way around the part where you have to do the thing. This is a concrete, neurodivergent-informed implementation system designed specifically for women who can see their potential with crystal clarity and still cannot seem to make it move. You're going to leave this guide with a personal accountability structure that works with your brain, honors your spiritual framework, and produces results you can actually point to — because the universe doesn't reward readiness, it rewards action that looks like readiness from the inside out.</p>
+    <div class="promise">🎯 Transform spiritual awareness into consistent daily wins; build personal accountability systems that feel aligned rather than rigid; prove capability through measurable results while honoring neurodivergent/spiritual identity</div>
+    <p class="author-note">A note on where this guide came from: I'm a researcher, not Candace. I spent time deep in her content, in the comment sections, in the DMs she shares publicly, and in the broader world of women who identify exactly the way her audience does — spiritually awake, wildly capable, and quietly exhausted by the gap between knowing and doing. What I found wasn't a motivation problem or a discipline problem. It was a systems problem. Nobody had ever handed these women a structure that respected both the way their brains actually work and the very real spiritual intelligence they carry. This guide is my attempt to build that structure honestly, without hype, and without pretending the execution part is anything other than the hardest and most sacred part of the whole journey.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another word of this guide, you're going to complete a single implementation cycle from scratch — not because you feel ready, but because doing it once before you feel ready is exactly the point. This exercise is called the One True Thing audit and it takes 30 minutes. It will show your nervous system, with evidence, that you can move from awareness to action in the same sitting. That's not small. For a brain wired the way yours is, that's the whole game.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Name the download that's been sitting unopened</strong><p>Open a blank note on your phone or grab a piece of paper — nothing fancy, nothing that requires setup. Set a 10-minute timer. Write down every insight, idea, healing realization, or 'I really need to start doing this' thought that has been living in your head rent-free for longer than two weeks. Don't organize it. Don't judge it. Just drain it out. You're looking for the one that makes your stomach do a small anxious flip when you write it down — that's the one the universe has already been trying to hand you. Circle it.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Strip it down to the smallest possible physical action</strong><p>Take that circled thing and ask yourself one brutal question: 'What is the tiniest version of this that takes less than five minutes and involves my body moving in the physical world?' Not thinking about it. Not researching it. Not creating a system for it. A body-moving action. If the download is 'start my creative business,' the tiny action is opening a free Canva account and typing your working name into a blank document. If it's 'stop numbing at night,' the tiny action is putting your phone charger in a different room right now. Write the tiny action down in one sentence. This is your proof-of-concept move.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Do the tiny action and document the timestamp</strong><p>Do it. Right now, before the guide, before the playlist, before you feel settled. When you finish — and it will take less than five minutes — write the time next to it and one sentence about how your body feels. Not your thoughts. Your body. This timestamp is the first entry in your Implementation Record, which you'll build properly in Chapter Three. Right now it just needs to exist, because the moment it exists, you are no longer someone who has insights. You are someone who acts on them. Those are two completely different identities and you just crossed the line.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: You will finish this exercise with one completed action, one timestamp, and a nervous system that has been shown — not told, shown — that the gap between awareness and execution can close in under 30 minutes. That feeling is not motivation. It's evidence. And evidence is what we're building everything else on top of.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Awareness Trap: Why Knowing Isn't the Same as Building</h3>
+      <p>You'll finally understand why your spiritual intelligence has been working against your execution — and rewire the exact gap between insight and action.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Here's the uncomfortable truth nobody in your spiritual communities will say out loud: high self-awareness without a container for action creates a loop where processing *becomes* the productivity, and you mistake understanding your patterns for actually changing them — this is the Awareness Trap, and it's why you can journal about your shadow, nail your human design chart, and still not send the email. Your nervous system, especially if you're ADHD or trauma-shaped, has learned that insight feels like progress because it releases dopamine without the risk of real-world failure, so we're going to interrupt that circuit by anchoring every reflection to one physical output, starting today. The Conscious Creator framework treats your spiritual awareness as raw data — genuinely useful, genuinely real — but insists that data only counts when it produces a decision, a creation, or a changed behavior you can point to by end of day. You're not here to become more aware; you're here to become someone who builds things with what you already know.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Write down ONE insight you've had about yourself in the last 30 days that you haven't acted on yet — then write a single sentence describing what acting on it would look like in the next 24 hours, not eventually</li><li>Set a 'grounding alarm' for 6pm today labeled 'what did I build?' — your only job is to name one tangible thing you made, moved, or finished, even if it's tiny, because this trains your brain to expect output from itself</li><li>Take your current 'big vision' and write it in one sentence, then cross out every word that's about who you'll *become* and rewrite it focused only on what you'll *make or do* — this is your first execution anchor</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Stop calling it resistance. When you can't start, it's almost never a mindset problem — it's a missing first physical action, and your spiritually-wired brain will philosophize forever rather than admit it doesn't know the literal next step. Before any ritual, any journaling, any meditation around a stuck project, write the words 'the next physical action is ___' and fill in the blank with something that takes under 10 minutes. Clarity creates momentum; ceremony without clarity just feels productive.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Nervous System Blueprint: Why Your Vision Keeps Dying Before Lunch</h3>
+      <p>You'll finally understand why your high-vibe mornings collapse into executive dy...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why Your Awareness Is Keeping You Stuck (And How to Stop Using Insight as a Substitute for Action)</h3>
+      <p>You'll identify the exact three patterns that turn your high consciousness into ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Energy Audit: Stop Spending Spiritual Currency on Tasks That Drain You</h3>
+      <p>Learn to map your actual energy cycles (not the productivity guru's schedule) so...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Sacred Daily Container: Building Your Non-Negotiable 90-Minute Anchor Routine</h3>
+      <p>Stop redesigning your life every Monday and finally install the repeatable daily...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>The Reset Protocol: How to Get Back On Track Without Losing Weeks to Shame Spirals</h3>
+      <p>Learn to treat a derailed week as data, not evidence of your brokenness, so you ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Spiral, Not the Straight Line: Making Conscious Creation Your Permanent Default</h3>
+      <p>You stop white-knuckling your way through discipline and instead wire the system...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
