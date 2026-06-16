@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Watching to Scoring: The Literary Theory Retention System for South Asian Students — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/17603742/pexels-photo-17603742.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Shaeenamina704 viewers</div>
+    <h1>From Watching to Scoring: The Literary Theory Retention System for South Asian Students</h1>
+    <p>A Structured Framework for Turning Video Notes and Scattered Concepts into High-Scoring Essays and Confident Exam Answers</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You have watched the explanation of Foucault's power-knowledge three times. You understood it while the video was playing. You even nodded along when the examples made sense. Then your exam paper arrived two days later, and the question asked you to apply discourse theory to a literary text — and your mind went completely blank. Not because you are not intelligent. Not because the material is beyond you. But because watching and retaining are two entirely different cognitive processes, and nobody ever gave you a system that bridges that gap. This guide exists because that specific failure — understanding in the moment, forgetting under pressure — is not a personal weakness. It is a structural problem that requires a structural solution.</h2>
+    <p>What you will find in these pages is a complete retention and application system built specifically for students studying literary theory and criticism in South Asian academic contexts — whether you are preparing for BA and MA examinations, competitive papers like CSS or NET, or simply trying to write essays that go beyond repeating your lecturer's words. This is not a summary of literary theory. You have summaries. What you need is a method: how to encode complex ideas from Freud, Derrida, Said, and others so they stay retrievable under exam conditions; how to connect theorists to each other and to actual literary texts without confusion; how to build original arguments rather than reproducing explanations you heard somewhere. Every section of this guide has been designed so that you can open your notebook, apply the framework, and produce measurably better written work — not eventually, but within days of starting.</p>
+    <div class="promise">🎯 Master literary theory and criticism confidently enough to write high-scoring essays and ace exams by building an organized, retrievable knowledge system</div>
+    <p class="author-note">A note before we begin: this guide was researched and written by an academic content researcher who studies how humanities students in Pakistan, India, and Bangladesh actually learn, struggle with, and eventually master literary theory. I am not the creator of the video channel that brought you here, and I do not claim to replace the teaching you receive there or in your institution. My role is simpler — I have looked carefully at where the gap lives between watching excellent explanations and performing confidently in written assessments, and I have tried to build something practical that fills it. I have deep respect for the academic rigor this subject demands, and equal respect for the real constraints you are working within: limited time, high-stakes exams, and material that is genuinely difficult. Everything here is written with that reality in mind. Begin with Bismillah and a clear niyyah — the intention to seek knowledge that benefits — because the pursuit of ilm is never wasted effort, and barakah has a way of entering work that is begun with sincerity.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another page of theory or watch another explanation, do this exercise right now. It will take thirty minutes, require only a pen and paper or a plain document, and it will give you immediate, visible evidence that your retention problem is solvable. Choose one theorist you have already studied — Freud, Said, Barthes, anyone you feel you know reasonably well. You are about to find out exactly what you actually own versus what you only borrowed temporarily from a video. This is not a test to make you feel bad. It is a diagnostic that will show you precisely where your system needs to be built. Start with Bismillah.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Write everything you know about one theorist from memory — no notes, no phone — in exactly ten minutes</strong><p>Set a timer. Write the theorist's name at the top of the page and then write continuously: their key concept, what problem they were responding to, any terms they coined, any example you remember, anything at all. Do not stop to check accuracy. Do not worry about order or grammar. This is a brain-dump, not an essay. When the timer ends, stop. What you have written — however much or little — represents your actual retrievable knowledge right now. Most students are surprised to find it fills less than half a page despite hours of video watching. That gap between what you watched and what you wrote is exactly what this guide will close.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Identify your three weakest points from that page using the Three-Gap Test</strong><p>Read what you wrote and mark three specific places where you wrote something vague, incomplete, or where you simply left a blank. Look for: a term you used but cannot define precisely in your own words; a concept you described but cannot connect to a literary text or real example; a name or idea you know exists but could not explain if asked directly. Write these three gaps as honest questions — for example, 'I cannot explain what the mirror stage actually means in my own words' or 'I know Said wrote about Orientalism but I cannot say what claim he was making or why it matters for reading literature.' These questions are now your priority targets. They tell you exactly what your notes have failed to do for you.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write one three-sentence explanation of the theorist's core idea as if explaining it to a first-year student who has never heard of them</strong><p>Using only what you wrote in step one — still no notes — write three sentences: the first naming the theorist and their central claim in plain language, the second giving one concrete example of how that idea applies to reading a literary text, the third explaining why any reader or critic would find this idea useful. Keep each sentence under thirty words. If you cannot write the second sentence — the application sentence — without going vague or abstract, you have just located the most common exam failure point for literary theory students, and you have done so in under thirty minutes. Save this paragraph. At the end of this guide, you will write it again, and the difference will be the evidence that your system is working.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After this exercise you will have a clear, honest picture of the distance between your current retained knowledge and the level of fluency required to write confidently under exam conditions. You will also have your first three specific learning targets — not a vague sense that you need to 'study more theory' but precise gaps with precise questions attached to them. Most students who complete this step report that it is the first time their studying has felt directed rather than overwhelming. That clarity is the foundation everything else in this guide builds upon.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Niyyah Framework: Why You Forget Derrida Five Minutes After Watching</h3>
+      <p>Transform your passive video-watching habit into an active retention system by building the right mental foundation before a single theory even enters your brain.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The reason you can watch a full explanation of Saussure's signifier-signified or Althusser's Ideological State Apparatuses and still blank out in your CSS or MA exam is not that you are not smart enough — it is that your brain received the theory as entertainment, not as knowledge it needs to own and use. Before your next Shaeenamina video, pause and make a genuine niyyah: 'I am seeking this ilm so I can articulate ideas clearly, serve my education, and use my mind as Allah intended.' This single shift from passive consumer to active seeker changes how your hippocampus encodes information — you are no longer watching, you are acquiring. The most practical version of this is what we call the Three-Question Contract: before pressing play, write down what you already think you know about this theorist, what specific confusion brought you to this video, and what you will be able to do differently in an essay after watching — because a brain with a question searches the video like a hunter, while a brain without one just lets it wash over.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, open a dedicated notebook — physical, not phone notes — write 'Kitaab ul Ilm' on the cover and date the first page, then under it write your honest answer to: 'What is the last theory I watched and cannot explain in my own Urdu or English words?' This confession is your baseline.</li><li>Before your very next literary theory video, spend exactly 90 seconds writing the Three-Question Contract in your notebook: what you think you already know, what specific thing confuses you, and one sentence describing how you will use this in an essay — then keep the notebook open beside you while watching.</li><li>After Fajr or any salah today, sit for five minutes and try to explain one theory you have already watched — Barthes, Foucault, Said, whoever — out loud to yourself as if you are teaching a younger cousin in Lahore who has never heard of it, and notice exactly where your explanation breaks down, because that breakdown is your real starting point.</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Stop rewatching videos you have already seen as your study method — every rewatch feels productive but is actually your brain taking the easy road of recognition instead of doing the hard work of recall, and the students who score highest in BA and CSS vivas are not the ones who watched the most content but the ones who closed the laptop earliest and forced themselves to reconstruct the theory from memory, imperfectly, on paper.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Theorist Triangle: How to Lock Saussure, Derrida, and Barthes Into Your Memory Forever</h3>
+      <p>Transform scattered theorist names and half-remembered concepts into a locked, r...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The 5 Traps That Keep You Stuck at Re-Watching (And the Halal Hustle Fix for Each)</h3>
+      <p>Identify the exact mental and practical obstacles blocking your retention and re...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Argument Architecture Method: Building Exam Answers from Theory Fragments</h3>
+      <p>Transform your scattered notes on Derrida, Foucault, and Said into a repeatable ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Daily Barakah Loop: Your 20-Minute Literary Theory Habit That Actually Sticks</h3>
+      <p>Transform scattered theory-watching into a daily rhythm anchored to your prayer ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>The Recovery Plan: When Your Brain Blanks on Derrida at 2AM Before Exams</h3>
+      <p>Turn your worst retention crises into your strongest exam moments by diagnosing ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Lifestyle Lock-In: Making Literary Theory a Lifelong Habit, Not a Exam Panic</h3>
+      <p>Transform literary theory from something you cram before CSS or MA exams into a ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
