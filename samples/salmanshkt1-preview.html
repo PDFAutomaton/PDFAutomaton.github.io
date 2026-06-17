@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 3-Tool Tech System: Stop Switching, Start Staying Focused — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/9832695/pexels-photo-9832695.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Salmanshkt1 viewers</div>
+    <h1>The 3-Tool Tech System: Stop Switching, Start Staying Focused</h1>
+    <p>How to Finally Pick Your Tools, Stick With Them, and Actually Get Things Done Without the Overwhelm</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>Bhai, be honest with me for a second. How many apps do you have on your phone right now that you downloaded because someone said it would make you more productive — and you used it for maybe three days before going back to your old habits? Notion, Obsidian, Todoist, TickTick, some random timer app, maybe a habit tracker you haven't opened since Ramadan... sound familiar? You're not lazy. You're not bad with tech. You're actually probably more tech-aware than 90% of people around you. The problem is nobody ever told you that downloading more tools is not the same thing as building a system. And watching a 12-minute video about the best apps of 2024 is not the same thing as actually using those apps to change how your day goes. Every time a new tool drops or a creator you follow hypes up some feature, there's this pressure — like, yaar if I don't switch now I'll fall behind. So you switch. And then you switch again. And somewhere in between all that switching, the actual work never gets done. That cycle ends here.</h2>
+    <p>This guide is built around one simple idea: you only need three tools, used consistently and with intention, to completely transform how you work, study, or manage your daily life. Not ten tools. Not a complicated productivity system with color-coded tags and weekly reviews. Three tools. We're going to figure out which three actually fit your life, show you exactly how to use them at the level that matters — not every feature, just the ones that move things forward — and help you build the kind of focused daily rhythm where barakah actually has room to show up. When your time has structure and your tools have purpose, Allah can put blessing into even a short work session. That's not just a nice thing to say — that's a real outcome you'll start to notice within the first week.</p>
+    <div class="promise">🎯 clear, simple tech decisions that actually stick; master 2-3 core tools deeply rather than chase 10 tools superficially; save time daily through smarter tech use</div>
+    <p class="author-note">Quick note before we get into it: I'm a third-party researcher, not Salman himself. I put this guide together after going deep into what actually works for people who consume a lot of tech content but struggle to turn that knowledge into real daily habits — which, honestly, describes a huge number of genuinely smart, curious people. Everything in here is based on real patterns, real struggles, and what actually helps versus what just sounds good in a video. Salman's channel is where the energy and the conversation lives — this guide is just the practical companion that gives you something concrete to walk away with and actually use. No fluff, no filler. Let's get into it.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read anything else in this guide, do this exercise first. Say Bismillah, set a genuine niyyah that you're going to use the next 30 minutes to bring some order to how you use your tools, and then work through these three steps. This isn't a warm-up. This is actually one of the highest-value things you'll do all week — and it'll make everything else in the guide click faster because you'll already have skin in the game.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Do the Honest App Audit — 10 Minutes</strong><p>Open your phone and go to your most-used apps list or just scroll through your home screen slowly. Write down — on paper or in your notes app — every single productivity, focus, or utility app you have. Don't judge yet, just list them. Then next to each one, write one of three letters: D for daily use, S for sometimes, and G for ghost — meaning you literally forgot it was there. Most people find they have 2-3 D apps, maybe 4-5 S apps, and an embarrassing number of G apps. That ghost list? That's where your decision fatigue is coming from. Those apps are sitting in your brain as unfinished decisions, draining mental energy every single day without you realizing it. You're going to delete every G app right now — not move them to a folder, delete them. This single action will make your phone feel lighter and your mind feel clearer within 24 hours.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Identify Your One Biggest Daily Time-Waster — 10 Minutes</strong><p>Think back to yesterday or the last time you sat down to do something important — study, work on a project, reply to important messages, whatever it is for you. Before you actually started doing the thing, how long did you spend deciding how to do it or which app to use? Be real with yourself. A lot of people in this situation spend 20-40 minutes just in the setup phase — opening apps, reorganizing notes, checking if there's a better template — before any real work happens. Write down the specific moment where you stalled. Was it opening three different note-taking apps before picking one? Was it getting distracted adjusting settings? Was it watching one more video about the tool before using it? That specific moment is your personal productivity leak. Name it. Write it down. We're going to address it directly in the main chapters — but just naming it clearly is already half the work because now it's a defined problem, not a vague frustrating feeling.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Set Your 3-Tool Shortlist — 10 Minutes</strong><p>Based on your audit from Step 1, look at your D apps — the ones you actually use daily. From that list, pick the three that, if everything else disappeared tomorrow, you could still function with. Don't overthink it. Your gut answer is probably right. These three become your provisional core stack for this guide. Write them down with a simple one-line answer next to each one: what is this tool's one job in my life? For example — WhatsApp: communication. Google Calendar: knowing when things happen. Notes app: capturing ideas before they disappear. If you struggle to write a clear one-line job for a tool, that's a sign it doesn't actually have a defined role in your system yet — which is exactly what we fix in Chapter 2. For now, just having your three written down with their jobs named is a genuine win. After Salah today, look at that list again. You'll notice it already feels more intentional than how you were using your phone this morning.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: By the end of this 30-minute session you will have deleted the digital clutter that was quietly draining your mental energy, identified the exact moment in your day where your focus breaks down, and named your three core tools with a clear purpose for each one. That's a real foundation — not a vibe, not a motivation high that fades by Isha, but an actual starting point you can build on. Most people who do this exercise tell themselves they'll do it later and never do. You just did it. That already puts you ahead of where you were this morning.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Niyyah Reset: Why Your Brain Can't Handle 47 Open Tabs</h3>
+      <p>You'll go from a guy drowning in Discord notifications, YouTube rabbit holes, and half-installed apps to someone who knows exactly which 3 tools deserve your attention — and why.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Here's the real problem, bhai: you're not lazy, you're architecturally overwhelmed — your brain is being asked to make 300 micro-decisions a day about which app, which notification, which feature actually matters, and it's burning out before Dhuhr. The Pakistani and Indian students killing it with productivity aren't using more tools than you — they've made a single foundational decision that everything else plugs into, which is this: a tool either protects your focus or it steals it, and there is no middle category. Think of it like Salah — five times a day, your day gets a hard reset, and the 3-Tool System is built around that exact rhythm so your work has the same structure your worship already does. Before you download anything new, your only job this week is to audit with intention: barakah doesn't land on scattered effort, it lands on deliberate, focused work done with a clear niyyah — so the framework starts not with your phone, but with your mind.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, open your phone's app drawer and count every productivity/tech app you have installed — screenshot it, because most people have between 12 and 30 and have never actually looked at this number before</li><li>Write one sentence — literally one — stating WHY you want a better tech system (not 'to be productive,' but something real like 'so I can finish my CS assignments before Isha and actually sleep'), then save it as your phone wallpaper so your niyyah is visible every time you unlock</li><li>Before your next Fajr or any Salah today, take 60 seconds after the prayer to mentally list the three things you most need to get done — this trains your brain to use prayer times as the focus resets the 3-Tool System is built around</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The tool that feels the most exciting to set up is almost always the one you need the least — genuine productivity tools are slightly boring at first glance, like a clean notebook, because they exist to serve your work, not to entertain you while you avoid it.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The 3-Tool Filter: How to Pick Your Stack in 10 Minutes</h3>
+      <p>You'll go from drowning in 47 browser tabs of 'maybe useful' apps to confidently...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>The 3 Shaytaan Moves That Kill Your Focus System (And the Fix for Each)</h3>
+      <p>Identify the exact traps that collapse your tech discipline so you can neutraliz...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Barakah Stack: How to Chain Your 3 Tools So They Work While You Sleep</h3>
+      <p>Transform your 3 tools from separate apps into one automated system that compoun...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The Barakah Blueprint: Your Non-Negotiable Daily Tech Ritual</h3>
+      <p>Turn your 3 tools from random apps you open sometimes into a locked daily system...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When Your System Breaks: The 3-Step Reset for Getting Back on Track</h3>
+      <p>When life disrupts your 3-tool system — exams, family pressure, Ramadan schedule...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Barakah Lock-In: Making Your 3-Tool System a Lifelong Habit, Not a 2-Week Phase</h3>
+      <p>Turn your 3-tool setup from an exciting new experiment into the permanent operat...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
