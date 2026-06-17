@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DATA ERROR: Guide Cannot Be Generated — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/34583777/pexels-photo-34583777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Ben viewers</div>
+    <h1>DATA ERROR: Guide Cannot Be Generated</h1>
+    <p>Channel data does not match stated niche — no fitness content detected</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>This guide could not be written because the channel data provided shows 100% GTA RP gaming content, not fitness content. Writing a fitness guide for a gaming audience would mean fabricating pain points, struggles, and solutions that have no basis in the actual channel or its viewers.</h2>
+    <p>If accurate channel data is provided — including the correct niche, real video titles relevant to that niche, and a verified audience — a fully customized, research-grounded guide can be produced that genuinely serves your audience.</p>
+    <div class="promise">🎯 N/A</div>
+    <p class="author-note">As a third-party researcher, my job is to reflect what the data actually shows, not to invent a narrative that fits a requested category. The channel analyzed produces GTA RP gaming content exclusively. Submitting this as a fitness channel appears to be either a data entry error or a mismatch in the submission form. Please verify the channel name and niche and resubmit so this guide can be created accurately and ethically.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before a guide can be written, the data needs to be corrected. Here is how to resolve this in under 30 minutes so your guide can be generated properly.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Verify the channel name submitted</strong><p>Check that the YouTube channel name entered in the submission form matches the actual channel for which you want a guide. A simple copy-paste error could have routed the wrong channel data into this request.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Confirm the niche matches the content</strong><p>Review the last 15 videos on the intended channel. If the majority of videos align with the stated niche of fitness, resubmit with the correct channel URL or handle. If the channel is genuinely GTA RP gaming, update the niche field to reflect that so a gaming-audience guide can be written instead.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Resubmit with corrected information</strong><p>Once the channel name and niche are confirmed and aligned, resubmit the request. A complete guide with an accurate hook, real audience pain points, and a relevant quick win can then be generated based on verified data.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: A corrected submission will allow a fully personalized, audience-specific guide to be written that reflects what your viewers actually watch, struggle with, and want help solving — rather than a generic document built on mismatched data.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>DATA ERROR: Cannot Generate Module</h3>
+      <p>This module cannot be created because the channel data directly contradicts the stated niche — Ben's channel produces GTA RP gaming content, not fitness content, making it impossible to build an accurate, specific, or honest foundation module.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The system flagged a critical mismatch: 15 out of 15 recent videos are GTA RP gaming content, which means any fitness advice written here would be fabricated for an audience that does not exist on this channel. Writing generic fitness mindset content and pretending it fits Ben's actual audience would be dishonest and useless to you. Before Module 1 can be written, the correct niche must be confirmed — either Ben is a GTA RP gaming creator (in which case the niche input was wrong) or Ben is genuinely pivoting to fitness (in which case zero content exists yet to analyze). Resubmit with the accurate niche — gaming, if that reflects reality — and a specific, honest module built around Ben's real audience will be generated immediately.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Confirm Ben's actual niche by reviewing his last 15 videos and identifying the real recurring theme</li><li>Resubmit the request with the correct niche (GTA RP gaming) OR clarify if this is a brand-new fitness channel with no published content yet</li><li>If fitness is genuinely the goal, note that Module 1 will be built around the transition strategy from gaming audience to fitness audience — a very specific and real challenge worth addressing</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: A module built on wrong data is worse than no module — it gives you false confidence and a strategy aimed at the wrong person entirely. The error message IS the advice: get the foundation right before building anything on top of it.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>DATA ERROR: Module Cannot Be Generated</h3>
+      <p>Channel data provided is invalid — Ben's channel shows 15 GTA RP gaming videos w...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>DATA ERROR: Module Cannot Be Generated</h3>
+      <p>SYSTEM ALERT: Channel data provided does not match the stated fitness niche — Be...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>DATA ERROR: Module Cannot Be Personalized</h3>
+      <p>Channel data provided does not match the stated fitness niche — all 15 recent vi...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>DATA ERROR: Module Cannot Be Personalized</h3>
+      <p>Channel data provided does not match the stated fitness niche — accurate module ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When Your Stream Goes Sideways: Recovering From GTA RP Drama, Technical Fails, and Dead Sessions</h3>
+      <p>Turn your worst streaming moments into content that actually builds deeper loyal...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>DATA ERROR: Module Cannot Be Generated</h3>
+      <p>SYSTEM ALERT: Channel data is fundamentally incompatible with the stated fitness...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
