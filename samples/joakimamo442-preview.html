@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The City Reality Audit — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/28287167/pexels-photo-28287167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Joakimamo442 viewers</div>
+    <h1>The City Reality Audit</h1>
+    <p>Decide Before You Move—A Framework for Cutting Through Hype</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You watched the videos. Nairobi's booming tech scene. Kigali's clean streets. The freelancer living large in Westlands on a remote salary. Your timeline is full of people who 'made it work' after moving back—or finally taking the leap to a new city. So you started planning. Maybe you even started packing. Then you got there—or you talked to someone who did—and the story changed fast. The apartment that looked sleek in the reel is a 45-minute matatu ride from anything useful. The 'thriving job market' means six rounds of interviews for a role paying less than your rent abroad. The neighborhood everyone recommends? Safe if you know which streets to avoid after 7pm, but nobody put that in the caption. This is not a coincidence. It is a content problem. Cities get branded the same way products do—highlight the best 10%, erase the friction, repeat until it trends. And you, trying to make a real decision about your real life, are left trying to decode a highlight reel as if it were a feasibility report. This guide exists because that gap—between what cities look like online and what they actually cost to live in—is costing people serious money, serious time, and in some cases, years they cannot get back.</h2>
+    <p>What you are holding is not a travel guide and it is not a motivational push to move somewhere new. It is a decision-making framework built specifically for evaluating cities before you commit—financially, professionally, or physically. You will learn how to build what we call a City Reality Audit: a structured, evidence-based process for gathering ground-truth information on any city you are considering, cross-checking it against hype signals, and arriving at a clear-eyed verdict you can actually act on. By the time you finish this guide, you will know exactly which questions to ask, where to find answers that are not filtered through someone's personal brand, how to calculate the real cost of a move versus the imagined one, and how to pressure-test any city narrative before it costs you anything more than your time.</p>
+    <div class="promise">🎯 Make confident, informed relocation/investment decisions backed by verified ground-truth documentation rather than hype</div>
+    <p class="author-note">A quick note on who put this together. This guide was researched and written by a third-party analyst working closely with primary source documentation, community feedback, and on-the-ground reporting—not as a commentator watching from a distance, but drawing directly from the kind of boots-on-ground evidence that rarely makes it into polished content. The framework here is not theoretical. It was built by studying the decisions people regretted and working backwards to identify exactly where the information broke down. I am not the person who moved to Nairobi and figured it out. I am the person who studied everyone who did—and everyone who wished they had asked better questions first. Use this accordingly.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another word of this guide, run this fast exercise. It will immediately show you the gap between how a city is being sold to you and what verifiable data actually says. Pick one city you are currently considering. You are going to build what we call a Hype-to-Reality Snapshot—a side-by-side comparison you can do right now with nothing but your phone or laptop and 30 minutes of focused attention.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Pull three recent pieces of content promoting your target city</strong><p>Search the city name on YouTube, Instagram, or TikTok and find three videos or posts from the last six months that show it positively—lifestyle content, relocation vlogs, 'why I moved here' style pieces. Do not overthink the selection. Just pick three that represent the kind of content that influenced your thinking. Write down or screenshot the three specific claims each piece makes about cost of living, safety, job availability, or infrastructure. You are looking for anything stated as fact: 'rent is affordable,' 'the roads are improving,' 'there is real demand for tech skills here.' List every claim. You should have between six and fifteen total across the three pieces.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Run each claim through one verifiable, non-content source</strong><p>For each claim you listed, spend two to three minutes finding one piece of evidence that is not a content creator, not a relocation agency, and not a tourism board. Useful sources include: Numbeo for cost of living data broken down by actual user submissions, LinkedIn job search filtered to that city with a posting date from the last 30 days to check real job volume and salary ranges, local Facebook groups for expats or residents where people ask unglamorous practical questions, recent news articles from local outlets not international press, and government or NGO infrastructure reports. You are not trying to prove the content wrong. You are trying to find out whether the claim holds up when you check it somewhere with no incentive to sell you on the city.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Score the gap</strong><p>Create a simple three-column table—on paper, in your notes app, wherever. Column one: the claim from the content. Column two: what your source actually says. Column three: rate the gap as Small, Medium, or Large based on how different the two are. A Small gap means the content was roughly accurate. A Medium gap means the content was technically true but missing critical context—like 'affordable rent' that only applies to one specific area you would never actually want to live in. A Large gap means the content was presenting an exception as if it were the rule, or omitting information that would change a reasonable person's decision entirely. Tally your results. If more than half your gaps rate Medium or Large, you are working with a heavily curated picture of that city—and you now have documented proof of exactly where the distortion is happening.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: You will finish this exercise with a one-page snapshot showing you precisely how reliable the information environment around your target city actually is. Most people who complete this find at least two to three Large gaps they had never questioned before—not because they were not smart, but because no one had given them a structure to check. That snapshot becomes the foundation for everything else in this guide. Keep it. You will build on it in every section that follows.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Hype Detox: How to Watch Nairobi Content Like a Researcher, Not a Tourist</h3>
+      <p>Transform from someone who gets emotionally sold by rooftop-pool tech hub content into someone who automatically spots the three filters separating curated narrative from ground truth.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">Every Joakimamo442-style tech walkthrough you've watched about Nairobi's Silicon Savannah was filmed by someone with a reason to make it look good — a brand deal, a YouTube thumbnail, or genuine excitement that edited out the 3-hour power outage that happened right after. Your first mindset shift is this: treat every relocation reel like a pitch deck, not a documentary, because the person showing you Westlands coffee shops at golden hour is selling you a feeling, not a cost-benefit analysis. The second shift is understanding that the Kenyan diaspora audience is uniquely vulnerable to this because the content hits two emotional triggers simultaneously — pride in watching Nairobi glow up, and the fear of missing out on 'the right time' to move back before it gets too expensive. Your new default question for every piece of content isn't 'does this look amazing?' but 'what would this person never film, and why?'</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Go back to the last 5 Nairobi/Kenyan tech hub videos you watched on YouTube or TikTok and write down ONE thing each creator never mentioned — rent price, load shedding frequency, visa status requirements, or actual average tech salaries — this gap IS the data</li><li>Find one creator in the same niche who has visibly left Nairobi or posted something critical about the ecosystem, then compare their framing against the hype content you just audited to calibrate your baseline</li><li>Set a phone reminder titled 'WHO BENEFITS?' to fire every time you open YouTube or TikTok for the next 7 days — the friction of answering that question before watching will rewire how your brain processes relocation content</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: The most dangerous content isn't the obviously flashy stuff — it's the 'honest breakdown' or 'real talk' video from a creator who moved back and still needs you to trust their brand, because it feels like ground truth while still omitting the numbers that would actually change your decision.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Ground Truth Stack: How to Extract Real Data From People Already Living It</h3>
+      <p>You'll build a repeatable intelligence system that gets you unfiltered, current ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why Your Brain Is Working Against You: Breaking the Hype Paralysis Loop</h3>
+      <p>You'll identify the exact psychological traps and social pressures that keep Ken...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Salary Triangulation Method: Cross-Reference Three Data Points Before Trusting Any Number</h3>
+      <p>Stop guessing what you'll actually earn in Nairobi's tech scene by learning to t...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 15-Minute Daily Ground-Truth Ritual: Building Your Nairobi Reality Feed Before You Land</h3>
+      <p>Replace your algorithm-curated highlight reel with a repeatable daily intelligen...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When the Ground Truth Hits Different: Recovering Your Decision When Reality Breaks Your Framework</h3>
+      <p>Transform the moment your Nairobi research falls apart into the sharpest competi...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Ongoing Audit: Turn Reality-Checking Into a Reflex, Not a One-Time Event</h3>
+      <p>Transform the City Reality Audit from a pre-move checklist into a permanent oper...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
