@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Watcher to Speaker: The Real-World Chinese Activation System — Sample Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --primary: #7C3AED; --primary-bg: #EDE9FE; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  /* HERO */
+  .hero {
+    position: relative; width: 100%; height: 420px; overflow: hidden;
+    background: linear-gradient(135deg, var(--primary) 0%, #1a1a2e 100%);
+  }
+  .hero-img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+    filter: blur(1px);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: flex-end; padding: 40px 24px;
+    text-align: center;
+  }
+  .sample-pill {
+    background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 16px;
+  }
+  .for-badge {
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 5px 14px;
+    border-radius: 20px; margin-bottom: 16px; display: inline-block;
+  }
+  .hero h1 {
+    font-size: clamp(22px, 5vw, 38px); font-weight: 900;
+    color: #fff; line-height: 1.2; max-width: 720px; margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.8); max-width: 560px;
+  }
+
+  /* MAIN CONTENT */
+  .container { max-width: 780px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* HOOK CARD */
+  .hook-card {
+    background: #fff; border-radius: 16px; padding: 36px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 32px;
+    border-left: 5px solid var(--primary);
+  }
+  .hook-card h2 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #1a1a2e; }
+  .hook-card p { font-size: 15px; line-height: 1.7; color: #444; }
+  .promise {
+    margin-top: 20px; padding: 16px 20px;
+    background: var(--primary-bg); border-radius: 10px;
+    font-size: 14px; font-weight: 600; color: var(--primary);
+  }
+
+  /* QUICK WIN */
+  .section-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--primary); margin-bottom: 8px;
+  }
+  .section-title { font-size: 24px; font-weight: 900; margin-bottom: 20px; }
+
+  .step {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: #fff; border-radius: 12px; padding: 20px 24px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+  }
+  .step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step strong { font-size: 15px; display: block; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  .result-box {
+    background: linear-gradient(135deg, var(--primary-bg), #fff);
+    border: 2px dashed var(--primary); border-radius: 12px;
+    padding: 20px 24px; margin-top: 16px; text-align: center;
+    font-size: 14px; font-weight: 700; color: var(--primary);
+  }
+
+  /* MODULES */
+  .modules-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+  .module-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer; position: relative;
+  }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+  .module-header {
+    display: flex; align-items: center; gap: 16px; padding: 20px 24px;
+  }
+  .module-num {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--primary); color: #fff;
+    font-size: 16px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-info h3 { font-size: 16px; font-weight: 800; margin-bottom: 3px; }
+  .module-info p { font-size: 13px; color: #888; }
+
+  /* LOCKED MODULE */
+  .module-card.locked {
+    position: relative; overflow: hidden;
+  }
+  .module-card.locked .module-header { filter: blur(3px); user-select: none; }
+  .locked-overlay {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(2px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; opacity: 0; transition: opacity 0.2s;
+  }
+  .module-card.locked:hover .locked-overlay { opacity: 1; }
+  .module-card.locked:not(:hover) .locked-overlay { opacity: 1; }
+  .lock-icon { font-size: 24px; }
+  .lock-text { font-size: 12px; font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* MODULE IMAGE */
+  .module-img {
+    width: 100%; height: 140px; object-fit: cover;
+    border-bottom: 3px solid var(--primary-bg);
+  }
+  .module-img-placeholder {
+    width: 100%; height: 140px;
+    background: linear-gradient(135deg, var(--primary-bg), var(--primary)22);
+    border-bottom: 3px solid var(--primary-bg);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--primary)cc, var(--primary));
+    border-radius: 20px; padding: 48px 36px; text-align: center; margin-top: 48px;
+    color: #fff;
+  }
+  .cta-section h2 { font-size: 26px; font-weight: 900; margin-bottom: 12px; }
+  .cta-section p { font-size: 15px; opacity: 0.9; max-width: 480px; margin: 0 auto 28px; line-height: 1.6; }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--primary);
+    font-weight: 800; font-size: 15px;
+    padding: 14px 32px; border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 4px 32px rgba(255,255,255,0.4); }
+  }
+  .earnings-pill {
+    display: inline-block; background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff; font-size: 13px; font-weight: 700;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+
+  /* AUTHOR */
+  .author-note {
+    font-size: 13px; color: #888; font-style: italic;
+    line-height: 1.7; margin-top: 16px;
+  }
+</style>
+<style>
+    :root { --primary: #0F3460; --primary-bg: #E8F0FE; }
+    .hero { background: linear-gradient(135deg, #0F3460 0%, #1a1a2e 100%); }
+    .step-num { background: #0F3460; }
+    .module-num { background: #0F3460; }
+    .for-badge { background: #0F3460; }
+    .cta-btn { color: #0F3460; }
+    </style>
+</head>
+<body>
+
+<!-- HERO WITH PEXELS IMAGE -->
+<div class="hero">
+  <img class="hero-img" src="https://images.pexels.com/photos/7516363/pexels-photo-7516363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+  <div class="hero-overlay">
+    <div class="sample-pill">✦ Sample Preview</div>
+    <div class="for-badge">Built for Mandarinnicole666 viewers</div>
+    <h1>From Watcher to Speaker: The Real-World Chinese Activation System</h1>
+    <p>How to Finally Use the Chinese You Already Know — In Real Conversations, Not Just Recognition Tests</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <div class="hook-card">
+    <h2>You've watched the videos. You've done the lessons. You can follow along when Nicole speaks clearly to camera, and you've even picked up phrases you'd never find in a textbook. But then something happens — you meet an actual native speaker, or you land in a real situation where you need to say something, and your brain just... goes blank. The words you studied last Tuesday? Gone. The phrase you repeated five times? You can't remember if it's too formal, too casual, or if you're about to accidentally say something weird. That freeze — that gap between 'I understand this' and 'I can actually say this' — is exactly what this guide is built to close.</h2>
+    <p>This isn't another vocabulary list or grammar drill to add to your pile. What you're holding is a practical activation system — a repeatable daily framework that takes the Chinese you've already been absorbing through immersion and converts it into language you can actually pull out and use in real moments. By the time you finish this guide, you'll have a clear method for learning phrases in context so they stick, a way to practise that mimics how real conversations actually feel, and the confidence to open your mouth knowing you're using Mandarin that locals genuinely use — not the stiff textbook version that makes native speakers pause politely and then respond in English anyway.</p>
+    <div class="promise">🎯 Speak basic Mandarin confidently in real situations (travel, meeting natives, simple conversations) with vocabulary that actually sticks and feels natural to use</div>
+    <p class="author-note">A quick note on where this guide came from: I'm not Nicole. I'm a language learning researcher and curriculum writer who has spent the last several years studying what actually separates people who successfully make the leap to real-world speaking from those who stay stuck in the comprehension loop indefinitely. I came to Nicole's channel the same way most of you did — looking for Chinese content that felt human and practical rather than clinical — and what I found was a teaching approach that already does something most formal methods completely miss: it shows language living in real context, not sitting in a textbook vacuum. This guide was built to formalise and extend that approach into a daily system you can follow on your own. Nicole's voice, her philosophy, and the specific real-world situations she brings into her content are the backbone of everything here. I've just built the scaffolding around it.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- QUICK WIN -->
+  <div class="section-label">⚡ Quick Win — Included Free</div>
+  <div class="section-title">Get Your First Result in 30 Minutes</div>
+  <p style="color:#666; margin-bottom:24px; font-size:14px;">Before you read another word of this guide, do this first. Seriously — close everything else, set a 30-minute timer, and run through these three steps. The goal isn't to learn something new today. The goal is to take something you've already passively absorbed and make it stick in your mouth, not just your head. You're going to walk away from this with at least one phrase you can actually say naturally, in context, with the right energy — and that small win is going to change how the rest of this guide feels.</p>
+
+  <div class="step"><div class="step-num">1</div><div><strong>Pick ONE scene from a Nicole video you've already watched</strong><p>Go to any video you've seen before — ideally one with a real-world situation like ordering food, meeting someone new, or navigating a market. Pick a single 60-to-90-second clip where she uses a phrase in a genuine context, not an explanation segment. Watch it twice. Write down the one phrase that feels most immediately useful to your real life — maybe it's how she greets someone naturally, deflects a question with humour, or orders without sounding like a phrasebook. Just one phrase. You're not collecting vocabulary today, you're adopting one piece of language that already has real-world context attached to it from the moment you heard it.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><strong>Say it out loud seven times in the actual situation context</strong><p>Don't just repeat it into the void. Picture a specific real moment where you'd use this phrase — you're at a tea house, you're meeting your partner's Chinese colleague, you're at a night market stall and someone's asking if you want the spicy version. Say the phrase inside that imagined scene, out loud, seven times. Not robotically — actually let the situation land in your head each time. Change your tone slightly on a few of them the way you would in a real conversation. What you're doing here is wiring the phrase to a context rather than to a flashcard, which is precisely why it won't evaporate by Thursday.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><strong>Write one sentence in English describing exactly when you'd use it</strong><p>On a Post-it or in your phone notes, write: 'I would say [phrase] when ___' and fill in the blank with the most specific real scenario you can picture. Not 'when I'm in China' — something like 'when the vendor at a street stall asks me what size I want and I want to sound like I've done this before.' That sentence is your anchor. Stick it somewhere visible or save it as a phone wallpaper for the next 48 hours. Every time you see it, say the phrase once out loud in your head in that scenario. You're not studying. You're rehearsing a real moment.</p></div></div>
+
+
+  <div class="result-box">✅ Expected result: After 30 minutes you'll have one phrase that genuinely belongs to you — not floating in a list somewhere, but connected to a real imagined moment, said out loud enough times that it's starting to feel natural in your mouth. That's the exact mechanism this entire system runs on, just scaled up across every real-world context you want to be able to navigate. You've just done it once. Now let's build the whole thing.</div>
+
+  <hr class="divider">
+
+  <!-- MODULES -->
+  <div class="section-label">📚 Inside the Full Guide</div>
+  <div class="section-title">7 Modules. Real Results.</div>
+  <p style="color:#666; margin-bottom:8px; font-size:14px;">The first module is unlocked. The rest ship with the full guide.</p>
+
+  <div class="modules-grid">
+    
+<div class="module-card" style="border-left:4px solid #0F3460;">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <div class="module-info">
+      <h3>The Activation Gap: Why You Understand Chinese But Can't Speak It</h3>
+      <p>Discover why your brain is storing Chinese in the wrong format and how to rewire your study habit into a speaking habit starting today.</p>
+    </div>
+  </div>
+  <div style="padding:0 24px 24px;">
+    <p style="font-size:14px;color:#444;line-height:1.7;margin-bottom:16px;">The reason you can watch MandarinNicole's videos, follow the tones, even read the pinyin — yet completely freeze when a native speaker says 你好 to you in person — is because your brain has filed everything under 'recognition memory,' not 'production memory,' and these are literally different neural pathways. Every time you passively replay a video without pausing to repeat out loud, you're training yourself to be a better audience member, not a speaker, so the hours stack up but the output stays zero. The fix isn't more input — you already have plenty — it's forcing your brain to retrieve and produce the language under mild pressure, which means deliberately creating tiny 'performance moments' daily where you have to generate Chinese, not just consume it. Think of it this way: you don't learn to drive by watching driving videos, and you don't build speaking ability by watching speaking videos — the content is your raw material, but activation is the manufacturing process.</p>
+    <ul style="font-size:13px;color:#555;padding-left:20px;margin-bottom:16px;"><li>Right now, open the last MandarinNicole video you watched, pick one sentence you understood, pause it, and say that sentence out loud three times without looking at the subtitles — this single act moves it from recognition to production memory</li><li>Set a phone alarm labeled '中文时刻' (Chinese moment) for a time you're alone daily — your commute, shower, or morning coffee — and commit that this is your no-subtitle, speak-aloud practice window starting tomorrow</li><li>Write down the ONE real-world situation where you most want to speak Chinese (ordering food in Beijing, talking to a colleague, impressing someone at a restaurant) and keep it visible at your desk — this is your activation anchor that makes every study session feel purposeful instead of abstract</li></ul>
+    <div style="background:#E8F0FE;border-radius:8px;padding:12px 16px;font-size:13px;color:#0F3460;font-weight:600;">
+      💡 Pro tip: Stop measuring your progress by how many videos you've watched or how many words you've 'learned' and start tracking only one metric: how many Chinese sentences came out of your mouth today — even one counts, even if it was wrong, because production reps are the only currency that actually buys speaking fluency.
+    </div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <div class="module-info">
+      <h3>The Scene-Lock Method: Wiring Vocabulary to Real Moments Instead of Flashcard Lists</h3>
+      <p>Stop memorizing Chinese in a vacuum and start anchoring every word and phrase to...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <div class="module-info">
+      <h3>Why You Keep Forgetting Everything (And the Fix That Actually Works)</h3>
+      <p>Stop losing vocabulary overnight by learning why your brain rejects isolated Chi...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <div class="module-info">
+      <h3>The Tone-Map Method: How to Lock Chinese Into Muscle Memory Using Context Anchors</h3>
+      <p>You'll stop forgetting vocabulary overnight by wiring new words to specific emot...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <div class="module-info">
+      <h3>The 15-Minute Daily Loop: Your Non-Negotiable Chinese Activation Ritual</h3>
+      <p>Stop studying Chinese in random bursts and start running a repeatable daily syst...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <div class="module-info">
+      <h3>When It Falls Apart: Your Chinese Recovery Protocol</h3>
+      <p>Turn setbacks, freezes, and bad weeks into the exact fuel that accelerates your ...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+<div class="module-card locked">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <div class="module-info">
+      <h3>The Lifestyle Lock-In: Making Chinese Stick Forever Without Burning Out</h3>
+      <p>You stop treating Chinese as a study subject and start treating it as the operat...</p>
+    </div>
+  </div>
+  <div class="locked-overlay">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-text">Unlocked in the full guide</div>
+  </div>
+</div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="earnings-pill">💰 You earn $13.50 on every $27 sale — automatically</div>
+    <h2>Want to offer this to your audience?</h2>
+    <p>Zero cost. Zero work beyond sharing the link once. Your audience gets a guide built specifically for them — and you earn 50% of every sale, paid weekly to your bank.</p>
+    <a href="mailto:reply@pdfautomaton.com" class="cta-btn">Partner With Us →</a>
+  </div>
+
+</div>
+
+<script>
+// Locked module hover interaction already via CSS
+// Add smooth scroll behavior
+document.querySelectorAll('.module-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    if (!this.classList.contains('locked')) {
+      this.style.borderLeft = '4px solid var(--primary)';
+    }
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.borderLeft = '';
+  });
+});
+</script>
+
+</body>
+</html>
