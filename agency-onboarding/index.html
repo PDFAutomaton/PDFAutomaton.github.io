@@ -98,17 +98,33 @@
 
 <div class="foot">© Monroe &amp; Co. · Custom agency operations guides</div>
 
-<iframe name="hidden_iframe" style="display:none"></iframe>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none"></iframe>
 <script>
+  var submitted = false;
+  var redirected = false;
+
+  function goToCheckout(){
+    if(redirected) return;
+    redirected = true;
+    window.location.href="https://whop.com/pdf-business-automation/custom-agency-onboarding-guide/";
+  }
+
+  // When the hidden iframe finishes loading, the Google Form POST has been
+  // received — THEN it's safe to redirect to checkout. This is what makes the
+  // answers reliably reach the sheet (a blind timer could redirect too early
+  // and cut off the submission).
+  document.getElementById('hidden_iframe').addEventListener('load', function(){
+    if(submitted){ goToCheckout(); }
+  });
+
   function go(){
     var email=document.getElementById('email').value.trim();
     if(!email || email.indexOf('@')<0){document.getElementById('err').style.display='block';return false;}
-    // Submit answers to Google Form (in hidden iframe), then send to checkout.
-    // The form posts to the iframe; we redirect the top window to Whop checkout.
-    setTimeout(function(){
-      window.location.href="https://whop.com/pdf-business-automation/custom-agency-onboarding-guide/";
-    }, 700);
-    return true; // allow the form POST to the hidden iframe
+    submitted = true;
+    // Safety fallback: if the iframe load event doesn't fire within 2.5s
+    // (some browsers/networks), redirect anyway so the buyer isn't stuck.
+    setTimeout(goToCheckout, 2500);
+    return true; // allow the form POST to submit into the hidden iframe
   }
 </script>
 </body></html>
