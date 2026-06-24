@@ -121,6 +121,7 @@
   .fld{margin-bottom:18px}
   .fld label{display:block;font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:8px}
   .qnum{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--accent);margin-right:9px}
+  .fld .hint{font-size:12.5px;color:var(--mu);margin:-1px 0 9px;line-height:1.45;font-style:italic}
   .fld input,.fld textarea{width:100%;border:1px solid #d4dbe6;border-radius:10px;padding:12px 14px;font-size:14.5px;font-family:inherit;color:var(--txt);resize:vertical;transition:border-color .15s,box-shadow .15s}
   .fld input:focus,.fld textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.14)}
   .priceline{display:flex;align-items:baseline;gap:10px;margin:6px 0 18px}
@@ -307,7 +308,7 @@
 <section class="sec offer" id="offer"><div class="wrap narrow">
   <p class="eyebrow reveal">Get started</p>
   <h2 class="reveal">Build your onboarding system</h2>
-  <p class="lead reveal">Answer these 6 questions so we build something genuinely specific to you. Then complete checkout — your custom guide arrives within 48 hours.</p>
+  <p class="lead reveal">Answer these 6 questions in your own words — the more specific you are, the more your guide is built around how <em>you</em> actually work, not a generic template. Then complete checkout, and it arrives within 48 hours.</p>
 
   <div class="form-card reveal">
     <form id="intake" action="https://docs.google.com/forms/d/e/1FAIpQLSdvwY8nAfAIQZDIpL26i357ALXGGLht2fwrL9P_N6SfrVfZYA/formResponse" method="POST" target="hidden_iframe" onsubmit="return go()">
@@ -318,27 +319,33 @@
       
         <div class="fld reveal">
           <label><span class="qnum">01</span>Walk me through your client onboarding right now, from the moment they sign to their first deliverable.</label>
-          <textarea name="entry.452722275" rows="2" placeholder="A sentence or two is plenty."></textarea>
+          <div class="hint">e.g. Contract signed in HelloSign, then I email a welcome, spin up an Asana project, and book a kickoff in Calendly. First deliverable is a strategy deck in ~10 days.</div>
+          <textarea name="entry.452722275" rows="3" placeholder="The more specific you are, the more your guide is built around how you actually work…"></textarea>
         </div>
         <div class="fld reveal">
           <label><span class="qnum">02</span>What tools does your team use day to day? (project management, comms, file sharing, etc.)</label>
-          <textarea name="entry.473331410" rows="2" placeholder="A sentence or two is plenty."></textarea>
+          <div class="hint">e.g. Asana for projects, Slack for comms, Google Drive for files, Figma for design.</div>
+          <textarea name="entry.473331410" rows="3" placeholder="The more specific you are, the more your guide is built around how you actually work…"></textarea>
         </div>
         <div class="fld reveal">
           <label><span class="qnum">03</span>Where do new clients most often get confused or frustrated in the first few weeks?</label>
-          <textarea name="entry.184971722" rows="2" placeholder="A sentence or two is plenty."></textarea>
+          <div class="hint">e.g. They go quiet around week 2 — unsure what we need from them or when the first deliverable lands.</div>
+          <textarea name="entry.184971722" rows="3" placeholder="The more specific you are, the more your guide is built around how you actually work…"></textarea>
         </div>
         <div class="fld reveal">
           <label><span class="qnum">04</span>What's the one onboarding step that always seems to get missed or done inconsistently?</label>
-          <textarea name="entry.1606853951" rows="2" placeholder="A sentence or two is plenty."></textarea>
+          <div class="hint">e.g. Getting ad-account access. Meta Business Manager admin always gets missed and stalls launch.</div>
+          <textarea name="entry.1606853951" rows="3" placeholder="The more specific you are, the more your guide is built around how you actually work…"></textarea>
         </div>
         <div class="fld reveal">
           <label><span class="qnum">05</span>How big is your team, and who is involved in onboarding a new client?</label>
-          <textarea name="entry.1568709734" rows="2" placeholder="A sentence or two is plenty."></textarea>
+          <div class="hint">e.g. 8 people — me, 2 account managers, 3 specialists, 2 designers. The account managers run onboarding.</div>
+          <textarea name="entry.1568709734" rows="3" placeholder="The more specific you are, the more your guide is built around how you actually work…"></textarea>
         </div>
         <div class="fld reveal">
           <label><span class="qnum">06</span>What outcome do you most want this guide to create for your agency?</label>
-          <textarea name="entry.1078934347" rows="2" placeholder="A sentence or two is plenty."></textarea>
+          <div class="hint">e.g. Cut first-90-day churn, and stop being the bottleneck on every new client.</div>
+          <textarea name="entry.1078934347" rows="3" placeholder="The more specific you are, the more your guide is built around how you actually work…"></textarea>
         </div>
       <div class="priceline"><b>$297</b><span>one-time · delivered in 48 hours</span></div>
       <button type="submit" class="btn btn-block">Get my custom guide →</button>
