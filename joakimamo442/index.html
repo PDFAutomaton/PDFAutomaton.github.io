@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before You Move: The Reality Check Framework for Evaluating Nairobi</title>
+<meta name="description" content="This guide gives you the framework they never built. A structured, ground-truth evaluation process that tells you exactly what to assess, in what order, before ">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --accent: #6366F1;
+    --accent-dark: #4F46E5;
+    --accent-light: #EEF2FF;
+    --text: #1E1B4B;
+    --gray: #64748B;
+    --border: #E2E8F0;
+    --white: #FFFFFF;
+    --bg: #F8FAFC;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #0F172A; background: var(--white); }
+
+  /* HERO */
+  .hero { position:relative; min-height:92vh; display:flex; flex-direction:column; justify-content:flex-end; padding:0; overflow:hidden; }
+  .hero-bg { position:absolute; inset:0; background-image:url("https://images.pexels.com/photos/8092507/pexels-photo-8092507.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"); background-size:cover; background-position:center; }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(15,23,42,0.3) 0%, rgba(15,23,42,0.85) 60%, rgba(15,23,42,0.97) 100%); }
+  .hero-content { position:relative; z-index:2; padding:48px 24px 56px; max-width:760px; margin:0 auto; width:100%; }
+  .hero-badge { display:inline-block; background:var(--accent); color:white; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:20px; margin-bottom:20px; }
+  .hero-title { font-size:clamp(28px,5vw,52px); font-weight:900; color:white; line-height:1.15; margin-bottom:16px; letter-spacing:-0.02em; }
+  .hero-subtitle { font-size:clamp(15px,2vw,19px); color:rgba(255,255,255,0.8); line-height:1.65; margin-bottom:32px; max-width:580px; }
+  .hero-creator { font-size:13px; color:var(--accent); font-weight:600; margin-bottom:28px; }
+  .hero-cta { display:inline-block; background:var(--accent); color:white; padding:18px 40px; border-radius:12px; font-size:17px; font-weight:800; text-decoration:none; transition:transform 0.15s, box-shadow 0.15s; box-shadow:0 8px 32px rgba(0,0,0,0.3); }
+  .hero-cta:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(0,0,0,0.4); background:var(--accent-dark); }
+  .hero-price { display:inline-flex; align-items:center; gap:12px; margin-left:20px; color:rgba(255,255,255,0.7); font-size:15px; vertical-align:middle; }
+  .hero-price strong { color:white; font-size:22px; font-weight:900; }
+
+  /* PAIN SECTION */
+  .pain { background:var(--bg); padding:72px 24px; text-align:center; }
+  .pain-inner { max-width:680px; margin:0 auto; }
+  .section-label { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+  .section-title { font-size:clamp(22px,3.5vw,36px); font-weight:800; line-height:1.25; margin-bottom:20px; letter-spacing:-0.01em; }
+  .section-body { font-size:16px; color:var(--gray); line-height:1.8; }
+
+  /* WHAT YOU GET */
+  .modules { padding:72px 24px; background:var(--white); }
+  .modules-inner { max-width:760px; margin:0 auto; }
+  .modules-header { text-align:center; margin-bottom:48px; }
+  .mod-grid { display:flex; flex-direction:column; gap:16px; }
+  .mod-card { display:flex; align-items:flex-start; gap:18px; padding:20px 24px; border:1.5px solid var(--border); border-radius:14px; background:var(--white); transition:border-color 0.15s, transform 0.15s; }
+  .mod-card:hover { border-color:var(--accent); transform:translateX(4px); }
+  .mod-num { font-size:13px; font-weight:800; padding:6px 10px; border-radius:8px; flex-shrink:0; letter-spacing:1px; }
+  .mod-title { font-size:15px; font-weight:700; color:#0F172A; margin-bottom:4px; }
+  .mod-overview { font-size:13px; color:var(--gray); line-height:1.6; }
+
+  /* QUICK WIN */
+  .quickwin { padding:72px 24px; background:var(--accent-light); }
+  .quickwin-inner { max-width:680px; margin:0 auto; text-align:center; }
+  .quickwin-box { background:white; border-radius:16px; padding:36px; box-shadow:0 4px 24px rgba(0,0,0,0.06); margin-top:32px; border-top:4px solid var(--accent); }
+  .quickwin-title { font-size:18px; font-weight:800; color:var(--accent); margin-bottom:12px; }
+  .quickwin-desc { font-size:15px; color:var(--gray); line-height:1.7; }
+
+  /* SOCIAL PROOF */
+  .proof { padding:72px 24px; background:var(--white); text-align:center; }
+  .proof-inner { max-width:680px; margin:0 auto; }
+  .proof-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:40px; }
+  .stat { padding:24px; background:var(--bg); border-radius:14px; }
+  .stat-num { font-size:32px; font-weight:900; color:var(--accent); }
+  .stat-label { font-size:12px; color:var(--gray); margin-top:4px; }
+
+  /* CTA SECTION */
+  .cta-section { padding:80px 24px; background:linear-gradient(135deg, #0F172A 0%, #1E293B 100%); text-align:center; }
+  .cta-inner { max-width:580px; margin:0 auto; }
+  .cta-title { font-size:clamp(24px,4vw,40px); font-weight:900; color:white; margin-bottom:16px; line-height:1.2; }
+  .cta-sub { font-size:16px; color:rgba(255,255,255,0.65); margin-bottom:36px; line-height:1.7; }
+  .cta-btn { display:inline-block; background:var(--accent); color:white; padding:20px 52px; border-radius:14px; font-size:18px; font-weight:800; text-decoration:none; transition:transform 0.15s; box-shadow:0 8px 32px rgba(0,0,0,0.3); }
+  .cta-btn:hover { transform:translateY(-3px); background:var(--accent-dark); }
+  .cta-price { color:rgba(255,255,255,0.5); font-size:14px; margin-top:16px; }
+  .guarantee { display:inline-flex; align-items:center; gap:8px; color:rgba(255,255,255,0.6); font-size:13px; margin-top:20px; }
+
+  /* FAQ */
+  .faq { padding:72px 24px; background:var(--bg); }
+  .faq-inner { max-width:680px; margin:0 auto; }
+  .faq-header { text-align:center; margin-bottom:40px; }
+  .faq-item { border:1.5px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden; background:white; }
+  .faq-q { width:100%; background:none; border:none; padding:20px 24px; text-align:left; font-size:15px; font-weight:700; color:#0F172A; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+  .faq-q:hover { color:var(--accent); }
+  .faq-icon { font-size:20px; font-weight:400; flex-shrink:0; color:var(--accent); transition:transform 0.2s; }
+  .faq-a { padding:0 24px 0; font-size:14px; color:var(--gray); line-height:1.8; max-height:0; overflow:hidden; transition:max-height 0.3s ease, padding 0.3s; }
+  .faq-a.open { max-height:200px; padding:0 24px 20px; }
+
+  /* FOOTER */
+  footer { padding:32px 24px; background:#0F172A; text-align:center; font-size:12px; color:#475569; }
+  footer a { color:#64748B; text-decoration:none; margin:0 8px; }
+
+  @media (max-width:600px) {
+    .proof-stats { grid-template-columns:1fr; }
+    .hero-cta { display:block; text-align:center; }
+    .hero-price { display:block; margin-left:0; margin-top:12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Premium PDF Guide</div>
+    <h1 class="hero-title">Before You Move: The Reality Check Framework for Evaluating Nairobi</h1>
+    <p class="hero-subtitle">And Why Media Lies About It</p>
+    <p class="hero-creator">✦ Built exclusively for Joakimamo442's audience</p>
+    <div>
+      <a href="https://whop.com/checkout/plan_S9LEQkOnNc2rz/?a=joakimamo442" class="hero-cta">Get Instant Access</a>
+      <span class="hero-price"><strong>$23</strong> one-time · instant download</span>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="pain-inner">
+    <p class="section-label">Why this guide exists</p>
+    <h2 class="section-title">You have watched the videos. Someone touches down in Nairobi, eyes wide, saying they love it. Another one says they regr</h2>
+    <p class="section-body">This guide gives you the framework they never built. A structured, ground-truth evaluation process that tells you exactly what to assess, in what order, before you commit to anything. You will finish this knowing the real cost of living ranges, the neighbourhoods worth considering versus the ones the influencers conveniently skip, the infrastructure realities that shock most arrivals, and the specific questions to ask people on the ground so you stop getting filtered answers. No hype. No doom. Just the actual picture so you can make a decision you will not regret six months in.</p>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules">
+  <div class="modules-inner">
+    <div class="modules-header">
+      <p class="section-label">What's inside</p>
+      <h2 class="section-title">7 modules. Everything you need, nothing you don't.</h2>
+    </div>
+    <div class="mod-grid">
+      
+        <div class="mod-card">
+            <div class="mod-num" style="background:#EEF2FF;color:#6366F1;">01</div>
+            <div class="mod-body">
+                <div class="mod-title">The Ground-Truth Mindset: Why Every Source Lies to You (Including the Ones You Trust)</div>
+                <div class="mod-overview">Before you spend a cent on a flight or a wire transfer, you need to understand why every Nairobi narrative you've consum</div>
+            </div>
+        </div>
+        <div class="mod-card">
+            <div class="mod-num" style="background:#EEF2FF;color:#6366F1;">02</div>
+            <div class="mod-body">
+                <div class="mod-title">The Ground-Truth Stack: How to Read Nairobi Before You Land</div>
+                <div class="mod-overview">One structured 45-minute research session will tell you more about real Nairobi than three months of watching highlight </div>
+            </div>
+        </div>
+        <div class="mod-card">
+            <div class="mod-num" style="background:#EEF2FF;color:#6366F1;">03</div>
+            <div class="mod-body">
+                <div class="mod-title">Why Smart People Still Get Nairobi Wrong (And the 3 Walls Blocking You)</div>
+                <div class="mod-overview">The real obstacles aren't lack of information — they're trusting the wrong sources, asking the wrong people, and mistaki</div>
+            </div>
+        </div>
+        <div class="mod-card">
+            <div class="mod-num" style="background:#EEF2FF;color:#6366F1;">04</div>
+            <div class="mod-body">
+                <div class="mod-title">Mine the Comment Sections Like a Field Agent</div>
+                <div class="mod-overview">The most unfiltered ground-truth intelligence about Nairobi isn't in the videos — it's buried in the arguments underneat</div>
+            </div>
+        </div>
+        <div class="mod-card">
+            <div class="mod-num" style="background:#EEF2FF;color:#6366F1;">05</div>
+            <div class="mod-body">
+                <div class="mod-title">The 15-Minute Daily Intel Ritual: How to Read Nairobi Like a Local Before You Land</div>
+                <div class="mod-overview">A repeatable morning routine that compounds raw, ground-truth knowledge about Nairobi daily — so by the time you make yo</div>
+            </div>
+        </div>
+        <div class="mod-card">
+            <div class="mod-num" style="background:#EEF2FF;color:#6366F1;">06</div>
+            <div class="mod-body">
+                <div class="mod-title">When Nairobi Breaks Your Plan: Real Recovery Moves for When Reality Doesn't Match the Research</div>
+                <div class="mod-overview">Even the best pre-move intelligence hits a wall sometimes — here's how to course-correct fast when the neighborhood isn'</div>
+            </div>
+        </div>
+        <div class="mod-card">
+            <div class="mod-num" style="background:#EEF2FF;color:#6366F1;">07</div>
+            <div class="mod-body">
+                <div class="mod-title">Build Your Permanent Nairobi Intelligence Network So You Never Rely on Secondhand Takes Again</div>
+                <div class="mod-overview">After consuming every episode of Joakimamo442, the viewers who make the best decisions are the ones who stop being passi</div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK WIN -->
+<section class="quickwin">
+  <div class="quickwin-inner">
+    <p class="section-label">Start immediately</p>
+    <h2 class="section-title">Get your first result in 30 minutes</h2>
+    <div class="quickwin-box">
+      <div class="quickwin-title">⚡ Quick Win</div>
+      <p class="quickwin-desc">Before you read another Nairobi thread online or watch another touchdown video, do this 30-minute ground-truth audit right now. It will immediately show you whether your current information sources are giving you reality or content.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="proof-inner">
+    <p class="section-label">Why $23</p>
+    <h2 class="section-title">Less than a meal out. Results that last.</h2>
+    <p class="section-body">This isn't a course you'll never finish. It's a focused, actionable guide you can get through in one sitting — and start using the same day.</p>
+    <div class="proof-stats">
+      <div class="stat"><div class="stat-num">$23</div><div class="stat-label">One-time payment</div></div>
+      <div class="stat"><div class="stat-num">7</div><div class="stat-label">Action-packed modules</div></div>
+      <div class="stat"><div class="stat-num">30min</div><div class="stat-label">To your first result</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-title">Ready to stop watching and start doing?</h2>
+    <p class="cta-sub">Instant PDF download. Works on any device. Start using it today.</p>
+    <a href="https://whop.com/checkout/plan_S9LEQkOnNc2rz/?a=joakimamo442" class="cta-btn">Get Instant Access — $23</a>
+    <p class="cta-price">One-time payment · No subscription · Instant download</p>
+    <p class="guarantee">🔒 Secure checkout powered by Whop</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <p class="section-label">Questions</p>
+      <h2 class="section-title">Everything you need to know</h2>
+    </div>
+    
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">Is this really free for me?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Yes — completely. You don't pay anything. The guide is built for your audience, listed at $23, and you earn $11.50 automatically on every sale. We make money when you do.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">How do I share it?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">However feels natural — a mention in a video, a pin in your comments, a link in your bio or description. One mention is enough to start earning.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">When do I get paid?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">Every week automatically, directly to your bank account via Whop. You can track every sale in real time on your dashboard.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">What if my audience doesn't buy?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">No risk — it costs you nothing to try. If it doesn't convert, you've lost nothing. If it does, you earn passively forever.</div>
+        </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 PDF Business Automation · 
+    <a href="/partner.html">Partner with us</a> ·
+    <a href="/privacy.html">Privacy</a> ·
+    <a href="/terms.html">Terms</a>
+  </p>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const icon   = btn.querySelector('.faq-icon');
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+  if (!isOpen) {
+    answer.classList.add('open');
+    icon.style.transform = 'rotate(45deg)';
+  }
+}
+
+// Smooth scroll CTA tracking
+document.querySelectorAll('.hero-cta, .cta-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (typeof gtag !== 'undefined') gtag('event', 'click_cta', {});
+  });
+});
+</script>
+</body>
+</html>
